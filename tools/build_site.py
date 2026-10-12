@@ -189,7 +189,10 @@ def landing(built, bank, wiki=""):
     compared = {}
     for pr in W["prizes"]:
         for g in pr.get("pages", [pr.get("page")]):
-            compared.setdefault(g, []).extend(f'{w["team"]} {w["year"]}' for w in pr["winners"])
+            for w in pr["winners"]:                      # a team can win two of our prizes in one year
+                name = f'{w["team"]} {w["year"]}'
+                if name not in compared.setdefault(g, []):
+                    compared[g].append(name)
     for x in W["precedents"]:
         for f in x["for"]:
             compared.setdefault(f, []).append(f'{x["team"]} {x["year"]}')
