@@ -1,6 +1,14 @@
 hwp-photometer-2014-aachen https://2014.igem.org/Team:Aachen/OD/F_device
 hwp-photometer-2014-aachen-engineering https://2014.igem.org/Team:Aachen/Notebook/Engineering/ODF
 hwp-photometer-2014-aachen-diy-hardware https://2014.igem.org/Team:Aachen/Interlab_Study/Hardware
+hwp-photometer-2019-tu-darmstadt https://2019.igem.org/Team:TU_Darmstadt/Tech
+hwp-bioreactor-2015-aachen https://2015.igem.org/Team:Aachen/Lab/Bioreactor/Hardware
+hwp-bioreactor-2015-aachen-characterization https://2015.igem.org/Team:Aachen/Lab/Bioreactor/Characterization_of_Bioreactor
+hwp-bioreactor-2015-aachen-manuals https://2015.igem.org/Team:Aachen/Notebook/Construction_Manuals
+hwp-bioreactor-2015-aachen-manual-biomass-sensor https://2015.igem.org/Team:Aachen/Notebook/Construction_Manuals/Biomass_Sensor
+hwp-bioreactor-2015-aachen-manual-pumps https://2015.igem.org/Team:Aachen/Notebook/Construction_Manuals/Pumps
+hwp-bioreactor-2019-humboldt-berlin https://2019.igem.org/Team:Humboldt_Berlin/Hardware
 hwp-photometer-2018-tsinghua-a https://2018.igem.org/Team:Tsinghua-A/Hardware
 hwp-bioreactor-2019-eth-zurich https://2019.igem.org/Team:ETH_Zurich/core/hardware
-hwp-bioreactor-2019-humboldt-berlin https://2019.igem.org/Team:Humboldt_Berlin/Hardware
+hwp-bioreactor-2022-cornell https://2022.igem.wiki/cornell/hardware
+hwp-bioreactor-2023-xmu-china https://2023.igem.wiki/xmu-china/hardware

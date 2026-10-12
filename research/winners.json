@@ -233,6 +233,81 @@
    "link_pages": [
     "software"
    ]
+  },
+  {
+   "key": "hardware",
+   "name": "Best Hardware",
+   "also_known_as": "Best Hardware in 2023, 2024 and 2025 as well; the name did not change. The 2026 ballot adds a user-testing question that the earlier ballots did not ask.",
+   "page": "hardware/bioreactor",
+   "pages": [
+    "hardware/bioreactor",
+    "hardware/photometer",
+    "hardware/diopal",
+    "hardware/hydroponics"
+   ],
+   "link_pages": [
+    "hardware/bioreactor",
+    "hardware/photometer",
+    "hardware/diopal",
+    "hardware/hydroponics"
+   ],
+   "ballot": [
+    "Does the hardware you developed address a need or problem in synthetic biology?",
+    "Did the team conduct user testing and learn from user feedback?",
+    "Did the team demonstrate utility and functionality in their hardware proof of concept?",
+    "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
+   ],
+   "winners": [
+    {
+     "year": 2025,
+     "track": "UG",
+     "team": "Cornell",
+     "url": "https://2025.igem.wiki/cornell/hardware",
+     "verified": true,
+     "note": "Four nominees (BIT-China, Estonia-TUBI, NUDT-CHINA, Rochester); no tie. The page is titled 'Adaptive Reaction Chamber' and carries its own 'Best Undergraduate Hardware 2025' banner. Its operating manual is an embedded PDF (general-operating-manual.pdf); the module CAD files are called open-sourced in the text but are not linked from the page."
+    },
+    {
+     "year": 2025,
+     "track": "OG",
+     "team": "TUDarmstadt",
+     "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+     "verified": true,
+     "note": "Two nominees (Brno Czech Republic, ETH-Zurich); no tie. Two devices on one page, a random positioning machine and a DIY bioreactor. The prototype's DBTL iterations are cross-referenced to https://2025.igem.wiki/tudarmstadt/engineering#rpm, and the build files are GitLab raw downloads (3D_print_RPM.zip, RPM_microgravity.gcode) plus two embedded PDFs."
+    },
+    {
+     "year": 2024,
+     "track": "UG",
+     "team": "UBC-Vancouver",
+     "url": "https://2024.igem.wiki/ubc-vancouver/hardware",
+     "verified": true,
+     "note": "Four nominees (Cambridge, HiZJU-China, Kyoto, NU-Kazakhstan); no tie. /hardware is a 445-word hub. The prize-winning documentation is on /hardware/bioreactor/ (5,156 words, three Design History File PDFs) and /hardware/microfluidic-pump/ (323 words). Neither subpage is reachable from the site: the hub's three project cards are images with no href and the nav lists only top-level pages, and both URLs resolve only with a trailing slash (302 without). The third project, Multiphase Microfluidic Chips, has a card but no published page; five candidate slugs return 404."
+    },
+    {
+     "year": 2024,
+     "track": "OG",
+     "team": "Aachen",
+     "url": "https://2024.igem.wiki/aachen/hardware",
+     "verified": true,
+     "note": "One nominee (EPFL); no tie. Device is MAIK, a colorimeter, plus a microfluidic chip. Build instructions, CAD and code sit behind two accordion folds that link three static.igem.wiki PDFs and two GitLab folders; the hardware DBTL iterations are deferred to https://2024.igem.wiki/aachen/engineering."
+    },
+    {
+     "year": 2023,
+     "track": "OG",
+     "team": "Evry-Paris-Saclay",
+     "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+     "verified": true,
+     "note": "One nominee (WrightState-OH); no tie. Three devices on one continuous page with a table of contents: a 96-well plate illuminator, a lux sensor and a digital microfluidics platform. The page says the CAD and PCB files are documented but links no file; the only repository link is the generic footer GitLab link."
+    }
+   ],
+   "unawarded": [
+    {
+     "year": 2023,
+     "track": "UG",
+     "team": null,
+     "verified": false,
+     "note": "No undergraduate winner. The 2023 results page lists the Best Hardware undergraduate Winner slot empty, with four nominees beneath it (HUST-China, Kyoto, OUC-China, Rochester), while the overgraduate and high school slots are filled. Confirmed twice: in the shared render at .render/results-2023.html and in an independent re-render of https://competition.igem.org/results/2023?tab=special-prizes on 2026-10-12. This is not a combined-section year: the two collegiate sections were awarded separately, so the undergraduate award appears to have gone unawarded rather than merged. No team name is recorded here because none is published."
+    }
+   ]
   }
  ],
  "precedents": []
