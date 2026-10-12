@@ -31,6 +31,9 @@
    "notes": 60,
    "broken": []
   },
-  "hardware/hydroponics": null
+  "hardware/hydroponics": {
+   "notes": 50,
+   "broken": []
+  }
  }
 }
