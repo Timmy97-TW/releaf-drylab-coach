@@ -102,6 +102,12 @@ def main(src):
         skip = SKIP_IN_PAGE.get(slug, [])
         shutil.copytree(src / slug, DOCS / slug, dirs_exist_ok=True,
                         ignore=lambda d, names: [n for n in names if n in skip])
+        if "/" in slug:   # a subpage needs its parent's stylesheets even when the parent is not built
+            par = slug.split("/")[0]
+            (DOCS / par).mkdir(parents=True, exist_ok=True)
+            for f in (src / par).iterdir():
+                if f.is_file() and f.name != "index.html" and not (DOCS / par / f.name).exists():
+                    shutil.copy2(f, DOCS / par / f.name)
         used = {i for n in a["notes"] for i in n.get("excerpts", [])}
         data = {"page": slug, "title": title, "prizeName": prize, "summary": a.get("summary"),
                 "live": LIVE, "mockPages": mock, "wiki": wiki, "root": up(slug),
