@@ -445,7 +445,9 @@
     }
     wrapEl.appendChild(c);
     var head = $("section.abstract") || $(".pagehead") || $("header");
-    if (head && head.parentNode) head.parentNode.insertBefore(wrapEl, head.nextSibling);
+    if (head && head.parentNode) { head.parentNode.insertBefore(wrapEl, head.nextSibling); return; }
+    var docWrap = $(".doc-wrap");          // hardware pages: between the dark hero and the document
+    if (docWrap && docWrap.parentNode) docWrap.parentNode.insertBefore(wrapEl, docWrap);
     else doc.body.insertBefore(wrapEl, doc.body.firstChild);
   }
 
