@@ -1,0 +1,64 @@
+/* The coach's front page, in the Engagement pages' soft style. */
+body.lp { margin: 0; background: #fff; color: var(--cx-ink); font-family: var(--cx-font); -webkit-font-smoothing: antialiased; padding-bottom: 60px; }
+.lp-head { max-width: 860px; margin: 0 auto; padding: 88px 24px 48px; text-align: center; }
+.lp-head img { border-radius: 12px; }
+.lp-eyebrow { font: 600 13px/1 var(--cx-font); letter-spacing: .06em; text-transform: uppercase; color: var(--leaf-700, #23684a); margin: 22px 0 14px; }
+.lp-head h1 { font: 700 clamp(36px, 6vw, 60px)/1.05 var(--cx-font); letter-spacing: -.035em; margin: 0 0 18px; }
+.lp-lede { font: 400 clamp(17px, 2.1vw, 21px)/1.5 var(--cx-font); color: var(--cx-ink-2); margin: 0 auto; max-width: 720px; }
+.lp-main { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.lp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.lp-card { display: flex; flex-direction: column; gap: 10px; background: var(--cx-well); border-radius: 28px; padding: 28px 28px 24px; color: inherit; text-decoration: none; transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+.lp-card:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,.08); }
+.lp-card__prize { font: 600 12px/1.2 var(--cx-font); letter-spacing: .04em; text-transform: uppercase; color: var(--cx-ink-3); }
+.lp-card h3 { font: 700 26px/1.15 var(--cx-font); letter-spacing: -.02em; margin: 0; }
+.lp-card p { margin: 0; font: 15px/1.5 var(--cx-font); color: var(--cx-ink-2); }
+.lp-card__first { background: #fff; border-radius: 14px; padding: 12px 14px; color: var(--cx-ink) !important; }
+.lp-card__first b { display: block; font: 600 11px/1.2 var(--cx-font); letter-spacing: .05em; text-transform: uppercase; color: var(--cx-mistake); margin-bottom: 4px; }
+.lp-card .cx-sum__counts { margin: auto 0 0; padding-top: 6px; }
+.lp-main h2 { font: 700 28px/1.2 var(--cx-font); letter-spacing: -.02em; margin: 0 0 16px; }
+.lp-wait, .lp-legend, .lp-credit { margin-top: 64px; }
+.lp-wait ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.lp-wait li { background: var(--cx-well); border-radius: 999px; padding: 9px 14px; font: 500 14px/1 var(--cx-font); color: var(--cx-ink-2); }
+.lp-legend ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.lp-legend li { background: var(--cx-well); border-radius: 18px; padding: 16px 18px; font: 14.5px/1.45 var(--cx-font); color: var(--cx-ink-2); }
+.lp-legend li b { display: flex; align-items: center; gap: 8px; color: var(--cx-c); font-weight: 600; margin-bottom: 4px; }
+.lp-legend li b::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cx-c); }
+.lp-credit p { font: 15px/1.55 var(--cx-font); color: var(--cx-ink-2); max-width: 760px; margin: 0 0 18px; }
+.lp-credit ul { list-style: none; padding: 0; margin: 0; columns: 3 240px; column-gap: 24px; }
+.lp-credit li { font: 14.5px/1.4 var(--cx-font); padding: 6px 0; break-inside: avoid; }
+.lp-credit li a { color: var(--cx-ink); text-decoration: none; font-weight: 500; }
+.lp-credit li a:hover { text-decoration: underline; }
+.lp-credit li span { color: var(--cx-ink-3); font-size: 13px; margin-left: 4px; }
+.lp-cross { margin-top: 64px; }
+.lp-cross > p { font: 15px/1.55 var(--cx-font); color: var(--cx-ink-2); max-width: 760px; margin: 0 0 18px; }
+.lp-cross ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 10px; }
+.lp-cross a { display: block; height: 100%; box-sizing: border-box; background: var(--cx-mistake-bg); border-radius: 18px; padding: 16px 18px; color: var(--cx-ink-2); text-decoration: none; font: 14px/1.45 var(--cx-font); transition: transform .2s; }
+.lp-cross a:hover { transform: translateY(-2px); }
+.lp-cross a span { display: block; font: 600 11px/1.2 var(--cx-font); letter-spacing: .05em; text-transform: uppercase; color: var(--cx-mistake); margin-bottom: 5px; }
+.lp-cross a b { display: block; color: var(--cx-ink); font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.lp-src { margin: 56px 0 0; font: 13px/1.5 var(--cx-font); color: var(--cx-ink-3); }
+.lp-card__vs { font-size: 13px !important; line-height: 1.45 !important; color: var(--cx-ink-3) !important; }
+.lp-card__vs b { display: block; font: 600 11px/1.2 var(--cx-font); letter-spacing: .05em; text-transform: uppercase; color: var(--cx-ink-3); margin-bottom: 3px; }
+.lp-win { margin-top: 64px; }
+.lp-win > p { font: 15px/1.55 var(--cx-font); color: var(--cx-ink-2); max-width: 760px; margin: 0 0 18px; }
+.lp-win h3 { font: 700 20px/1.25 var(--cx-font); letter-spacing: -.015em; margin: 40px 0 8px; }
+.lp-win__scroll { overflow-x: auto; background: var(--cx-well); border-radius: 24px; padding: 8px 20px; -webkit-overflow-scrolling: touch; }
+.lp-win__table { width: 100%; border-collapse: collapse; font: 14px/1.4 var(--cx-font); min-width: 860px; }
+.lp-win__table--prec { min-width: 640px; }
+.lp-win__table th, .lp-win__table td { text-align: left; vertical-align: top; padding: 14px 12px 14px 0; border-top: 1px solid var(--cx-line); }
+.lp-win__table thead th { border-top: 0; font: 600 12px/1.3 var(--cx-font); color: var(--cx-ink-3); letter-spacing: .02em; padding-top: 12px; padding-bottom: 10px; }
+.lp-win__table thead th a { display: block; font: 700 15px/1.2 var(--cx-font); color: var(--cx-ink); text-decoration: none; letter-spacing: -.01em; }
+.lp-win__table thead th a:hover { text-decoration: underline; }
+.lp-win__table thead th span { text-transform: uppercase; letter-spacing: .05em; font-size: 11px; }
+.lp-win__table tbody th { font: 600 14.5px/1.3 var(--cx-font); color: var(--cx-ink); width: 21%; }
+.lp-win__page { display: block; margin-top: 5px; font: 500 12.5px/1.3 var(--cx-font); color: var(--leaf-700, #23684a); text-decoration: none; }
+.lp-win__page::after { content: " \2192"; }
+.lp-win__page:hover { text-decoration: underline; }
+.lp-win__table td a { display: block; color: var(--cx-ink); font-weight: 500; text-decoration: none; padding: 2px 0; }
+.lp-win__table td a:hover { color: var(--cx-restructure); text-decoration: underline; }
+.lp-win__table td em { display: block; font: 500 11px/1.2 var(--cx-font); font-style: normal; text-transform: uppercase; letter-spacing: .05em; color: var(--cx-ink-3); margin-top: 3px; }
+.lp-win__table--prec td a { display: inline; margin-right: 12px; }
+.lp-win__table--prec td:last-child { color: var(--cx-ink-3); }
+.lp-win__lic { font-size: 13px !important; color: var(--cx-ink-3) !important; margin-top: 16px !important; }
+@media (max-width: 760px) { .lp-win__scroll { border-radius: 18px; padding: 4px 14px; } }
+.lp-win__table td a::after { content: "\2009\2197"; color: var(--cx-ink-3); font-size: .85em; }

@@ -1,7 +1,7 @@
 {
  "page": "software",
  "summary": {
-  "verdict": "On evidence this page is already past the winners. A null-model baseline for the trust layer, a leave-one-arm-out table, a forecast fixed by hash before the batch and a sensor calibration that failed and is reported anyway are moves that none of the eight Best Software winners and none of the six Best Measurement winners we read attempted. Two things hold it back. The software ballot's other four questions go unanswered because the page has no install route, no component list, no log format and no protocol on it, and the licence label contradicts the repository's own LICENSE file. And the page disagrees with five other ReLEAF pages about its own facts, including the strain of the 434-hour run and whether the 24-hour row behind R5 is a result at all.",
+  "verdict": "On evidence this page is already past the winners. A null-model baseline for the trust layer, a leave-one-arm-out table, a forecast fixed by hash before the batch and a sensor calibration that failed and is reported anyway are moves that none of the eight Best Software winners and none of the six Best Measurement winners we read attempted. Two things hold it back. The software ballot's other four questions go unanswered because the page has no install route, no component list, no log format and no protocol on it, and the licence label contradicts the repository's own LICENSE file. And the page disagrees with other ReLEAF pages about its own facts: ten of the notes below and about ten more items in extras quote another one of our pages contradicting this one, including the strain of the 434-hour run and whether the 24-hour row behind R5 is a result at all.",
   "strengths": [
    "Provenance on every value. Tagging each channel in-line, commanded, soft, bench tested, planned or external, and applying it consistently across both tables, is a data standard, and nothing in the winners' pages matches it.",
    "Validation against something. R3 scores the trust layer against a naive step detector on the same data, R4 scores the Kalman filter against persistence at four horizons, and R5 holds out each light arm in turn. No winning software page compares its tool to a null model.",
@@ -10,7 +10,7 @@
    "Limits with mechanisms. Eight bullets, each carrying a figure or a named cause, and the rule that nothing counts as validated unless it was scored on data it was not fitted to, including where the page itself fails that rule (\"No point was held out.\")."
   ],
   "priorities": [
-   "Reconcile the page against the rest of the wiki before the freeze. Sixteen notes here quote another ReLEAF page contradicting this one. Three are serious: Hardware and Engineering call the 434-hour run WB800 where you call it 168; Measurement's table for the 19 September plate run gives the green arms at 0.008 to 0.083 at 24 h and calls that row a handling fault, which is the row R5 rests on; and Measurement's LPA procedure says the plate was incubated at 37 degrees, which removes the registered forecast's reason for not applying its own criterion.",
+   "Reconcile the page against the rest of the wiki before the freeze. Ten notes here and about ten more items in extras quote another ReLEAF page contradicting this one. Three are serious: Hardware and Engineering call the 434-hour run WB800 where you call it 168; Measurement's table for the 19 September plate run gives the green arms at 0.008 to 0.083 at 24 h and calls that row a handling fault, which is the row R5 rests on; and Measurement's LPA procedure says the plate was incubated at 37 degrees, which removes the registered forecast's reason for not applying its own criterion.",
    "Put a protocol on the page for at least the TiO2 calibration, and a floor under the photometer. The silica paragraph shows you can write one: step size, range, volume, matrix, instrument, logging interval. The TiO2 run is the page's headline calibration and it is one sentence. Measurement ballot questions 1 and 2 ask for nothing else, and the OD 1.2 ceiling is defended while the blank level is never stated, on a page where two runs start near zero.",
    "Answer the four software ballot questions the page currently skips. A clone URL and a command in the body, a three-sentence component list saying what runs on the board, in the backend and in the browser, the log's column list with its units, and two lines of the serial protocol. All four describe work that is already done, and the repository is also the eligibility item.",
    "Fix the licence. Two figure labels say MIT; the repository LICENSE puts the source code under CC BY 4.0, which is not an OSI-approved licence and so does not satisfy Best Software eligibility. Give the licence its own heading and put a matching LICENSE file beside the code.",
@@ -122,8 +122,7 @@
    "\"fourteen-fold\" and \"a factor of 11\" describe different things four paragraphs apart in the June fold: the flask's own growth, and the gap between the two vessels at 24 h. Say which is which.",
    "Figure 10's caption says \"the log carries no clock\" while R6's opening says the runs were \"logged every five seconds\". Both are true. Write \"carries a sample interval and no timestamp\".",
    "The chromoprotein idea in section 5 raises a question and leaves it open. Move it to Gaps and limits as a row, or state what a second peak would have to satisfy.",
-   "The Beer-Lambert limit bullet carries two optical configurations, two ceilings and a third point about induction light. Split it into three bullets.",
-   "Five notes from this review are not in the margin because they landed on sentences we had written ourselves, and we applied them to the page before publishing: the rig app section now says every reactor number was recorded by one program, since R5, R6 and the BioDrop column were not; R6 says the sensor reads its own plastic disc and not a plant; the bench repository is named and linked; the limits bullet stops repeating R6; and the abstract's air probe no longer breathes."
+   "The Beer-Lambert limit bullet carries two optical configurations, two ceilings and a third point about induction light. Split it into three bullets."
   ]
  },
  "notes": [
@@ -159,7 +158,7 @@
    "zone": "abstract"
   },
   {
-   "id": "dt-a05",
+   "id": "dt-a04",
    "type": "clarify",
    "anchor": "That layer gave 26.7 hours of warning before the OD channel failed",
    "title": "Which layer is that layer",
@@ -173,7 +172,7 @@
    "zone": "abstract"
   },
   {
-   "id": "dt-a06",
+   "id": "dt-a05",
    "type": "suggest",
    "anchor": "Both interfaces run live on this page",
    "title": "Say there is software to download",
@@ -187,7 +186,7 @@
    "zone": "abstract"
   },
   {
-   "id": "dt-a07",
+   "id": "dt-a06",
    "type": "praise",
    "anchor": "26.7 h of warning before the OD channel failed",
    "title": "The status word in every result row",
@@ -199,7 +198,7 @@
    "zone": "abstract"
   },
   {
-   "id": "dt-a08",
+   "id": "dt-a07",
    "type": "mistake",
    "anchor": "Slope 1.018 against BioDrop, R² 0.995, on a known dose",
    "title": "Two different scorings in one row",
@@ -340,7 +339,7 @@
    "type": "restructure",
    "anchor": "The 25 August progress report gives 0.084 bar and 0.90–0.96× theory for the same measurement",
    "title": "Two unresolved notes left in public",
-   "body": "The page now carries two folds called \"To reconcile before the freeze\", this one and the one in R2. Each tells a judge that we have two answers for one measurement and have not chosen. In both cases you have chosen: here the next sentence says the figures are the later analysis, and in R2 the scoped figure is the right one. Put the decision in the body as a reason, and keep the fold for anything still genuinely open.",
+   "body": "The page now carries two folds called \"To reconcile before the freeze\", this one and the one in R2. Each tells a judge that we have two answers for one measurement and have not chosen. In both cases you have chosen: here the next sentence says the figures are the later analysis, and in R2 the scoped figure is the right one. Put the decision in the body as a reason, and keep a fold only for what is still genuinely open.",
    "after": "Both figures come from one spreadsheet; the 0.096 bar and 1.03× quoted here are from the later re-analysis, which corrected [what changed]. The 25 August progress report's 0.084 bar and 0.90–0.96× are superseded.",
    "excerpts": []
   },
@@ -620,6 +619,15 @@
    "excerpt_note": "Vilnius puts the reason the tool exists in sentence two. The casebook's commonest fault among winners is that reason arriving late."
   },
   {
+   "id": "dt-040",
+   "type": "clarify",
+   "anchor": "Both sensors were held in air beside each other, with no leaf.",
+   "title": "Three names for the sensing surface",
+   "body": "Here it is \"no leaf\", the channel table calls it a \"dummy-leaf sensor\", and the limits say \"it reads a dummy leaf\". A judge needs one sentence saying what the sensor actually senses, because the whole water-stress signal depends on it.",
+   "after": "Both sensors were held in air beside each other. The SN-3001-YM-N01 measures the temperature of its own white plastic disc, which stands in for a leaf, so in this test it was reading air and not a plant.",
+   "excerpts": []
+  },
+  {
    "id": "dt-041",
    "type": "praise",
    "anchor": "Each site had three five-minute runs logged every five seconds, giving 540 paired readings.",
@@ -676,7 +684,7 @@
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
   },
   {
-   "id": "dt-047",
+   "id": "dt-046",
    "type": "restructure",
    "anchor": "Here, the SHT31 checks the leaf thermistor because both sensors sit in the same air.",
    "title": "The section's thesis is its last line",
@@ -689,7 +697,7 @@
    "ballot": "Could it be useful to other projects?"
   },
   {
-   "id": "dt-048",
+   "id": "dt-047",
    "type": "praise",
    "anchor": "To test the twin's forecast, we registered it before a reactor run of B. subtilis WB800 with constitutive ACC deaminase secretion",
    "title": "Nobody else in this prize does this",
@@ -701,7 +709,7 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-049",
+   "id": "dt-048",
    "type": "mistake",
    "anchor": "The LPA run's temperature was not recorded",
    "title": "Our own protocol gives the plate a temperature",
@@ -710,7 +718,7 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-050",
+   "id": "dt-049",
    "type": "mistake",
    "anchor": "The same batch carries the first ACC deaminase activity assay",
    "title": "An earlier activity assay already exists",
@@ -719,7 +727,7 @@
    "excerpts": []
   },
   {
-   "id": "dt-051",
+   "id": "dt-050",
    "type": "cut",
    "anchor": "ELISA follows on the CcaS/CcaR version once the western blot band is strong enough.",
    "title": "The assay plan belongs on Measurement",
@@ -728,7 +736,7 @@
    "excerpts": []
   },
   {
-   "id": "dt-052",
+   "id": "dt-051",
    "type": "suggest",
    "anchor": "Firmware v3.10.9 · backend v4.12 · interface v4.13",
    "title": "Three versions, no components",
@@ -741,7 +749,7 @@
    "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
   },
   {
-   "id": "dt-054",
+   "id": "dt-052",
    "type": "suggest",
    "anchor": "One file, no install, served by the board on port 7000 in English or Traditional Chinese",
    "title": "No route for a judge to the code",
@@ -755,7 +763,7 @@
    "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
   },
   {
-   "id": "dt-055",
+   "id": "dt-053",
    "type": "clarify",
    "anchor": "Derived against the provisional baseline: wall shear 4996 s⁻¹, ΔP ratio 0.83, γ ratio 1.01",
    "title": "Three terms the reader has not met",
@@ -764,7 +772,7 @@
    "excerpts": []
   },
   {
-   "id": "dt-056",
+   "id": "dt-054",
    "type": "suggest",
    "anchor": "After a restart the app appends to the same file and records the gap in a gap_s column.",
    "title": "The log format is never written out",
@@ -778,7 +786,7 @@
    "ballot": "How well is the software compatible with, and does it leverage, existing synthetic biology standards? (e.g. SBOL, other RFCs, data formats, etc.)"
   },
   {
-   "id": "dt-057",
+   "id": "dt-055",
    "type": "mistake",
    "anchor": "1007UI.html · MIT licence Open full screen",
    "title": "The repository licence is not MIT",
@@ -790,7 +798,7 @@
    "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
   },
   {
-   "id": "dt-058",
+   "id": "dt-056",
    "type": "restructure",
    "anchor": "The rig app's interlocks, board-side recording, bubble rejection and calibration bookkeeping each exist because a run failed without them",
    "title": "Your best argument is the last line",
@@ -802,7 +810,7 @@
    "excerpt_note": "Marburg opens on its own measured failure, 27% of combinations active, and the tool arrives as the answer to it. Same structure, and yours covers four features at once."
   },
   {
-   "id": "dt-059",
+   "id": "dt-057",
    "type": "clarify",
    "anchor": "That makes it a digital shadow with actuation [1, 2].",
    "title": "The page is titled Digital Twin",
@@ -811,7 +819,7 @@
    "excerpts": []
   },
   {
-   "id": "dt-061",
+   "id": "dt-058",
    "type": "suggest",
    "anchor": "A documented two-line ASCII protocol with a heartbeat watchdog, interlocks on the microcontroller",
    "title": "The protocol is named, never shown",
@@ -825,7 +833,7 @@
    "ballot": "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)"
   },
   {
-   "id": "dt-062",
+   "id": "dt-059",
    "type": "cut",
    "anchor": "The pressure logging also gives the project's cheapest biocontainment layer.",
    "title": "This fold belongs on Safety",

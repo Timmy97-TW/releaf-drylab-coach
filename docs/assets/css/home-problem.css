@@ -1,0 +1,104 @@
+/* =============================================================================
+   ReLeaf: the homepage problem arc, shared frame (01 the threat, 02 the hour,
+   protectants, the question and the five demands)
+   -----------------------------------------------------------------------------
+   The frame every problem section is built in: the one-screen padding, the
+   numbered kicker, the title and lede, and the demand tag. (Each section
+   used to end on a box of the demands it earned, .pb-need; it went on
+   1 Oct, and the five demands are said once, in #demands.) Each section's own layout is in its
+   own sheet, loaded after this one: home-threat.css, home-hour.css,
+   home-safe.css, and the demands block home-demands.css. (The [n] citations
+   and the numbered source list went on 29 Sep, when the owner asked for the
+   sources to come off the homepage.)
+
+   Grounds run: hero ink, then white for 01, 02, the protectants and the
+   demands, then ink for the reactor. The homepage uses two grounds only, white and ink.
+
+   EVERY SEAM IS A HARD CUT. The grounds used to be blended into each other by
+   gradient bands between the sections. All of that is gone: one ground stops
+   and the next starts, on one line, and the white sheets are told apart by a
+   hairline or a rule at the top of each. If you are tempted to soften a
+   boundary again, that is a deliberate decision to reverse, not an omission
+   to fix.
+
+   Everything here is prefixed .pb- so it cannot collide with home.css.
+   ========================================================================== */
+
+
+:root {
+  /* --ink and --sig-green are home.css's (it loads first) */
+  --screen-pad: clamp(2rem, 5vh, 3.25rem);
+  --pb-offset: var(--nav-h);   /* the site nav is fixed */
+  --pb-screen: calc(100svh - var(--pb-offset));
+}
+
+/* ---------------------------------------------------------------- frame --- */
+
+.pb-inner { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--sp-5); }
+@media (min-width: 640px) { .pb-inner { padding: 0 var(--sp-6); } }
+/* the chapters rail's gutter, the same value every column uses (home.css) */
+@media (min-width: 1180px) { .pb-inner { padding-inline: var(--rail-gutter); } }
+
+/* one section, one screen, on anything wider than a phone */
+/* sections are sized to fit one screen, not stretched to fill it */
+.pb-screen { padding: var(--screen-pad) 0; }
+
+.pb-index {
+  display: flex; align-items: center; gap: var(--sp-3);
+  margin: 0 0 var(--sp-4);
+  font-size: .6875rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--leaf-700);
+}
+.pb-index span {
+  display: inline-grid; place-items: center;
+  min-width: 2.1rem; height: 1.5rem; padding: 0 .4rem;
+  border: 1.5px solid currentColor; border-radius: 999px;
+  font-variant-numeric: tabular-nums; letter-spacing: .04em;
+}
+.pb-index::after { content: ""; flex: 1; max-width: 6rem; height: 1px; background: currentColor; opacity: .3; }
+
+.pb-title {
+  margin: 0 0 var(--sp-4);
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, .9rem + 1.9vw, 2.45rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -.022em;
+  color: var(--leaf-900);
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.pb-lede {
+  max-width: 58ch; margin: 0 0 var(--sp-3);
+  font-size: clamp(1rem, .92rem + .3vw, 1.125rem); line-height: 1.6; color: var(--gray-600);
+}
+
+/* the demand tag: 02's column heads and the demands block. The reactor's
+   cards carry the ink version of it (.rxs-card__tag, home-reactor.css) */
+.pb-tag {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .34rem .78rem .34rem .58rem;
+  border-radius: 999px;
+  background: var(--leaf-900); color: var(--white);
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.pb-tag::before {
+  content: ""; width: .5rem; height: .5rem; border-radius: 50%;
+  background: var(--sig-green); box-shadow: 0 0 0 3px rgb(53 224 138 / .25);
+}
+
+
+/* the demand tag with its own icon in place of the dot (the demands, the
+   reactor's cards and the big picture use the same five icons) */
+.pb-tag--i { padding-left: .6rem; }
+.pb-tag--i::before { content: none; }
+.pb-tag--i svg { width: 1rem; height: 1rem; flex: none; color: var(--sig-green); }
+
+
+/* 1 Oct (students: titles broke too early). A title may run to about thirty
+   characters a line, so the problem arc's headings sit on one line or break
+   into two even lines on a wide screen. */
+.pb-title { max-width: 30ch; }
+.hr3__head { max-width: none; }
+/* 1 Oct, Jacquelyn: the hour's title runs on one line where the screen is
+   wide enough, and breaks only where it is not */
+.hr3__head .pb-title { max-width: none; }

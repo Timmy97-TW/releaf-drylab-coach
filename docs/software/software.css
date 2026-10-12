@@ -1,0 +1,331 @@
+/* =============================================================================
+   ReLeaf: the Digital Twin page (slug /software)
+   -----------------------------------------------------------------------------
+   Sits on top of page.css and takes every colour from tokens.css. The page is
+   written as a process description of one unit operation, so its components
+   are the ones a batch record needs: a state register with provenance tags,
+   an autonomy ladder, a twin diagram, and plain tables. No decorative rules,
+   no dashed separators; state is carried by tags and swatches.
+   ========================================================================== */
+
+.sw { --max: 1440px; --measure: 80ch; }
+.sw .pagebody { max-width: none; }
+.sw .pagebody .sec > p,
+.sw .pagebody .sec > ul:not(.keyfacts),
+.sw .pagebody .sec > ol,
+.sw .pagebody .sec > .callout,
+.sw .pagebody .sec > .stand { max-width: var(--measure); }
+.sw .pagebody .sec > .tablewrap { max-width: 72rem; }
+.sw code { overflow-wrap: anywhere; }
+
+/* a one-line claim under a section heading */
+.stand {
+  margin: -0.35rem 0 var(--sp-5);
+  max-width: 72ch;
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+.stand b { color: var(--leaf-900); font-weight: 650; }
+
+/* ------------------------------------------------------------- KEY FACTS -- */
+.sec .keyfacts {
+  list-style: none;
+  margin: var(--sp-6) 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+}
+.sec .keyfacts li { margin: 0; padding: var(--sp-4) var(--sp-4) var(--sp-5); background: var(--white); }
+.keyfacts b {
+  display: block;
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--leaf-900);
+  font-variant-numeric: tabular-nums;
+}
+.keyfacts span { display: block; margin-top: .5rem; font-size: var(--text-sm); color: var(--gray-600); line-height: 1.4; }
+
+/* ------------------------------------------------------ PROVENANCE TAGS -- */
+/* measured / derived / absent / commanded, and the parameter provenances
+   fixed / lit / calc / verify. Solid fills only.                             */
+.tag {
+  display: inline-block;
+  padding: .12rem .45rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: .1em;
+}
+.tag--meas   { background: var(--leaf-100);  color: var(--leaf-900); }
+.tag--der    { background: var(--slate-100); color: var(--slate-700); }
+.tag--abs    { background: var(--rust-100);  color: var(--rust-700); }
+.tag--cmd    { background: var(--gray-100);  color: var(--gray-700); }
+.tag--fixed  { background: var(--leaf-100);  color: var(--leaf-900); }
+.tag--lit    { background: var(--slate-100); color: var(--slate-700); }
+.tag--calc   { background: var(--gray-100);  color: var(--gray-700); }
+.tag--verify { background: var(--amber-100); color: var(--amber-700); }
+.tag--done   { background: var(--leaf-100);  color: var(--leaf-900); }
+.tag--part   { background: var(--amber-100); color: var(--amber-700); }
+.tag--none   { background: var(--rust-100);  color: var(--rust-700); }
+
+table.data td small { display: block; margin-top: .2rem; color: var(--gray-500); font-size: var(--text-xs); line-height: 1.4; }
+
+/* ---------------------------------------------------------- TWIN FIGURE -- */
+/* The twin as four blocks and the two directions of dataflow between them.
+   HTML rather than SVG so that on a phone the blocks stack and stay legible. */
+.twin {
+  margin: var(--sp-6) 0;
+  padding: var(--sp-5);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+}
+.twin__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: var(--sp-3);
+}
+.twin__node {
+  padding: var(--sp-4);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+.twin__node h4 { margin: 0 0 var(--sp-2); font-size: var(--text-base); color: var(--leaf-900); }
+.twin__node ul { margin: 0; padding-left: 1.1em; }
+.sec .twin__node li + li { margin-top: .2rem; }
+.twin__kicker {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .6875rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gray-500);
+}
+.twin__node--phys { border-top: 3px solid var(--leaf-700); }
+.twin__node--edge { border-top: 3px solid var(--slate-700); }
+.twin__node--virt { border-top: 3px solid var(--amber-700); }
+.twin__link {
+  display: flex; flex-direction: column; justify-content: center; gap: var(--sp-2);
+  min-width: 6.5rem;
+  font-size: var(--text-xs); line-height: 1.3; color: var(--gray-600); text-align: center;
+}
+.twin__arrow { display: block; font-size: 1.1rem; line-height: 1; color: var(--leaf-700); }
+.twin__arrow--back { color: var(--amber-700); }
+.twin__foot {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+.twin__foot .twin__node { background: var(--white); }
+@media (max-width: 900px) {
+  .twin { padding: var(--sp-4); }
+  .twin__row { grid-template-columns: 1fr; }
+  .twin__link { flex-direction: row; justify-content: center; min-width: 0; padding: var(--sp-1) 0; }
+  .twin__arrow { transform: rotate(90deg); }
+  .twin__foot { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------- LADDER -- */
+/* Tiers ordered by reversibility. The step indent grows with the tier, so the
+   top of the ladder reads as further from the process, not as more colour.   */
+.sec .ladder { list-style: none; margin: var(--sp-6) 0; padding: 0; display: grid; gap: var(--sp-3); }
+.sec .ladder li {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+}
+.ladder__no {
+  display: flex; align-items: center; justify-content: center;
+  width: 3.2rem; height: 3.2rem;
+  border-radius: 50%;
+  background: var(--leaf-100); color: var(--leaf-900);
+  font-size: 1.35rem; font-weight: 750; font-variant-numeric: tabular-nums;
+}
+.ladder li:nth-child(2) .ladder__no { background: var(--leaf-200); }
+.ladder li:nth-child(3) .ladder__no { background: var(--amber-100); color: var(--amber-700); }
+.ladder li:nth-child(4) .ladder__no { background: var(--rust-100); color: var(--rust-700); }
+.ladder h4 { margin: 0 0 .2rem; font-size: var(--text-base); color: var(--leaf-900); }
+.ladder p { margin: .25rem 0 0; font-size: var(--text-sm); line-height: 1.5; color: var(--gray-700); }
+.ladder dl { display: grid; grid-template-columns: max-content 1fr; gap: .15rem var(--sp-3); margin: var(--sp-2) 0 0; font-size: var(--text-sm); }
+.ladder dt { color: var(--gray-500); font-weight: 600; }
+.ladder dd { margin: 0; color: var(--gray-700); }
+@media (min-width: 1000px) {
+  .sec .ladder li:nth-child(2) { margin-left: 1.5rem; }
+  .sec .ladder li:nth-child(3) { margin-left: 3rem; }
+  .sec .ladder li:nth-child(4) { margin-left: 4.5rem; }
+}
+@media (max-width: 560px) {
+  .sec .ladder li { grid-template-columns: 1fr; gap: var(--sp-2); }
+  .ladder__no { width: 2.4rem; height: 2.4rem; font-size: 1.05rem; }
+  .ladder dl { grid-template-columns: 1fr; }
+  .ladder dd { margin-bottom: .3rem; }
+}
+
+/* ------------------------------------------------------------ EQUATIONS -- */
+.eq { margin: var(--sp-4) 0; padding: var(--sp-3) var(--sp-4); background: var(--gray-50); border-radius: var(--radius-sm); overflow-x: auto; }
+.eq .katex-display { margin: .4rem 0; }
+.eq p { margin: .3rem 0 0; font-size: var(--text-sm); color: var(--gray-600); }
+
+/* a block of student prose kept as they wrote it, labelled by file name */
+.codeblock h4 { margin: var(--sp-5) 0 var(--sp-2); font-family: var(--font-mono); font-size: var(--text-sm); color: var(--leaf-900); }
+.steps { margin: var(--sp-3) 0; }
+
+/* ---------------------------------------------------------- EMBEDDED UI -- */
+.embed {
+  margin: var(--sp-4) 0;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--gray-50);
+}
+.embed__frame { position: relative; width: 100%; aspect-ratio: 7 / 5; min-height: 32rem; max-height: 88vh; }
+.embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: var(--white); }
+@media (max-width: 900px) { .embed__frame { aspect-ratio: 4 / 5; min-height: 40rem; } }
+@media (max-width: 560px) { .embed__frame { aspect-ratio: 3 / 5; min-height: 44rem; } }
+.embed__bar {
+  display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-5);
+  justify-content: space-between; align-items: baseline;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--white);
+  font-size: var(--text-sm);
+}
+
+/* tables that carry a lot of columns scroll inside their wrapper on a phone */
+.sw .tablewrap, .sw .eq { overflow-x: auto; position: relative; }
+.sw table.data { min-width: 36rem; }
+.sw table.data.narrow { min-width: 0; }
+
+.twin__cap { margin-top: var(--sp-4); font-size: var(--text-sm); color: var(--gray-600); line-height: 1.5; }
+.twin__cap b { color: var(--leaf-700); }
+
+.sw td > code:only-child { overflow-wrap: normal; white-space: nowrap; }
+
+/* --------------------------------------------------- MUST HAVE, YET TO HAVE -- */
+/* A gap that changes what may be claimed. Filled red and outlined, so that it
+   reads as a flag rather than as one more status among the others. */
+
+.tag--must {
+  background: var(--rust-700);
+  color: #fff;
+  border: 1px solid var(--rust-700);
+}
+
+/* A small caption above a paragraph, for an aside that does not deserve a
+   heading of its own. */
+.microlabel {
+  margin: var(--sp-5) 0 var(--sp-1);
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+}
+
+/* Limits and contribution: one claim per line, the lead in bold. */
+.sec .limits,
+.sec .contrib {
+  margin: var(--sp-4) 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: var(--sp-3);
+}
+.sec .limits li,
+.sec .contrib li { padding-left: .15rem; }
+.sec .limits { list-style: square; }
+
+/* The AI-provenance ink in nav.css repaints every span inside an .ai block,
+   which also repaints the status tags, where the colour IS the status (and
+   leaves white-on-red unreadable). Restore them at matching specificity. */
+html:not(.ai-off) .ai .tag--meas,
+html:not(.ai-off) .ai .tag--fixed,
+html:not(.ai-off) .ai .tag--done   { color: var(--leaf-900); }
+html:not(.ai-off) .ai .tag--der,
+html:not(.ai-off) .ai .tag--lit    { color: var(--slate-700); }
+html:not(.ai-off) .ai .tag--abs,
+html:not(.ai-off) .ai .tag--none   { color: var(--rust-700); }
+html:not(.ai-off) .ai .tag--cmd,
+html:not(.ai-off) .ai .tag--calc   { color: var(--gray-700); }
+html:not(.ai-off) .ai .tag--verify,
+html:not(.ai-off) .ai .tag--part   { color: var(--amber-700); }
+html:not(.ai-off) .ai .tag--must   { color: #fff; }
+
+/* ============================================================ SOFT SHELL ===
+   9 October 2026. The page carries `engage` beside `sw` and speaks the
+   Integrated Human Practices language from assets/css/engage.css: tabbed
+   chapters, pale cards, folds. These are the joins.                         */
+
+/* engage.css paints every span inside an .ai block orange, at a higher
+   weight than the restore above; the status tags keep their own colour.   */
+html:not(.ai-off) body.engage .ai .tag--meas,
+html:not(.ai-off) body.engage .ai .tag--fixed,
+html:not(.ai-off) body.engage .ai .tag--done   { color: var(--leaf-900); }
+html:not(.ai-off) body.engage .ai .tag--der,
+html:not(.ai-off) body.engage .ai .tag--lit    { color: var(--slate-700); }
+html:not(.ai-off) body.engage .ai .tag--abs,
+html:not(.ai-off) body.engage .ai .tag--none   { color: var(--rust-700); }
+html:not(.ai-off) body.engage .ai .tag--cmd,
+html:not(.ai-off) body.engage .ai .tag--calc   { color: var(--gray-700); }
+html:not(.ai-off) body.engage .ai .tag--verify,
+html:not(.ai-off) body.engage .ai .tag--part   { color: var(--amber-700); }
+html:not(.ai-off) body.engage .ai .tag--must   { color: #fff; }
+
+/* prose inside a chapter keeps the reading measure; tables and embeds run wide */
+.sw .rail__panel > p,
+.sw .rail__panel > ul:not([class]),
+.sw .card > p,
+.sw .card > ul { max-width: var(--measure); }
+.sw .rail--seg > .rail__panel { min-width: 0; }
+.sw .rail--seg > .rail__panel :is(h3, h4, figure[id], details[id], div[id]) { scroll-margin-top: calc(var(--nav-h) + 5rem); }
+
+/* the status tag in a chapter eyebrow sits on the baseline of the label */
+.sw .chap__eyebrow .tag { margin-left: .35rem; vertical-align: .12em; }
+
+/* a long closing paragraph reads at body size, not at the chapter-end size */
+.engage.sw .chap__end--long p:not(.chap__eyebrow) { font-size: clamp(1.0625rem, 1rem + .3vw, 1.1875rem); line-height: 1.55; }
+
+/* the provenance key: one line per tag on a phone, a wrapped row on a laptop */
+.sw .taglegend { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; max-width: 64rem; font-size: var(--text-sm); color: var(--ink-2); }
+.sw .taglegend li { margin: 0; }
+.sw .taglegend .tag { margin-right: .35rem; }
+
+/* figures: rounded white frames, two side by side where they pair up */
+.sw .rail__panel .fig { margin: var(--sp-5) 0; }
+.sw .figpair { display: grid; gap: 1rem; margin: var(--sp-5) 0; }
+.sw .figpair .fig { margin: 0; }
+@media (min-width: 62rem) { .sw .figpair { grid-template-columns: 1fr 1fr; } }
+
+/* embedded interfaces sit in the soft frame */
+.engage.sw .embed { border: 0; border-radius: 20px; box-shadow: 0 0 0 1px rgb(0 0 0 / .07); }
+.engage.sw .embed__bar { border-bottom: 1px solid rgb(0 0 0 / .06); }
+
+/* the 8 October batch card */
+.engage.sw .card--white { margin: var(--sp-6) 0 0; }
+.engage.sw .card .fig { margin: var(--sp-4) 0; }
+
+/* the judging callout closes the page and holds a fold of its own */
+.engage.sw .callout--medal { margin-top: var(--sp-8); }
+.engage.sw .callout .fold { margin-top: var(--sp-4); background: #fff; }
+.engage.sw .callout .fold__body ul { margin: 0; padding-left: 1.1rem; }
+
+/* the introduction's lede, then its body paragraph */
+.engage.sw .lede-c + p { margin-top: var(--sp-5); }

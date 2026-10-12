@@ -1,0 +1,106 @@
+/* =============================================================================
+   HOMEPAGE 5, INTEGRATED HUMAN PRACTICES ("the voices"). Owned by #ihp only.
+
+   Rebuilt 1 Oct (Jacquelyn: one photograph should not fill a screen). The
+   headline, then three perspectives side by side from 760px, farmers,
+   experts, industry, each a 4:3 photograph, its role and one line. Below
+   760px they stack.
+
+   MOTION. The row is a .rise (home.js piece 1): it fades up once and its
+   pictures settle from a slight zoom. Opacity and transform only. With
+   scripting off or reduced motion, nothing is hidden.
+   ========================================================================== */
+
+/* ------------------------------------------------------------- header --- */
+.vx__head { max-width: 60rem; }
+.vx__head .kicker { margin-bottom: var(--sp-3); }
+#ihp h2.vx__title {
+  margin: 0;
+  max-width: none;
+  font-size: clamp(1.75rem, 1rem + 2.6vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -.032em;
+  text-wrap: balance;
+}
+.vx__lede {
+  max-width: 40rem;
+  margin: var(--sp-4) 0 0;
+  font-size: clamp(1.0625rem, .98rem + .35vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--gray-600);
+  text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------- rows --- */
+/* One row of three from 760px, the same width each; an arrow in the gap
+   between two carries the order. The line under each role is set a step
+   smaller than a heading, so three sit side by side without crowding. */
+.vx__rows {
+  --vx-gap: clamp(2rem, 4vw, 3.5rem);
+  list-style: none;
+  margin: clamp(2rem, 5vh, 3rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-6) var(--vx-gap);
+}
+.vx-row { position: relative; display: grid; align-content: start; gap: var(--sp-4); }
+.vx-row__photo {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--gray-100);
+}
+.vx-row__photo img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 4 / 3; object-fit: cover;
+}
+.vx-row__role {
+  margin: 0 0 var(--sp-2);
+  font-size: .8125rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--leaf-700);
+}
+.vx-row__line {
+  margin: 0;
+  font-size: clamp(1.1875rem, 1rem + .6vw, 1.5rem);
+  font-weight: 700; line-height: 1.2; letter-spacing: -.015em;
+  color: var(--leaf-900);
+  text-wrap: balance;
+}
+@media (min-width: 760px) {
+  .vx__rows { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* the order: a short arrow centred in the gap, level with the photographs */
+  .vx-row { container-type: inline-size; }
+  .vx-row:not(:last-child)::after {
+    content: ""; position: absolute;
+    top: calc(37.5cqw - .45rem); right: calc(-.5 * var(--vx-gap) - .3rem);
+    width: .7rem; height: .7rem;
+    border-top: 2px solid var(--gray-400); border-right: 2px solid var(--gray-400);
+    transform: rotate(45deg);
+  }
+}
+
+/* --------------------------------------------------------------- motion --- */
+@media (prefers-reduced-motion: no-preference) {
+  .vx-row__photo img { transition: transform 1.2s cubic-bezier(.2, .7, .2, 1); }
+  .vx__rows.rise.is-armed:not(.in) .vx-row__photo img { transform: scale(1.04); }
+}
+
+/* ------------------------------------------------ 7 Oct (owner) ---------- */
+/* No kicker over the headline. The role is the title of its column, set
+   large, and the line under it is the caption, set small: the hierarchy of
+   the two is the other way round from 1 October. The roles are the owner's
+   words: Local farmers, Academic Experts Stakeholders, Industry
+   Stakeholders. */
+.vx-row__role {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1rem + .85vw, 1.75rem);
+  font-weight: 750; letter-spacing: -.022em; line-height: 1.12;
+  text-transform: none; color: var(--leaf-900);
+  text-wrap: balance;
+}
+.vx-row__line {
+  font-size: clamp(.9375rem, .9rem + .15vw, 1.0625rem);
+  font-weight: 450; line-height: 1.5; letter-spacing: 0;
+  color: var(--gray-600);
+  text-wrap: pretty;
+}

@@ -1,0 +1,449 @@
+/* =============================================================================
+   ReLeaf homepage: our answer, the reactor (3)
+   -----------------------------------------------------------------------------
+   Replaces the dark act (chain, turn lines, spark, name card), the five
+   engineering highlights in their scrolling column and the product band.
+
+   · The five demands (2b) and the scene that carries them here are in
+     home-demands.css.
+   · THE REACTOR IS THE MAIN CHARACTER. One ink section, the model in the
+     middle, the same five demands round it: two on each side and Farm-owned
+     under it. Everything here is prefixed .rxs- so no generic class name
+     elsewhere on the page can reach it.
+   · THE RESTING STATE IS THE FINISHED LAYOUT. Every custom property below
+     falls back to its final value. home.js (piece 7) moves this band only
+     inside the scene (.dx.is-live, home-demands.css); with scripting off,
+     motion reduced or on paper nothing moves and nothing is missing.
+   · ONE WEBGL CANVAS, AND NEVER AN EMPTY BOX. The photograph of the rig is
+     the default. It gives way only when home-reactor.js says the model is
+     built (#rx.is-ready), and it stays with scripting off, without WebGL,
+     while the model loads and when the load fails (.no-gl).
+   ========================================================================== */
+
+
+/* The five demands (2b) and the scene that carries them into this band are
+   in home-demands.css. */
+
+/* ========================================= 3  OUR ANSWER: THE REACTOR ===== */
+
+/* The turn of the page, and the one place it gets the most room. Weight comes
+   from space rather than from anything that moves: the opening has a screen
+   of its own, a thin line comes down from the edge of the ink to the kicker,
+   and the stage under it is one screen for the lede, the model and the five
+   demands. The lede heads the stage, so what the reactor is for stays on the
+   screen that holds. The kicker and the heading are the site's own sizes. */
+
+.rxs {
+  position: relative;
+  background-color: var(--ink);            /* the chapters rail reads this */
+  color: var(--leaf-100);
+  /* The model's width follows the canvas HEIGHT (home-reactor.js uses a
+     vertical field of view; at its camera distance the assembly is about
+     1.1 × the height across), so the height is what keeps it on screen and
+     between the cards. */
+  --rxs-h: min(80vw, 24rem);
+  --pad-x: var(--sp-5);
+}
+@media (min-width: 640px) { .rxs { --pad-x: var(--sp-6); } }
+/* From 1180px the chapters rail is fixed in the right margin. The opening
+   pads by the same --rail-gutter as every other column (home.css), on both
+   sides, so it stays centred and clear of the rail. The stage has its own,
+   wider measure (below). The demands block gets it from .pb-inner. */
+@media (min-width: 1180px) {
+  .rxs { --pad-x: var(--rail-gutter); }
+}
+.rxs :focus-visible { outline-color: var(--sig-green); }
+
+/* ---------------------------------------------------------------- opening - */
+/* centred at every width: the model under it is centred too */
+/* The heading is the first thing in the stage, so it stays on screen while
+   the stage is pinned and the cards come in (it used to scroll away above
+   the stage, leaving the cards without their heading). */
+.rxs__head {
+  position: relative; z-index: 2;
+  padding: 0 0 var(--sp-4);
+  text-align: center;
+}
+.rxs__title {
+  margin: 0 auto var(--sp-5);
+  font-family: var(--font-display);
+  /* the site's h1 step: 34px on a phone, 56px on a wide screen */
+  font-size: var(--text-h1);
+  font-weight: 700; line-height: 1.06; letter-spacing: -.028em;
+  color: var(--white);
+  text-wrap: balance;
+}
+/* the lede opens the stage: what the reactor is and what it answers, over
+   the model it describes */
+.rxs__lede {
+  position: relative; z-index: 2;
+  margin: 0 auto var(--sp-5); max-width: 42ch;
+  text-align: center;
+  font-size: var(--text-lede); line-height: 1.5; color: var(--leaf-200);
+  text-wrap: balance;
+}
+/* From 980px it sits on the model's box: the model is drawn with a clear
+   band above it, and the lede takes half of that, which pays for part of its
+   own height. 11 Oct: the band is half what it was (the machine fills more
+   of the canvas, home-reactor.js), so the lede may only take half as much
+   back, or the case's top edge runs under its second line. */
+@media (min-width: 980px) {
+  .rxs__lede { max-width: 54ch; margin-bottom: calc(-.025 * var(--rxs-h)); }
+}
+/* Below about 1080px the gap between the two card columns is narrower than
+   the lede's 54ch, so its second line, tucked into the model's clear band,
+   ran under the first cards. One step smaller, the lede keeps its two lines
+   (the measure is in ch, so it shrinks with them) and they fit between the
+   columns; the stage gets shorter, not taller. */
+@media (min-width: 980px) and (max-width: 1079px) {
+  .rxs__lede { font-size: var(--text-base); }
+}
+@media (min-width: 980px) {
+  /* the photograph has no clear band at its top, so it starts under the
+     lede, with a gap of its own (it only gets shorter: object-fit: cover) */
+  .rxs__model > .rxs__poster { top: calc(.025 * var(--rxs-h) + var(--sp-4)); }
+}
+
+/* ------------------------------------------------------------------ stage - */
+/* clip, not hidden: a hidden overflow would make this the scroll container
+   for the model's sticky position on narrow screens */
+.rxs__stage { position: relative; overflow: hidden; overflow: clip; padding: clamp(3.5rem, 2rem + 6vh, 6rem) 0 var(--sp-6); }
+.rxs__inner { position: relative; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad-x); }
+
+/* ------------------------------------------------------------------- grid - */
+/* one column below 980px: the model, then the cards; flex rather than grid so
+   the whole list is the model's containing block when it sticks */
+.rxs__grid {
+  position: relative;
+  display: flex; flex-direction: column; gap: var(--sp-4);
+}
+.rxs__side {
+  position: relative; z-index: 2;
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: var(--sp-4);
+  pointer-events: none;                    /* the model behind stays draggable */
+}
+.rxs__side > li { pointer-events: auto; }
+
+/* ------------------------------------------------------------------ model - */
+.rxs__model {
+  position: relative; z-index: 1; order: -1;
+  min-height: var(--rxs-h);
+}
+/* the canvas runs the full width of the screen behind the cards: the field of
+   view is vertical, so a canvas as narrow as the middle column would crop the
+   plinth instead of shrinking it. It is centred on its cell and keeps its own
+   height, so the cards, not the canvas, decide how tall the row is. It stays
+   invisible, and out of the pointer's way, until the model is built. */
+.rxs__canvas {
+  position: absolute; top: 50%; left: 50%;
+  width: 100vw; height: var(--rxs-h);
+  transform: translate(-50%, -50%);
+  opacity: 0; pointer-events: none;
+  transition: opacity .9s ease;
+}
+.rxs__canvas canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; }
+.rxs__canvas canvas:active { cursor: grabbing; }
+.rxs__model.is-ready .rxs__canvas { opacity: 1; pointer-events: auto; }
+.rxs__model.no-gl .rxs__canvas { display: none; }
+
+/* the photograph of the rig: the default, so scripting off, no WebGL and a
+   model still loading all show it; it crossfades out once the model is in */
+.rxs__poster {
+  position: absolute; inset: 0; display: flex; justify-content: center;
+  transition: opacity .9s ease, visibility 0s linear .9s;
+}
+.rxs__poster img {
+  width: 100%; height: 100%; max-width: 34rem;
+  object-fit: cover; object-position: 50% 60%;
+  border-radius: var(--radius);
+}
+.rxs__model.is-ready:not(.no-gl) .rxs__poster { opacity: 0; visibility: hidden; }
+
+.rxs__loading {
+  position: absolute; left: 50%; bottom: var(--sp-4); z-index: 1; margin: 0; transform: translateX(-50%);
+  padding: .3rem .8rem; border-radius: 999px; background: rgb(7 11 9 / .78);
+  font-size: var(--text-xs); letter-spacing: .18em; text-transform: uppercase; white-space: nowrap;
+  color: rgb(255 255 255 / .72);
+}
+.rxs__loading[hidden] { display: none; }
+
+
+/* ------------------------------------------------------------------ cards - */
+.rxs-card {
+  position: relative; isolation: isolate;
+  display: grid; gap: var(--sp-2); justify-items: start;
+  width: 100%; margin: 0; text-align: left;
+  padding: .875rem var(--sp-4) var(--sp-4);
+  border: 1px solid transparent; border-radius: var(--radius);
+  background: none;
+  color: inherit; font: inherit; cursor: default;
+  transition: opacity .3s;
+}
+/* the card's box is drawn on ::before, so the scene (home-demands.css) can
+   bring it in with opacity alone while the tag is already in place */
+.rxs-card::before {
+  content: ""; position: absolute; inset: -1px; z-index: -1;
+  border: 1px solid rgb(255 255 255 / .12); border-radius: inherit;
+  background: rgb(7 11 9 / .78);
+  transition: border-color .2s, background-color .2s;
+}
+.rxs-card:hover::before, .rxs-card.is-on::before { border-color: rgb(53 224 138 / .55); background: rgb(16 28 21 / .92); }
+/* No model to light (scripting off, or home.js gave the cards up with the
+   model, .rx-static): the cards are plain text beside the photograph, so
+   they do not answer the pointer as if they were controls */
+.rxs.rx-static .rxs-card:hover::before { border-color: rgb(255 255 255 / .12); background: rgb(7 11 9 / .78); }
+@media (scripting: none) {
+  .rxs-card:hover::before { border-color: rgb(255 255 255 / .12); background: rgb(7 11 9 / .78); }
+}
+/* pressed (a click, a tap, Enter or Space): it stays lit when the pointer
+   or the focus moves on, and its edge says so */
+.rxs-card[aria-pressed="true"]::before { border-color: var(--sig-green); }
+/* while one card is lit the others step back, as the model's other parts
+   do; at .55 their white text is still about 6:1 on the ink */
+.rxs__grid.is-pointing .rxs-card:not(.is-on) { opacity: .55; }
+
+/* the tag is the same word, with the same icon, as the white pill in the
+   demands block above, in the ink version of it */
+.rxs-card__tag {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-bottom: .125rem; padding: .34rem .8rem .34rem .6rem;
+  border: 1px solid rgb(53 224 138 / .5); border-radius: 999px;
+  background: rgb(53 224 138 / .07);
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; line-height: 1.2;
+  color: var(--white);
+  transition: background-color .2s, border-color .2s;
+}
+.rxs-card__tag svg { width: 1.05rem; height: 1.05rem; color: var(--sig-green); flex: none; }
+.rxs-card.is-on .rxs-card__tag { background: rgb(53 224 138 / .16); border-color: var(--sig-green); }
+
+/* what the reactor does, in one or two plain sentences */
+.rxs-card__say { display: block; font-size: var(--text-sm); line-height: 1.5; text-wrap: pretty; color: var(--white); }
+
+/* Farm-owned: the fifth demand, under the model. It points at the machine as
+   a whole, so it lights every part of it (data-comp="unit"). Below 980px it
+   is simply the fifth card in the column. */
+.rxs__wide { position: relative; z-index: 2; pointer-events: none; }
+.rxs__wide > .rxs-card { pointer-events: auto; }
+
+
+
+/* ------------------------------------------------------ below 980 -------- */
+/* The model stays in view under the nav while the cards scroll up beneath
+   it, so a card tapped far down the list lights a model the reader can see.
+   Only where the model takes well under half the screen; on a short
+   landscape phone it scrolls with the rest. The budget counts the site bar:
+   bar plus model stays at or under 44% of the screen (about 258px of model
+   on a 740px phone, 303px on an 844px one). No runway is added: the model
+   simply holds its place for the length of the cards. */
+@media (max-width: 979px) and (min-height: 560px) {
+  .rxs { --rxs-h: min(80vw, 24rem, calc(44svh - var(--nav-h))); }
+  .rxs__model { position: sticky; top: var(--nav-h); z-index: 3; }
+  /* ink behind it, full width, feathered at the bottom edge so a card
+     sliding under does not meet a hard line. It stays solid for .75rem past
+     the hint at the model's foot before it fades, so card text scrolling up
+     is not read into the hint */
+  .rxs__model::before {
+    content: ""; position: absolute; z-index: -1;
+    top: calc(-1 * var(--sp-4)); bottom: calc(-1 * (var(--sp-5) + .75rem));
+    left: calc(50% - 50vw); right: calc(50% - 50vw);
+    background: linear-gradient(var(--ink) calc(100% - var(--sp-5)), rgb(7 11 9 / 0));
+    pointer-events: none;
+  }
+}
+/* the site bar is drawn by nav.js, so with scripting off there is no bar to
+   stick under */
+@media (max-width: 979px) and (min-height: 560px) and (scripting: none) {
+  .rxs__model { top: 0; }
+}
+@media (min-width: 640px) and (max-width: 979px) {
+  .rxs { --rxs-h: min(58vw, 28rem); }
+  .rxs__side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 640px) and (max-width: 979px) and (min-height: 560px) {
+  .rxs { --rxs-h: min(58vw, 28rem, calc(44svh - var(--nav-h))); }
+}
+
+
+/* ------------------------------------------------------ 980 and wider ----- */
+/* Three columns: two cards, the model, two cards, and Farm-owned in a third
+   row under the model. The stage is wider than the page's text measure
+   (8rem more), and the side cards are a little narrower than the text
+   column's, so the model has room across; from 1180px the stage keeps 5rem
+   from each edge, which clears the chapters rail. The model's height is the
+   smallest of what the screen has left once the stage's padding, the lede,
+   the Farm-owned row and the closing line are paid, what the middle column
+   can hold across, and 38rem. The heading is not in this sum: it sits above
+   the stage. */
+@media (min-width: 980px) {
+  .rxs {
+    --stage-max: calc(var(--max) + 8rem);
+    --stage-pad: var(--pad-x);
+    /* 15.5rem at 1024px, growing to 17.5rem by about 1380px */
+    --card-w: clamp(15.5rem, calc(15.5rem + (100vw - 1024px) * .09), 17.5rem);
+    --gut: var(--sp-5);
+    /* the clear space between the two card columns */
+    --gap-x: calc(min(100vw, var(--stage-max)) - 2 * var(--stage-pad) - 2 * var(--card-w));
+    --rxs-h: min(calc(100svh - var(--nav-h) - 23.75rem), calc(var(--gap-x) / 1.24), 38rem);
+  }
+  .rxs__head { padding-bottom: var(--sp-3); }
+  /* in the stage the heading is one step smaller than the site's h1, so the
+     model keeps most of its height */
+  .rxs__title { font-size: clamp(2.1rem, 1.1rem + 1.9vw, 3rem); margin-bottom: 0; }
+  .rxs__inner { max-width: var(--stage-max); padding: 0 var(--stage-pad); }
+  .rxs__stage {
+    min-height: calc(100svh - var(--nav-h));
+    display: flex; align-items: center;
+    padding: var(--sp-4) 0 var(--sp-7);
+  }
+  /* The model is at least as tall as its canvas, so Farm-owned sits under
+     the drawing and never on it. Beside it, two card rows shared by both
+     side columns (subgrid), so a card on the left always lines up with its
+     partner on the right; the two flexible rows around them take whatever
+     height the model has over the cards, which keeps the cards together and
+     centred on the model. */
+  .rxs__grid {
+    display: grid;
+    grid-template-columns: var(--card-w) minmax(0, 1fr) var(--card-w);
+    grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1fr) auto;
+    column-gap: var(--gut); row-gap: 0;
+  }
+  .rxs__side { grid-row: 2 / span 2; grid-template-rows: subgrid; row-gap: var(--sp-4); }
+  .rxs__side--l { grid-column: 1; }
+  .rxs__side--r { grid-column: 3; }
+  .rxs__side > li { display: flex; }
+  .rxs__side .rxs-card { align-content: start; }
+  .rxs__model { grid-column: 2; grid-row: 1 / span 4; order: 0; min-height: var(--rxs-h); }
+
+  /* Farm-owned: centred under the model at a readable measure (it may
+     reach past the model's column where that is narrow), with its words
+     beside the tag rather than under it */
+  .rxs__wide { grid-column: 1 / -1; grid-row: 5; margin-top: var(--sp-4); display: flex; justify-content: center; }
+  .rxs-card--wide {
+    max-width: 36rem;
+    grid-template-columns: auto minmax(0, 1fr); align-items: start;
+    column-gap: var(--sp-4);
+  }
+  .rxs-card--wide .rxs-card__tag { margin: 0; }
+}
+/* From 1180px the chapters rail is fixed in the right margin: the stage
+   keeps 5rem from each edge, which clears it. */
+@media (min-width: 1180px) {
+  .rxs { --stage-pad: 5rem; }
+}
+
+/* 11 Oct: the owner's five cards carry more words than the old ones, and the
+   two card rows share a height (subgrid), so the longest card sets both. On
+   a short laptop screen it is the cards, not the model, that have to fit the
+   pinned stage: one step less in the words and a tighter gap round them buys
+   back what the longer lines cost. Measured at 1024x700 — the smallest
+   screen the scene is allowed — where it takes the room to spare from 10px
+   back to about 70. Without it piece 7 drops the scene and the question and
+   the answer simply stack, which is the resting state and reads fine, but
+   there is no reason to lose it. */
+@media (min-width: 980px) and (max-height: 820px) {
+  .rxs__side { row-gap: var(--sp-3); }
+  .rxs-card { padding: .75rem var(--sp-3) var(--sp-3); gap: .375rem; }
+  .rxs-card__say { font-size: .8125rem; line-height: 1.45; }
+  .rxs__wide { margin-top: var(--sp-3); }
+}
+
+/* on paper everything is in and nothing is pinned */
+@media print {
+  .rxs__model { position: relative; }
+}
+
+/* 1 Oct (Jacquelyn): the name as a wordmark, ReLEAF, the way the team's
+   shirts and logo set it: heavy, slightly open, "Re" a step quieter in the
+   pale leaf so LEAF carries it. One line under it, the lede, says what the
+   system does end to end. No kicker. */
+.rxs__title {
+  font-weight: 800; letter-spacing: .015em; line-height: 1;
+}
+.rxs__re { color: var(--leaf-200); font-weight: 600; letter-spacing: -.01em; }
+.rxs__lede { color: rgb(255 255 255 / .82); }
+
+/* the tags carry the word only (1 Oct): even padding without the icon */
+.rxs-card__tag { padding: .34rem .8rem; }
+
+/* round 4 (owner): no boxes round the cards. The tag and the words sit
+   straight on the ink; a lit or pressed card says so through its tag
+   (.is-on, above) and the model, not an outline. */
+.rxs-card::before,
+.rxs-card:hover::before, .rxs-card.is-on::before,
+.rxs-card[aria-pressed="true"]::before,
+.rxs.rx-static .rxs-card:hover::before { border-color: transparent; background: transparent; }
+.rxs-card[aria-pressed="true"] .rxs-card__tag { background: rgb(53 224 138 / .22); border-color: var(--sig-green); }
+
+/* 7 Oct (owner): the name half as large again, and no photograph of the
+   rig while the model loads: the stage stays ink until the model is in.
+   The photograph still stands in where the model cannot be shown at all
+   (no WebGL, or scripting off). */
+.rxs__title { font-size: calc(var(--text-h1) * 1.8); }
+@media (min-width: 980px) {
+  .rxs__title { font-size: clamp(3.8rem, 1.9rem + 3.6vw, 5.5rem); }
+  /* the reserve pays for the taller name and for a lede that may take two
+     lines; if either changes, check #dx still keeps .is-live at 1440x900
+     and at 1024x700, because piece 7 drops the scene when the stage's
+     content no longer fits the pinned screen.
+     11 Oct (owner): the machine is bigger. The reserve came down from 27.5rem
+     to 22.5rem, which is most of the air the stage was holding above and
+     below itself, and the model now draws about 470px tall at 1440x900
+     instead of 390. Seen square on it is narrow (about .6 of its height
+     across), so the width between the cards stopped being the limit and the
+     /1.24 term never binds at these sizes. */
+  .rxs { --rxs-h: min(calc(100svh - var(--nav-h) - 22.5rem), calc(var(--gap-x) / 1.1), 42rem); }
+}
+@media (scripting: enabled) {
+  .rxs__model:not(.no-gl) .rxs__poster { opacity: 0; visibility: hidden; transition: none; }
+}
+
+/* ---------------------------------------- the wordmark, 7 Oct (owner) ----- */
+/* "Make it more impressive, powerful, futuristic, but not messy." Four
+   things, and nothing else:
+
+   1  THE LETTERS ARE LIT FROM ABOVE. One gradient clipped to the text, white
+      at the cap line falling to a cool pale green at the baseline, so the
+      word has a light on it instead of a flat fill. `color` stays set, so a
+      browser without background-clip gets the plain white word.
+   2  ONE BLOOM BEHIND IT, in --sig-green, the 520 nm the reactor runs on. It
+      is a single wide radial at low opacity on a pseudo-element, sized in em
+      so it scales with the type. One soft light, not a stack of shadows.
+   3  "Re" IS THE QUIET HALF, as before: the pale leaf at a lighter weight,
+      so LEAF carries the line and the lockup reads as one word, not two.
+   There is no rule under the name: in the scene the lede sits straight
+   beneath it with no gap, and a hairline there crossed the words.
+
+   What this does NOT do, on purpose: no outline, no second shadow, no
+   letter-by-letter animation, no chrome or bevel. The scene already brings
+   the name in (home.js piece 7); anything that moves on its own would
+   compete with the model turning beside it. */
+.rxs__head { position: relative; }
+.rxs__title {
+  position: relative;
+  background-image: linear-gradient(177deg, #fff 8%, #f2fbf5 44%, #cbe9d6 96%);
+  -webkit-background-clip: text; background-clip: text;
+  /* the gradient only paints the glyphs where the browser supports it; the
+     colour under it is what everything else sees */
+  -webkit-text-fill-color: transparent;
+}
+@supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+  .rxs__title { background-image: none; -webkit-text-fill-color: currentColor; }
+}
+.rxs__title::before {
+  content: ""; position: absolute; z-index: -1;
+  left: 50%; top: 50%;
+  width: 11em; height: 4.4em;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side,
+    rgb(53 224 138 / .20), rgb(53 224 138 / .11) 42%, rgb(53 224 138 / .04) 68%, transparent);
+  pointer-events: none;
+}
+/* "Re" keeps its own colour, which means its own fill over the gradient */
+/* against a gradient that is nearly white, leaf-200 was no longer a step
+   down: "Re" takes a cooler, softer fill so LEAF still carries the line */
+.rxs__re { -webkit-text-fill-color: rgb(168 214 185 / .92); color: rgb(168 214 185 / .92); }
+@media print {
+  .rxs__title { background-image: none; -webkit-text-fill-color: currentColor; color: var(--black); }
+  .rxs__title::before { display: none; }
+}

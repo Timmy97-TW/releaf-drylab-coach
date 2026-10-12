@@ -1,0 +1,125 @@
+/* HOMEPAGE 1, the first visual: sizes on top of home.css's .hero rules.
+
+   THE LOCKUP. The slogan large and heavy; the project's full title under it
+   in plain title case, a size step down at a lighter weight (1 Oct,
+   Jacquelyn: no capitals, and the title larger and a little lower).
+
+   FARMER CHEN. Bottom right, no rule and no box: her words, then her name,
+   then where and when, each on its own line.
+
+   THE MACHINE AND THE LIGHT. The reactor's box sits between the lockup and
+   the foot, a little smaller than in Neo's first build (Jacquelyn: it should
+   not compete with the title and the quote). home.js reads every number it
+   needs from the custom properties below, so the drawing, the light and the
+   arithmetic cannot drift apart:
+     --r-ar          the render's aspect ratio
+     --r-cx, --r-cy  the machine's centre in the render, as fractions
+     --r-hw, --r-hh  the machine's half width and half height, as fractions
+                     (measured on the cut-out's alpha, 1 Oct)
+     --lamp          the light's radius while it follows the pointer
+   A new render means new --r-* numbers and nothing else. */
+
+.hero__head { max-width: 100%; }
+
+/* one line from about 1100px; below that it breaks after "a" */
+.hero__claim {
+  font-size: clamp(2.4rem, .9rem + 4.1vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -.034em;
+  text-shadow: 0 2px 28px rgb(7 11 9 / .45);
+}
+
+.hero__caption {
+  margin: clamp(.75rem, .45rem + .8vw, 1.25rem) 0 0;
+  max-width: 40rem;
+  font-size: clamp(1.0625rem, .9rem + .55vw, 1.4rem);
+  font-weight: 450; line-height: 1.35; letter-spacing: -.008em;
+  color: rgb(255 255 255 / .9);
+  text-wrap: balance;
+  text-shadow: 0 1px 18px rgb(7 11 9 / .6), 0 0 2px rgb(7 11 9 / .25);
+}
+/* the phrase's own break (8 Oct: "... with a / Stress-Responsive Optogenetic
+   Bioreactor for Precision Plant Protection"). Each span is a line of its own
+   from 1100px, where the line is set to hold: nowrap on the paragraph alone
+   would run all of it off the right of the screen. */
+.hero__caption span { display: inline-block; }
+@media (min-width: 1100px) {
+  .hero__caption { max-width: none; white-space: nowrap; }
+  .hero__caption span { display: block; }
+}
+@media (max-width: 479px) {
+  .hero__caption span { display: inline; }
+}
+
+/* ---------------------------------------------------------------- the foot */
+.hero__note {
+  max-width: 26rem; text-align: right;
+  text-shadow: 0 1px 14px rgb(7 11 9 / .85), 0 0 2px rgb(7 11 9 / .4);
+}
+.hero__note p {
+  font-size: clamp(.9375rem, .84rem + .25vw, 1.0625rem); line-height: 1.55;
+  color: rgb(255 255 255 / .95);
+}
+.hero__note footer {
+  margin-top: .75rem;
+  display: flex; flex-direction: column; align-items: flex-end; gap: .1rem;
+  font-size: .8125rem; line-height: 1.45;
+}
+.hero__note footer b { color: var(--white); font-weight: 700; }
+.hero__note footer span { color: rgb(255 255 255 / .72); }
+@media (max-width: 800px) {
+  .hero__note { max-width: 22rem; }
+}
+
+/* -------------------------------------------------- the machine, the light */
+/* registered so that home.js reads --lamp in pixels, whatever it is set in */
+@property --lamp { syntax: "<length>"; inherits: true; initial-value: 180px; }
+.hero__frames {
+  /* 11 Oct: the B2 carry case seen head on through its open side, 1520 x 2239.
+     The cut-out is trimmed to the machine itself, so it fills its own frame:
+     centre .5/.5, half-extent .5/.5.
+     THESE MUST MATCH THE IMAGE. With the bench's old 1.6 still here the light
+     took the machine for a short wide band and opened over a slice of it. */
+  --r-ar: .679; --r-cx: .5; --r-cy: .5; --r-hw: .5; --r-hh: .5;
+  --lamp: clamp(130px, 14vw, 220px);
+  /* the machine's own height; its width follows the image (--r-ar), so the
+     frame is exactly the drawing and nothing is letterboxed inside it */
+  --r-h: min(44cqh, 27cqw);
+}
+/* 11 Oct (owner): SMALL, and hung directly under the title block, not filling
+   the screen between the lockup and the quote. Its top sits a hair below the
+   last line of the project's title; its foot clears Farmer Chen's words. */
+/* Centred with AUTO MARGINS, not a translate: home.js's measure() reads
+   rxf.offsetLeft, which a transform does not move, so a translate puts the
+   light half a frame off the machine. */
+.hero__frame--reactor {
+  top: 31cqh; bottom: auto; left: 0; right: 0; margin-inline: auto;
+  height: var(--r-h); width: calc(var(--r-h) * var(--r-ar));
+}
+/* the lockup takes a second line of its own below about 1100px, so the
+   machine starts lower */
+@media (max-width: 1099px) {
+  .hero__frames { --r-h: min(38cqh, 30cqw); }
+  .hero__frame--reactor { top: 37cqh; }
+}
+
+/* a phone held upright: the machine across the width, between the lockup
+   and the quote, and a light big enough for a fingertip */
+@media (max-aspect-ratio: 2/3) {
+  .hero__frames { --lamp: clamp(110px, 32vw, 170px); --r-h: min(40cqh, 76cqw); }
+  .hero__frame--reactor { top: 36cqh; }
+}
+
+/* 7 Oct (owner): no name under the machine any more (.hero__label went),
+   and Farmer Chen's words sit further right, on three lines: one span a
+   line from 800px, the foot reaching past the page column to the hero's
+   own right gutter. */
+@media (min-width: 801px) {
+  .hero__foot { margin-right: min(0px, calc((var(--max) - 100vw) / 2)); }
+  .hero__note { max-width: none; }
+  .hero__note p span { display: block; white-space: nowrap; }
+  /* the marks ride on the first and last lines, not lines of their own */
+  .hero__note p::before, .hero__note p::after { content: none; }
+  .hero__note p span:first-child::before { content: "\201C"; }
+  .hero__note p span:last-child::after { content: "\201D"; }
+}

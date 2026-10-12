@@ -1,17 +1,26 @@
 {
- "wiki": "d0b160b 2026-10-12 Digital Twin: five fixes the review found in our own orange prose",
+ "wiki": "f036343 2026-10-12 Digital Twin: the lamp is one lamp, and the fold says so",
  "pages": {
-  "model": null,
+  "model": {
+   "notes": 68,
+   "broken": []
+  },
   "software": {
-   "notes": 65,
+   "notes": 66,
    "broken": []
   },
   "protein-design": {
    "notes": 13,
    "broken": []
   },
-  "protein-design/methodology": null,
-  "protein-design/sprints": null,
+  "protein-design/methodology": {
+   "notes": 60,
+   "broken": []
+  },
+  "protein-design/sprints": {
+   "notes": 38,
+   "broken": []
+  },
   "protein-design/molecular-dynamics": {
    "notes": 42,
    "broken": []

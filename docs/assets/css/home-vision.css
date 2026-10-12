@@ -1,0 +1,219 @@
+/* =============================================================================
+   VISION: "Every farmer a biomanufacturer."  One farm becomes a valley of them.
+   -----------------------------------------------------------------------------
+   One ink band, and the page's last word. The words set up one farm and the
+   reactor standing in its field; the picture opens close on that farm at night
+   and, in a single scroll, pulls back while first light comes up, until the
+   frame holds a whole valley of small farms, each with its own reactor lit
+   green and its own field lit with it. The line lands on the sky, and its full
+   stop lights last. Then the band ends on ink, straight into #explore.
+
+   THE PICTURE is the design team's hand-drawn valley (assets/img/home/vision/,
+   README there), as layers on one artboard, 2048 x 1552 units: her sky at
+   night and at first light, her sun, and the land in daylight with the farm
+   details drawn into it. This file places the artboard where the LAST frame
+   has it and dims the land to first light, so without script the section is
+   static and complete. home-vision.js (.is-live) then pins the stage in a
+   screen-long runway, moves one camera over the layers and lights them: a
+   canvas multiplied into the picture is the night and the dawn, and a second
+   canvas over it carries the reactors, the lit windows and the sun's flare.
+   With reduced motion it draws that same last frame, lit, and nothing moves.
+
+   Classes are prefixed vl- (valley) so they cannot collide with the big
+   picture's generic names (.node, .link, .task) or anything else on the page.
+   ========================================================================== */
+
+#vision.vl {
+  --vl-h: clamp(30rem, calc(100svh - var(--nav-h)), 64rem);
+  /* the words on the sky; the static artboard below estimates where they end
+     from the same values */
+  --vl-pad: clamp(1.25rem, 5svh, 3.5rem);
+  --vl-fs: clamp(2.125rem, .75rem + 4.9vw, 5.25rem);
+  padding: 0; background-color: var(--ink); color: var(--leaf-100);
+}
+.vl :focus-visible { outline-color: var(--sig-green); }
+
+/* ---- the words before the picture ----
+   7 Oct (owner): the line used to scroll off the top while the picture was
+   still on its first field. It now holds the top of the screen for as long
+   as the camera is close, and home-vision.js fades it out as the pull-back
+   starts (p 0.14 to 0.36). It keeps its place in the flow, so nothing moves
+   when it sticks, and it is only sticky while the scene is live: with no
+   script, or with reduced motion (.is-still), it is an ordinary line above
+   an ordinary picture. */
+.vl-head { padding-top: var(--sp-8); padding-bottom: var(--sp-5); }
+.vl.is-live:not(.is-still) .vl-head { position: sticky; top: var(--nav-h); z-index: 4; }
+.vl-intro {
+  margin: 0; max-width: 32ch;
+  /* it ends up over the picture's first field, so it carries the same soft
+     halo the headline on the sky does */
+  text-shadow: 0 1px 2px rgb(7 11 9 / .7), 0 0 18px rgb(7 11 9 / .75);
+  font-family: var(--font-display);
+  font-size: var(--text-h2); font-weight: 700; line-height: 1.14; letter-spacing: -.018em;
+  color: var(--white); text-wrap: balance;
+}
+
+/* ---- the stage: one frame, the height of the screen under the nav ---- */
+.vl-run { position: relative; }
+.vl-stage {
+  position: relative; overflow: hidden;
+  height: var(--vl-h);
+  background-color: var(--ink);
+  isolation: isolate;          /* the multiplied light stays inside the stage */
+}
+
+/* ---- the artboard at its last frame: it covers the stage, foot on foot ----
+   2048 x 1552 units. Without script this is the whole section: her valley at
+   first light, the sun up, every reactor and its field lit in the picture's
+   own paint. */
+.vl-art {
+  position: absolute; z-index: 0; bottom: 0; left: 50%;
+  width: max(100%, calc(var(--vl-h) * 2048 / 1552)); aspect-ratio: 2048 / 1552;
+  transform: translateX(-50%); transform-origin: 0 0;
+  pointer-events: none;
+}
+.vl-layer {
+  position: absolute; display: block; max-width: none;
+  -webkit-user-select: none; user-select: none;
+}
+/* the land is drawn in daylight: without script it is dimmed to first light */
+.vl-layer[data-layer="land"] { filter: brightness(.62) saturate(.92); }
+/* night, the close-up and her reactor belong to the moving version only */
+.vl-layer[data-layer="sky-night"],
+.vl-layer[data-layer="close"],
+.vl-layer[data-layer="reactor"] { display: none; }
+
+/* ---- with script: the artboard in px, moved by one transform ---- */
+.vl.is-live .vl-art {
+  left: 0; top: 0; bottom: auto; aspect-ratio: auto;
+  transform: none; will-change: transform; backface-visibility: hidden;
+}
+.vl.is-live .vl-layer { display: block; }
+/* the light that dims the land is a canvas, and it needs three small files
+   (masks, hero-mask, land-mask) and the six layers of the drawing itself.
+   Until they land the camera already moves, so the land keeps the flat dim
+   above rather than showing full daylight; the moment the canvas can draw,
+   it takes over. */
+.vl.is-live.is-ready .vl-layer[data-layer="land"] { filter: none; }
+/* 11 Oct (owner): NOTHING OF THE LIGHT IS PAINTED UNTIL THE DRAWING UNDER IT
+   IS. The reactor glows and the halo are drawn from the farm data, not from
+   a file, so they are ready the instant the script runs; the land they stand
+   in is 278 kB. On a slow line a reader who went straight to the valley used
+   to meet a field of green lights hanging in the dark with no valley under
+   them. They now wait for "is-ready", which counts the drawing as well as
+   the masks, and fade up with it.
+   THE WHOLE PICTURE WAITS, not just the light. Her six layers arrive at
+   their own speeds — the reactor is 7 kB and the land is 278 — so revealing
+   them as they came showed a reactor standing in an empty black field. Until
+   every one of them is in, the band holds what it already has: the ink, the
+   line and the gloss. Then the valley fades up whole. A reader almost never
+   sees this: the layers are fetched eight screens early (home-vision.js). It
+   is the floor for the one who outruns that, and it is only ever reached
+   with the script alive and the camera running — if anything fails, is-live
+   goes with it and the drawing is simply there. */
+.vl.is-live .vl-art, .vl.is-live .vl-glows { transition: opacity .5s ease; }
+.vl.is-live:not(.is-ready) .vl-art, .vl.is-live:not(.is-ready) .vl-glows { opacity: 0; }
+/* the halo's own opacity is written inline on every frame, so it is taken
+   out of the painting altogether rather than fought over */
+.vl.is-live:not(.is-ready) .vl-halo { visibility: hidden; }
+.vl.is-live .vl-layer[data-layer="sky-dawn"] { will-change: opacity; }
+.vl.is-live .vl-layer[data-layer="sun"] { will-change: transform; }
+
+/* the night and the pools of light, multiplied into the picture */
+.vl-light {
+  position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;
+  pointer-events: none; mix-blend-mode: multiply;
+}
+/* the light her first reactor throws round itself, under her drawing of it */
+.vl-halo {
+  position: absolute; z-index: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(closest-side, rgb(53 224 138 / .7), rgb(53 224 138 / .26) 45%, rgb(53 224 138 / 0));
+}
+/* the dark around the first field, in the opening frames only */
+.vl-vig { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; }
+.vl-glows { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+.vl-grain {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  opacity: .55; background-size: 128px 128px;
+}
+
+/* The picture has no hard edges: its top melts out of the words above it and
+   its foot into the ink the band ends on. Over the picture, under the words. */
+.vl-stage::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    linear-gradient(to bottom, var(--ink), rgb(7 11 9 / 0) 3rem),
+    linear-gradient(to bottom, rgb(7 11 9 / .34), rgb(7 11 9 / 0) calc(var(--vl-pad) + 2.04 * var(--vl-fs) + 7rem)),
+    linear-gradient(to top, var(--ink), rgb(7 11 9 / .6) 5%, rgb(7 11 9 / 0) 10%);
+}
+
+/* ---- the sky: the line, and the sentence under it ---- */
+.vl-sky {
+  position: absolute; left: 0; right: 0; top: 0; z-index: 1;
+  padding-top: var(--vl-pad);
+  pointer-events: none;
+}
+.vl-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--vl-fs);
+  font-weight: 750; line-height: 1.02; letter-spacing: -.034em;
+  color: var(--white);
+}
+/* the line breaks where the team breaks it, and neither half ever wraps;
+   the full stop (a span inside the second half) stays on the line */
+.vl-line > span { display: block; white-space: nowrap; }
+.vl-gloss {
+  /* 9 Oct (owner): one line, never broken. It is about 33 times its own font
+     size wide, so below the width where that fits it takes the viewport's
+     measure instead of --text-lede. Re-measure if the words change. */
+  margin: var(--sp-4) 0 0; max-width: none; white-space: nowrap;
+  font-size: min(var(--text-lede), 2.9vw); line-height: 1.5;
+  color: var(--leaf-100);
+}
+/* A soft dark halo keeps the words at reading contrast wherever the sky
+   behind them brightens, without a box round them. */
+.vl-line, .vl-gloss { text-shadow: 0 1px 2px rgb(7 11 9 / .7), 0 0 18px rgb(7 11 9 / .75); }
+/* The full stop is one more reactor coming on: --sig-green, the only thing on
+   the page that glows, and on ink only. Lit in the resting state. */
+.vl-stop {
+  color: var(--sig-green);
+  text-shadow: 0 0 .28em rgb(53 224 138 / .55), 0 1px 2px rgb(7 11 9 / .7);
+  transition: color .5s ease, text-shadow .5s ease;
+}
+.vl.is-live:not(.is-lit) .vl-stop { color: var(--white); text-shadow: 0 1px 2px rgb(7 11 9 / .7), 0 0 18px rgb(7 11 9 / .75); }
+/* the line and its sentence wait for the valley; the script fades them in */
+.vl.is-live .vl-line, .vl.is-live .vl-gloss { opacity: 0; will-change: opacity, transform; }
+
+/* ---- the runway: the stage plus one screen of scroll ---- */
+.vl.is-live:not(.is-still) .vl-run { height: calc(var(--vl-h) + 85svh); }
+.vl.is-live:not(.is-still) .vl-stage { position: sticky; top: var(--nav-h); }
+
+/* a short screen: the words climb, so the sentence stays on the sky */
+@media (max-height: 760px) and (min-width: 640px) {
+  #vision.vl { --vl-pad: 1.25rem; --vl-fs: clamp(2rem, .8rem + 3.3vw, 3.6rem); }
+}
+/* a phone cannot hold it on one line at a readable size: it wraps there */
+@media (max-width: 639px) { .vl-gloss { white-space: normal; text-wrap: balance; font-size: var(--text-base); } }
+@media (max-width: 420px) { #vision.vl { --vl-fs: clamp(1.9rem, 9.4vw, 2.4rem); } }
+
+/* ------------------------------------------------ 7 Oct (owner) ---------- */
+/* The line into the vision is centred, a size up, and stays on ONE line:
+   the type is sized from the column it sits in, so the sentence never
+   breaks on a screen wide enough to hold it. Below 760px, where one line
+   would be smaller than reading size, it wraps instead. */
+.vl-intro {
+  max-width: none; text-align: center;
+  font-size: clamp(1.375rem, 1.05rem + 1.1vw, 1.75rem);
+  text-wrap: pretty;
+}
+@media (min-width: 760px) {
+  /* measured: the sentence's own width is 2.26 times its font size, and the
+     column is at most 1216px, so 2.45vw capped at 33px always fits with room
+     over. If the words change, re-measure before trusting either number. */
+  .vl-intro { white-space: nowrap; font-size: min(2.0625rem, 2.45vw); }
+}
+/* the "Our Vision:" label this line briefly carried was dropped the same
+   day, and .vl-intro__k with it */
+/* a fallback face with wider metrics must not be able to scroll the page */
+.vl-head { overflow-x: clip; }

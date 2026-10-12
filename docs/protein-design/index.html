@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protein Design | ReLEAF &middot; iGEM 2026</title>
+  <meta name="description" content="How ReLEAF chose three plant protectants and engineered one of them: the GRAFT methodology behind the docking workflow, the design sprints it produced, and the molecular dynamics that tested the result." />
+  <link rel="icon" href="../assets/img/logo.png" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/nav.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+  <link rel="stylesheet" href="../assets/css/engage.css?v=1010seg" />
+  <link rel="stylesheet" href="protein.css?v=202610107" />
+  <link rel="stylesheet" href="../assets/css/bannerhead.css?v=20261010b" />
+  <link rel="stylesheet" href="../coach/coach.css?v=1012134635" />
+</head>
+<body class="engage pd">
+<!--
+  SOURCE. Rebuilt 28 September 2026 from the students' own layout document,
+  "Layout - Protein Design Page.docx": a homepage and three subpages,
+  Methodology, Sprints and Results, Molecular Dynamics. Everything a student
+  wrote lives on the subpage the layout document assigns it to, in their words.
+
+  The five pages of the old GRAFT split (triage, restraints, generate,
+  assembly, packaging) are redirect stubs pointing at the section of
+  /protein-design/methodology/ that absorbed them. Their URLs still work.
+
+  10 October 2026. Timmy asked for this page to be cut back to a header, the
+  summary, and three boxes into the subpages, and for nothing else. So the
+  five sections it carried are gone: the problem statement, the four findings
+  ledger, the future-work pair and the reference list, along with the step
+  nav and the contents rail. What survived of them is the abstract, whose
+  findings column now points into the subpage that shows each one's working.
+  The references the removed sections cited are all carried by the subpage
+  whose work rests on them.
+
+  The three boxes take the soft Engagement look (.doors in protein.css,
+  rewritten the same day): a pale rounded well, the artwork inset and
+  rounded, a chapter colour on the rule above the name.
+
+  10 October 2026, later. Felix delivered the homepage writing, "0. Protein
+  Homepage Writing.docx", so the page is no longer drafted. His two abstract
+  paragraphs are the summary, and each door takes his own one-line description
+  and his own list of what is inside. The Methodology door is named GRAFT
+  Methodology and lists his five steps, Generate, Restraints, Assembly, Flex
+  (MD) and Triage & Packaging, with the letter in place of the bullet. The
+  Molecular Dynamics door has no list in his document, so the four drafted
+  lines under it were deleted rather than kept.
+
+  The findings column is the only drafted thing left on the page. His document
+  has no counterpart for it, and the abstract band carries one on all
+  twenty-three pages, so it stays and keeps class="ai".
+
+  12 October 2026. Checked against the new drop of the same document, which is
+  the first copy of it to arrive with the dated drafts: the 1 October one was
+  empty. It is word for word what the page already carries, so nothing in the
+  abstract or on the three doors has changed. The only departures from his file
+  are the project's own spelling, ReLEAF for ReLeaf, and a full stop at the end
+  of the Sprints and Results description.
+
+  The five findings rows are still the only orange on the page, for the reason
+  above: the document has an abstract and the stage and subpage descriptions,
+  and no findings column.
+
+  One thing for Timmy to look at. The abstract says three protectants, and the
+  Sprints and Results door lists two, BoPEP4 and ACC Deaminase, because that is
+  the list in his document. LEA14 is in the layout document with eight designs
+  against it, every one marked as not yet run, so the door is right about what
+  has results and the abstract is right about what was chosen. If that reads as
+  a contradiction, the fix is a word in the abstract or a third line on the
+  door, and it is his call which.
+-->
+
+  <div id="site-nav" data-base="../" data-tab="drylab" data-page="protein-design"></div>
+  <div class="sitenav-spacer"></div>
+
+  <header class="bannerhead bannerhead--rest" data-tab="drylab">
+    <h1 class="visually-hidden">Protein Design</h1>
+    <div class="bannerhead__art">
+      <img src="../assets/img/headers/protein-design.webp"
+           srcset="../assets/img/headers/protein-design-w1200.webp 1200w, ../assets/img/headers/protein-design.webp 2253w"
+           sizes="(max-width: 1280px) 100vw, 1280px"
+           alt="Protein Design. A dark structural render of the PEPR1 and BAK1 receptor pair with the orange BoPEP4 peptide threaded between them and the contact residues labelled."
+           width="2253" height="748" fetchpriority="high" />
+    </div>
+  </header>
+
+  <section class="abstract abstract--sheet bannerhead" data-tab="drylab" aria-label="Summary">
+    <div class="abstract__inner">
+      <div class="abstract__story">
+        <h2 class="abs-kicker">Abstract</h2>
+        <p class="abstract__lead">This section is the dry lab work that chose ReLEAF&rsquo;s three protectants and decided what to change about each one before any DNA was ordered.</p>
+        <p class="abstract__body">The first thing it established was that there was little to gain by redesigning the binding sites themselves, which evolution had already brought close to as good as they get. The engineering moved instead to the construct and the delivery, and those decisions came from the pipelines around us rather than from this one: how short a molecule can be made before the Bioreactor struggles to produce it, what conditions the Hydroponics System actually delivers it into, what dose Math Modelling says has to arrive, and how a finished sequence becomes DNA a bacterium will read, which is Codon Optimization, a pipeline that split off from this one once designing a protein and getting a cell to secrete it turned out to be separate problems.</p>
+        <p class="abstract__body">It is also a record of what we got wrong and caught in time. A purification tag that every earlier check had approved turned out, once simulated, to disable the exact contact the peptide depends on, which would have given the wet lab a molecule that purifies beautifully and cannot work. For the second protectant we mapped one half of an interaction with confidence and then showed that the other half cannot be predicted from what is currently known, so that design goes to the bench as one testable mutation rather than as a model we could not defend. The third is an enzyme whose largest available gain is not a mutation at all, but a change to the medium it works in.</p>
+      </div>
+      <div class="abstract__outcomes">
+        <h2 class="abs-kicker">Findings</h2>
+        <ul class="abs-ledger">
+          <li><a class="st-key" href="./methodology/"><i></i><span class="abs-ledger__name">Three protectants</span><span class="abs-st">Selection</span><span class="abs-ledger__text ai">BoPEP4, LEA14 and ACC deaminase</span></a></li>
+          <li><a class="st-key" href="./sprints/"><i></i><span class="abs-ledger__name">Truncation plateau</span><span class="abs-st">Docking</span><span class="abs-ledger__text ai">The opening GILIGS segment cuts at no cost</span></a></li>
+          <li><a class="st-key" href="./molecular-dynamics/"><i></i><span class="abs-ledger__name">The purification tag</span><span class="abs-st">Dynamics</span><span class="abs-ledger__text ai">Six histidines on the wrong end of the peptide</span></a></li>
+          <li><a class="st-key" href="./molecular-dynamics/"><i></i><span class="abs-ledger__name">Apoplast pH</span><span class="abs-st">Dynamics</span><span class="abs-ledger__text ai">At pH 5.5 a new contact forms in nearly every frame</span></a></li>
+          <li><a class="st-key" href="./methodology/#codon-optimisation"><i></i><span class="abs-ledger__name">Codon optimisation</span><span class="abs-st">Translation</span><span class="abs-ledger__text ai">Codons 2 to 31 of the signal peptide are the ones that matter</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="hubwrap">
+    <div class="doors">
+
+      <a class="door pl-1" href="./methodology/">
+        <span class="door__shot">
+          <img class="is-fit" src="../assets/img/protein-design/graft-pipeline.webp"
+               alt="Flow chart of the protein design workflow, from literature and protectant families through mutation ideation, restraint mapping and conformer generation into docking, molecular dynamics and structure scoring."
+               width="1002" height="577" loading="lazy" decoding="async" />
+        </span>
+        <span class="door__name">GRAFT Methodology</span>
+        <p class="door__what">How a protectant was chosen and how a peptide became a docking problem. The process, with the runs it produced documented in Sprints and Results.</p>
+        <ul class="door__in door__in--graft">
+          <li><b>G</b>enerate</li>
+          <li><b>R</b>estraints</li>
+          <li><b>A</b>ssembly</li>
+          <li><b>F</b>lex (MD)</li>
+          <li><b>T</b>riage &amp; Packaging</li>
+        </ul>
+        <span class="door__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="door pl-3" href="./sprints/">
+        <span class="door__shot">
+          <img class="is-fit" src="../assets/img/protein-design/alanine-scan-bopep4.webp"
+               alt="Bar chart of the BoPEP4 alanine scan against PEPR1, one bar per residue from Ser6 to Asn23, with binding hotspots, structural signals and mutation-tolerant positions in three colours."
+               width="1400" height="663" loading="lazy" decoding="async" />
+        </span>
+        <span class="door__name">Sprints and Results</span>
+        <p class="door__what">Every design run, as derived from the methodology, in one overview, with emphasis on key findings and connections.</p>
+        <ul class="door__in">
+          <li>BoPEP4</li>
+          <li>ACC Deaminase</li>
+        </ul>
+        <span class="door__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="door pl-5" href="./molecular-dynamics/">
+        <span class="door__shot">
+          <img src="../assets/img/protein-design/card-md-asn23.webp"
+               alt="Molecular surface of the PEPR1 binding groove with the C-terminal end of the BoPEP4 peptide, Asn23, buried in a pocket at the closed end."
+               width="900" height="900" loading="lazy" decoding="async" />
+        </span>
+        <span class="door__name">Molecular Dynamics</span>
+        <p class="door__what">Nine all-atom trajectories of BoPEP4 that ask whether a docked pose holds up once the atoms are allowed to move.</p>
+        <span class="door__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <nav class="pagenav" aria-label="Neighbouring pages">
+    <a class="is-prev" href="../software/"><b>Previous</b><span>Digital Twin</span></a>
+    <a class="is-next" href="./methodology/"><b>Next</b><span>GRAFT Methodology</span></a>
+  </nav>
+
+  <footer class="footer2">
+    <div class="footer2__inner">
+        <div>
+          <h3>Project</h3>
+          <ul>
+          <li><a href="../description/">Description</a></li>
+          <li><a href="../biomanufacturing/">Biomanufacturing</a></li>
+          <li><a href="../engineering/">Engineering</a></li>
+          <li><a href="../development/">Development</a></li>
+          <li><a href="../contribution/">Contribution</a></li>
+          <li><a href="../results/">Results</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Wet Lab</h3>
+          <ul>
+          <li><a href="../experiments/">Experiments</a></li>
+          <li><a href="../parts/">Parts</a></li>
+          <li><a href="../plant/">Plants</a></li>
+          <li><a href="../measurement/">Measurement</a></li>
+          <li><a href="../safety-and-security/">Safety</a></li>
+          <li><a href="../notebook/">Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dry Lab</h3>
+          <ul>
+          <li><a href="../model/">Math Model</a></li>
+          <li><a href="../hardware/">Hardware</a></li>
+          <li><a href="../software/">Digital Twin</a></li>
+          <li><a href="../protein-design/">Protein Design</a></li>
+          <li><a href="../drylab-notebook/">Dry Lab Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engagement</h3>
+          <ul>
+          <li><a href="../human-practices/">Integrated Human Practices</a></li>
+          <li><a href="../education/">Education</a></li>
+          <li><a href="../entrepreneurship/">Entrepreneurship</a></li>
+          <li><a href="../sustainability/">Sustainability</a></li>
+          <li><a href="../laws-and-regulations/">Laws and Regulations</a></li>
+          <li><a href="../geospatial-analysis/">Geospatial Analysis</a></li>
+          <li><a href="../data-physicalization/">Data Physicalization</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Team</h3>
+          <ul>
+          <li><a href="../team/">Members</a></li>
+          <li><a href="../attributions/">Attribution</a></li>
+          <li><a href="../milestone/">Milestone</a></li>
+          </ul>
+        </div>
+      <div class="footer2__legal">
+        <p><b>ReLEAF</b> &middot; GEMS Taiwan &middot; iGEM 2026 &middot; Biomanufacturing Village</p>
+        <p>&copy; 2026 &middot; Content on this wiki is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+        <p>The repository used to create this website is available at <a href="https://gitlab.igem.org/2026/gems-taiwan">gitlab.igem.org/2026/gems-taiwan</a>.</p>
+        <p>Nothing on this wiki is fetched from a server outside iGEM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/data/site-nav.js" fetchpriority="high"></script>
+  <script src="../assets/js/nav.js" fetchpriority="high"></script>
+  <script src="../assets/js/page.js?v=20261010" fetchpriority="high"></script>
+  <script src="../assets/js/engage.js?v=1007s"></script>
+  <script src="../coach/data/protein-design.js?v=1012134635"></script>
+  <script src="../coach/coach.js?v=1012134635"></script>
+</body>
+</html>

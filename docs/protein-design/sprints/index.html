@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sprints and Results | Protein Design | ReLEAF &middot; iGEM 2026</title>
+  <meta name="description" content="Every design run the GRAFT methodology produced, in one roster, with three written out in full: the alanine substitution scan, the truncation ladder and the tandem repeat analysis, each with how it was run, what came back, and what it changed." />
+  <link rel="icon" href="../../assets/img/logo.png" />
+  <link rel="stylesheet" href="../../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../../assets/css/nav.css" />
+  <link rel="stylesheet" href="../../assets/css/page.css" />
+  <link rel="stylesheet" href="../../assets/css/engage.css?v=1010seg" />
+  <link rel="stylesheet" href="../protein.css?v=202610107" />
+  <link rel="stylesheet" href="../../coach/coach.css?v=1012134635" />
+</head>
+<body class="engage pd">
+<!--
+  SOURCE. The roster and its state marks come from "Layout - Protein Design
+  Page.docx" (section 2), where a cross means the run has not happened yet.
+
+  Updated 8 October 2026 from "2. Sprints Subpage/Sprints Writing.docx", which
+  the students rewrote after this page was built. On 28 September that document
+  held one sentence; it now holds "How to Read" and three sprints written out
+  in full to their own three-part shape, Methodology, Key Results and Project:
+  the alanine substitution scan, the truncation ladder, and the tandem repeat
+  analysis. All three are on this page in their words, and the page's section
+  order follows the document.
+
+  The single sentence quoted here before ("relying solely on computational
+  results ... may lead to misleading conclusions") is gone. It was the earlier
+  revision of the passage the document now calls "HADDOCK Score Reliability",
+  which is on the page in full under "Reading a docking score", so keeping
+  both would have put two revisions of one argument side by side. The newer
+  passage sits inside the truncation ladder sprint in the document; it is
+  lifted to its own section here because it governs every score on the page.
+
+  The Key Results and Project lists are the students' own paragraphs, each of
+  which opens with a claim sentence and then supports it. The claim sentence
+  is set bold and the paragraph becomes a list item; no words are changed.
+
+  The same mechanical fixes run through this student text as through the
+  Methodology page: the names are normalised to the spelling the rest of the
+  wiki uses (BoPEP4, AtPEP1, ReLeaf), species and genus names are set italic,
+  and the angstrom sign, the minus sign, the Greek letters and the squared
+  unit are written as entities and markup. No wording is changed.
+
+  The three result figures come from "Methodology Writing.docx", which is where
+  the students drew them; that document points its own results at this page
+  ("see Sprints and Results"), so the figures live here and the reasoning for
+  each axis stays on /protein-design/methodology/.
+
+  The page uses assets/css/engage.css, the soft layout the Engagement pages
+  and Integrated Human Practices share.
+
+  10 October 2026. Re-read against "1010 Protein Design/2. Sprints Subpage/
+  Sprints Writing.docx". The three written-out sprints are unchanged from the
+  8 October delivery, word for word. What the new document adds is the rest of
+  the roster as the students now name it: eight more BoPEP4 runs, six LEA14
+  designs, and an ACC D heading with nothing under it yet.
+
+  Timmy asked for the students' writing and nothing else, and for the page to
+  begin at section 1. So the hero plate, the standfirst and the Section /
+  Written by / Last updated / Status list are gone, along with the step nav,
+  and every drafted paragraph has been deleted rather than recoloured: the two
+  section ledes, the three chapter intros, the two "carried forward"
+  cross-references, and the note about Asn23 not being invariant (that is a
+  message to whoever next edits the other pages, so it lives in the session
+  notes now and not on the page).
+
+  Two whole sections went with them, because neither had any student writing
+  behind it. "Point substitutions" was a drafted summary of K8Q and K18R,
+  which the document still lists as bare headings; the run map marks them run
+  and unwritten, which is the honest statement. "Where these results go" was
+  not in the document at all.
+
+  Section 2 is now one window instead of twenty-four prose cards: three lanes,
+  one per protectant, every run a chip marked written up, run, or not run, and
+  the legend doubles as a filter (.runmap in protein.css, with a small script
+  at the end of this file). The run names are the students' own headings. The
+  descriptions that used to sit under each one were ours, so they are gone;
+  the state marks and the counts are facts, not prose. The three lanes keep
+  the ids #bopep4-runs, #accd-runs and #lea14-runs so inbound links still land.
+
+  What kept class="ai" at that point was the three figure legends and the
+  provenance lines. They went the same week, when Timmy asked for the subpages
+  to be the students' writing and nothing else, so the page now reports no .ai
+  element at all; every chart carries its own title and axis labels inside the
+  image, so none of them needed a sentence underneath.
+
+  10 October 2026, later. The same two rules as the other two subpages, and
+  this page is where they divide most cleanly, because the students' own shape
+  already separates the three parts.
+
+  Methodology stays flat. Each sprint opens with its Methodology card and its
+  chart, so a reader meets how the run happened, and every precaution in it,
+  with nothing over them.
+
+  Key Results and Project are drop-downs, shut when the page loads, with the
+  finding count on the row: six and five for the alanine scan, four and four
+  for the truncation ladder, five and four for the tandem repeats. Not one
+  word moved; the two cards became .fold--res rows, and the students' own card
+  names are the row titles so the shape "How to read this page" describes is
+  still the shape on the page.
+
+  "Reading a docking score" is not folded. It is the page's standing caution
+  about every number above it, so it stays open at the end.
+
+  10 October 2026, last pass. The segmented control over the three sprints is
+  gone and they are stacked, so section 3 reads straight down. Each sprint is
+  a .sprint block keeping its own id and its colour, and its title is now a
+  real h3 rather than a data-no-toc chapter title, so the rail lists them as
+  3.1, 3.2 and 3.3 and a judge can jump to one. The "Sprint 1 / 2 / 3"
+  eyebrows went with the control: the rail numbers them now, and an eyebrow
+  that repeats the rail's count is the thing this wiki keeps taking out.
+
+  The run map stays as it is. Its lanes run across the page but it is a map
+  of what was run, not a switch between panels, and nothing is hidden behind
+  it.
+
+  12 October 2026. Re-read against the new drop: "2. Sprints Subpage/Sprints
+  Writing.docx", 3,239 words where the 1 October copy held 29, and section 2
+  of "Layout - Protein Design Page.docx". The three written-out sprints and
+  the HADDOCK passage are word for word what the page already carried, with
+  one exception. The alanine scan's opening sentence now reads as the students
+  wrote it, "built with one validated docking pose", in place of a clause of
+  ours about how the methodology builds everything at that stage. That was the
+  last sentence on the page that was not theirs.
+
+  The document still ends at a bare "ACC D" heading, and under BoPEP4 it still
+  carries K8Q, K18R, K8Q+K18R, N-His vs C-His, Ternary Docking, Asn23
+  Strategic Importance, S15A and G17A as headings with nothing under them.
+  Those eight stay as chips marked run and unwritten, which is the honest
+  statement; nothing has been written for them here.
+
+  The layout adds one BoPEP4 run the map did not have, "d1-2, d1-3", so the
+  lane is twelve chips in the layout's own order, which puts N-His vs C-His
+  ahead of the substitutions. The shallow cuts have no section of their own
+  because the students report them inside the truncation ladder, so the chip
+  is marked run rather than written up. The layout's crossed runs stay off the
+  map, as Timmy asked on 10 October: "Other specified engineering direction
+  runs" under BoPEP4, three ACC deaminase checks, and the eight LEA14 designs,
+  which is that protectant entire.
+
+  The third sprint takes the document's own name, Tandem repeat analysis. The
+  section over the HADDOCK passage is still called "Reading a docking score",
+  which is ours and not the document's "HADDOCK Score Reliability"; the name
+  was chosen when the passage was lifted out of the truncation ladder, and
+  build/md_page.py links to #reading-a-docking-score, so it is left for Timmy
+  to settle rather than changed here. Both section ids are unchanged.
+-->
+
+  <div id="site-nav" data-base="../../" data-tab="drylab" data-page="protein-design"></div>
+  <div class="sitenav-spacer"></div>
+
+
+
+  <div class="pagewrap">
+    <div class="railcol">
+
+      <nav class="secnav pl-3" aria-label="Protein Design section">
+        <a class="secnav__home" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Protein Design</a>
+        <ul class="secnav__list">
+            <li><a href="../methodology/">GRAFT Methodology</a></li>
+            <li><a href="./" aria-current="page">Sprints and Results</a></li>
+            <li><a href="../molecular-dynamics/">Molecular Dynamics</a></li>
+        </ul>
+      </nav>
+
+      <details class="toc" open>
+        <summary>Contents</summary>
+        <div class="toc__inner"><p class="toc__title">On this page</p></div>
+      </details>
+
+    </div>
+
+    <main class="pagebody">
+
+      <h1 class="visually-hidden">Sprints and Results</h1>
+
+      <!-- ================================================ 1 · HOW TO READ -->
+      <section class="sec" id="how-to-read">
+        <h2>How to read this page</h2>
+
+        <div class="lede-c">
+          <p>Each section is split primarily into three sections, including &ldquo;Methodology,&rdquo; &ldquo;Key Results,&rdquo; and &ldquo;Project.&rdquo; Methodology represents how and why we ran the sprint, and what influenced our run. Key Results outlines the main findings of each run, going to specific values and further analysis. Project outlines the impact this run had on the protein design pipeline, and our project in general.</p>
+        </div>
+
+      </section>
+
+      <!-- ===================================================== 2 · THE SET -->
+      <section class="sec" id="the-runs">
+        <h2>The runs</h2>
+
+        <div class="runmap" data-runmap>
+          <div class="runmap__lanes">
+
+            <div class="runmap__lane" id="bopep4-runs">
+              <div class="runmap__who">
+                <span class="runmap__name">BoPEP4</span>
+                <span class="runmap__tally">12 runs &middot; 3 written up</span>
+              </div>
+              <div class="runmap__chips">
+                <a class="rchip" data-state="done" href="#the-alanine-scan">Alanine substitution</a>
+                <a class="rchip" data-state="done" href="#the-truncation-ladder">Truncation ladder</a>
+                <a class="rchip" data-state="done" href="#tandem-repeats">Tandem repeat analysis</a>
+                <span class="rchip" data-state="ran">N-His vs C-His</span>
+                <span class="rchip" data-state="ran">K8Q</span>
+                <span class="rchip" data-state="ran">K18R</span>
+                <span class="rchip" data-state="ran">K8Q, K18R</span>
+                <span class="rchip" data-state="ran">&Delta;1-2, &Delta;1-3</span>
+                <span class="rchip" data-state="ran">Ternary docking</span>
+                <span class="rchip" data-state="ran">Asn23 strategic importance</span>
+                <span class="rchip" data-state="ran">S15A</span>
+                <span class="rchip" data-state="ran">G17A</span>
+              </div>
+            </div>
+
+            <div class="runmap__lane" id="accd-runs">
+              <div class="runmap__who">
+                <span class="runmap__name">ACC deaminase</span>
+                <span class="runmap__tally">4 runs</span>
+              </div>
+              <div class="runmap__chips">
+                <span class="rchip" data-state="ran">Y156C</span>
+                <span class="rchip" data-state="ran">Unpaired cysteines removed</span>
+                <span class="rchip" data-state="ran">V293T</span>
+                <span class="rchip" data-state="ran">PLP binding test</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="runmap__key" role="group" aria-label="Run state">
+            <button type="button" data-filter="done" aria-pressed="false">Written up on this page <span class="runmap__n">3</span></button>
+            <button type="button" data-filter="ran" aria-pressed="false">Run <span class="runmap__n">13</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="the-sprints">
+        <h2>Three sprints in full</h2>
+
+
+          <!-- ------------------------------------------- 3.1 ALANINE SCAN -->
+        <div class="sprint pl-2" id="the-alanine-scan">
+          <h3 data-toc="Alanine substitution">Alanine substitution</h3>
+
+            <article class="card">
+              <h4 class="card__name">Methodology</h4>
+              <p>Our interface map for BoPEP4 was built with one validated docking pose, residues buried, salt bridges measured, contacts listed at a 4.5&nbsp;&Aring; cutoff. It says which side chains sit against PEPR1. It cannot say what the interface loses if one is removed, and by late July that was the question the engineering panel needed answered, because every proposed substitution and every truncation was about to assume a position was expendable.</p>
+              <p>An alanine scan answers it with a perturbation rather than a measurement. Delete one side chain, let the complex relax, record what the energy function says, and repeat at every position. The ranking that comes out is produced by a method sharing no assumptions with a burial calculation, so agreement between them is evidence and disagreement is a question.</p>
+              <p>Eighteen single-point mutants, Ser6 through the C-terminal Asn23, were built on the validated native-mode complex rather than predicted from scratch: side-chain atoms beyond C&beta; deleted, backbone and C&alpha;-C&beta; geometry held fixed. Mutating on a fixed pose is what isolates the cost of the substitution; re-docking each mutant would have let it find an unrelated register and returned a number about that instead. All 19 systems, 18 mutants plus an unmutated baseline reused from trunc1-23_PEPR1, went through identical HADDOCK 2.5 water refinement at 40/10/10 with the same restraints, so score differences are attributable to the mutation. Electrostatic and van der Waals terms were kept separate, to tell a lost salt bridge from lost packing, and peptide backbone deviation was recorded as a pose metric independent of the score. All 18 completed.</p>
+            </article>
+
+            <div class="chartbox"><div class="charts charts--1"><figure class="fig fig--chart">
+              <img src="../../assets/img/protein-design/alanine-scan-bopep4.webp"
+                   alt="Bar chart of the BoPEP4 alanine scan against PEPR1 after HADDOCK refinement. One bar per substitution from S6A to N23A, showing the change in HADDOCK score against wild type, with positive values destabilising. Bars are coloured as binding hotspots, structural or conformational signals, and neutral or mutation-tolerant positions, with an ensemble mean marked on each."
+                   width="1536" height="727" loading="lazy" decoding="async" />
+            </figure></div></div>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Key results <span class="fold__sub">6 findings</span></summary>
+              <div class="fold__body">
+              <ul class="findings">
+                <li><b>Eight hotspots that fail the same way.</b> K7, R9, R11, E12, H14, K18, H22 and N23 clear +7 on both metrics, and every one is carried by a large positive &Delta;E<sub>elec</sub>, from +32.6 at H14 to +150.4 at K18, with &Delta;E<sub>vdw</sub> flat or favourable throughout. That is the signature of removing a charged side chain from a salt bridge, and it rules out a packing artefact introduced by the mutagenesis. K18A and K7A are the largest hits. K7A is also the only mutant that moves the peptide, by 1.62&nbsp;&Aring;, so it costs binding energy and pose retention together.</li>
+                <li><b>Cross-validation at 13 of 13.</b> Of the positions where the interface map made an unambiguous call, eight anchors and five non-contacts, the scan agrees with all of them. Two methods with no shared assumptions returned the same interface.</li>
+                <li><b>Asn23 ranks last of the eight hotspots.</b> N23A is +9.5, which sits oddly against Asn23 having the largest buried surface at 170&nbsp;&Aring;<sup>2</sup> and four hydrogen bonds. The explanation the data support is that several of those contacts engage the C-terminal carboxylate and backbone amide rather than the side-chain atoms an Asn to Ala substitution removes, so part of the clamp survives. That distinction is what the C-terminal tag question turned on later: substituting at position 23 keeps the chain terminus, appending to it does not.</li>
+                <li><b>Ser15 and Ser16 disagree with their own conservation.</b> Both are invariant across all 16 characterised Pep-family sequences and were assigned as core hydrogen-bonded contacts. Neither registers, at &minus;1.3 and &minus;8.0. A serine hydroxyl contributes little to an electrostatic term next to a full salt bridge, so the conservation is real and this assay is not positioned to explain it.</li>
+                <li><b>The scan would not have found our own two controls.</b> S15A and G17A are the loss-of-function constructs we ordered, on published activities roughly 100-fold and more than 4000-fold below wild type. The scan returns &minus;1.3 and &minus;2.9 at exactly those positions. A method that misses the two substitutions the published work shows matter most is a method whose silence elsewhere carries no weight, which is the same conclusion the July audit of HADDOCK and AlphaFold3 reached by a different route.</li>
+                <li><b>The glycines move and the prolines do not.</b> G20A and G21A show the largest backbone deviations in the set, 1.21 and 1.42&nbsp;&Aring;, with no score effect, consistent with glycine accommodating dihedrals an alanine cannot. The hypothesis floated before the run, that the prolines would show the same signature from losing backbone rigidity, failed: P10A, P13A and P19A sit at 0.75 to 1.03&nbsp;&Aring;, inside the neutral range.</li>
+              </ul>
+              </div>
+            </details>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Project <span class="fold__sub">5 findings</span></summary>
+              <div class="fold__body">
+              <p>ReLEAF has to produce a protectant, secrete it and get it onto a plant. This scan is the sprint that established the binding site is not where that work happens, and it did so by naming the positions that are closed.</p>
+              <ul class="findings">
+                <li><b>It closed the binding site and opened the construct.</b> Eight positions are protected as binding-critical, and five more, S15, S16, G17, G20 and G21, are protected on conservation grounds even without a score penalty. With the C terminus already off-limits, the surface left to engineer is the construct and the delivery. Every subsequent design decision in the project sits there.</li>
+                <li><b>It put direct evidence under the secretion handle.</b> S6, K8, P10, P13 and P19 are neutral on both metrics. K8 is the residue the K8Q and K8E secretion designs modify, and until this sprint that choice rested on the burial map alone. The project's limiting problem is secretion efficiency, so a free handle at K8 is a project-level result rather than a structural footnote.</li>
+                <li><b>It set the truncation direction.</b> Flat response at S6, plus the map's finding that residues 1 to 6 make no contact, pointed at the N terminus as the removable end. Given the biomanufacturing strategy, the gain was taken as truncation rather than substitution, which produced the ladder and then the 9-23 construct: a third less mass, one trypsin-type site instead of three, half the positive charge, so less of it binding electrostatically to the producer cells.</li>
+                <li><b>It is why K18R had a rationale, and why losing it cost nothing.</b> K18 carries the largest electrostatic contribution in the peptide, which is what made a conservative Lys to Arg swap attractive. MD later found the Lys18 contact with Asp348 present in 53.7% of frames over a 2.55 to 9.37&nbsp;&Aring; swing, and Phe371 nearest Gly20 rather than Lys18. Position 18 still matters; the structural claim underneath K18R does not, and it was not ordered. Because the engineering target had already moved to the construct, withdrawing it removed nothing from the panel.</li>
+                <li><b>PEPR2 is not covered.</b> Existing data show PEPR2 with a degraded mid-belt where Arg11 and Glu12 lose their partners, so R11A and E12A may behave differently there. A PEPR2 scan has not been run, and dual-receptor engagement is a ReLEAF-level claim, so it stays open.</li>
+              </ul>
+              </div>
+            </details>
+
+          </div>
+
+          <!-- ---------------------------------------- 3.2 TRUNCATION LADDER -->
+        <div class="sprint pl-3" id="the-truncation-ladder">
+          <h3 data-toc="Truncation ladder">Truncation ladder</h3>
+
+            <article class="card">
+              <h4 class="card__name">Methodology</h4>
+              <p>The alanine scan had just told us which positions the interface cannot lose, and by implication which it can: S6, K8, P10, P13 and P19 neutral on both metrics, with the map putting residues 1 to 6 outside the contact region entirely. That licenses editing the N terminus. It does not tell you where to cut.</p>
+              <p>The distinction matters because a substitution and a truncation are not the same experiment. A point mutation removes one side chain and leaves the chain. A truncation removes residues, shortens the peptide, changes its net charge, and moves the N terminus to a new residue that now carries a free &alpha;-amino group. Our methodology had no way to predict which of those consequences dominates, so the series was run as a ladder: cut at successive points, score each one on the same protocol, and find where the interface stops tolerating it.</p>
+              <p>Two things made this the sprint the project needed rather than a curiosity. The published work already reports the 9-23 core retaining activity within a factor of ten, so a short form was known to be viable and the question was only which short form. And the manufacturing case was strong enough that if the binding cost were tolerable, the decision was already made. The ladder existed to find out whether it was tolerable, and where.</p>
+            </article>
+
+            <div class="chartbox"><div class="charts charts--1"><figure class="fig fig--chart">
+              <img src="../../assets/img/protein-design/truncation-cliff-bopep4.webp"
+                   alt="Line chart titled truncation cliff, HADDOCK water-refined score. The x axis runs from the full-length peptide, residues 1 to 23, through successive N-terminal cuts to residues 17 to 23. Two traces, PEPR1 and PEPR2, stay near minus 200 and minus 220 for the first seven cuts, then rise steadily towards minus 80 as more residues are removed. The conserved core region 15 to 23 and the damaged controls beyond it are shaded at the right."
+                   width="775" height="415" loading="lazy" decoding="async" />
+            </figure></div></div>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Key results <span class="fold__sub">4 findings</span></summary>
+              <div class="fold__body">
+              <ul class="findings">
+                <li><b>The anchor belt lies downstream of the cut.</b> The atlas established the architecture the ladder is cutting into: an extended peptide clipped into an acidic LRR groove by a three-point salt-bridge belt at Arg9, Lys7/Lys8 and position 18, with the buried Asn23 anchor at the end. The first belt residue is Lys7. Shaving the N terminus removes only Gly1 to Leu3, which make no anchor contact, and the belt is retained intact in every truncated complex.</li>
+                <li><b>The shallow truncations were the strongest binders in the panel.</b> &Delta;1-2 and &Delta;1-3 came out ahead of both substitutions on AF3 confidence against PEPR1, ipTM 0.88 and 0.89 against 0.82 for K18R and 0.83 for K8Q, with the lowest interface PAE in the set at 1.62&nbsp;&Aring; for &Delta;1-3. HADDOCK agreed directionally at &minus;207 and &minus;201. Position 18 keeps its canonical partner through the cut, at 2.77 and 2.85&nbsp;&Aring;. Removing the anchorless N terminus costs nothing measurable, which is the structural licence for treating N-terminal length as an engineering axis.</li>
+                <li><b>The series then moved past them.</b> &Delta;1-2 and &Delta;1-3 were the July finalists and are not what we ordered. Shaving two or three residues buys almost no manufacturing benefit while keeping the disordered N-terminal segment that contributes little binding, so the cut moved down the ladder to 9-23, with 7-23 alongside it. &Delta;1 and &Delta;1-3 were dropped on that reasoning rather than on a binding result.</li>
+                <li><b>MD located the boundary, and then moved it.</b> The wild-type run put the fluctuation break at the same residue the ladder's cliff falls on: Gly1 fluctuating by 3.51&nbsp;&Aring;, everything from Glu12 onward under 1.0&nbsp;&Aring;, and Arg9 at the boundary with an RMSF of 1.32&nbsp;&Aring;, a mean closest approach of 2.79&nbsp;&Aring; and 100% contact occupancy. Two methods with no shared assumptions landed on Arg9. The truncation runs then complicated it: clamp integrity is 100.0% for 1-23, 98.5% for 7-23 and 99.9% for 15-23, but 77.1% for 9-23. The cliff is real and it is not where length predicts, because 9-23 keeps the 9-14 segment while removing the Lys7-Asp129 salt bridge that anchors it, and 15-23 removes both together. Shorter is not worse; losing an anchor without the segment it anchors is worse.</li>
+              </ul>
+              </div>
+            </details>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Project <span class="fold__sub">4 findings</span></summary>
+              <div class="fold__body">
+              <ul class="findings">
+                <li><b>It produced the production molecule.</b> 9-23 is the manufacturing candidate and the construct already in hand as D-01 and D-04. Against full length it carries 33% less mass, 1,612.73&nbsp;Da against 2,409.74&nbsp;Da, one trypsin-type cut site instead of three, and half the positive charge at +2.1 against +4.1, so less of it sticks electrostatically to the producer cells. It also removes the greasy GILI front segment, which is the part that raises a self-toxicity risk in <i>B. subtilis</i>, where no amount of promoter tuning would recover the yield. The cost is the published factor of ten in activity.</li>
+                <li><b>It costs nothing to settle at the bench.</b> Both lengths were ordered, 9-23 as D-01 and D-04 and full length as D-03 and D-05, so the head-to-head titre is a comparison we can already run in one sitting. That is the clearest example in the project of a dry lab result shaped so the wet lab can decide it.</li>
+                <li><b>It redirected the engineering away from the binding site.</b> With the C terminus off-limits and the eight hotspots protected, N-terminal length was the only axis left that changes the molecule's manufacturability without touching the interface. The truncation series is what established that axis, and the later tag-placement result depends on it: the N terminus is the end that flaps and the end the ladder shows is removable, so it is where a tag can sit without touching a contact.</li>
+                <li><b>It left one decision unresolved.</b> 7-23 is more stable than 9-23 on every MD metric we have, with clamp integrity 98.5% against 77.1%, Asn23-Arg487 99.9% against 81.1%, and 151 receptor contacts against 129. It is also not in our construct set. If the 9-23 deficit holds, the production candidate and the dry lab's best truncation are different molecules.</li>
+              </ul>
+              </div>
+            </details>
+
+          </div>
+
+          <!-- ----------------------------------------- 3.3 TANDEM REPEATS -->
+        <div class="sprint pl-4" id="tandem-repeats">
+          <h3 data-toc="Tandem repeat analysis">Tandem repeat analysis</h3>
+
+            <article class="card">
+              <h4 class="card__name">Methodology</h4>
+              <p>The alanine scan and the truncation ladder both ask what the receptor needs. The alignment asks what the peptide family keeps, which is a different and cheaper question: every position that is invariant across a family has been held there by selection, and selection sees the whole job, not only docking.</p>
+              <p>We needed that because our methods had failed on exactly this axis. The 30 July audit found the HADDOCK score 93% explainable by length and charge and uncorrelated with measured activity, and AF3 unable to separate BoPEP4 from a peptide more than 4000-fold dead. Conservation is the one line of evidence in the sprint that is independent of both, since it is observation rather than prediction.</p>
+              <p>Tandem repeats were the same week's second question. If a single copy engages one receptor, two copies on one chain might engage two, and for a production platform a potency gain per molecule secreted is worth more than a binding gain.</p>
+            </article>
+
+            <div class="chartbox"><div class="charts charts--1"><figure class="fig fig--chart">
+              <img src="../../assets/img/protein-design/tandem-repeat-sweep.webp"
+                   alt="Table of the tandem repeat sweep. For each receptor and for one to eight copies of the conserved unit, the table lists peptide length, HADDOCK score, buried surface area, buried area per residue, salt bridges, hydrogen bonds, copies engaged and a verdict of non-binder, rising or plateaued."
+                   width="1054" height="526" loading="lazy" decoding="async" />
+            </figure></div></div>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Key results <span class="fold__sub">5 findings</span></summary>
+              <div class="fold__body">
+              <ul class="findings">
+                <li><b>The conserved region stops at 20, not 23.</b> We have been describing 15 to 23 as the conserved block. The alignment supports an invariant SSG at 15 to 17 and an invariant Gly at 20, with 21, 22 and 23 variable. BoPEP4's own Gly21 is a minority residue at that position.</li>
+                <li><b>Asn23 is not invariant in our set.</b> All seven characterised AtPEPs carry Asn there, and so does BoPEP4, but five of the nine <i>Brassica</i> entries do not: BnPep4_E5L6 has Ser, BnPep6_DM88 has Asp, and the three Pep1 orthologs end in His. BnPep4_E5L6 is BoPEP4's closest relative at two differences. The defensible sentence is that Asn23 is invariant across the characterised AtPEP set and 12 of 17 in our <i>Brassica</i>-inclusive alignment, which is not what our pages currently say.</li>
+                <li><b>The invariant positions are the ones the docking score ignores.</b> This is the finding that ties the sprints together. The alanine scan returned &minus;1.3, &minus;8.0, &minus;2.9 and &minus;3.9 at S15, S16, G17 and G20: no penalty at any of the four positions the family has never changed. Published work puts S15A at roughly 100-fold and G17A at more than 4000-fold weaker, and Tang reports G20A harmless while G20I kills binding. So the invariant block is held by selection for something a binding-energy refinement does not measure, most likely backbone register or a step after engagement. Conservation and docking score are answering different questions, and the conserved block is where they visibly disagree.</li>
+                <li><b>BoPEP4 aligns to AtPEP1 gapless</b>, 10 of 17 ordered positions identical, at mature 7, 9, 12, 15, 16, 17, 19, 20, 22 and 23. Every identity falls inside the 7 to 23 region. The confirmed figure matches what the MD page already states.</li>
+                <li><b>Tandem repeats cannot work for this peptide, on chemistry.</b> Only the final copy in a tandem chain has a free C-terminal carboxylate. In every upstream copy that carboxylate is consumed into the peptide bond joining it to the next copy, and that carboxylate is what salt-bridges Arg487 at 100% occupancy inside a 0.54&nbsp;&Aring; window. An n-copy construct therefore carries n&minus;1 copies that cannot engage, which is the same mechanism that kills a C-terminal His tag. The groove compounds it: Asn23 sits buried in a pocket at the end of the run with no exit channel, so there is nowhere for a linker to thread out. A linker placed further upstream to avoid that lands inside the invariant 15 to 20 block.</li>
+              </ul>
+              </div>
+            </details>
+
+            <details class="fold fold--res">
+              <summary><span class="fold__k">Results</span> Project <span class="fold__sub">4 findings</span></summary>
+              <div class="fold__body">
+              <ul class="findings">
+                <li><b>It closed multivalency as a potency route.</b> Yield per litre and length per molecule are the levers that remain, which is where the truncation decision came from. No tandem construct is in the panel, and this is the reason to give.</li>
+                <li><b>It is the second independent route to the same tag conclusion.</b> The tandem argument and the 6xHis result rest on one chemical fact about chain ends. Our ordered constructs append CATCATCATCATCATCAT directly after the mature peptide, so the tag sits on exactly that carboxylate. Two analyses reaching it by different routes is why tag placement moved to the front rather than being treated as a modelling caveat.</li>
+                <li><b>It supports the crop-range claim.</b> BrPep4_A5G1 differs from BoPEP4 by one residue and BnPep4_E5L6 by two, so the <i>Brassica</i> Pep4 orthologs are effectively the same molecule. A peptide designed for one <i>Brassica</i> crop is not obviously specific to it, which is the in-silico support under the crop-range experiment.</li>
+                <li><b>It gave the assay controls a rationale beyond the literature.</b> S15 and G17 are two of the four positions the family has never changed, which is a stronger reason to expect them to break than a transferred activity figure alone.</li>
+              </ul>
+              </div>
+            </details>
+
+        </div>
+      </section>
+
+      <!-- ===================================================== 4 · SCORING -->
+      <section class="sec" id="reading-a-docking-score">
+        <h2>Reading a docking score</h2>
+
+
+        <p>This series is the one place in the project where the scoring function is measuring the variable under test, and the record should say so plainly.</p>
+
+        <p>Our own methodology audit on 30 July found that the HADDOCK score across BoPEP4 variants is 93% explainable by peptide length and net charge alone, and that its correlation with Pearce's measured activities is rho &asymp; +0.05, where zero is no relationship. A truncation ladder changes length and net charge at every rung: 23 residues at +4.1 down to 15 residues at +2.1. So the ladder's score differences are being produced by the two quantities the audit identified as the score's actual content, and a monotone trend across the ladder would be uninformative no matter which direction it ran.</p>
+
+        <p>A second case is sharper, because it is a failure rather than a confound. The K8Q+K18R double collapses on PEPR1 by every geometric measure available: AF3 ipTM 0.49 against 0.75 to 0.89 for the rest of the panel, interface PAE 9.45&nbsp;&Aring; against 1.62 to 2.78&nbsp;&Aring;, the fewest receptor contacts at 42, nine hydrogen bonds against 16 to 21 elsewhere, and a position-18 anchor that has slipped off Asp320 onto Glu296 at a broken 3.42&nbsp;&Aring;. HADDOCK scores that complex &minus;194.7, which sits inside the &minus;187 to &minus;218 band occupied by the nine healthy complexes. The matrix logs it as DISCORDANT-HADDOCK-rescues. The function looked at a mis-registered interface with half the hydrogen bonds and called it normal.</p>
+
+        <p>Two consequences follow, and both are already in the methodology.</p>
+
+        <p>The score is interpretable within a protocol and not across ligands. The alanine scan is the favourable case: same receptor, same restraints, same length, same charge, one side chain removed from one fixed pose, so a score difference has nowhere else to come from. The ladder is the unfavourable case, which is why the cliffs are reported as a hypothesis about which residues matter rather than as a measurement of how much binding is lost.</p>
+
+        <p>And it is why the load-bearing evidence moved. Where the cliff claim now rests is geometry and occupancy rather than score: the salt-bridge inventory showing which bridges dissolve at which cut, and then contact occupancy over 30&nbsp;ns showing which of those bridges were held rather than sampled. Both were measured on the same ladder. Neither is a HADDOCK score. The ladder picked the cut points worth simulating, which is what a confounded ranking can honestly be used for.</p>
+
+      </section>
+
+    </main>
+  </div>
+
+  <nav class="pagenav" aria-label="Neighbouring pages">
+    <a class="is-prev" href="../methodology/"><b>Previous</b><span>GRAFT Methodology</span></a>
+    <a class="is-next" href="../molecular-dynamics/"><b>Next</b><span>Molecular Dynamics</span></a>
+  </nav>
+
+  <footer class="footer2">
+    <div class="footer2__inner">
+        <div>
+          <h3>Project</h3>
+          <ul>
+          <li><a href="../../description/">Description</a></li>
+          <li><a href="../../biomanufacturing/">Biomanufacturing</a></li>
+          <li><a href="../../engineering/">Engineering</a></li>
+          <li><a href="../../development/">Development</a></li>
+          <li><a href="../../contribution/">Contribution</a></li>
+          <li><a href="../../results/">Results</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Wet Lab</h3>
+          <ul>
+          <li><a href="../../experiments/">Experiments</a></li>
+          <li><a href="../../parts/">Parts</a></li>
+          <li><a href="../../plant/">Plants</a></li>
+          <li><a href="../../measurement/">Measurement</a></li>
+          <li><a href="../../safety-and-security/">Safety</a></li>
+          <li><a href="../../notebook/">Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dry Lab</h3>
+          <ul>
+          <li><a href="../../model/">Math Model</a></li>
+          <li><a href="../../hardware/">Hardware</a></li>
+          <li><a href="../../software/">Digital Twin</a></li>
+          <li><a href="../../protein-design/">Protein Design</a></li>
+          <li><a href="../../drylab-notebook/">Dry Lab Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engagement</h3>
+          <ul>
+          <li><a href="../../human-practices/">Integrated Human Practices</a></li>
+          <li><a href="../../education/">Education</a></li>
+          <li><a href="../../entrepreneurship/">Entrepreneurship</a></li>
+          <li><a href="../../sustainability/">Sustainability</a></li>
+          <li><a href="../../laws-and-regulations/">Laws and Regulations</a></li>
+          <li><a href="../../geospatial-analysis/">Geospatial Analysis</a></li>
+          <li><a href="../../data-physicalization/">Data Physicalization</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Team</h3>
+          <ul>
+          <li><a href="../../team/">Members</a></li>
+          <li><a href="../../attributions/">Attribution</a></li>
+          <li><a href="../../milestone/">Milestone</a></li>
+          </ul>
+        </div>
+      <div class="footer2__legal">
+        <p><b>ReLEAF</b> &middot; GEMS Taiwan &middot; iGEM 2026 &middot; Biomanufacturing Village</p>
+        <p>&copy; 2026 &middot; Content on this wiki is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+        <p>The repository used to create this website is available at <a href="https://gitlab.igem.org/2026/gems-taiwan">gitlab.igem.org/2026/gems-taiwan</a>.</p>
+        <p>Nothing on this wiki is fetched from a server outside iGEM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/data/site-nav.js" fetchpriority="high"></script>
+  <script src="../../assets/js/nav.js" fetchpriority="high"></script>
+  <script src="../../assets/js/page.js?v=20261010" fetchpriority="high"></script>
+  <script src="../../assets/js/engage.js?v=1007s"></script>
+  <script>
+  /* The run map's legend is also its filter: pressing a state shows only the
+     runs in that state, so "what is still outstanding" is one press away.
+     Without JavaScript every chip is on the page already, marked. */
+  (function () {
+    var map = document.querySelector("[data-runmap]");
+    if (!map) return;
+    var keys  = Array.prototype.slice.call(map.querySelectorAll(".runmap__key button"));
+    var chips = Array.prototype.slice.call(map.querySelectorAll(".rchip"));
+    keys.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var was = btn.getAttribute("aria-pressed") === "true";
+        keys.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+        if (!was) btn.setAttribute("aria-pressed", "true");
+        var want = was ? null : btn.dataset.filter;
+        map.classList.toggle("is-filtered", !!want);
+        chips.forEach(function (c) {
+          c.classList.toggle("is-on", !want || c.dataset.state === want);
+        });
+      });
+    });
+  }());
+  </script>
+  <script src="../../coach/data/protein-design__sprints.js?v=1012134635"></script>
+  <script src="../../coach/coach.js?v=1012134635"></script>
+</body>
+</html>

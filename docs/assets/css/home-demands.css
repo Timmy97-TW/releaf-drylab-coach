@@ -1,0 +1,204 @@
+/* =============================================================================
+   ReLeaf homepage: the five demands (2b) and the scene into Our answer
+   -----------------------------------------------------------------------------
+   · THE DEMANDS. The question, centred and large, one line under it, and
+     the five demands in a row, each a chip with its line under it.
+   · THE SCENE. #dx wraps #demands and #solution. home.js (piece 7) adds
+     .is-live where the answer's stage fits one screen: .dx__pin then holds
+     the screen for a runway of about three screens and the scroll scrubs one
+     calm hand-off: the words fade, the white turns quickly to ink, the
+     chips glide from their row onto the card tags round the reactor, the
+     reactor comes up in their middle, then its name, its line and the
+     cards' words, in that order.
+     Every value home.js writes is inline and every default here is the
+     finished layout, so with scripting off, motion reduced, on a phone or
+     on paper the two sections are simply stacked and complete.
+   · Loaded after home-reactor.css, so the scene's rules win where they meet.
+   ========================================================================== */
+
+
+/* ================================================== 2b  THE FIVE DEMANDS == */
+
+.dmd {
+  background: var(--white);
+  /* 9 Oct (owner): close under the figure above, with the old room kept
+     below, where the answer follows */
+  padding: clamp(2rem, 1rem + 4vh, 3.5rem) 0 clamp(5rem, 3rem + 10vh, 9rem);
+  text-align: center;
+}
+.dmd__inner { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--sp-5); }
+@media (min-width: 640px)  { .dmd__inner { padding: 0 var(--sp-6); } }
+@media (min-width: 1180px) { .dmd__inner { padding-inline: var(--rail-gutter); } }
+
+.dmd__title {
+  margin: 0 auto;
+  max-width: 24em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1rem + 3vw, 3.5rem);
+  font-weight: 700; line-height: 1.08; letter-spacing: -.03em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.dmd__k {
+  margin: clamp(1rem, .6rem + 1.2vh, 1.5rem) 0 0;
+  /* 9 Oct (Jacquelyn): a step larger */
+  font-size: clamp(1.3125rem, 1.1rem + .8vw, 1.875rem);
+  line-height: 1.4; color: var(--gray-600);
+}
+
+.dmd__chips {
+  list-style: none; margin: clamp(2.25rem, 1rem + 4vh, 3.5rem) auto 0; padding: 0;
+  max-width: 64rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: var(--sp-5) var(--sp-4);
+}
+.dmd__chips > li { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+/* one row wherever the row fits: the five are one set */
+@media (min-width: 900px) { .dmd__chips { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+/* 7 Oct (owner): no caption under a chip. The chips are the five words. */
+
+/* THE CHIP. Every length is in em, in the proportions of the reactor
+   cards' tag (.rxs-card__tag: .75rem type), so a chip scaled by the ratio
+   of the two type sizes IS the tag, and the scene can hand one over to the
+   other without a visible step. It carries two skins, faded by the scene
+   with --dmd-m: the ink fill it has on white, and the tag's outline that
+   it wears on the reactor's ink. */
+.dmd__chip {
+  --m: var(--dmd-m, 0);
+  position: relative; isolation: isolate;
+  display: inline-flex; align-items: center; gap: .667em;
+  padding: .453em 1.067em .453em .8em;
+  border: calc(1em / 12) solid transparent;           /* 1px at the tag's size */
+  border-radius: 999px;
+  font-size: clamp(.875rem, .1rem + 1.2vw, 1.125rem); font-weight: 700; line-height: 1.2;
+  letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+  color: var(--white);
+}
+.dmd__chip::before, .dmd__chip::after {
+  content: ""; position: absolute; inset: calc(-1em / 12); z-index: -1;
+  border-radius: inherit;
+}
+.dmd__chip::before { background: var(--leaf-900); opacity: calc(1 - var(--m)); }
+.dmd__chip::after {
+  border: calc(1em / 12) solid rgb(53 224 138 / .5);
+  background: rgb(53 224 138 / .07);
+  opacity: var(--m);
+}
+.dmd__chip svg { position: relative; width: 1.4em; height: 1.4em; flex: none; color: var(--sig-green); }
+
+@media (max-width: 639px) {
+  .dmd__chip { font-size: .875rem; }
+}
+
+/* Phones and every screen without the scene: the chips come in one by one
+   the first time the row is seen. Only a row that is still below the
+   screen is hidden (home.js adds .is-armed just before it watches it), so
+   nothing already in view blinks out. */
+.dx:not(.is-live) .dmd.is-armed .dmd__chips > li {
+  opacity: 0; transform: translateY(.75rem) scale(.96);
+  transition: opacity .6s cubic-bezier(.2, .7, .2, 1), transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+.dx:not(.is-live) .dmd.is-armed.in .dmd__chips > li { opacity: 1; transform: none; }
+.dmd.is-armed.in .dmd__chips > li:nth-child(2) { transition-delay: .09s; }
+.dmd.is-armed.in .dmd__chips > li:nth-child(3) { transition-delay: .18s; }
+.dmd.is-armed.in .dmd__chips > li:nth-child(4) { transition-delay: .27s; }
+.dmd.is-armed.in .dmd__chips > li:nth-child(5) { transition-delay: .36s; }
+
+
+/* ============================================================ THE SCENE == */
+
+.dx { position: relative; }
+.dx__pin { position: relative; }
+.dx__paper, .dx__runway { display: none; }
+
+.dx.is-live .dx__pin {
+  position: sticky; top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
+  height: calc(100svh - var(--nav-h));
+  overflow: hidden; overflow: clip;
+  background: var(--ink);
+}
+/* 3.1 screens: RUN in home.js piece 7 */
+.dx.is-live .dx__runway { display: block; height: 310vh; height: 310svh; }
+
+/* the layers: the answer's band at the bottom, the white paper of the
+   problem arc over it (it fades to show the band's ink), the demands on top */
+.dx.is-live #solution { position: absolute; inset: 0; z-index: 1; }
+.dx.is-live .dx__paper {
+  will-change: opacity;
+  display: block; position: absolute; inset: 0; z-index: 2;
+  background: var(--white);
+}
+.dx.is-live .dmd {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; align-items: center;
+  /* the question sits ABOVE the middle of its screen (9 Oct, owner), so it
+     follows the figure closely instead of opening a screen of white. The
+     chips' starting places are measured at run time (home.js piece 7,
+     measure()), so moving the block does not disturb the glide. */
+  padding: 0 0 clamp(0rem, 26vh, 15rem); background: none;
+  pointer-events: none;                       /* nothing in it is a control */
+}
+.dx.is-live .dmd__head,
+.dx.is-live .dmd__k,
+.dx.is-live .dmd__chip { will-change: transform, opacity; }
+
+
+/* the answer's band inside the pin: one screen, not a sticky stage of its
+   own; the parts that home.js moves are promoted */
+.dx.is-live .rxs__stage { height: 100%; min-height: 0; padding: var(--sp-4) 0; }
+.dx.is-live .rxs__head,
+.dx.is-live .rxs__lede,
+.dx.is-live .rxs__model { will-change: transform, opacity; }
+/* the cards open round their tags: the box and the words come in with
+   --dx-card, the tags themselves with --dx-tag (both 1 at rest) */
+.dx.is-live .rxs-card::before,
+.dx.is-live .rxs-card__say { opacity: var(--dx-card, 1); }
+.dx.is-live .rxs-card__tag { opacity: var(--dx-tag, 1); }
+/* a card that is not in yet takes no pointer, so it cannot light the model
+   under a resting cursor or take a click */
+.dx.is-live.is-early #partlist .rxs-card { pointer-events: none; }
+
+/* on paper the scene is two plain sections */
+@media print {
+  .dx.is-live .dx__pin { position: relative; height: auto; overflow: visible; }
+  .dx.is-live .dx__runway, .dx.is-live .dx__paper { display: none; }
+  .dx.is-live .dmd, .dx.is-live #solution { position: relative; inset: auto; }
+  .dx .dmd__head, .dx .dmd__k, .dx .dmd__chip, .dx .rxs__head, .dx .rxs__lede, .dx .rxs__model,
+  .dx .rxs-card__tag, .dx .rxs-card__say, .dx .rxs-card::before { opacity: 1 !important; transform: none !important; }
+}
+
+/* 1 Oct: the chips carry the word only; the icons read as generated.
+   Padding evened out now there is no icon on the left. */
+.dmd__chip { padding: .453em 1.067em; }
+
+/* ------------------------------------------------ 7 Oct (owner) ---------- */
+/* The question stands alone first; "We believe the answer has to meet five
+   demands" arrives with the chips it counts (home.js piece 7 writes its
+   opacity), and "five" is the green of the light the reactor runs on.
+
+   THE RESTING STATE IS THE FINISHED STATE: the line is there with no script
+   and with reduced motion. Only the live scene, and the armed one-shot
+   below it, hold it back. */
+/* the question and its kicker are only ever read on the white half of the
+   scene (both fade out before the ground turns to ink), so they take the
+   paper green, not the bright one: see --sig-paper in home.css */
+.dmd__five { color: var(--sig-paper); font-weight: 700; }
+.dmd__sb { color: var(--sig-paper); }
+/* 9 Oct (Jacquelyn): the question breaks after "to" where there is room */
+@media (max-width: 999px) { .dmd__br { display: none; } }
+/* two lines, broken where she broke them: the second line is about 22 times
+   its font size wide, so the size follows the column (measured 9 Oct; re-measure
+   if the words change) */
+@media (min-width: 1000px) {
+  .dmd__inner { container-type: inline-size; }
+  .dmd__title { max-width: none; font-size: min(3.5rem, 100cqi / 23); }
+  .dmd__l2 { white-space: nowrap; }
+}
+/* the chips' captions are gone, so a chip is the whole of its cell */
+.dmd__chips > li { gap: 0; }
+.dx:not(.is-live) .dmd.is-armed .dmd__k {
+  opacity: 0; transform: translateY(.5rem);
+  transition: opacity .5s ease .2s, transform .5s ease .2s;
+}
+.dx:not(.is-live) .dmd.is-armed.in .dmd__k { opacity: 1; transform: none; }

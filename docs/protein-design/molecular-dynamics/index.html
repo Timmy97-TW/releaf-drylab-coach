@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Molecular Dynamics | Protein Design | ReLEAF &middot; iGEM 2026</title>
+  <meta name="description" content="Flex, the F in ReLEAF's GRAFT methodology: nine all-atom trajectories of BoPEP4 against the PEPR1 ectodomain, with the analysis, the plots and the trajectories on the page. A purification tag that passed a test it should have failed, a salt bridge on no published hotspot list, the apoplast at pH 5.5, and the receptor on its own." />
+  <link rel="icon" href="../../assets/img/logo.png" />
+  <link rel="stylesheet" href="../../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../../assets/css/nav.css" />
+  <link rel="stylesheet" href="../../assets/css/page.css" />
+  <link rel="stylesheet" href="../../assets/css/engage.css?v=1010seg" />
+  <link rel="stylesheet" href="../protein.css?v=202610107" />
+  <link rel="stylesheet" href="./md.css?v=202610101" />
+  <link rel="stylesheet" href="../../coach/coach.css?v=1012134635" />
+</head>
+<body class="engage pd">
+<!--
+  SOURCE. Every paragraph set in black is the students' own, lifted verbatim
+  from the "Draft 3 (Structure final)" section of "3. Molecular Dynamics
+  Subpage/MD Writing.docx". Drafts 1 and 2 earlier in that document are
+  superseded and are not used. Character-level changes only: the docx's stray
+  zero-width joiners are dropped and Angstroms, en dashes and Greek letters
+  become entities. Section and chapter headings are the students' own section
+  titles, set in sentence case.
+
+  12 OCTOBER 2026. Checked against the 12 October drop of the same docx. The
+  prose on this page already was Draft 3, so the sync added one thing the page
+  had been missing: the "Worked case" card in section 10, which is the second
+  half of the students' own "VI. Application of Results". Every other paragraph
+  of Draft 3 is already here, and all 87 numbers in the prose reconcile against
+  the per-run reports and payloads under /md-simulations/.
+
+  Two things were deliberately NOT carried over, both for the owner to settle.
+
+    a. The students' "IV. Runs" opening (two paragraphs, beginning "Nine 30-ns
+       simulations ...") lists a K18R mutant among the nine trajectories that
+       were run, and says the K18R simulation probed Asp348 and Phe371. No K18R
+       trajectory exists. The ninth system is the AtPEP1 7-23 benchmark, as the
+       table in section 3 and the nine reports under /md-simulations/ both have
+       it, and Draft 3 itself says of K18R that "whether K18R achieves this
+       geometry remains untested and requires a dedicated simulation". Printing
+       the overview as written would have contradicted the table directly below
+       it, so it is held back until the students correct the run list.
+    b. Draft 3 has a "6. Future Work" heading with nothing under it. The page
+       leaves the gap rather than filling it.
+
+  DO NOT RUN build/md_page.py. It was the one-pass restructuring tool of
+  9 October and its frozen source, build/_md_src.html, is the 8 October build.
+  Re-running it reverts this page to its 9 October state: it discards the
+  10 October rebuild described below, the ReLEAF rename and this sync. Edit
+  this HTML by hand, which is what note 3 below always intended.
+
+  10 OCTOBER 2026. Rebuilt on Timmy's instruction. Three things changed.
+
+    1. The whole molecular dynamics argument is on this page and nothing here
+       links to the nine per-run reports under the MD reports section. Those
+       pages keep their URLs; they are simply no longer advertised from here.
+    2. The page starts at section 1. The hero, the breadcrumb eyebrow, the
+       standfirst, the meta list and the section strip are gone, and the h1 is
+       carried for assistive technology only.
+    3. Nothing on the page is ours. The seven figure read-outs, the source
+       note under the references and the one-line gloss each trajectory viewer
+       printed beside its numbers were all deleted on 10 October, when Timmy
+       asked for the figure legends to go as well and the page to be
+       student-only. Every chart carries its own title and axis labels inside
+       the SVG, so none of them needs a sentence underneath. The viewer gloss
+       lived in the payloads written by build/md_page_anim.py; md-viewer.js no
+       longer renders it.
+    5. 10 October, later. The same two rules as the other two subpages, with
+       one difference that comes from what this page is.
+
+       The method and the cautions are flat. Section 3, the setup and the
+       nine-run table, and section 9, the limitations, are open on the page
+       with nothing over them, and so is section 10.
+
+       Section 2, the key findings, is four drop-downs, shut when the page
+       loads: the histidine tag, pH 5.5, the truncation ladder, and the
+       wild type with the K18R rationale. Each row is the students' own card
+       name and each body is their paragraph with its figure, unchanged.
+
+       The five run chapters are not folded as well. They are already one at
+       a time behind the segmented control, which is this page's own
+       compaction, and they carry the argument rather than a read-out, so a
+       second layer over them would bury the analysis instead of compacting
+       it. Flex is where the results live; the page would have nothing left
+       open if every result on it were behind a click.
+
+    6. 10 October, last pass. The segmented control over the five runs is
+       gone and they are stacked as sections 4 to 8, so the page is one
+       scroll and the contents rail is the only switch. Each keeps its id,
+       its h2's own id and its colour.
+
+       Note 5 said the run chapters were not folded because they carry the
+       argument. Stacking them all open made the page very long, so the
+       division moved one level down instead: each chapter opens on its own
+       account of the run, and its deeper analysis is a toggle. Six of them,
+       the students' own h3 titles on the rows: reassessing Arg18, the
+       N-terminal anchor, 7-23 as a benchmark, 15-23 as a negative control,
+       the implications of the series, and protonation in 9-23. Each keeps
+       its h3's id on the <details>, so inbound links still land. They leave
+       the contents rail, which now lists the ten sections and nothing else.
+
+       The nine-system table is a toggle too. It is reference data for the
+       parameters above it rather than something to read through.
+
+    4. Getting back to the section homepage was hard once inside a subpage,
+       so .secnav sits at the head of the rail column (.railcol in
+       protein.css): the section name as a back row, then the three subpages
+       with this one marked, pinned with the contents on a wide screen and
+       sitting above the folded contents on a narrow one. It costs the page no
+       vertical space, which is why it is there and not across the top.
+  -->
+
+  <div id="site-nav" data-base="../../" data-tab="drylab" data-page="protein-design"></div>
+  <div class="sitenav-spacer"></div>
+
+  <div class="pagewrap">
+    <div class="railcol">
+
+      <nav class="secnav pl-5" aria-label="Protein Design section">
+        <a class="secnav__home" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Protein Design</a>
+        <ul class="secnav__list">
+            <li><a href="../methodology/">GRAFT Methodology</a></li>
+            <li><a href="../sprints/">Sprints and Results</a></li>
+            <li><a href="./" aria-current="page">Molecular Dynamics</a></li>
+        </ul>
+      </nav>
+
+      <details class="toc" open>
+        <summary>Contents</summary>
+        <div class="toc__inner"><p class="toc__title">On this page</p></div>
+      </details>
+
+    </div>
+
+    <main class="pagebody">
+      <h1 class="visually-hidden">Molecular Dynamics</h1>
+      <!-- ============================================== 1 · SIGNIFICANCE -->
+      <section class="sec">
+        <h2 id="significance" data-toc="Significance">Significance of molecular dynamics</h2>
+
+        <div class="lede-c">
+          <p>Molecular Dynamics (MD) simulation is a fundamental computational methodology that uses statistical mechanics to evaluate the physical properties, structural stability, and mechanism of action of engineered proteins and peptides. By integrating Newtonian equations of motion, MD tracks the velocities, positions, and interactions between molecules over time. We applied this to our project to understand the translation and secretion efficiency of our protectants by analyzing the interactions between different receptors.</p>
+          <p>With HADDOCK providing a structural framework for how our protectants bind to specific molecules, Molecular Dynamics (MD) simulations offer a glimpse into whether these predicted bound poses remain stable over time. Rather than treating a single docking pose as a definitive representation of the binding interaction, MD subjects the complex to a simulated dynamic environment, allowing the protein and protectant to move and interact as they would under molecular conditions. While MD runs can answer crucial hypotheses, they can also serve as trigger points for unique, project-altering strategies.</p>
+        </div>
+      </section>
+      <!-- ============================================== 2 · KEY FINDINGS -->
+      <section class="sec">
+        <h2 id="key-findings" data-toc="Key findings">Key findings and design implications</h2>
+        <details class="fold fold--res">
+          <summary><span class="fold__k">Results</span> Histidine tag</summary>
+          <div class="fold__body">
+          <p>The decision to move the purification tag to the C-terminus resulted in six histidines beginning at Asn23 and the loss of the free carboxylate's participation in the native bidentate salt bridge with Arg487. While this tagged peptide satisfied the distance-based criterion used by the project, a more rigorous test considering both distance and bond angle showed that the bidentate salt bridge was missing in every simulated frame in contrast to 100% of native frames. The difference in these findings indicates the tagged peptide fails to maintain the native salt bridge, despite satisfying the project's original distance criteria. An N-terminal tag or synthetic peptide without a purification tag would not disrupt the C-terminal free carboxylate.</p>
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 780 400" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-gate-t fig-gate-d">
+  <title id="fig-gate-t">The same tagged construct under the project's own acceptance gate and under an atom-resolved criterion</title>
+  <desc id="fig-gate-d">Six measures of one pair of trajectories. Under the three distance-only measures above the dashed line the tagged construct is indistinguishable from wild type and has the lowest conserved-window RMSD in the whole set, 1.12 angstroms. Under the three atom-resolved measures below it, every one reads 0 per cent against 99.8 to 100 per cent for wild type.</desc>
+<rect x="0" y="0" width="780" height="400" fill="none"/>
+<text x="26" y="26" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">One pair of trajectories, two definitions of the same contact</text>
+<text x="26" y="42" font-size="9.5" fill="#6e6e73" text-anchor="start">bars are the measured value &#183; 1,500 frames each</text>
+<rect x="568" y="18" width="14" height="10" rx="2" fill="#23684a"/>
+<text x="588" y="27" font-size="11" fill="#23684a" text-anchor="start" font-weight="700">wild type</text>
+<rect x="662" y="18" width="14" height="10" rx="2" fill="#9a3d22"/>
+<text x="682" y="27" font-size="11" fill="#9a3d22" text-anchor="start" font-weight="700">+ 6&#215;His</text>
+<text x="220" y="86" font-size="9.5" fill="#6e6e73" text-anchor="end" font-weight="700" letter-spacing="0.07em">BEFORE THE CONSTRUCT EXISTED</text>
+<text x="236" y="86" font-size="9.5" fill="#6e6e73" text-anchor="start">the gate as written: distances between atoms</text>
+<text x="220" y="114" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Asn23-Arg487 within 4 &#8491;</text>
+<text x="220" y="128" font-size="9.5" fill="#6e6e73" text-anchor="end">either oxygen counts</text>
+<rect x="236" y="104" width="360" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="603" y="112.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">100.0%</text>
+<rect x="236" y="118" width="359.3" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="602.3" y="126.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">99.8%</text>
+<text x="220" y="164" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Clamp, 3 of 4 contacts held</text>
+<text x="220" y="178" font-size="9.5" fill="#6e6e73" text-anchor="end">either oxygen counts</text>
+<rect x="236" y="154" width="360" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="603" y="162.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">100.0%</text>
+<rect x="236" y="168" width="358.9" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="601.9" y="176.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">99.7%</text>
+<text x="220" y="214" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Conserved-window RMSD</text>
+<text x="220" y="228" font-size="9.5" fill="#6e6e73" text-anchor="end">lower is steadier</text>
+<rect x="236" y="204" width="231.2" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="474.2" y="212.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">1.67 &#8491;</text>
+<rect x="236" y="218" width="155.1" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="398.1" y="226.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">1.12 &#8491;</text>
+<line x1="26" y1="232" x2="760" y2="232" stroke="#a3a3a3" stroke-dasharray="3 4"/>
+<text x="220" y="254" font-size="9.5" fill="#9a3d22" text-anchor="end" font-weight="700" letter-spacing="0.07em">AFTER, ON NAMED ATOMS</text>
+<text x="236" y="254" font-size="9.5" fill="#9a3d22" text-anchor="start">the same trajectory, measured on the chemistry</text>
+<text x="220" y="282" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Bidentate salt bridge</text>
+<text x="220" y="296" font-size="9.5" fill="#6e6e73" text-anchor="end">both oxygens, angle-aware</text>
+<rect x="236" y="272" width="360" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="603" y="280.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">100.0%</text>
+<rect x="236" y="286" width="1.6" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="243" y="294.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">0.0%</text>
+<text x="220" y="332" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Two or more H-bonds to Arg487</text>
+<text x="220" y="346" font-size="9.5" fill="#6e6e73" text-anchor="end">named donor and acceptor</text>
+<rect x="236" y="322" width="359.3" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="602.3" y="330.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">99.8%</text>
+<rect x="236" y="336" width="1.6" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="243" y="344.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">0.0%</text>
+<text x="220" y="382" font-size="11" fill="#1d1d1f" text-anchor="end" font-weight="600">Carboxylate in Arg487 shell</text>
+<text x="220" y="396" font-size="9.5" fill="#6e6e73" text-anchor="end">first solvation shell</text>
+<rect x="236" y="372" width="360" height="10" rx="2" fill="#23684a" opacity="0.95"/>
+<text x="603" y="380.5" font-size="10" fill="#23684a" text-anchor="start" font-weight="700" class="m">100.0%</text>
+<rect x="236" y="386" width="1.6" height="10" rx="2" fill="#9a3d22" opacity="0.88"/>
+<text x="243" y="394.5" font-size="10" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">0.0%</text>
+</svg>
+</div>
+</figure>
+          <figure class="mdv" data-mdv="wt" data-runs="wt:Wild type|chis:+ 6&times;His"></figure>
+          </div>
+        </details>
+        <details class="fold fold--res">
+          <summary><span class="fold__k">Results</span> pH 5.5</summary>
+          <div class="fold__body">
+          <p>The slightly acidic apoplast environment led us to consider pH 5.5 instead of neutral pH as the default condition. At this pH, with His14, His22, and His227 protonated to reflect this environment, the bidentate salt bridge between peptide Glu12 and receptor His227 was present in 99.9% of frames compared to 0.8% at pH 7.0. This interaction is also present in the neutral pH AtPEP1 benchmark, and the acidic environment may facilitate a similar interaction in BoPEP4. We therefore found this to be the more suitable condition for studying BoPEP4, but we continued to simulate at pH 7.0 as a control.</p>
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 700 372" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-phgrid-t fig-phgrid-d">
+  <title id="fig-phgrid-t">Truncation crossed with protonation: only the combination fails</title>
+  <desc id="fig-phgrid-d">A two-by-two. Full length at pH 7 is the reference. Protonating three histidines on the full-length peptide recovers the Glu12 to His227 contact from 0.8 to 99.9 per cent of frames and leaves the bidentate salt bridge at 99.9 per cent. The same protonation applied to the 9 to 23 construct drops bidentate occupancy from 46.9 to 6.9 per cent, the only run in the set to fail its acceptance criteria, and its backbone RMSD improves while it fails.</desc>
+<text x="150" y="28" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">The same two changes, crossed</text>
+<text x="150" y="44" font-size="9.5" fill="#6e6e73" text-anchor="start">bidentate salt bridge (left) and Glu12-His227 (right), % of frames</text>
+<text x="265" y="66" font-size="11" fill="#6e6e73" text-anchor="middle" font-weight="700">pH 7</text>
+<text x="509" y="66" font-size="11" fill="#6e6e73" text-anchor="middle" font-weight="700">pH 5.5, three histidines protonated</text>
+<text x="136" y="124" font-size="11" fill="#6e6e73" text-anchor="end" font-weight="700">full length</text>
+<text x="136" y="139" font-size="10" fill="#6e6e73" text-anchor="end" class="m">1-23</text>
+<text x="136" y="234" font-size="11" fill="#6e6e73" text-anchor="end" font-weight="700">truncated</text>
+<text x="136" y="249" font-size="10" fill="#6e6e73" text-anchor="end" class="m">9-23</text>
+<rect x="150" y="76" width="230" height="96" rx="12" fill="#23684a" opacity="0.06"/>
+<rect x="150" y="76" width="230" height="96" rx="12" fill="none" stroke="#23684a" stroke-width="1" opacity="0.3"/>
+<text x="166" y="98" font-size="10.5" fill="#6e6e73" text-anchor="start" font-weight="600" class="m">1-23 &#183; pH 7</text>
+<text x="166" y="130" font-size="24" fill="#23684a" text-anchor="start" font-weight="700" class="m">100.0</text>
+<text x="166" y="144" font-size="9" fill="#6e6e73" text-anchor="start">bidentate</text>
+<rect x="166" y="152" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="166" y="152" width="88" height="4" rx="2" fill="#23684a"/>
+<text x="270" y="130" font-size="24" fill="#3f5468" text-anchor="start" font-weight="700" class="m">0.8</text>
+<text x="270" y="144" font-size="9" fill="#6e6e73" text-anchor="start">Glu12-His227</text>
+<rect x="270" y="152" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="270" y="152" width="1.5" height="4" rx="2" fill="#3f5468"/>
+<text x="364" y="98" font-size="9.5" fill="#23684a" text-anchor="end" font-weight="700">reference</text>
+<text x="364" y="166" font-size="9" fill="#6e6e73" text-anchor="end" class="m">RMSD 1.67 &#8491;</text>
+<rect x="394" y="76" width="230" height="96" rx="12" fill="#23684a" opacity="0.06"/>
+<rect x="394" y="76" width="230" height="96" rx="12" fill="none" stroke="#23684a" stroke-width="1" opacity="0.3"/>
+<text x="410" y="98" font-size="10.5" fill="#6e6e73" text-anchor="start" font-weight="600" class="m">1-23 &#183; pH 5.5</text>
+<text x="410" y="130" font-size="24" fill="#23684a" text-anchor="start" font-weight="700" class="m">99.9</text>
+<text x="410" y="144" font-size="9" fill="#6e6e73" text-anchor="start">bidentate</text>
+<rect x="410" y="152" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="410" y="152" width="87.9" height="4" rx="2" fill="#23684a"/>
+<text x="514" y="130" font-size="24" fill="#3f5468" text-anchor="start" font-weight="700" class="m">99.9</text>
+<text x="514" y="144" font-size="9" fill="#6e6e73" text-anchor="start">Glu12-His227</text>
+<rect x="514" y="152" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="514" y="152" width="87.9" height="4" rx="2" fill="#3f5468"/>
+<text x="608" y="98" font-size="9.5" fill="#23684a" text-anchor="end" font-weight="700">best untagged run</text>
+<text x="608" y="166" font-size="9" fill="#6e6e73" text-anchor="end" class="m">RMSD 1.34 &#8491;</text>
+<rect x="150" y="186" width="230" height="96" rx="12" fill="#92610c" opacity="0.06"/>
+<rect x="150" y="186" width="230" height="96" rx="12" fill="none" stroke="#92610c" stroke-width="1" opacity="0.3"/>
+<text x="166" y="208" font-size="10.5" fill="#6e6e73" text-anchor="start" font-weight="600" class="m">9-23 &#183; pH 7</text>
+<text x="166" y="240" font-size="24" fill="#92610c" text-anchor="start" font-weight="700" class="m">46.9</text>
+<text x="166" y="254" font-size="9" fill="#6e6e73" text-anchor="start">bidentate</text>
+<rect x="166" y="262" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="166" y="262" width="41.3" height="4" rx="2" fill="#92610c"/>
+<text x="270" y="240" font-size="24" fill="#3f5468" text-anchor="start" font-weight="700" class="m">3.0</text>
+<text x="270" y="254" font-size="9" fill="#6e6e73" text-anchor="start">Glu12-His227</text>
+<rect x="270" y="262" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="270" y="262" width="2.6" height="4" rx="2" fill="#3f5468"/>
+<text x="364" y="208" font-size="9.5" fill="#92610c" text-anchor="end" font-weight="700">passed, but worst</text>
+<text x="364" y="276" font-size="9" fill="#6e6e73" text-anchor="end" class="m">RMSD 2.28 &#8491;</text>
+<rect x="394" y="186" width="230" height="96" rx="12" fill="#9a3d22" opacity="0.06"/>
+<rect x="394" y="186" width="230" height="96" rx="12" fill="none" stroke="#9a3d22" stroke-width="1" opacity="0.3"/>
+<text x="410" y="208" font-size="10.5" fill="#6e6e73" text-anchor="start" font-weight="600" class="m">9-23 &#183; pH 5.5</text>
+<text x="410" y="240" font-size="24" fill="#9a3d22" text-anchor="start" font-weight="700" class="m">6.9</text>
+<text x="410" y="254" font-size="9" fill="#6e6e73" text-anchor="start">bidentate</text>
+<rect x="410" y="262" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="410" y="262" width="6.1" height="4" rx="2" fill="#9a3d22"/>
+<text x="514" y="240" font-size="24" fill="#3f5468" text-anchor="start" font-weight="700" class="m">26.4</text>
+<text x="514" y="254" font-size="9" fill="#6e6e73" text-anchor="start">Glu12-His227</text>
+<rect x="514" y="262" width="88" height="4" rx="2" fill="#e5e5e5"/>
+<rect x="514" y="262" width="23.2" height="4" rx="2" fill="#3f5468"/>
+<text x="608" y="208" font-size="9.5" fill="#9a3d22" text-anchor="end" font-weight="700">failed the gate</text>
+<text x="608" y="276" font-size="9" fill="#6e6e73" text-anchor="end" class="m">RMSD 1.33 &#8491;</text>
+<text x="20" y="318" font-size="10" fill="#6e6e73" text-anchor="start">Neither change alone pulls the C-terminus off the receptor: the His22 self-contact runs at 17.4% of frames from truncation</text>
+<text x="20" y="333" font-size="10" fill="#6e6e73" text-anchor="start">and 64.7% from protonation. Only the two together reach 96.9%, and that is the frame count on which the clamp collapses.</text>
+<text x="20" y="351" font-size="10" fill="#3f5468">The AtPEP1 benchmark already holds Glu12-His227 at neutral pH, 3.36 &#8491; in 76.9% of frames, so protonation recovers a contact the benchmark has.</text>
+</svg>
+</div>
+</figure>
+          </div>
+        </details>
+        <details class="fold fold--res">
+          <summary><span class="fold__k">Results</span> Truncation ladder</summary>
+          <div class="fold__body">
+          <p>Simulations revealed an important interaction, Lys7&ndash;Asp129, that was not included in the published hotspot lists that we initially consulted. In the full-length peptide (Lys7&ndash;Arg156), a salt bridge between Lys7 and Asp129 was present in 98.7% of frames at a distance of 2.81&nbsp;&Aring;. Its absence in the 9&ndash;23 construct provides a more straightforward explanation for the construct's diminished stability than our initial hypothesis that it was due to the newly exposed terminus. Simulations also revealed that stability was not progressively diminished by each successive truncation. This implies a testable next step, namely introducing a K7A mutation in the full-length peptide to test whether it is specifically the Lys7 side chain that is important for this interaction and structural stability.</p>
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 760 366" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-ladder-t fig-ladder-d">
+  <title id="fig-ladder-t">The truncation ladder is not monotonic: the four-rung comparison dips at 9 to 23</title>
+  <desc id="fig-ladder-d">Clamp integrity and bidentate salt-bridge occupancy for the full-length peptide and the three cuts. Full length, 7 to 23 and 15 to 23 all hold the clamp above 98 per cent. Only the intermediate 9 to 23 construct falls, to 77.1 per cent clamp integrity and 46.9 per cent bidentate occupancy. The bottom row marks where the Lys7 to Asp129 salt bridge is present at 98.7 per cent of frames and where the residue has been cut away.</desc>
+<text x="76" y="26" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">Clamp integrity and the Arg487 salt bridge, by rung</text>
+<text x="76" y="42" font-size="9.5" fill="#6e6e73" text-anchor="start">share of 1,500 frames &#183; the ladder is not monotonic</text>
+<line x1="86" y1="262" x2="638" y2="262" stroke="#e5e5e5"/>
+<text x="78" y="266" font-size="10" fill="#6e6e73" text-anchor="end" class="m">0</text>
+<line x1="86" y1="176" x2="638" y2="176" stroke="#e5e5e5"/>
+<text x="78" y="180" font-size="10" fill="#6e6e73" text-anchor="end" class="m">50</text>
+<line x1="86" y1="90" x2="638" y2="90" stroke="#e5e5e5"/>
+<text x="78" y="94" font-size="10" fill="#6e6e73" text-anchor="end" class="m">100</text>
+<line x1="86" y1="158.8" x2="638" y2="158.8" stroke="#9a3d22" stroke-dasharray="4 3" opacity="0.65"/>
+<text x="78" y="162.8" font-size="9" fill="#9a3d22" text-anchor="end" font-weight="700">gate 60%</text>
+<rect x="108" y="90" width="34" height="172" rx="3" fill="#23684a" opacity="0.95"/>
+<text x="125" y="83" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">100.0</text>
+<rect x="150" y="90" width="34" height="172" rx="3" fill="#23684a" opacity="0.42"/>
+<text x="167" y="83" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">100.0</text>
+<text x="146" y="280" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">1-23</text>
+<text x="146" y="295" font-size="9.5" fill="#6e6e73" text-anchor="middle">full length</text>
+<text x="146" y="314" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">96.5 contacts</text>
+<text x="146" y="327" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">RMSD 1.67 &#8491;</text>
+<rect x="256" y="92.6" width="34" height="169.4" rx="3" fill="#23684a" opacity="0.95"/>
+<text x="273" y="85.6" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">98.5</text>
+<rect x="298" y="111.2" width="34" height="150.8" rx="3" fill="#23684a" opacity="0.42"/>
+<text x="315" y="104.2" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">87.7</text>
+<text x="294" y="280" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">7-23</text>
+<text x="294" y="295" font-size="9.5" fill="#6e6e73" text-anchor="middle">Lys7 terminal</text>
+<text x="294" y="314" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">94.6 contacts</text>
+<text x="294" y="327" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">RMSD 1.38 &#8491;</text>
+<rect x="404" y="129.4" width="34" height="132.6" rx="3" fill="#92610c" opacity="0.95"/>
+<text x="421" y="122.4" font-size="10" fill="#92610c" text-anchor="middle" font-weight="700" class="m">77.1</text>
+<rect x="446" y="181.3" width="34" height="80.7" rx="3" fill="#92610c" opacity="0.42"/>
+<text x="463" y="174.3" font-size="10" fill="#92610c" text-anchor="middle" font-weight="700" class="m">46.9</text>
+<text x="442" y="280" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">9-23</text>
+<text x="442" y="295" font-size="9.5" fill="#92610c" text-anchor="middle">ordered construct</text>
+<text x="442" y="314" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">68.5 contacts</text>
+<text x="442" y="327" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">RMSD 2.28 &#8491;</text>
+<rect x="552" y="90.2" width="34" height="171.8" rx="3" fill="#23684a" opacity="0.95"/>
+<text x="569" y="83.2" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">99.9</text>
+<rect x="594" y="94.8" width="34" height="167.2" rx="3" fill="#23684a" opacity="0.42"/>
+<text x="611" y="87.8" font-size="10" fill="#23684a" text-anchor="middle" font-weight="700" class="m">97.2</text>
+<text x="590" y="280" font-size="12" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">15-23</text>
+<text x="590" y="295" font-size="9.5" fill="#6e6e73" text-anchor="middle">conserved core</text>
+<text x="590" y="314" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">89.6 contacts</text>
+<text x="590" y="327" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">RMSD 1.81 &#8491;</text>
+<rect x="76" y="60" width="12" height="9" rx="2" fill="#3f5468"/>
+<text x="94" y="68" font-size="9.5" fill="#6e6e73" text-anchor="start">clamp integrity, 3 of 4 native contacts</text>
+<rect x="314" y="60" width="12" height="9" rx="2" fill="#3f5468" opacity="0.42"/>
+<text x="332" y="68" font-size="9.5" fill="#6e6e73" text-anchor="start">bidentate Arg487 salt bridge</text>
+<text x="78" y="348" font-size="9" fill="#6e6e73" text-anchor="end" font-weight="700">Lys7-Asp129</text>
+<text x="146" y="348" font-size="9.5" fill="#23684a" text-anchor="middle" font-weight="700" class="m">98.7%</text>
+<text x="294" y="348" font-size="9.5" fill="#23684a" text-anchor="middle" font-weight="700" class="m">98.7%</text>
+<text x="442" y="348" font-size="9.5" fill="#92610c" text-anchor="middle" font-weight="700" class="m">absent</text>
+<text x="590" y="348" font-size="9.5" fill="#92610c" text-anchor="middle" font-weight="700" class="m">absent</text>
+<text x="78" y="360" font-size="8.5" fill="#a3a3a3" text-anchor="end">anchor, 2.81 &#8491;</text>
+</svg>
+</div>
+</figure>
+          </div>
+        </details>
+        <details class="fold fold--res">
+          <summary><span class="fold__k">Results</span> Wild-type BoPEP4 and the K18R mutation rationale</summary>
+          <div class="fold__body">
+          <p>The simulation of wild-type BoPEP4 led us to re-examine the evidence for the planned K18R mutation. While there is a contact between Lys18 and Asp348 in 53.7% of frames at distances between 2.55 and 9.37&nbsp;&Aring; , this is not the short-distance interaction implied by the static nature of the docking model. The trajectory revealed that Gly20 maintained an interaction with Phe371, providing an alternative account of the pattern of local contacts.</p>
+          </div>
+        </details>
+      </section>
+      <!-- ==================================================== 3 · SET-UP -->
+      <section class="sec">
+        <h2 id="setup" data-toc="Setup and parameters">Simulation setup and parameters</h2>
+
+        <p>All nine systems were solvated in explicit OPC water and simulated using the AMBER ff19SB force field with the PEPR1 ectodomain (residues 29-738) from PDB 5GR8. The systems have ~127,600 atoms each and underwent mass repartitioning of the hydrogen atoms to enable a 4 fs time step. Each trajectory 30&nbsp;ns of production dynamics from a single random seed and 1,500 frames were saved for analysis. This adds up to a total of 270&nbsp;ns of simulation time or 25.9 GPU-hours on a single NVIDIA A100 GPU. The nine systems varied in four ways: the identity of the ligand, the length of the peptide, whether the peptide had a free C-end or not, and the protonation states of three histidines. All other simulation parameters were the same. The same analysis codebase was used for all nine trajectories, with identical definitions and calculations for all reported metrics, which allows for a common footing in analysis of structural stability and intermolecular interactions between the nine systems.</p>
+
+        <div class="folds folds--stack">
+          <details class="fold fold--case" id="the-nine-systems">
+            <summary>The nine systems, run by run</summary>
+            <div class="fold__body">
+        <figure class="figwrap figwrap--nine">
+          <div class="figwrap__pan">
+            <table class="nine">
+            <caption class="visually-hidden">The nine trajectories: the four variables that change between them, and the two contact metrics and backbone RMSD each produced</caption>
+            <thead><tr><th scope="col">System</th><th scope="col">Ligand</th><th scope="col">Residues</th><th scope="col">C-end</th><th scope="col">His<sup>+</sup></th><th scope="col">Clamp integrity</th><th scope="col">Bidentate Arg487</th><th scope="col">RMSD <small>&Aring;</small></th></tr></thead><tbody>
+            <tr data-fam="reference">
+            <th scope="row">1&ndash;23<small>reference</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:0%;width:82.14%"></i></span><span class="nine__n">23</span></td>
+            <td>free</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:100%" class="ok"></i></span><span class="nine__v">100.0</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:100%" class="ok"></i></span><span class="nine__v">100.0</span></td>
+            <td class="nine__r">1.67</td>
+            </tr>
+            <tr data-fam="benchmark">
+            <th scope="row">AtPEP1 7&ndash;23<small>benchmark</small></th>
+            <td>AtPEP1</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:21.43%;width:60.71%"></i></span><span class="nine__n">17</span></td>
+            <td>free</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:99.93%" class="ok"></i></span><span class="nine__v">99.9</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:99.93%" class="ok"></i></span><span class="nine__v">99.9</span></td>
+            <td class="nine__r">1.17</td>
+            </tr>
+            <tr data-fam="truncation">
+            <th scope="row">7&ndash;23<small>truncation</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:21.43%;width:60.71%"></i></span><span class="nine__n">17</span></td>
+            <td>free</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:98.53%" class="ok"></i></span><span class="nine__v">98.5</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:87.67%" class="warn"></i></span><span class="nine__v">87.7</span></td>
+            <td class="nine__r">1.38</td>
+            </tr>
+            <tr data-fam="truncation">
+            <th scope="row">9&ndash;23<small>truncation</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:28.57%;width:53.57%"></i></span><span class="nine__n">15</span></td>
+            <td>free</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:77.07%" class="warn"></i></span><span class="nine__v">77.1</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:46.87%" class="bad"></i></span><span class="nine__v">46.9</span></td>
+            <td class="nine__r">2.28</td>
+            </tr>
+            <tr data-fam="truncation">
+            <th scope="row">15&ndash;23<small>truncation</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:50%;width:32.14%"></i></span><span class="nine__n">9</span></td>
+            <td>free</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:99.87%" class="ok"></i></span><span class="nine__v">99.9</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:97.2%" class="ok"></i></span><span class="nine__v">97.2</span></td>
+            <td class="nine__r">1.81</td>
+            </tr>
+            <tr data-fam="tag">
+            <th scope="row">1&ndash;23 + 6&times;His<small>tag</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:0%;width:103.6%"></i></span><span class="nine__n">29</span></td>
+            <td class="is-blocked">blocked</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:99.67%" class="ok"></i></span><span class="nine__v">99.7</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:2.4%" class="bad"></i></span><span class="nine__v">2.4</span></td>
+            <td class="nine__r">1.12</td>
+            </tr>
+            <tr data-fam="pH 5.5">
+            <th scope="row">1&ndash;23<small>pH 5.5</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:0%;width:82.14%"></i></span><span class="nine__n">23</span></td>
+            <td>free</td>
+            <td class="nine__hip">3</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:100%" class="ok"></i></span><span class="nine__v">100.0</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:99.93%" class="ok"></i></span><span class="nine__v">99.9</span></td>
+            <td class="nine__r">1.34</td>
+            </tr>
+            <tr data-fail data-fam="pH 5.5">
+            <th scope="row">9&ndash;23<small>pH 5.5</small></th>
+            <td>BoPEP4</td>
+            <td class="nine__len"><span class="nine__span"><i style="left:28.57%;width:53.57%"></i></span><span class="nine__n">15</span></td>
+            <td>free</td>
+            <td class="nine__hip">3</td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:19.33%" class="bad"></i></span><span class="nine__v">19.3</span></td>
+            <td class="nine__m"><span class="nine__bar"><i style="width:6.933%" class="bad"></i></span><span class="nine__v">6.9</span></td>
+            <td class="nine__r">1.33</td>
+            </tr>
+            <tr data-fam="control">
+            <th scope="row">Apo receptor<small>control</small></th>
+            <td>none</td>
+            <td class="nine__len"><span class="nine__na">no ligand</span></td>
+            <td>&#183;</td>
+            <td class="nine__hip">0</td>
+            <td class="nine__m"><span class="nine__na">&#183;</span></td>
+            <td class="nine__m"><span class="nine__na">&#183;</span></td>
+            <td class="nine__r">&#183;</td>
+            </tr>
+            </tbody></table>
+          </div>
+        </figure>
+            </div>
+          </details>
+        </div>
+      </section>
+      <!-- ========================================== 4 to 8 · THE NINE RUNS -->
+      <section class="sec pl-2" id="panel-wild-type">
+        <h2 id="wild-type" data-toc="Wild type">Wild type</h2>
+        <p>The wild-type run served as a comparison and analysis benchmark for the other mutations. We found that the eight N-terminal residues had an average fluctuation above 2&nbsp;&Aring;. This was consistent with the alanine scan results, which found that mutations to the first six residues had the least penalty in the peptide-receptor docking, indicating a lower contribution to peptide-receptor interaction. All residues past Pro10 had over 75% contact with the receptor, except for Pro19. All residues past Arg11 had under 1&nbsp;&Aring; fluctuation, except for Lys18. Our conserved window 15-23, defined by aligning sequences from the PEP receptor family, had near 100% contact with mostly sub-&Aring;ngstr&ouml;m movements. This evidence supports that the N- and C-termini have different behaviours and roles as the N-terminus has greater conformational freedom, while the conserved C-terminus region remains stabilized in contact with the receptor. The conserved residues also form the primary region of the peptide that interacts with the binding pocket, highlighting their importance.</p>
+          <p>The run also supported our decision to use truncations instead of point mutations. Arg9 has a fluctuation of 1.32&nbsp;&Aring; and a mean closest approach of 2.79&nbsp;&Aring; and 100% contact, which explains the sharp jump in the HADDOCK score when removing Arg9. Although Ile2 and Ile4 have contact with the receptor, they have a fluctuation of over 1.5&nbsp;&Aring; and switch between different locations on the PEPR1 instead of maintaining contact. Adding these residues also necessitates preserving the surrounding disordered residues, which have only about 25% contact with the receptor. The improved binding from adding these residues was not worth the extra sequence length, so we did not pursue the &Delta;1 and &Delta;1-3 designs and instead opted for the truncation designs with residues 7 and 9.</p>
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 760 352" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-perres-t fig-perres-d">
+  <title id="fig-perres-t">Per-residue contact occupancy and fluctuation for the wild-type reference run</title>
+  <desc id="fig-perres-d">Twenty-three bars, one per residue. The opening GILIGS segment is low-occupancy and the fluctuation line sits above two angstroms across it. From Ser15 to Asn23 occupancy is near 100 per cent and fluctuation is sub-angstrom. The two ends of the peptide behave differently, and the conserved end is the one in contact.</desc>
+<text x="40" y="24" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">Contact occupancy (bars) and fluctuation (line), full-length BoPEP4</text>
+<text x="40" y="40" font-size="9.5" fill="#6e6e73" text-anchor="start">occupancy = share of 1,500 frames within 4 &#8491; of the receptor</text>
+<rect x="463.1" y="74" width="266.9" height="148" fill="#23684a" opacity="0.06"/>
+<text x="596.6" y="66" font-size="9.5" fill="#23684a" text-anchor="middle" font-weight="700">conserved window 15-23</text>
+<rect x="48" y="74" width="177.9" height="148" fill="#92610c" opacity="0.055"/>
+<text x="137" y="66" font-size="9.5" fill="#92610c" text-anchor="middle" font-weight="700">GILIGS, the cut</text>
+<line x1="48" y1="222" x2="730" y2="222" stroke="#e5e5e5"/>
+<text x="41" y="226" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">0</text>
+<line x1="48" y1="148" x2="730" y2="148" stroke="#e5e5e5"/>
+<text x="41" y="152" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">50</text>
+<line x1="48" y1="74" x2="730" y2="74" stroke="#e5e5e5"/>
+<text x="41" y="78" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">100</text>
+<rect x="49.5" y="144.9" width="26.7" height="77.1" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="62.8" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">G</text>
+<text x="62.8" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">1</text>
+<rect x="79.2" y="75.2" width="26.7" height="146.8" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="92.5" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">I</text>
+<rect x="108.8" y="160.1" width="26.7" height="61.9" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="122.1" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">L</text>
+<rect x="138.5" y="85.8" width="26.7" height="136.2" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="151.8" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">I</text>
+<rect x="168.1" y="197.7" width="26.7" height="24.3" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="181.4" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">G</text>
+<rect x="197.8" y="194.3" width="26.7" height="27.7" rx="2" fill="#92610c" opacity="0.8"/>
+<text x="211.1" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">S</text>
+<rect x="227.4" y="74.3" width="26.7" height="147.7" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="240.7" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">K</text>
+<text x="240.7" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">7</text>
+<rect x="257.1" y="146.8" width="26.7" height="75.2" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="270.4" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">K</text>
+<rect x="286.7" y="74" width="26.7" height="148" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="300" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">R</text>
+<text x="300" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">9</text>
+<rect x="316.4" y="208.4" width="26.7" height="13.6" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="329.7" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">P</text>
+<rect x="346" y="77.2" width="26.7" height="144.8" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="359.3" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">R</text>
+<rect x="375.7" y="74.1" width="26.7" height="147.9" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="389" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">E</text>
+<rect x="405.3" y="101.1" width="26.7" height="120.9" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="418.7" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">P</text>
+<rect x="435" y="74" width="26.7" height="148" rx="2" fill="#3f5468" opacity="0.8"/>
+<text x="448.3" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">H</text>
+<rect x="464.6" y="74" width="26.7" height="148" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="478" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">S</text>
+<text x="478" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">15</text>
+<rect x="494.3" y="74" width="26.7" height="148" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="507.6" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">S</text>
+<rect x="523.9" y="75.3" width="26.7" height="146.7" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="537.3" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">G</text>
+<rect x="553.6" y="74" width="26.7" height="148" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="566.9" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">K</text>
+<text x="566.9" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">18</text>
+<rect x="583.2" y="144.6" width="26.7" height="77.4" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="596.6" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">P</text>
+<rect x="612.9" y="74.2" width="26.7" height="147.8" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="626.2" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">G</text>
+<rect x="642.5" y="74.1" width="26.7" height="147.9" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="655.9" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">G</text>
+<rect x="672.2" y="74" width="26.7" height="148" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="685.5" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">H</text>
+<rect x="701.8" y="74" width="26.7" height="148" rx="2" fill="#23684a" opacity="0.8"/>
+<text x="715.2" y="237" font-size="10.5" fill="#1d1d1f" text-anchor="middle" font-weight="700" class="m">N</text>
+<text x="715.2" y="251" font-size="9" fill="#6e6e73" text-anchor="middle" class="m">23</text>
+<polyline points="62.8,92.3 92.5,148 122.1,142.2 151.8,155.9 181.4,152.3 211.1,140.8 240.7,148 270.4,133.8 300.0,173.3 329.7,169.3 359.3,134.5 389.0,186.9 418.7,189.9 448.3,187.3 478.0,195.3 507.6,189 537.3,193.1 566.9,170.8 596.6,188.6 626.2,191.4 655.9,190.9 685.5,184.6 715.2,195.5" fill="none" stroke="#9a3d22" stroke-width="1.6"/>
+<circle cx="62.8" cy="92.3" r="2.1" fill="#9a3d22"/>
+<circle cx="92.5" cy="148" r="2.1" fill="#9a3d22"/>
+<circle cx="122.1" cy="142.2" r="2.1" fill="#9a3d22"/>
+<circle cx="151.8" cy="155.9" r="2.1" fill="#9a3d22"/>
+<circle cx="181.4" cy="152.3" r="2.1" fill="#9a3d22"/>
+<circle cx="211.1" cy="140.8" r="2.1" fill="#9a3d22"/>
+<circle cx="240.7" cy="148" r="2.1" fill="#9a3d22"/>
+<circle cx="270.4" cy="133.8" r="2.1" fill="#9a3d22"/>
+<circle cx="300" cy="173.3" r="2.1" fill="#9a3d22"/>
+<circle cx="329.7" cy="169.3" r="2.1" fill="#9a3d22"/>
+<circle cx="359.3" cy="134.5" r="2.1" fill="#9a3d22"/>
+<circle cx="389" cy="186.9" r="2.1" fill="#9a3d22"/>
+<circle cx="418.7" cy="189.9" r="2.1" fill="#9a3d22"/>
+<circle cx="448.3" cy="187.3" r="2.1" fill="#9a3d22"/>
+<circle cx="478" cy="195.3" r="2.1" fill="#9a3d22"/>
+<circle cx="507.6" cy="189" r="2.1" fill="#9a3d22"/>
+<circle cx="537.3" cy="193.1" r="2.1" fill="#9a3d22"/>
+<circle cx="566.9" cy="170.8" r="2.1" fill="#9a3d22"/>
+<circle cx="596.6" cy="188.6" r="2.1" fill="#9a3d22"/>
+<circle cx="626.2" cy="191.4" r="2.1" fill="#9a3d22"/>
+<circle cx="655.9" cy="190.9" r="2.1" fill="#9a3d22"/>
+<circle cx="685.5" cy="184.6" r="2.1" fill="#9a3d22"/>
+<circle cx="715.2" cy="195.5" r="2.1" fill="#9a3d22"/>
+<line x1="48" y1="148" x2="730" y2="148" stroke="#9a3d22" stroke-dasharray="2 4" opacity="0.45"/>
+<text x="54" y="142" font-size="9" fill="#9a3d22" text-anchor="start">2 &#8491; fluctuation</text>
+<circle cx="518" cy="42" r="3" fill="#9a3d22"/><line x1="508" y1="42" x2="528" y2="42" stroke="#9a3d22" stroke-width="1.6"/>
+<text x="536" y="46" font-size="9.5" fill="#6e6e73" text-anchor="start">fluctuation, scale 0 to 4 &#8491;</text>
+<text x="8" y="278" font-size="10" fill="#6e6e73" text-anchor="start">Every residue past Pro10 holds over 75% contact except Pro19, and every residue past Arg11 fluctuates under 1 &#8491; except Lys18. The two ends of</text>
+<text x="8" y="293" font-size="10" fill="#6e6e73" text-anchor="start">this peptide do different jobs, and the end that can be cut is the end that is already loose.</text>
+</svg>
+</div>
+</figure>
+        <details class="fold fold--case" id="reassessing-arg18">
+          <summary>Reassessing Arg18 contact network</summary>
+          <div class="fold__body">
+        <p>The MD results also prompted us to reassess the rationale for the K18R substitution. The literature identifies two receptor contacts involving Arg18 in AtPep1: one with Asp348 and another with Phe371. BoPEP4 contains lysine at the corresponding position, and our initial docking poses suggested that Lys18 could reproduce both interactions at approximately crystal-like distances. On this basis, we initially proposed K18R as a way to restore an interaction that was already largely established.</p>
+          <p>The MD trajectory, however, showed that these contacts were less stable than the docking poses suggested. Asp348 is the primary receptor partner of Lys18, with the next-closest peptide residue remaining 7.87&nbsp;&Aring; away. Despite this preference, the Lys18&ndash;Asp348 contact is present in only 53.7% of frames, with distances ranging from 2.55 to 9.37&nbsp;&Aring;. By comparison, the Asn23&ndash;Arg487 interaction maintains 100% occupancy within a 0.54&nbsp;&Aring; distance window. Although Lys18 can interact with Asp348, the variation in distance and incomplete occupancy indicate that the contact is not maintained consistently throughout the simulation.</p>
+          <p>The interaction with Phe371 further illustrates the difference between the static model and the simulated behavior. During the trajectory, Phe371 most frequently contacts Gly20, which remains within 3.69&nbsp;&Aring; for 84.4% of frames. Lys18, in contrast, has an average distance of 5.12&nbsp;&Aring; from Phe371 and approaches within 4&nbsp;&Aring; in only 18.1% of frames. The residue assigned to this interaction in the original docking model therefore does not maintain the contact for most of the simulation. Taken together, these results suggest that the initial docking poses overstated the extent to which Lys18 reproduces the interactions attributed to Arg18 in AtPep1.</p>
+          <p>This does not rule out K18R as a viable design. Lysine has a shorter side chain than arginine, whose guanidinium group can support the proposed bidentate interaction. The distinction is that the substitution should not be described as simply restoring a contact that is already largely formed in BoPEP4. Rather, introducing arginine is intended to provide the side-chain geometry needed to establish the proposed interaction more effectively. Whether K18R achieves this geometry remains untested and requires a dedicated simulation.</p>
+          <p>The stability of the Lys18&ndash;Asp348 contact also varies with peptide length. In the nine-residue construct, its occupancy increases from 53.7% to 90.1%, suggesting that the surrounding sequence influences how consistently the interaction forms. This difference highlights the importance of evaluating receptor contacts in the context of the complete peptide construct, as changes elsewhere in the sequence can affect the behavior of individual residues.</p>
+          <p>Overall, the MD results provide a more specific basis for the K18R design. The substitution remains plausible because arginine may support a bidentate interaction that lysine cannot reproduce as effectively. However, the current simulations do not establish that this geometry will form after substitution. K18R should therefore be treated as a design hypothesis to be tested, rather than as a confirmed restoration of an interaction already present in the original BoPEP4 sequence.</p>
+          </div>
+        </details>
+        </section>
+      <section class="sec pl-3" id="panel-truncation-ladder">
+        <h2 id="truncation-ladder" data-toc="Truncation ladder">Truncation ladder</h2>
+        <details class="fold fold--case" id="n-terminal-anchor">
+          <summary>An unidentified N-terminal anchor</summary>
+          <div class="fold__body">
+        <p>The 9-23 construct was added to the truncation series to investigate the effects of N-terminal truncation on receptor engagement. It was the least stable of all the untagged constructs. It had 77.1% clamp integrity, formed the bidentate salt bridge in only 46.9% of frames, and had the 81.1% of frames with the distance between Asn23 and Arg487 within the defined cutoff distance. It formed 68.5 contacts in the conserved window compared to 96.5 in the wild type. It had a backbone RMSD of 2.28&nbsp;&Aring;, the largest of the BoPEP4 trajectories. Although the 9-23 construct passed the acceptance gate, it had all the contact-based metrics lower than the other untagged constructs simulated at pH 7. The bidentate salt bridge transiently dissociated multiple times rather than breaking once and staying broken. It broke 94 times or 22.9% of the trajectory. Each break lasted no longer than 0.68&nbsp;ns. Asp348 and Phe371 had their contacts shifting between different peptide residues. Overall, these indicated that the interface was engaged, but much more dynamically than in the wild type.</p>
+          <p>We initially hypothesized that the unusual instability was caused by the novel N-terminus created by the deletion of the first 8 residues. In the 9-23 construct, the positively-charged alpha-ammonium group of Arg9 becomes the new N-terminal residue, which could be forming a new interaction with the receptor. To investigate this possibility, we simulated the 7-23 construct, which moves the free N-terminus to Lys7, which is an internal residue. The interface became much more stable, the clamp integrity jumped to 98.5% from 77.1%, the occupancy of the Asn23-Arg487 interaction rose to 99.9% from 81.1%, and the occupancy of the bidentate salt bridge jumped to 87.7% from 46.9%. The shared 9-23 sequence had its contacts increasing to 151.3 from 128.7. These changes supported the importance of the residues removed in the 9-23 construct, but did not prove that it was due to the charge on the N-terminus. In the 7-23 construct, the alpha-amino group of Lys7 was 7.11&nbsp;&Aring; away from its closest receptor carboxylate and within 4&nbsp;&Aring; of it in 0.0% of frames. In the 9-23 construct, the N-terminal Arg9 was within 4&nbsp;&Aring; of a receptor carboxylate in only 18.5% of frames. The full-length BoPEP4 and the AtPep1 benchmark had little evidence of their N-termini making persistent interactions. The truncation series had revealed an unexpected N-terminal anchor that was not included in the published hotspot list. The side chain of Lys7 formed a salt bridge with Asp129 at 2.81&nbsp;&Aring; in 98.7% of frames, even when it was the N-terminal residue when the 7-23 construct was simulated. Arg9 contributed to the interaction network in 100% of frames. These identified two N-terminal salt bridges in the BoPEP4 that were not in the published hotspot list and offered an alternative explanation to the instability of the 9-23 construct that did not rely on the introduction of the interaction with the terminal alpha-ammonium group. The instability of the 9-23 construct is more consistent with the removal of the Lys7-Asp129 anchor and retaining the residues 9-14 within the binding interface. This explains why the 9-23 construct was not consistently less stable with decreasing peptide length. Full-length BoPEP4, 7-23, and 15-23 had clamp integrity of 100.0%, 98.5%, and 99.9%, respectively, while the intermediate 9-23 construct had a clamp integrity of 77.1%. This indicates that it depended on which interactions were removed rather than how many residues were remaining. Directly testing the proposed role of Lys7 would be to simulate a full-length K7A mutant. This would remove the proposed side-chain anchor without changing the peptide termini and directly assess its contribution to receptor engagement.</p>
+          </div>
+        </details>
+        <details class="fold fold--case" id="benchmark-7-23">
+          <summary>7&ndash;23 as a benchmark for AtPep1</summary>
+          <div class="fold__body">
+        <p>The 7-23 construct offers a more direct comparison to the AtPep1 crystal structure as they both span the same 7-23 sequence and share the same free N-terminus. 15 out of the 17 positions had very similar contact occupancies between the two peptides. The main sequence difference within the published receptor-contact hotspots was that AtPep1 had an Arg18 while BoPEP4 had a Lys18, which is the structural basis for the proposed K18R substitution. There was a difference in the anchoring of the N-termini between the two peptides. AtPep1 used Gln8 to make a contact with Tyr153 at 3.41&nbsp;&Aring; in 95.8% of frames while Lys7 contributed in only 19.0% of frames. Conversely, BoPEP4 used Lys7 to make a contact with Asp129 at 2.81&nbsp;&Aring; in 98.7% of frames while Lys8 contributed in only 4.1% of frames. One residue was primarily making the contact at this end of the interface for both peptides, but the anchoring residue and receptor partner was different by both sequence and position. They shared a free N-terminal residue of Lys7 and this comparison is less affected by the difference in the terminal configuration and more directly compares the different interaction networks of the two peptides. This is also seen in the occupancy of the Lys7 contact, which reached 99.9% in the BoPEP4 and only 23.5% in the AtPep1. Otherwise, 7-23 closely recapitulated the binding architecture of full-length BoPEP4. However, it was not entirely similar. The Asn465 hydrogen bond happened in 62.9% of frames compared to 99.8% in wild type and the bidentate salt bridge was occupied in 87.7% of frames compared to 100%. While the 7-23 construct had all the main features of the binding interface, it had a reduction in persistence of some of the interactions. This is important to note when using 7-23 as a benchmark as it offers a similar terminal configuration for comparison, but it does not capture all the interactions seen with full-length BoPEP4.</p>
+          </div>
+        </details>
+        <details class="fold fold--case" id="negative-control-15-23">
+          <summary>15&ndash;23 as a negative control</summary>
+          <div class="fold__body">
+        <p>The 15-23 construct was designed to be a negative control as the sequence before it was proposed to be important for stable receptor engagement. Unexpectedly, the peptide was highly organized throughout the simulation. It had a clamp integrity of 99.9%, occupancy of the bidentate salt bridge of 97.2%, and a backbone RMSD of 1.81&nbsp;&Aring;. The other 9 residues formed 89.6 contacts compared to 96.5 contacts made by the same residues in wild type. Thus, despite the deletion of 14 residues, the construct had ~93% of the contact network of its corresponding sequence in the full-length peptide. However, the dissociation of peptides from a leucine-rich repeat (LRR) ectodomain could have microsecond to millisecond timescales, much longer than the 30&nbsp;ns trajectories simulated here. The lack of dissociation in the simulation does not prove that the peptide would not eventually dissociate or that its equilibrium affinity is unchanged. Still, it shows that the conserved C-terminal region can maintain an organized binding register for the duration of the simulated trajectory in the absence of the sequence before it.</p>
+          </div>
+        </details>
+        <details class="fold fold--case" id="truncation-implications">
+          <summary>Implications of the truncation series</summary>
+          <div class="fold__body">
+        <p>The 9-23 construct is especially revealing: deleting the first 8 residues removed the Lys7-Asp129 anchor but left residues 9-14 within the binding interface, where they continued to make contacts with the receptor. By contrast, 15-23 lacks this intervening sequence and nonetheless maintains an organized interaction through its conserved C-terminal contacts.</p>
+
+        <p>These results undermine a simple connection between peptide length and binding stability. They point instead to a specific N-terminal interaction network whose contribution depends on the surrounding sequence and on which residues persist after truncation. The proposed role of Lys7 still awaits experimental confirmation or a targeted simulation such as the full-length K7A mutant, whose N-terminus would disrupt the proposed side-chain anchor without affecting the peptide ends, directly testing its role in interface stability.</p>
+          </div>
+        </details>
+        <div class="chap__end">
+          <p>The truncation series indicates that the conserved C-terminal region forms the structural basis for receptor engagement, while the sequence before it contributes extra interactions that affect the stability and dynamics of the interface.</p>
+        </div>
+        </section>
+      <section class="sec pl-5" id="panel-ph-5-5">
+        <h2 id="ph-5-5" data-toc="pH 5.5">pH 5.5</h2>
+        <p>Because conventional molecular dynamics does not dynamically simulate pH, our pH 5.5 condition represents a fixed protonation state intended to approximate the apoplast rather than a constant-pH simulation. Histidine protonation was assigned using model pKa values, with His14 and His22 on BoPEP4 and His227 on PEPR1 carrying positive charges, while all other histidines remained neutral and all Asp and Glu residues remained deprotonated throughout the 30&nbsp;ns trajectory. No other simulation parameter was changed relative to the wild-type pH 7 run, making the three protonation changes the sole variable in this comparison.</p>
+          <p>Under this condition, the interaction between peptide Glu12 and receptor His227 was substantially strengthened, with the pair separated by 2.75 &plusmn; 0.11&nbsp;&Aring; in 99.9% of frames compared with 5.33&nbsp;&Aring; and only 0.8% occupancy at pH 7. This interaction is already present in the AtPEP1 benchmark at neutral pH, where the corresponding pair occurs at 3.36&nbsp;&Aring; with 76.9% occupancy, indicating that protonation allows BoPEP4 to recover a contact present in its structural benchmark rather than introducing an entirely new interaction. Importantly, this improvement did not compromise the primary C-terminal anchor: clamp integrity remained at 100.0%, the bidentate salt bridge at 99.9%, and the conserved window formed 95.7 contacts with a backbone RMSD of 1.34&nbsp;&Aring;, the lowest value observed among the untagged constructs that satisfied their acceptance criteria.</p>
+          <p>This result therefore changes the interpretation of the original sequence difference at Glu12-His227. The lower contact occupancy observed at pH 7 had initially appeared to reflect a sequence-level deficiency in BoPEP4, but the pH-controlled comparison indicates that it was instead a consequence of the protonation state used in the simulation. Because the apoplast is the environment in which the engineered protectant is expected to function, pH 5.5 is therefore a more physiologically relevant default for full-length BoPEP4, with pH 7 retained as the control. At the same time, the trajectory does not support the proposed His14 pH-switch mechanism: His14 remained approximately 6.1&nbsp;&Aring; from the nearest receptor carboxylate and formed a sub-4&nbsp;&Aring; contact in 0.0% of frames at either condition. The pH-responsive interaction identified here is instead the Glu12-His227 pair.</p>
+        <details class="fold fold--case" id="protonation-9-23">
+          <summary>Evaluating protonation in the 9&ndash;23 construct</summary>
+          <div class="fold__body">
+        <p>Protonation improved the interaction network of full-length BoPEP4 at pH 5.5, raising the question of whether the same effect could improve the stability of the 9&ndash;23 construct, which was the least stable untagged peptide at pH 7. To investigate this, we repeated the 9&ndash;23 simulation using the same starting coordinates and protonating the same three histidines as in the full-length pH 5.5 simulation, while keeping all other simulation parameters unchanged.</p>
+          <p>Contrary to the full-length result, protonation further destabilized the 9-23 construct. Asn23-Arg487 remained within 4&nbsp;&Aring; in only 23.6% of frames, well below the 60% acceptance threshold, while clamp integrity fell to 19.3% and bidentate salt-bridge occupancy to 6.9%, making this the only BoPEP4 trajectory that failed its pre-registered acceptance criteria. The underlying mechanism was a new intramolecular interaction between protonated His22 and the C-terminal carboxylate: this contact occurred at 2.84&nbsp;&Aring; in 96.9% of frames in 9-23 at pH 5.5, compared with 17.4% at pH 7. For comparison, the corresponding interaction occurred in only 1.1% of full-length frames at pH 7 and increased to 64.7% at pH 5.5 while the full-length clamp remained intact.</p>
+          <p>Therefore, the combined effect of truncation and protonation is important. Neither condition alone was sufficient to produce the strong self-contact observed in the failed trajectory: truncation increased occupancy from 1.1% to 17.4% at neutral pH, while protonation increased full-length occupancy to 64.7%; only their combination produced the 96.9% occupancy that coincided with collapse of the C-terminal anchor. At the same time, the stabilizing Arg9-Asp179 interaction remained highly occupied in full-length trajectories but decreased to 75.0% in 9-23 at pH 5.5, leaving the shortened peptide sufficiently unconstrained for its C terminus to fold back toward His22. Thus, protonation should not be treated as a universal stabilizing condition across constructs; instead, its effect depends on the interaction network remaining in each peptide.</p>
+          <p>Two additional observations support this interpretation. First, the newly exposed Arg9 &alpha;-amino group remained 6.90&nbsp;&Aring; from its nearest receptor carboxylate and formed a sub-4&nbsp;&Aring; contact in only 5.8% of frames, providing further evidence against the proposed terminal salt bridge. Second, although protonation restored the Glu12-His227 interaction to 99.9% occupancy in full length, the same pair reached only 26.4% in 9-23, indicating that protonation alone cannot stabilize an interaction when the upstream peptide sequence required to position it has been removed.</p>
+
+          <figure class="mdv" data-mdv="lowph" data-runs="lowph:1&ndash;23 at pH 5.5|t923l:9&ndash;23 at pH 5.5"></figure>
+          </div>
+        </details>
+        </section>
+      <section class="sec pl-1" id="panel-apo-receptor">
+        <h2 id="apo-receptor" data-toc="Apo receptor">Apo receptor</h2>
+        <p>To determine whether peptide binding itself produced measurable conformational changes in PEPR1, we also simulated the receptor without peptide using chain A from the wild-type complex and otherwise identical conditions. Contrary to the expectation that the unbound receptor would become substantially more flexible or that its binding groove would partially collapse, the apo receptor remained structurally comparable to the peptide-bound trajectories.</p>
+          <p>The apo receptor had the lowest mean C&alpha; RMSD of all nine simulations at 1.57&nbsp;&Aring;, compared with 1.58-2.16&nbsp;&Aring; across the peptide-bound runs, while its groove span was 35.91&nbsp;&Aring; compared with 35.65-36.42&nbsp;&Aring; for the bound structures. Its per-residue flexibility profile also correlated strongly with the wild-type profile at r = 0.94-0.97. Moreover, the 54 interface residues shifted by only +0.125&nbsp;&Aring; relative to wild type, compared with +0.156&nbsp;&Aring; for the remaining 656 residues, with the largest differences occurring at residues 41-55, which constitute the N-terminal cap of the ectodomain, and with residue 738, the final residue, being the most rigid in the structure. Both observations reflect chain-end effects distant from the binding groove. Thus, within the 30&nbsp;ns simulation window, we found no evidence for a substantial peptide-induced conformational change in the receptor.</p>
+          <p>This provides both a structural and methodological control. The pre-formed groove supports representing the binding surface using a mean receptor structure rather than assuming that ligand binding creates the pocket. More importantly, the apo trajectory establishes a noise floor against which receptor-side differences can be interpreted: the seven peptide-bound runs differed from one another by 0.59&nbsp;&Aring; in receptor C&alpha; RMSD, while the apo trajectory was only 0.01&nbsp;&Aring; below the steadiest bound trajectory. Because changing the peptide produced more receptor-side variation than removing it entirely, we do not interpret small receptor RMSD or flexibility differences as evidence that BoPEP4 stabilizes PEPR1. Instead, our comparisons remain centered on peptide-side contact geometry.</p>
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 700 300" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-apo-t fig-apo-d">
+  <title id="fig-apo-t">Receptor alpha-carbon RMSD across all nine runs, with the apo run as the floor</title>
+  <desc id="fig-apo-d">Nine rows. The receptor simulated with no peptide at all has the lowest RMSD of the set at 1.57 angstroms, one hundredth of an angstrom below the steadiest bound run. The bound runs spread over 0.59 angstroms among themselves. Changing the peptide moves the receptor more than removing it, so no receptor-side difference in this set is read as peptide-induced stabilisation.</desc>
+<text x="20" y="26" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">Receptor C&#945; RMSD, all nine runs</text>
+<text x="20" y="42" font-size="9.5" fill="#6e6e73" text-anchor="start">the receptor on its own is the steadiest trajectory in the set</text>
+<text x="138" y="80" font-size="10" fill="#1d1d1f" text-anchor="end" font-weight="700" class="m">apo, no peptide</text>
+<line x1="150" y1="76" x2="214.9" y2="76" stroke="#e5e5e5"/>
+<circle cx="214.9" cy="76" r="5" fill="#3f5468"/>
+<text x="224.9" y="80" font-size="9.5" fill="#1d1d1f" text-anchor="start" font-weight="700" class="m">1.57</text>
+<text x="138" y="97" font-size="10" fill="#6e6e73" text-anchor="end" class="m">1-23 + 6xHis</text>
+<line x1="150" y1="93" x2="225.8" y2="93" stroke="#e5e5e5"/>
+<circle cx="225.8" cy="93" r="3.6" fill="#a3a3a3"/>
+<text x="235.8" y="97" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.59</text>
+<text x="138" y="114" font-size="10" fill="#6e6e73" text-anchor="end" class="m">1-23</text>
+<line x1="150" y1="110" x2="220.4" y2="110" stroke="#e5e5e5"/>
+<circle cx="220.4" cy="110" r="3.6" fill="#a3a3a3"/>
+<text x="230.4" y="114" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.58</text>
+<text x="138" y="131" font-size="10" fill="#6e6e73" text-anchor="end" class="m">7-23</text>
+<line x1="150" y1="127" x2="247.4" y2="127" stroke="#e5e5e5"/>
+<circle cx="247.4" cy="127" r="3.6" fill="#a3a3a3"/>
+<text x="257.4" y="131" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.63</text>
+<text x="138" y="148" font-size="10" fill="#6e6e73" text-anchor="end" class="m">AtPEP1 7-23</text>
+<line x1="150" y1="144" x2="285.3" y2="144" stroke="#e5e5e5"/>
+<circle cx="285.3" cy="144" r="3.6" fill="#a3a3a3"/>
+<text x="295.3" y="148" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.70</text>
+<text x="138" y="165" font-size="10" fill="#6e6e73" text-anchor="end" class="m">9-23</text>
+<line x1="150" y1="161" x2="296.1" y2="161" stroke="#e5e5e5"/>
+<circle cx="296.1" cy="161" r="3.6" fill="#a3a3a3"/>
+<text x="306.1" y="165" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.72</text>
+<text x="138" y="182" font-size="10" fill="#6e6e73" text-anchor="end" class="m">1-23 pH 5.5</text>
+<line x1="150" y1="178" x2="377.3" y2="178" stroke="#e5e5e5"/>
+<circle cx="377.3" cy="178" r="3.6" fill="#a3a3a3"/>
+<text x="387.3" y="182" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">1.87</text>
+<text x="138" y="199" font-size="10" fill="#6e6e73" text-anchor="end" class="m">9-23 pH 5.5</text>
+<line x1="150" y1="195" x2="523.4" y2="195" stroke="#e5e5e5"/>
+<circle cx="523.4" cy="195" r="3.6" fill="#a3a3a3"/>
+<text x="533.4" y="199" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">2.14</text>
+<text x="138" y="216" font-size="10" fill="#6e6e73" text-anchor="end" class="m">15-23</text>
+<line x1="150" y1="212" x2="534.2" y2="212" stroke="#e5e5e5"/>
+<circle cx="534.2" cy="212" r="3.6" fill="#a3a3a3"/>
+<text x="544.2" y="216" font-size="9.5" fill="#6e6e73" text-anchor="start" class="m">2.16</text>
+<line x1="214.9" y1="62" x2="214.9" y2="233" stroke="#3f5468" stroke-dasharray="3 4" opacity="0.6"/>
+<text x="206.9" y="247" font-size="9.5" fill="#3f5468" text-anchor="middle" font-weight="700">apo floor 1.57 &#8491;</text>
+<text x="20" y="269" font-size="10" fill="#6e6e73" text-anchor="start">0.59 &#8491; separates the bound runs from each other; 0.01 &#8491; separates the apo run from the steadiest of them. Changing the</text>
+<text x="20" y="284" font-size="10" fill="#6e6e73" text-anchor="start">peptide moves the receptor more than removing it, so no receptor-side difference here is read as stabilisation.</text>
+</svg>
+</div>
+</figure>
+        </section>
+      <section class="sec pl-6" id="panel-overall">
+        <h2 id="overall" data-toc="Overall">Overall</h2>
+        <p>The combined trajectories demonstrate why RMSD and aggregate structural measures are insufficient for ranking these constructs. Across the eight peptide-containing runs, backbone RMSD over the conserved window correlated only weakly with the bidentate Arg487 salt bridge, with Pearson and Spearman coefficients of +0.13 and +0.29, respectively, while correlations with clamp integrity were &minus;0.03 and &minus;0.07.</p>
+
+        <p>The individual trajectories illustrate this more clearly: the tagged construct and 9-23 at pH 5.5 had the two lowest RMSDs, at 1.12&nbsp;&Aring; and 1.33&nbsp;&Aring;, yet their bidentate salt bridges were occupied in only 2.4% and 6.9% of frames, whereas 15-23 had a higher RMSD of 1.81&nbsp;&Aring; but retained the salt bridge in 97.2% of frames. Contact count performed relatively better, with a Spearman correlation of +0.71 across the seven untagged runs, but this comparison is based on only seven trajectories and is strongly influenced by individual constructs. Together with the earlier docking-score analysis, these results support using named atom-pair criteria rather than aggregate scores to determine whether a construct retains the intended binding chemistry.</p>
+
+<figure class="figwrap">
+<div class="figwrap__pan">
+<svg class="mdfig" viewBox="0 0 760 440" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="fig-decouple-t fig-decouple-d">
+  <title id="fig-decouple-t">Conserved-window backbone RMSD against bidentate salt-bridge occupancy, eight runs</title>
+  <desc id="fig-decouple-d">A scatter of the eight peptide-bearing runs. The horizontal axis is backbone RMSD over the conserved window, the vertical axis is the share of frames holding the bidentate Arg487 salt bridge. The points do not line up: the tagged construct at 1.12 angstroms and the failed 9 to 23 run at pH 5.5 at 1.33 angstroms are the two lowest RMSDs in the set and hold the salt bridge in 2.4 and 6.9 per cent of frames, while the 15 to 23 control at 1.81 angstroms holds it in 97.2 per cent.</desc>
+<text x="26" y="26" font-size="11.5" fill="#1d1d1f" text-anchor="start" font-weight="700">Backbone RMSD does not predict whether the salt bridge survives</text>
+<text x="26" y="42" font-size="9.5" fill="#6e6e73" text-anchor="start">eight peptide-bearing runs &#183; Pearson +0.13, Spearman +0.29</text>
+<text x="724" y="42" font-size="9.5" fill="#6e6e73" text-anchor="end">vertical: bidentate Arg487 salt bridge, % of 1,500 frames</text>
+<line x1="62" y1="308" x2="724" y2="308" stroke="#e5e5e5"/>
+<text x="54" y="312" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">0</text>
+<line x1="62" y1="261" x2="724" y2="261" stroke="#e5e5e5"/>
+<text x="54" y="265" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">25</text>
+<line x1="62" y1="214" x2="724" y2="214" stroke="#e5e5e5"/>
+<text x="54" y="218" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">50</text>
+<line x1="62" y1="167" x2="724" y2="167" stroke="#e5e5e5"/>
+<text x="54" y="171" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">75</text>
+<line x1="62" y1="120" x2="724" y2="120" stroke="#e5e5e5"/>
+<text x="54" y="124" font-size="9.5" fill="#6e6e73" text-anchor="end" class="m">100</text>
+<line x1="62" y1="195.2" x2="724" y2="195.2" stroke="#a3a3a3" stroke-dasharray="3 4"/>
+<text x="148.3" y="325" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">1.2</text>
+<text x="340.2" y="325" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">1.6</text>
+<text x="532.1" y="325" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">2.0</text>
+<text x="724" y="325" font-size="9.5" fill="#6e6e73" text-anchor="middle" class="m">2.4</text>
+<text x="393" y="342" font-size="10" fill="#6e6e73" text-anchor="middle">conserved-window backbone RMSD (&#8491;)  &#183;  steadier to the left</text>
+<line x1="134" y1="113.2" x2="134" y2="78" stroke="#3f5468" stroke-width="0.8" opacity="0.4"/>
+<circle cx="134" cy="120.2" r="5.5" fill="#3f5468" opacity="0.92"/>
+<text x="134" y="62" font-size="10" fill="#1d1d1f" text-anchor="middle" font-weight="600" class="m">AtPEP1 7-23</text>
+<text x="134" y="74" font-size="9" fill="#3f5468" text-anchor="middle" font-weight="700">crystal benchmark</text>
+<line x1="373.8" y1="113" x2="373.8" y2="78" stroke="#23684a" stroke-width="0.8" opacity="0.4"/>
+<circle cx="373.8" cy="120" r="5.5" fill="#23684a" opacity="0.92"/>
+<text x="373.8" y="62" font-size="10" fill="#1d1d1f" text-anchor="middle" font-weight="600" class="m">1-23</text>
+<text x="373.8" y="74" font-size="9" fill="#23684a" text-anchor="middle" font-weight="700">reference</text>
+<line x1="215.5" y1="113.2" x2="215.5" y2="110" stroke="#23684a" stroke-width="0.8" opacity="0.4"/>
+<circle cx="215.5" cy="120.2" r="5.5" fill="#23684a" opacity="0.92"/>
+<text x="215.5" y="94" font-size="10" fill="#1d1d1f" text-anchor="middle" font-weight="600" class="m">1-23 pH 5.5</text>
+<text x="215.5" y="106" font-size="9" fill="#23684a" text-anchor="middle" font-weight="700">best untagged run</text>
+<line x1="441" y1="118.3" x2="495" y2="110" stroke="#23684a" stroke-width="0.8" opacity="0.4"/>
+<circle cx="441" cy="125.3" r="5.5" fill="#23684a" opacity="0.92"/>
+<text x="495" y="94" font-size="10" fill="#1d1d1f" text-anchor="middle" font-weight="600" class="m">15-23</text>
+<text x="495" y="106" font-size="9" fill="#23684a" text-anchor="middle" font-weight="700">control that held</text>
+<circle cx="234.7" cy="143.1" r="5.5" fill="#23684a" opacity="0.92"/>
+<text x="234.7" y="165.1" font-size="10" fill="#1d1d1f" text-anchor="middle" font-weight="600" class="m">7-23</text>
+<circle cx="666.4" cy="219.8" r="5.5" fill="#92610c" opacity="0.92"/>
+<text x="654.4" y="223.8" font-size="10" fill="#1d1d1f" text-anchor="end" font-weight="600" class="m">9-23</text>
+<text x="654.4" y="235.8" font-size="9" fill="#92610c" text-anchor="end" font-weight="700">ordered construct</text>
+<circle cx="210.7" cy="295" r="5.5" fill="#9a3d22" opacity="0.92"/>
+<text x="222.7" y="313" font-size="10" fill="#1d1d1f" text-anchor="start" font-weight="600" class="m">9-23 pH 5.5</text>
+<text x="222.7" y="325" font-size="9" fill="#9a3d22" text-anchor="start" font-weight="700">failed the gate</text>
+<circle cx="110" cy="303.5" r="5.5" fill="#9a3d22" opacity="0.92"/>
+<text x="122" y="287.5" font-size="10" fill="#1d1d1f" text-anchor="start" font-weight="600" class="m">1-23 + 6xHis</text>
+<text x="122" y="299.5" font-size="9" fill="#9a3d22" text-anchor="start" font-weight="700">tag</text>
+<text x="26" y="370" font-size="10.5" fill="#1d1d1f" text-anchor="start">The two steadiest runs in the set, by the number a construct would normally be ranked on, are the tagged construct and the only</text>
+<text x="26" y="385" font-size="10.5" fill="#1d1d1f" text-anchor="start">run that failed its gate. Contact count does better, Spearman +0.71 over the seven untagged runs, but on seven points. Named atom</text>
+<text x="26" y="400" font-size="10.5" fill="#1d1d1f" text-anchor="start">pairs do better than either.</text>
+</svg>
+</div>
+</figure>
+
+        <div class="chap__end">
+          <p>In other words, overall structural stability was largely independent of whether the key binding interaction remained chemically intact.</p>
+        </div>
+        </section>
+      <!-- ================================================= 9 · LIMITATIONS -->
+      <section class="sec">
+        <h2 id="limitations" data-toc="Limitations">Limitations</h2>
+
+        <p>The 30&nbsp;ns timescale constrains what can be inferred about binding strength. While the 30&nbsp;ns snapshot of each peptide-receptor complex illustrates how each peptide-peptide complex evolved during the simulation, these timescales are too short to capture many protein-peptide dissociation events which occur on several orders of magnitude longer timescales. Thus, a peptide occupying the binding groove during the course of the trajectory does not imply strong binding or stability during longer timescales. Moreover, these results should be interpreted as the structural persistence during the simulation period and not as evidence of stability during longer timescales. To further directly address binding strength, longer simulation times, independent sampling, and additional free energy calculations or experimental measurements may be required.</p>
+          <p>The absence of replicate simulations constrains the reliability of construct comparisons. Each system was simulated with a single trajectory and thus a single set of initial velocities and relaxation pathways. These molecular systems can relax along different pathways even when they share similar initial structures and are simulated with the same parameters. Differences in contact occupancy, backbone fluctuation, or structural integrity could therefore be an outcome of variance rather than a true consequence of peptide design. For example, a given contact may be less persistent in one construct and behave differently in another independent trajectory. Simulating each system with multiple independent seeds will help ascertain whether the observed behaviors are generalizable and if the differences between constructs are robust.</p>
+          <p>The acceptance criteria demand particular care when comparing the tagged and untagged constructs. The original acceptance criteria were set before the simulation of the C-terminal histidine-tagged construct and were set around the interactions present in the untagged peptide, the interaction between the free C-terminal carboxylate of Asn23 and Arg487 on PEPR1. Adding six histidines C-terminal to Asn23 alters this C-terminal chemistry, Asn23 is no longer the free C-terminus and the original interaction cannot be assessed in the same manner. Thus, while the trajectory with the C-terminal histidine-tag is still usable, the acceptance criteria cannot be applied to this construct in the same manner as the untagged constructs without further consideration for this changed chemistry. The acceptance criteria should be revised to differentiate between interactions that are still pertinent after the addition of the histidine-tag and those that rely on the native free C-terminus.</p>
+          <p>The acidic-pH simulations denote a specific model rather than a comprehensive simulation of pH-dependent behavior. For the pH 5.5 simulations, His14, His22 on BoPEP4 and His227 on PEPR1 were assigned a positive charge based on their estimated pKa and all other histidines were assigned a neutral charge which was held fixed throughout the trajectory. This approach allowed us to observe how the complexes interacted under a specific set of protonation states, but did not permit residues to dynamically gain or lose a proton when their local environment changed. For example, the interaction observed between Glu12 and His227 provides the potential for a pH-dependent interaction under these conditions, but does not prove how this interaction behaves under the full set of conditions found in the plant apoplast. This constraint is pertinent to the tagged construct which had its histidines modeled as neutral even under the acidic condition. These residues can have different protonation states under an acidic condition and this simulation does not comprehensively demonstrate how the tag behaves under its intended conditions. Additional findings with more suitable tag protonation designations or a constant-pH simulation scheme may help resolve this uncertainty.</p>
+      </section>
+      <!-- ========================================= 10 · APPLICATION -->
+      <section class="sec">
+        <h2 id="application" data-toc="Application of results">Application of results</h2>
+
+        <h4 class="card__name">Wetlab</h4>
+
+        <p>The protein design workflow chart connects the computational findings to the experiments that follow because simulations can help identify which design changes are worth testing, but their predicted stability must ultimately be evaluated through biological experiments. For the histidine-tagged construct, the results informed the decision to move the purification tag to the N-terminus before expression, preserving the native C-terminal chemistry implicated in receptor binding. Similarly, the relatively consistent contact network across the longer and shorter constructs raised the possibility that truncation could reduce the peptide's production burden without eliminating its key interactions. This remains a manufacturability hypothesis, however, and will be tested through secretion assays comparing the truncated constructs with wild-type BoPEP4. These experiments will determine whether the computationally identified designs can be produced and secreted effectively in practice.</p>
+
+        <h4 class="card__name">Worked case</h4>
+
+        <p>The Peptide Design page (following BoPEP4 residue-level detail) links the results of the simulations to the specific interactions of interest for receptor binding. The MD trajectories highlight the difference between sustained and transient interactions, with comparisons to AtPep1 offering context for the differences observed at the binding interface. This page integrates these results with the per-residue per-interface data and the constructs that have been ordered for validation, outlining how the authors' knowledge of individual residue interactions guided their peptide design. The simulations offer a molecular-level explanation for why certain residues and truncation points were favored in the peptide designs, while the peptide design record explains how the simulation results informed the construction of the specific constructs.</p>
+      </section>
+
+      <!-- ================================================== REFERENCES -->
+      <section class="refs" id="references">
+        <h2 data-no-toc>References</h2>
+        <ol>
+          <li>Tian, C. et al. ff19SB: amino-acid-specific protein backbone parameters trained against quantum mechanics energy surfaces in solution. <i>Journal of Chemical Theory and Computation</i> 16, 528 to 552 (2020).</li>
+          <li>Izadi, S., Anandakrishnan, R. &amp; Onufriev, A. V. Building water models: a different approach. <i>Journal of Physical Chemistry Letters</i> 5, 3863 to 3871 (2014). OPC.</li>
+          <li>Tang, J., Han, Z., Sun, Y., Zhang, H., Gong, X. &amp; Chai, J. Structural basis for recognition of an endogenous peptide by the plant receptor kinase PEPR1. <i>Cell Research</i> 25, 110 to 120 (2015). PDB&nbsp;5GR8.</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <nav class="pagenav" aria-label="Neighbouring pages">
+    <a class="is-prev" href="../sprints/"><b>Previous</b><span>Sprints and Results</span></a>
+    <a class="is-next" href="../../peptide-design/"><b>Next</b><span>Peptide Design</span></a>
+  </nav>
+
+  <footer class="footer2">
+    <div class="footer2__inner">
+        <div>
+          <h3>Project</h3>
+          <ul>
+          <li><a href="../../description/">Description</a></li>
+          <li><a href="../../biomanufacturing/">Biomanufacturing</a></li>
+          <li><a href="../../engineering/">Engineering</a></li>
+          <li><a href="../../development/">Development</a></li>
+          <li><a href="../../contribution/">Contribution</a></li>
+          <li><a href="../../results/">Results</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Wet Lab</h3>
+          <ul>
+          <li><a href="../../experiments/">Experiments</a></li>
+          <li><a href="../../parts/">Parts</a></li>
+          <li><a href="../../plant/">Plants</a></li>
+          <li><a href="../../measurement/">Measurement</a></li>
+          <li><a href="../../safety-and-security/">Safety</a></li>
+          <li><a href="../../notebook/">Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dry Lab</h3>
+          <ul>
+          <li><a href="../../model/">Math Model</a></li>
+          <li><a href="../../hardware/">Hardware</a></li>
+          <li><a href="../../software/">Digital Twin</a></li>
+          <li><a href="../../protein-design/">Protein Design</a></li>
+          <li><a href="../../drylab-notebook/">Dry Lab Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engagement</h3>
+          <ul>
+          <li><a href="../../human-practices/">Integrated Human Practices</a></li>
+          <li><a href="../../education/">Education</a></li>
+          <li><a href="../../entrepreneurship/">Entrepreneurship</a></li>
+          <li><a href="../../sustainability/">Sustainability</a></li>
+          <li><a href="../../laws-and-regulations/">Laws and Regulations</a></li>
+          <li><a href="../../geospatial-analysis/">Geospatial Analysis</a></li>
+          <li><a href="../../data-physicalization/">Data Physicalization</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Team</h3>
+          <ul>
+          <li><a href="../../team/">Members</a></li>
+          <li><a href="../../attributions/">Attribution</a></li>
+          <li><a href="../../milestone/">Milestone</a></li>
+          </ul>
+        </div>
+      <div class="footer2__legal">
+        <p><b>ReLEAF</b> &middot; GEMS Taiwan &middot; iGEM 2026 &middot; Biomanufacturing Village</p>
+        <p>&copy; 2026 &middot; Content on this wiki is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+        <p>The repository used to create this website is available at <a href="https://gitlab.igem.org/2026/gems-taiwan">gitlab.igem.org/2026/gems-taiwan</a>.</p>
+        <p>Nothing on this wiki is fetched from a server outside iGEM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/data/site-nav.js" fetchpriority="high"></script>
+  <script src="../../assets/js/nav.js" fetchpriority="high"></script>
+  <script src="../../assets/js/page.js?v=20261010" fetchpriority="high"></script>
+  <script src="../../assets/js/engage.js?v=1007s"></script>
+  <script src="../../assets/js/md-viewer.js?v=20261010b" data-base="../../" defer></script>
+  <script src="../../coach/data/protein-design__molecular-dynamics.js?v=1012134635"></script>
+  <script src="../../coach/coach.js?v=1012134635"></script>
+</body>
+</html>

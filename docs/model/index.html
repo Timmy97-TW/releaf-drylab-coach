@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Model | ReLEAF &middot; iGEM 2026</title>
+  <meta name="description" content="Three blocks that turn weather into a dose. A stress index fitted to twenty-five years of Taiwanese rice harvests, the CcaSR light-to-enzyme kinetics measured in our own reactor, and a dose anchored on the one ACC deaminase dose this project has applied to living plants: 1,670 litres per hectare on a plate, 4,008 litres per hectare per application on a rice canopy, a 10-unit reactor fleet, and a 2.4-year payback on salt-affected land against 64.7 on an ordinary paddy." />
+  <link rel="icon" href="../assets/img/logo.png" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/nav.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+  <link rel="stylesheet" href="../assets/vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="../assets/css/engage.css?v=1010seg" />
+  <link rel="stylesheet" href="model.css?v=202610101" />
+  <link rel="stylesheet" href="../assets/css/bannerhead.css?v=20261010b" />
+  <link rel="stylesheet" href="../coach/coach.css?v=1012134635" />
+</head>
+<body class="mm engage">
+<!--
+  SOURCE. Blocks 1 and 2 are Ethan Liu's draft of 7 October:
+
+    Math Model/1007 Math Model Content.docx
+
+  Block 3, the Conclusion and the Limitations are his draft of 9 October:
+
+    Math Model 2/1009 Math Model Content.docx
+
+  That file carries four passes at Block 3. Only the last one is on this page,
+  the section headed 'Block 3 . How much protectant, and how many reactors?'
+  with its 6 . Conclusion and Limitation. The earlier 'Math Model Block 3'
+  (the 68,795 L/ha apoplast delivery budget) and the 'Rewrite' section that
+  replaced it are superseded by it, and the trailing chat transcript under
+  '分頁 8' is working notes, not writing for publication. None of those three
+  are on this page.
+
+  WHAT CHANGED ON 10 OCTOBER. Block 3 no longer prices three dosing routes and
+  no longer argues catalytic headroom. The chain is now one route: the plate
+  dose of 1,670 L/ha, times a modelled canopy correction of 2.44, is 4,008 L
+  of culture per hectare per application, concentrated 10x into 400 L of tank
+  mix. Frequency comes from Block 1's dekad record for the Yunlin second crop,
+  and the economics are his: 64.7 years on ordinary paddy, 2.4 on
+  salt-affected land. The Vmax capacity comparison the old Block 3 and the old
+  Block 2 key findings rested on is retracted in his 9 October draft, so both
+  are gone.
+
+  BLOCK 3 DATA. All ours: the phase 3 application protocol on Plants for the
+  1.67 mL dose, the DNPH assay of 7 October for the 7.2514 mU/mL titre, and
+  Block 1's own dekad rebuild for the release count. The salinity run does not
+  record its plate size; the 100 cm2 is reconstructed, and his own table says
+  so in the Result 2 provenance row.
+
+  EQUATIONS. Equations 1 to 7 are the draft's, re-set as LaTeX and rendered
+  locally by KaTeX from assets/vendor/katex. Block 3 carries none: his 9
+  October draft states the chain as arithmetic in Figure 20.
+
+  FIGURES. Figures 1 to 19 are the 7 October draft's panels. Figures 20 to 23
+  and the two calculator panels are from the 9 October docx, converted to webp
+  in assets/img/model/ at 1600 px, none redrawn. Figures 24 to 26 are the
+  cuticle-pore chart and the two stomata micrographs, which his new draft
+  keeps. His tables that arrived as images (land size, dose provenance,
+  applications per season, fleet lead time, payback) are set as real tables.
+
+  WHAT CHANGED ON 12 OCTOBER. His 1009 draft came back with the prose revised
+  and the figures untouched. Four things moved. The Block 1 and Block 2
+  conclusions are now his, and much more cautious: Block 1 passes an
+  addressable stress signal without proving ACC deaminase prevents the loss,
+  and Block 2's response time is a planning scenario, not a validated
+  operating time. Both replace the Q1/Q2/Q3 ledgers, which answered 'Yes' to
+  questions he no longer answers that way. Block 3 gains the Assumption he
+  wrote for it, his 7.1 errata table and his 7.2. The Conclusion gains his
+  statement of the salinity-versus-waterlogging mismatch, with the 15
+  applications over 30 days it would take to fix.
+
+  4,008 OR 4,082. His new prose says 4,082 L/ha; every figure and table in
+  Block 3, including the ones in this same docx, says 4,008. Both are
+  1,670 L/ha times the canopy correction: 4,008 uses the 2.4 printed on the
+  arrow in Figure 20, 4,082 uses the unrounded 2.4441 that the panel's own
+  0.486 and 0.199 per-unit-leaf figures give. The gap is 1.8%, against a band
+  of 2,806 to 5,878 L on that step. The figures keep 4,008 because they are
+  his images and cannot be re-set; his 4,082 is quoted where he quotes it, in
+  the Block 3 Assumption, in 7.2 and in the Conclusion, and the one orange
+  sentence in the Assumption fold says which is which.
+
+  ORANGE. class="ai" is anything Ethan did not write. No body prose on this
+  page is orange except three sentences. What is left marked is the abstract
+  and its key-results ledger, the four equation blocks in the two Methods
+  folds and their glosses, the kept-and-dropped variable table transcribed
+  from Figure 3, the captions on Figures 8, 9, 12, 21 and 22, the one
+  paragraph that opens the Conclusion by gathering Blocks 1 and 2, which he
+  asked for, and three new sentences: the 4,008-against-4,082 note in the
+  Block 3 Assumption fold, the note under 7.1 saying that he counts four
+  errors and writes out one, and the unit conversion at the end of Block 2
+  Result 3 that keeps 1.056 g of ACC per litre per day on the page after the
+  Block 2 ledger that used to carry it was replaced by his conclusion.
+  Everything else is his. Em dashes in his prose have been replaced with
+  commas, colons or parentheses, which is the owner's global punctuation rule.
+
+  FIGURE 24. Its caption used to say the enzyme passes an open stomatal pore
+  with two orders of magnitude to spare. That is the exact claim his 7.1
+  errata table retracts, so the caption now says what he says there: the
+  aperture is not the barrier, the ~10 nm size-exclusion limit is.
+-->
+  <div id="site-nav" data-base="../" data-tab="drylab" data-page="model"></div>
+  <div class="sitenav-spacer"></div>
+
+  <header class="bannerhead bannerhead--rest" data-tab="drylab">
+    <h1 class="visually-hidden">Math Model</h1>
+    <div class="bannerhead__art">
+      <img src="../assets/img/headers/model.webp"
+           srcset="../assets/img/headers/model-w1200.webp 1200w, ../assets/img/headers/model.webp 2253w"
+           sizes="(max-width: 1280px) 100vw, 1280px"
+           alt="Math Model. A pencil lies across a printed multi-line chart of yearly values, annotated by hand with a yield-to-price note and a trend expression."
+           width="2253" height="748" fetchpriority="high" />
+    </div>
+  </header>
+
+  <section class="abstract abstract--sheet bannerhead" data-tab="drylab" aria-label="Summary">
+    <div class="abstract__inner">
+      <div class="abstract__story">
+        <h2 class="abs-kicker">Abstract</h2>
+        <p class="abstract__lead ai">The model turns Taiwan&rsquo;s weather into a stress forecast, the forecast into a lamp setting, and the reactor&rsquo;s measured output into litres per hectare and New Taiwan dollars per hectare per year.</p>
+        <p class="abstract__body ai">Three blocks run as one chain, each tested against something outside itself. Taiwan&rsquo;s own rice harvests since 2001 chose the stress index: 32,767 models were scored on years they had not seen, and the one kept has <strong>32% less error than the no-weather trend</strong> in the second crop. Our DNPH assay sets reactor output at 1.056&nbsp;g of ACC cleared per litre per day, from one replicate above detection and below quantitation. The one dose this project has applied to living plants is 1,670&nbsp;L/ha on a seedling plate, which a rice canopy multiplies to <strong>4,008&nbsp;L of culture per hectare per application</strong>, diluted into 400&nbsp;L of spray. The weather decides how often: 17 of 25 seasons never fire at all, and a season that does takes nine passes. Capital returns in 2.4&nbsp;years on salt-affected coastal land; on an ordinary paddy it does not return in 64.7.</p>
+</div>
+      <div class="abstract__outcomes">
+        <h2 class="abs-kicker">Key results</h2>
+        <ul class="abs-ledger">
+          <li><a class="st-worked" href="#validation"><i></i><span class="abs-ledger__name">Stress index</span><span class="abs-st">Validated</span><span class="abs-ledger__text ai">32% less error than the trend in the second crop</span></a></li>
+          <li><a class="st-open" href="#validation"><i></i><span class="abs-ledger__name">2026 blind test</span><span class="abs-st">Running</span><span class="abs-ledger__text ai">4 of 16 counties in: error 7.9% against 8.8%</span></a></li>
+          <li><a class="st-worked" href="#accd-efficacy"><i></i><span class="abs-ledger__name">Apply it first</span><span class="abs-st">Measured</span><span class="abs-ledger__text ai">Given before the salt, ACCD plates hold 2.6&times; the buffer control</span></a></li>
+          <li><a class="st-key" href="#how-much"><i></i><span class="abs-ledger__name">Dose per hectare</span><span class="abs-st">Upper bound</span><span class="abs-ledger__text ai">4,008&nbsp;L of culture per application, 400&nbsp;L in the tank</span></a></li>
+          <li><a class="st-partial" href="#reactor-output"><i></i><span class="abs-ledger__name">Reactor output</span><span class="abs-st">One replicate</span><span class="abs-ledger__text ai">1.056&nbsp;g ACC cleared per L per day with samyQ</span></a></li>
+          <li><a class="st-open" href="#make-and-worth"><i></i><span class="abs-ledger__name">Lead time</span><span class="abs-st">Too slow</span><span class="abs-ledger__text ai">4.5 days per application on 10 units, against a 3-day forecast</span></a></li>
+          <li><a class="st-open" href="#make-and-worth"><i></i><span class="abs-ledger__name">Payback</span><span class="abs-st">Coast only</span><span class="abs-ledger__text ai">2.4 years on salt-affected land, 64.7 on an ordinary paddy</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="pagewrap">
+    <details class="toc" open>
+      <summary>Contents</summary>
+      <div class="toc__inner"><p class="toc__title">On this page</p></div>
+    </details>
+
+    <main class="pagebody" data-no-subnum>
+
+
+      <!-- ============================================ 1 · WHAT THE MODEL DOES -->
+      <section class="sec" id="what-the-model-does">
+        <h2>One chain: weather goes in, litres of protectant per hectare come out</h2>
+
+        <p>Abiotic stress (heat, soil salinity, and vapor pressure deficit) reduces crop yields across Taiwan's farmland long before visible damage appears, by disrupting plant hormone balance and protein stability at the cellular level. ReLEAF addresses this by deploying an optogenetically controlled <i>B. subtilis</i> bioreactor that senses field stress in real time and produces tailored protectant proteins. Our mathematical model asks the question that connects every part of that system: given today's stress conditions in a Taiwanese farm field, how much engineered protectant actually reaches the plant?</p>
+
+        <div class="chain">
+          <a class="link" href="#stress-index">
+            <span class="link__no">1</span>
+            <span class="link__name">Stress index</span>
+            <p class="link__io"><b>Asks</b>How much is this field losing, and how much of that can ACC deaminase reach?</p>
+            <p class="link__io"><b>Takes</b>Weather by growth stage</p>
+            <p class="link__io"><b>Gives</b>Stress index <i>S</i>, addressable share <i>S</i><sub>addr</sub>, demand <i>f</i></p>
+            <p class="link__io link__io--on"><b>Standing on</b><span class="prov prov--ours">Ours</span> 25 years of county harvests</p>
+          </a>
+          <a class="link" href="#optogenetic-kinetics">
+            <span class="link__no">2</span>
+            <span class="link__name">Optogenetic kinetics</span>
+            <p class="link__io"><b>Asks</b>What lamp setting does that demand mean, how fast does the reactor answer, and how much enzyme comes out?</p>
+            <p class="link__io"><b>Takes</b>Demand <i>f</i></p>
+            <p class="link__io"><b>Gives</b>Lamp PPFD, response horizon, activity in mU&nbsp;mL<sup>&minus;1</sup> and g&nbsp;ACC&nbsp;L<sup>&minus;1</sup>&nbsp;day<sup>&minus;1</sup></p>
+            <p class="link__io link__io--on"><b>Standing on</b><span class="prov prov--ours">Ours</span> DNPH assay, <span class="prov prov--lit">Literature</span> CcaSR transfer function</p>
+          </a>
+          <a class="link" href="#dose-and-payback">
+            <span class="link__no">3</span>
+            <span class="link__name">Dose and payback</span>
+            <p class="link__io"><b>Asks</b>How many litres does one hectare need, how often, and is it worth making?</p>
+            <p class="link__io"><b>Takes</b>Activity per litre, release dekads, efficacy <span class="sym">&epsilon;</span></p>
+            <p class="link__io"><b>Gives</b>Litres per hectare per application, applications per season, fleet lead time, NT$ per hectare per year</p>
+            <p class="link__io link__io--on"><b>Standing on</b><span class="prov prov--ours">Ours</span> the dose that worked on plants, <span class="prov prov--ours">Ours</span> DNPH titre</p>
+          </a>
+        </div>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 1066">
+            <img src="../assets/img/model/three-blocks-overview.webp"
+                 alt="Three panels under the title From Environmental Stress to Targeted Foliar AccD Delivery. Block 1, environment to stress prediction, shows a sensor in a field with temperature, conductivity and vapour pressure deficit, and a stage-weighted anomaly model. Block 2, engineered cell to AccD production, shows a reactor under green and red light with the CcaS and CcaR proteins and a Hill light response. Block 3, concentration to foliar delivery, shows the reactor feeding a bottle and a sprayer onto a leaf, with the delivered-dose equations. A strip at the bottom runs weather to anomaly to PPFD to AccD activity to spray volume to delivered dose."
+                 width="1600" height="1066" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 1.</b> The three blocks and the quantity each one passes on. The strip along the bottom is the whole chain in one line.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ============================================ 2 · BLOCK 1 · STRESS INDEX -->
+      <section class="sec pl-5" id="stress-index">
+        <h2 data-toc="Stress index">Block 1 &middot; Stress index</h2>
+
+        <div class="lede-c"><p>Taiwan&rsquo;s own harvests decide what a stressed season costs.</p></div>
+
+        <p>Our bioreactor makes a crop protectant only when its green lamp is on. So the whole system depends on one number: how stressed is the crop right now?</p>
+
+        <p>Most crop stress indices add temperature, water and light with weights chosen by experts, and are rarely checked against what happened in the field. We took a different route: let Taiwan's own harvests decide. The Agriculture and Food Agency (&#36786;&#31918;&#32626;) has published county rice yields for every season since 2001. A season whose yield fell below its trend was a stressed season. If weather alone can predict which seasons fall, and by how much, that prediction is a stress index, and every harvest becomes a test of it.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 994 / 320">
+            <img src="../assets/img/model/stress-index-yield-chain.webp"
+                 alt="A chain of five boxes. Weather from ERA5 daily and CWA stations feeds stress terms for typhoon, rain, light, cold and humidity by stage; those give a stress index S defined through log yield loss; S gives an addressable part of the stress that ACC deaminase can act on; that sets the green light through the inverted CcaSR Hill curve. A branch below turns S into a predicted yield, cross-checked against the realised harvest."
+                 width="994" height="320" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 2.</b> The pipeline. Weather becomes stress terms; their sum is the stress index <i>S</i>; <i>S</i> predicts yield, which is checked against the real harvest; the part of <i>S</i> our system can act on sets the green light.</figcaption>
+        </figure>
+
+        <details class="fold">
+          <summary>Assumptions</summary>
+          <div class="fold__body">
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">The five assumptions the stress index rests on, with the reason for each</caption>
+            <thead><tr><th>#</th><th>Assumption</th><th>Why?</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>A county's yield trend reflects technology and management; the deviation from it reflects weather.</td><td>Varieties and practices change slowly; weather changes every season.</td></tr>
+              <tr><th scope="row">2</th><td>The same weather stress causes more damage at some growth stages than others.</td><td>Rice sensitivity is stage-specific (e.g. cold at heading, rain at tillering).</td></tr>
+              <tr><th scope="row">3</th><td>Stress can only reduce yield, and only after it passes a threshold.</td><td>Physical damage is one-sided: a calm day does not add rice.</td></tr>
+              <tr><th scope="row">4</th><td>The two rice crops respond differently to weather and should be modeled separately.</td><td>Different seasons, weather and stresses.</td></tr>
+              <tr><th scope="row">5</th><td>The value of lost rice can be estimated using the current farm-gate price.</td><td>Official daily price exists; public purchase price is close.</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+        </details>
+        <details class="fold" id="methods-block1">
+          <summary>Methods</summary>
+          <div class="fold__body">
+
+        <div class="eqn eqn--ours ai">
+          <b>Stage-weighted exposure</b>
+          \[ x_{\mathrm{stage}} \;=\; \sum_{d} P(\mathrm{stage}\mid d)\; x_{d} \tag{1} \]
+          <em>Summed over the days <i>d</i> of the season. <i>P</i>(stage&nbsp;|&nbsp;<i>d</i>) is the probability that day <i>d</i> fell in that growth stage, which smooths the transplanting-date differences between counties.</em>
+        </div>
+
+        <div class="eqn eqn--ours ai">
+          <b>The yield model, and the index inside it</b>
+          \[ \mathrm{anomaly} \;=\; a \;+\; \gamma P \;+\; \sum_{i} b_i\, z(x_i) \;-\; \underbrace{\sum_{j} \beta_j E_j}_{\textstyle S} , \qquad \beta_j \ge 0 \tag{2} \]
+          \[ z(x) \;=\; \frac{x - \mu_{\mathrm{county}}}{\sigma_{\mathrm{train}}} , \qquad \hat{y} \;=\; \mathrm{trend} \times \exp(\mathrm{anomaly}) \tag{3} \]
+          <em>One fit per crop. <i>P</i> is the sunshine-potential term, <i>z</i>(<i>x<sub>i</sub></i>) are the stage terms standardised against the county's own history, and <i>E<sub>j</sub></i> are the damage exposures. The constraint <span class="sym">&beta;<sub>j</sub></span>&nbsp;&ge;&nbsp;0 is assumption&nbsp;3 written as an equation: a damage term can take yield away and never add it. The stress index <i>S</i> is the damage sum alone, which is why it is bounded below by zero and why it reads as a loss.</em>
+        </div>
+
+        <div class="eqn eqn--ours ai">
+          <b>Index to yield loss, and to the lamp</b>
+          \[ \mathrm{loss} \;=\; 1 - e^{-S} , \qquad S_{\mathrm{addr}} \;=\; \sum_{j} \varepsilon_j\, \beta_j E_j \tag{4} \]
+          <em>The first identity is what makes a harvest a test of the index: predicted yield is the county trend times <i>e</i><sup>&minus;<i>S</i></sup>, and the Agency publishes the realised yield beside it. The second is what Block&nbsp;2 receives: each damage term is weighted by <span class="sym">&epsilon;<sub>j</sub></span>, the share of that stress ACC deaminase can act on (0.58 for salinity, Figure&nbsp;10), and the normalised result is the demand <i>f</i>.</em>
+        </div>
+          </div>
+        </details>
+
+        <div class="rail rail--seg" data-rail data-rail-top>
+          <div class="seg">
+            <div class="rail__strip seg__track" role="tablist" aria-label="Block 1: stress index">
+              <button class="rail__btn seg__btn pl-5" role="tab" type="button" id="t-variable-selection" aria-controls="p-variable-selection" aria-selected="true">Variable selection</button>
+              <button class="rail__btn seg__btn pl-5" role="tab" type="button" id="t-our-model" aria-controls="p-our-model" aria-selected="false">Our model</button>
+              <button class="rail__btn seg__btn pl-5" role="tab" type="button" id="t-validation" aria-controls="p-validation" aria-selected="false">Validation</button>
+            </div>
+          </div>
+          <div class="rail__panel chap pl-5" role="tabpanel" id="p-variable-selection" aria-labelledby="t-variable-selection">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="variable-selection" data-toc="Variable selection">Result 1 &middot; Light, wind and badly timed water cost rice; heat earns nothing</h3>
+            </header>
+
+        <p>We gathered 18 candidate stresses. For each crop, every one of the 2<sup>15</sup> &minus; 1 = 32,767 combinations of 15 candidates was fitted and scored on years it had not seen. Each candidate was then judged three ways.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 824">
+            <img src="../assets/img/model/stress-variable-leaderboard.webp"
+                 alt="Two horizontal bar charts, second crop on the left and first crop on the right, ranking fifteen candidate weather stresses by the mean change in prediction error when the variable is added. For the second crop, rain by five stages and typhoon wind are furthest to the left and green; for the first crop, sunshine potential, dark spell and light deficit lead. Grey bars are dropped variables, and minimum and maximum temperature by stage sit at the bottom of the first crop with bars to the right, meaning they hurt."
+                 width="1600" height="824" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 3.</b> The leaderboard of stresses. Bars: average change in prediction error when the variable is added (left = helps). Green = kept in the final model. Percentages: share of combinations where it helped. Stars mark student-model variables.</figcaption>
+        </figure>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1468 / 569">
+            <img src="../assets/img/model/stress-permutation-test.webp"
+                 alt="Two bar charts of the increase in mean absolute error when each student-model variable is shuffled. For the second crop, rain by five stages costs about twenty kilograms per hectare with p equals 0.01 and is highlighted green; every other bar is near zero. For the first crop, every bar is at or below zero and no p-value is below 0.01 except humid days."
+                 width="1468" height="569" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 4.</b> Permutation test for the student-model variables. Shuffling rain by growth stage costs 19.8&nbsp;kg/ha (p = 0.010); shuffling warm nights or humid days costs nothing.</figcaption>
+        </figure>
+
+        <p><b>Which stresses were supported by the data.</b> After testing each candidate stress with three different methods, these were the variables that consistently improved the model and were kept in the final version.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">The weather terms kept in the final model for each crop, as read from the leaderboard</caption>
+            <thead><tr><th>Crop</th><th>Kept</th><th>Dropped despite being proposed</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" class="ai">Second (&#20108;&#26399;)</th><td class="ai">Rain by growth stage, typhoon wind, light deficit, sunshine potential, heavy-rain days &ge;&nbsp;150&nbsp;mm, lodging gusts, cold hours at heading</td><td class="ai">Humidity, minimum and mean temperature by stage, warm nights, hours &ge;&nbsp;35&nbsp;&deg;C</td></tr>
+              <tr><th scope="row" class="ai">First (&#19968;&#26399;)</th><td class="ai">Sunshine potential, dark spell, light deficit, humidity by growth stage, humid days, warm nights, hours &ge;&nbsp;35&nbsp;&deg;C</td><td class="ai">Wet-day runs, early storm rain, seedling cold, heavy-rain days, rain by stage, mean and minimum temperature by stage</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+          <div class="rail__panel chap pl-5" role="tabpanel" id="p-our-model" aria-labelledby="t-our-model">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="our-model" data-toc="Our model">Result 2 &middot; One equation per crop, and what its index is worth in dollars</h3>
+            </header>
+
+        <p>One equation predicts county yields, and its damage half is the stress index. Each index value has a price in kilograms and New Taiwan dollars.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1568 / 821">
+            <img src="../assets/img/model/stress-term-effects.webp"
+                 alt="Two horizontal bar charts of each model term's effect on yield in kilograms per hectare, with ninety per cent bootstrap intervals. For the second crop the largest red damage bars are radiation deficit, rain days over 150 millimetres and typhoon wind, each about minus 250 to minus 500. For the first crop the largest are dark spell and radiation deficit. Blue radiation surplus is positive in both."
+                 width="1568" height="821" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 5.</b> Effect of each term in the final model, in kg/ha at the average yield. Red = damage terms at a bad exposure (90th percentile), green = stage terms per standard deviation, blue = sunshine potential. Bars: 90% bootstrap interval.</figcaption>
+        </figure>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1464 / 1069">
+            <img src="../assets/img/model/stress-loyo-year-means.webp"
+                 alt="Two stacked line charts of area-weighted yearly yield anomaly from 2007 to 2025, observed in heavy black against six model predictions. The second crop panel above has swings from minus thirty per cent in 2007 and 2016 to plus fifteen per cent in 2012 and 2014, and the merged models track most of them; 2023 is marked unexplained and 2024 is marked Gaemi. The first crop panel below has smaller swings and the models follow them less closely."
+                 width="1464" height="1069" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 6.</b> Area-weighted year means on the 399 county-seasons all models share (11 counties, 2007&ndash;2025). Black = observed. Grey = trend only; orange = student model (v-county); blue = instructor model (v3); greens = the three best merged combinations.</figcaption>
+        </figure>
+
+        <h4>What one index point has historically cost, in rice and in New Taiwan dollars</h4>
+
+        <p>The stress index <i>S</i> is the damage side of the model (<a href="#methods-block1">Methods</a>, eq.&nbsp;2). Its meaning comes from history: for every county-season since 2001 we know its index (computed without that year) and the real harvest. Grouping seasons by index gives the typical outcome at each level.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1549 / 669">
+            <img src="../assets/img/model/stress-index-vs-yield.webp"
+                 alt="Two scatter plots of realised yield versus a normal year, in per cent, against the normalised stress index, with bands shaded none, mild, moderate and severe. For the first crop the typical line falls from plus seven per cent at index zero to minus four per cent by index 0.35 and then flattens; red triangles for the 2026 counties sit along it. For the second crop the line falls from plus twelve per cent to minus fifteen per cent by index 0.75."
+                 width="1549" height="669" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 7.</b> Each dot is one county-season. Green line: typical harvest vs a normal year at each index level; band: middle 50% of the 40 most similar seasons. Red triangles: 2026 first-crop counties.</figcaption>
+        </figure>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">What each first-crop stress index level has historically meant for yield and farm-gate value</caption>
+            <thead><tr><th class="num">First-crop index</th><th>Band</th><th class="num">Typical vs normal year</th><th class="num">kg/ha</th><th class="num">NT$/ha</th><th class="num">Chance of losing &gt; 5%</th></tr></thead>
+            <tbody>
+              <tr><td class="num">0.05</td><td>none</td><td class="num">+5.7%</td><td class="num">+422</td><td class="num">+10,858</td><td class="num">2%</td></tr>
+              <tr><td class="num">0.10</td><td>none</td><td class="num">+1.5%</td><td class="num">+109</td><td class="num">+2,802</td><td class="num">12%</td></tr>
+              <tr><td class="num">0.15</td><td>mild</td><td class="num">+0.0%</td><td class="num">+1</td><td class="num">+17</td><td class="num">25%</td></tr>
+              <tr><td class="num">0.20</td><td>mild</td><td class="num">&minus;1.8%</td><td class="num">&minus;129</td><td class="num">&minus;3,311</td><td class="num">35%</td></tr>
+              <tr><td class="num">0.25</td><td>mild</td><td class="num">&minus;1.8%</td><td class="num">&minus;129</td><td class="num">&minus;3,311</td><td class="num">25%</td></tr>
+              <tr><td class="num">0.30</td><td>mild</td><td class="num">&minus;3.4%</td><td class="num">&minus;252</td><td class="num">&minus;6,487</td><td class="num">32%</td></tr>
+              <tr><td class="num">0.35</td><td>moderate</td><td class="num">&minus;4.0%</td><td class="num">&minus;293</td><td class="num">&minus;7,539</td><td class="num">45%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>At the recent typical first-crop trend yield (7,354&nbsp;kg/ha) and the official 2026 farm-gate price (NT$25.7/kg). Second crop: a normal year sits near 0.33; &minus;5% at 0.5, &minus;9% at 0.6, &minus;15% at 0.8. The same number means different things in the two crops, so the index is always reported with its crop.</p>
+
+        <div class="figs figs--2">
+          <figure class="fig fig--photo">
+            <div class="fig__frame" style="--fr: 1484 / 1132">
+              <img src="../assets/img/model/stress-index-meaning-crop1.webp"
+                   alt="An interface panel for the first crop at stress index 0.32, labelled mild, reporting minus 3.4 per cent versus a normal year, minus 252 kilograms per hectare, minus NT$6,483 per hectare and a 38 per cent chance of losing more than five per cent, over a curve of outcome against index with a red marker at 0.32."
+                   width="1484" height="1132" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="ai"><b>Figure 8.</b> The lookup as a farmer sees it, first crop. Based on 37 past county-seasons within &plusmn;&nbsp;0.05 of this index.</figcaption>
+          </figure>
+          <figure class="fig fig--photo">
+            <div class="fig__frame" style="--fr: 1476 / 1180">
+              <img src="../assets/img/model/stress-index-meaning-crop2.webp"
+                   alt="The same interface panel switched to the second crop at stress index 0.33, also labelled mild, but reporting plus 0.7 per cent versus a normal year, plus 40 kilograms per hectare and a 25 per cent chance of losing more than five per cent."
+                   width="1476" height="1180" loading="lazy" decoding="async" />
+            </div>
+            <figcaption class="ai"><b>Figure 9.</b> The same index value, 0.33, on the second crop. It is a normal year here and a bad one there, which is why the crop is always quoted with the number.</figcaption>
+          </figure>
+        </div>
+
+        <h4 id="accd-efficacy">How much of that loss ACC deaminase can reach: the coefficient our wet lab sets</h4>
+
+        <p>Efficacy is the share of the yield a stress costs that ACC deaminase could save: 1 means all of it, 0 means none. The values in Figure&nbsp;11 come from the literature. Our wet lab measured the first one directly, for salinity, in <i>Arabidopsis</i> (experiment&nbsp;#9: buffer or ACCD given one day before, together with, or one day after 0, 75 or 100&nbsp;mM NaCl; 15 days on agar). We then carried the result to rice grain yield with published rice studies.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Arabidopsis fresh weight at 75 millimolar sodium chloride, with and without ACC deaminase at three timings</caption>
+            <thead><tr><th><i>Arabidopsis</i>, 75&nbsp;mM NaCl</th><th class="num">Fresh weight (g)</th><th class="num">Change under salt (vs same treatment, 0&nbsp;mM)</th><th class="num">vs buffer at 75&nbsp;mM</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Buffer (control)</th><td class="num">0.064</td><td class="num">&minus;51%</td><td class="num">&mdash;</td></tr>
+              <tr><th scope="row">ACCD before salt</th><td class="num">0.164</td><td class="num">+35%</td><td class="num">+158%</td></tr>
+              <tr><th scope="row">ACCD with salt</th><td class="num">0.144</td><td class="num">&minus;34%</td><td class="num">+127%</td></tr>
+              <tr><th scope="row">ACCD after salt</th><td class="num">0.141</td><td class="num">+42%</td><td class="num">+122%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1469 / 569">
+            <img src="../assets/img/model/accd-salinity-rice-yield.webp"
+                 alt="Rice yield as a per cent of non-saline against root-zone salinity in decisiemens per metre. A black line for no protection falls from one hundred per cent at two decisiemens to under ten at twelve. A green line with ACC deaminase at efficacy 0.58 falls far more slowly, reaching about sixty per cent at twelve, with a shaded band for efficacy 0.38 to 0.79. Dotted markers show the lab doses of 75 and 100 millimolar sodium chloride."
+                 width="1469" height="569" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 10.</b> About 58% of the yield a salty paddy loses could be saved, if ACCD is present before the salt arrives.</figcaption>
+        </figure>
+          </div>
+          <div class="rail__panel chap pl-5" role="tabpanel" id="p-validation" aria-labelledby="t-validation">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="validation" data-toc="Validation">Result 3 &middot; It beats the no-weather trend on years it never saw</h3>
+            </header>
+
+        <p>Every test asks the same question, how far off is the predicted county yield, but closes a different loophole. The reference is the trend: each county's yield trend with no weather at all, the "no skill" line any weather model must beat.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1509 / 892">
+            <img src="../assets/img/model/stress-validation-island.webp"
+                 alt="Island mean first-crop paddy yield from 2001 to 2026 in black, rising from 5,850 to about 7,350 kilograms per hectare with large year to year swings. A green model line and a dotted grey trend line, both predicted from earlier years only, follow it from 2008. Below, a bar chart of island error per cent shows the green model bars shorter than the grey trend bars in the bad years 2013, 2018 and 2022. A 2026 forecast of 7,644 kilograms per hectare frozen on 26 September is marked at the right with an error bar."
+                 width="1509" height="892" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 11.</b> Island first-crop yield (black), with the model's and the trend's predictions from earlier years only. 2016&ndash;2025 county error: trend 419, model 365&nbsp;kg/ha. It gains most in bad seasons (2018, 2022) and loses a little in quiet ones.</figcaption>
+        </figure>
+
+        <figure class="fig fig--chart wide" id="blind-2026">
+          <div class="fig__frame" style="--fr: 1509 / 649">
+            <img src="../assets/img/model/stress-blind-2026.webp"
+                 alt="Left: frozen forecast against official 2026 first-crop yield for four counties, with eighty per cent intervals, scattered around the one to one line; Taichung and Pingtung sit on it, Taitung and Hualien off it; the overall error is 533 kilograms per hectare or 7.9 per cent. Right: yield versus trend against the 2026 first-crop stress index, with the historical typical-outcome line and band, and the four counties as red triangles; Taichung falls on the line, Taitung below it and Hualien and Pingtung far above."
+                 width="1509" height="649" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="ai"><b>Figure 12.</b> The blind test, as far as it has gone. The 2026 forecast was frozen on 26&nbsp;September, before any county published. Four of sixteen are in: county error 7.9% against the trend's 8.8%. Four counties is too few to call, and the right-hand panel shows why: Hualien and Pingtung beat their index badly, Taitung undershot it, and only Taichung landed where history said it would.</figcaption>
+        </figure>
+
+          </div>
+        </div>
+
+        <div class="chap__end">
+          <p class="chap__eyebrow">Conclusion</p>
+
+        <p>Across the historical rice data, the weather linked to yield loss differed between the two crops. For the second crop, the strongest signals came from typhoon-related wind and lodging, low light, and water-related stress. Heat and warm nights added little once those factors were considered. The first-crop index was less informative, consistent with its smaller and harder-to-distinguish yield losses.</p>
+
+        <p>The index gives these patterns a scale that can be compared with past harvests. Its relationship with yield loss was stronger for the second crop than the first, so it is more useful for identifying high-risk second-crop seasons than for making precise predictions in every county and year. The 2026 comparison is still incomplete, and historical weather replay does not demonstrate that the system can forecast stress early enough to act.</p>
+
+        <p>Block&nbsp;1 therefore provides a historically tested estimate of crop stress and potential protectant demand, not proof that ACC deaminase will prevent the predicted loss. It passes an addressable stress signal to <a href="#optogenetic-kinetics">Block&nbsp;2</a>; the biological efficacy of that signal still needs direct testing.</p>
+        </div>
+
+      </section>
+
+      <!-- ===================================== 3 · BLOCK 2 · OPTOGENETIC KINETICS -->
+      <section class="sec pl-2" id="optogenetic-kinetics">
+        <h2 data-toc="Optogenetic kinetics">Block 2 &middot; Optogenetic kinetics</h2>
+
+        <div class="lede-c"><p>One litre of culture clears a gram of ACC a day.</p></div>
+
+        <p>The reactor holds <i>Bacillus subtilis</i> WB800 carrying the cyanobacterial CcaSR two-component system. Green light at 535&nbsp;nm activates the sensor kinase CcaS, which phosphorylates CcaR. CcaR~P activates the P<sub>cpcG2</sub> promoter, transcribing <i>acdS</i> fused to a secretion signal peptide. The Sec translocon exports the enzyme and cleaves the signal peptide, leaving active ACC deaminase in the culture supernatant.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1536 / 1024">
+            <img src="../assets/img/model/ccasr-secretion-pathway.webp"
+                 alt="A schematic of a Bacillus subtilis WB800 cell. Green 535 nanometre light drives the membrane sensor CcaS, which carries a phycocyanobilin chromophore needing ho1 and pcyA; red 672 nanometre light reverses it. CcaS phosphorylates CcaR, and CcaR~P activates the P_cpcG2 promoter driving a signal peptide fused to acdS. The ribosome makes pre-ACCD, the Sec translocon exports it and cleaves the signal peptide, leaving active ACC deaminase outside. A line at the bottom reads measured at this point: samyQ 7.25, csn 3.31 below detection, WB800 host zero."
+                 width="1536" height="1024" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 13.</b> The induction and secretion pathway. Green light drives CcaS; red light at 672&nbsp;nm reverses it. CcaS requires the chromophore phycocyanobilin, which <i>B. subtilis</i> does not synthesise, so the construct must also carry <i>ho1</i> and <i>pcyA</i>. Activity is measured in the supernatant, after the final step.</figcaption>
+        </figure>
+
+        <details class="fold">
+          <summary>Assumptions</summary>
+          <div class="fold__body">
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">The three assumptions the optogenetic kinetics rest on, with the basis for each</caption>
+            <thead><tr><th>#</th><th>Assumption</th><th>Basis</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">B1</th><td>The construct supplies phycocyanobilin.</td><td>CcaS is a bilin-binding photoreceptor. <i>B. subtilis</i> does not synthesise PCB, so Castillo-Hair co-expressed <i>ho1</i> and <i>pcyA</i> alongside the sensor.</td></tr>
+              <tr><th scope="row">B2</th><td>The CcaSR transfer function measured on a fluorescent reporter also describes <i>acdS</i> transcription.</td><td>Same promoter, same sensor, same host.</td></tr>
+              <tr><th scope="row">B3</th><td>Activity in the supernatant is proportional to correctly folded, secreted enzyme.</td><td>The assay measures &alpha;-ketobutyrate, produced 1:1 with ACC cleaved, so it reports catalytic activity rather than protein mass.</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+        </details>
+
+        <div class="rail rail--seg" data-rail data-rail-top>
+          <div class="seg">
+            <div class="rail__strip seg__track" role="tablist" aria-label="Block 2: optogenetic kinetics">
+              <button class="rail__btn seg__btn pl-2" role="tab" type="button" id="t-light-setpoint" aria-controls="p-light-setpoint" aria-selected="true">Light setpoint</button>
+              <button class="rail__btn seg__btn pl-2" role="tab" type="button" id="t-response-time" aria-controls="p-response-time" aria-selected="false">Response time</button>
+              <button class="rail__btn seg__btn pl-2" role="tab" type="button" id="t-reactor-output" aria-controls="p-reactor-output" aria-selected="false">Reactor output</button>
+            </div>
+          </div>
+          <div class="rail__panel chap pl-2" role="tabpanel" id="p-light-setpoint" aria-labelledby="t-light-setpoint">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="light-setpoint" data-toc="Light setpoint">Result 1 &middot; Useful control runs from demand 0.015 to 0.94, and the lamp sets both ends</h3>
+            </header>
+
+        <p><b>The measured transfer function.</b> Castillo-Hair et al. (2019) characterised CcaSR in <i>B. subtilis</i> and fitted the steady-state response to a Hill function with half-maximal intensity <i>K</i><sub>&frac12;</sub> = 4.66 &plusmn; 0.63&nbsp;&micro;mol&nbsp;m<sup>&minus;2</sup>&nbsp;s<sup>&minus;1</sup> and Hill coefficient <i>n</i> = 1.88 &plusmn; 0.16, over a dynamic range exceeding 70-fold. The same system in <i>E. coli</i> gives <i>K</i><sub>&frac12;</sub> = 1.075 and <i>n</i> = 2.737, so the parameters are host-specific and the <i>B. subtilis</i> values are the correct ones here.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1469 / 609">
+            <img src="../assets/img/model/ccasr-transfer-function.webp"
+                 alt="Promoter output as a per cent of maximum against green light photon flux on a logarithmic axis. A green curve for the B. subtilis system reaches half maximum at 4.66 micromoles per square metre per second; a dashed grey curve for the E. coli system reaches half maximum at 1.075 and rises more steeply. A shaded band marks the reactor lamp range from 0.5 to 20."
+                 width="1469" height="609" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 14.</b> CcaSR steady-state transfer function. The <i>B. subtilis</i> system is four-fold less sensitive and less cooperative than the <i>E. coli</i> system. Shaded band is the reactor lamp range.</figcaption>
+        </figure>
+
+        <p><b>Inversion.</b> Block&nbsp;1 produces addressable stress <i>S</i><sub>addr</sub> and converts it to a demand <i>f</i> between 0 and 1. The lamp setpoint is the light intensity that drives promoter output to that fraction of maximum:</p>
+
+        <div class="eqn eqn--lit">
+          <b>Lamp setpoint from demand</b>
+          \[ I \;=\; K_{1/2} \left( \frac{f}{1-f} \right)^{1/n} \tag{5} \]
+          <em><i>K</i><sub>&frac12;</sub> = 4.66&nbsp;&micro;mol&nbsp;m<sup>&minus;2</sup>&nbsp;s<sup>&minus;1</sup>, <i>n</i> = 1.88.</em>
+        </div>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1469 / 629">
+            <img src="../assets/img/model/lamp-setpoint-vs-demand.webp"
+                 alt="Lamp photon flux against demand f, rising gently from 0.5 at low demand through about 4.7 at demand 0.5, then steeply to the 20 micromole ceiling just past demand 0.94. A grey dashed line continues the unclipped inverse Hill above the ceiling. A right-hand axis converts to illuminance up to about 2,500 lux. Shaded strips mark the lamp floor below demand 0.015 and saturation above 0.94."
+                 width="1469" height="629" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 15.</b> Demand to lamp setpoint. Below <i>f</i> = 0.015 the computed intensity falls under the lamp floor; above <i>f</i> = 0.94 it exceeds the 20&nbsp;&micro;mol&nbsp;m<sup>&minus;2</sup>&nbsp;s<sup>&minus;1</sup> ceiling. Right axis gives illuminance at 526&nbsp;nm.</figcaption>
+        </figure>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Lamp photon flux and illuminance for six demand levels</caption>
+            <thead><tr><th class="num">Demand</th><th class="num">PPFD (&micro;mol&nbsp;m<sup>&minus;2</sup>&nbsp;s<sup>&minus;1</sup>)</th><th class="num">Illuminance (lux)</th></tr></thead>
+            <tbody>
+              <tr><td class="num">0.05</td><td class="num">0.97</td><td class="num">121</td></tr>
+              <tr><td class="num">0.1</td><td class="num">1.45</td><td class="num">180</td></tr>
+              <tr><td class="num">0.25</td><td class="num">2.6</td><td class="num">322</td></tr>
+              <tr><td class="num">0.5</td><td class="num">4.66</td><td class="num">578</td></tr>
+              <tr><td class="num">0.75</td><td class="num">8.36</td><td class="num">1,037</td></tr>
+              <tr><td class="num">0.9</td><td class="num">15.00</td><td class="num">1,859</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The lux conversion uses photon energy at 526&nbsp;nm (3.78 &times; 10<sup>&minus;19</sup>&nbsp;J, or 0.228&nbsp;J&nbsp;&micro;mol<sup>&minus;1</sup>) and the photopic luminous efficacy at that wavelength (683 &times; 0.80 = 546&nbsp;lm&nbsp;W<sup>&minus;1</sup>), giving 124 lux per &micro;mol&nbsp;m<sup>&minus;2</sup>&nbsp;s<sup>&minus;1</sup>. Both quantities are per unit area, so no area term enters. The ceiling saturates the promoter at <i>f</i> = 0.94, so demands above that are indistinguishable to the reactor.</p>
+          </div>
+          <div class="rail__panel chap pl-2" role="tabpanel" id="p-response-time" aria-labelledby="t-response-time">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="response-time" data-toc="Response time">Result 2 &middot; Seven hours from decision to protection, so the controller must run on forecast</h3>
+            </header>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1379 / 982">
+            <img src="../assets/img/model/ccasr-response-kinetics.webp"
+                 alt="Four panels. Top left, output rising to half of final 105 minutes after the lamp goes on. Top right, output falling to half 75 minutes after it goes off. Bottom left, a stacked bar of the 7.3 hour horizon: 1.8 hours transcription lag, 2 hours accumulation, 0.5 hours harvest and load, a sliver for spraying, and 3 hours stomatal uptake. Bottom right, dose time against demand under three assumptions: flat at two hours if required mass scales with demand, rising linearly if it scales with the square, and falling steeply if the required mass is fixed."
+                 width="1379" height="982" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 16.</b> Top: CcaSR response kinetics; activation is slower than deactivation, so the system commits to production before it can confirm the stress. Bottom left: the horizon by step. Bottom right: dose time against demand under three assumptions about how required mass scales.</figcaption>
+        </figure>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">The five steps between deciding to produce and the enzyme being active in the leaf</caption>
+            <thead><tr><th>Step</th><th class="num">Hours</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Transcription lag (to half-max)</th><td class="num">1.8</td><td>CcaSR reporter kinetics <span class="prov prov--lit">Literature</span></td></tr>
+              <tr><th scope="row">Accumulate required amount</th><td class="num">2</td><td><span class="prov prov--assum">Assumed</span> placeholder</td></tr>
+              <tr><th scope="row">Harvest, concentrate, load</th><td class="num">0.5</td><td>Block 3 <span class="prov prov--assum">Design</span></td></tr>
+              <tr><th scope="row">Spray</th><td class="num">0.1</td><td>Knapsack application <span class="prov prov--assum">Design</span></td></tr>
+              <tr><th scope="row">Stomatal uptake into apoplast</th><td class="num">3</td><td>Surfactant-assisted uptake <span class="prov prov--lit">Literature</span></td></tr>
+              <tr><th scope="row"><b>Total <i>H</i></b></th><td class="num"><b>7.3</b></td><td>Reactor alone would be 4.2&nbsp;h</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+          <div class="rail__panel chap pl-2" role="tabpanel" id="p-reactor-output" aria-labelledby="t-reactor-output">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="reactor-output" data-toc="Reactor output">Result 3 &middot; Secretion detected at 7.25&nbsp;mU&nbsp;mL<sup>&minus;1</sup>, not yet quantified</h3>
+            </header>
+
+        <p><b>Measured activity.</b> ACC deaminase activity was measured by DNPH colorimetry on culture supernatant. The enzyme converts ACC to &alpha;-ketobutyrate and ammonia in 1:1 stoichiometry, so &alpha;-ketobutyrate production equals ACC cleaved. Reaction conditions were 43.0&nbsp;mM ACC, pH&nbsp;8.0, 30&nbsp;&deg;C, 30&nbsp;min, with the WB800 host supernatant as blank.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1429 / 628">
+            <img src="../assets/img/model/accd-activity-by-signal-peptide.webp"
+                 alt="Bar chart of ACC deaminase activity in milliunits per millilitre of supernatant for three constructs. WB800 host blank is zero, csn signal peptide is 3.31, samyQ signal peptide is 7.25. A dashed limit-of-detection line sits at 4.9 and a dashed limit-of-quantitation line at 14.8, so only samyQ clears detection and neither clears quantitation."
+                 width="1429" height="628" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 17.</b> Secreted activity by signal peptide. Detection and quantitation limits are derived from the standard-curve residuals as 3.3&sigma;/<i>m</i> and 10&sigma;/<i>m</i>.</figcaption>
+        </figure>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Measured absorbance, cell density and derived activity for the host and two signal peptides</caption>
+            <thead><tr><th>Construct</th><th class="num">A<sub>540</sub></th><th class="num">OD<sub>600</sub></th><th class="num">Activity (mU&nbsp;mL<sup>&minus;1</sup>)</th><th class="num">Per OD<sub>600</sub></th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">WB800 host</th><td class="num">0.388</td><td class="num">3.322</td><td class="num">0</td><td class="num">&mdash;</td><td>Blank by definition</td></tr>
+              <tr><th scope="row">csn</th><td class="num">0.404</td><td class="num">2.638</td><td class="num">3.31</td><td class="num">1.25</td><td>Below LOD</td></tr>
+              <tr><th scope="row">samyQ</th><td class="num">0.423</td><td class="num">3.058</td><td class="num">7.25</td><td class="num">2.37</td><td>Detected, below LOQ</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><b>Signal is not a biomass artefact.</b> WB800 has the highest OD<sub>600</sub> and the second-highest absorbance; samyQ has lower biomass and higher signal. A background from cell density or secreted carbonyl metabolites would produce matching ranks. This argument is independent of the standard curve and survives any calibration error.</p>
+
+        <p><b>Calibration correction.</b> The standard-curve concentrations were originally computed against a 110&nbsp;&micro;L reaction volume while the actual standard volume was 160.6&nbsp;&micro;L. Correcting this reduces every derived activity by a factor of 1.460.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1429 / 609">
+            <img src="../assets/img/model/dnph-standard-curve.webp"
+                 alt="Absorbance at 540 nanometres against alpha-ketobutyrate concentration. Red crosses mark the five standards as originally labelled, spread out to 4 millimolar; grey arrows move each one left onto a green fitted line, with the corrected points reaching only 2.7 millimolar. The title says labels overstated concentration 1.460 times, inflating activity 46 per cent."
+                 width="1429" height="609" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 18.</b> Standard curve before and after correction. Arrows show each point moving to its true concentration. Fitted slope 0.18695&nbsp;AU&nbsp;mM<sup>&minus;1</sup>, <i>R</i><sup>2</sup> 0.99907, residual SD 0.00715.</figcaption>
+        </figure>
+
+        <p><b>Implied enzyme concentration.</b> Substrate was 43.0&nbsp;mM against a <i>K</i><sub>m</sub> of 3.4&nbsp;mM, so the assay ran at 93% of <i>V</i><sub>max</sub>. Correcting to <i>V</i><sub>max</sub> = 7.82&nbsp;mU&nbsp;mL<sup>&minus;1</sup> and applying <i>k</i><sub>cat</sub> = 146&nbsp;min<sup>&minus;1</sup> (<i>P. putida</i> UW4) gives a secreted enzyme concentration of 54&nbsp;nM, or 1.96&nbsp;mg&nbsp;L<sup>&minus;1</sup>.</p>
+
+        <div class="eqn eqn--ours ai">
+          <b>From activity to protein</b>
+          \[ \frac{v}{V_{\max}} = \frac{[S]}{K_m + [S]} = \frac{43.0}{3.4 + 43.0} = 0.927 , \qquad V_{\max} = \frac{7.25}{0.927} = 7.82\ \mathrm{mU\,mL^{-1}} \tag{6} \]
+          \[ [E] \;=\; \frac{V_{\max}}{k_{\mathrm{cat}}} \;=\; \frac{7.82\ \mathrm{nmol\,min^{-1}\,mL^{-1}}}{146\ \mathrm{min^{-1}}} \;=\; 53.6\ \mathrm{nM} \;=\; 1.96\ \mathrm{mg\,L^{-1}} \tag{7} \]
+          <em>Michaelis&ndash;Menten with no inhibition. The mass uses the 36.5&nbsp;kDa subunit, because <i>k</i><sub>cat</sub> is per active site and the active tetramer carries four of them: 53.6&nbsp;nM of sites is 13.4&nbsp;nM of tetramer, and both come to the same 1.96&nbsp;mg&nbsp;L<sup>&minus;1</sup> of protein. The published range for <i>B. subtilis</i> heterologous secretion is 4 to 200&nbsp;mg&nbsp;L<sup>&minus;1</sup>, so this sits a factor of two below its floor.</em>
+        </div>
+
+        <p><b>Accumulation.</b> Enzyme accumulates while the lamp runs and decays in the medium, so banked activity saturates at production rate &times; mean lifetime. Running the reactor longer past that point adds nothing.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1468 / 629">
+            <img src="../assets/img/model/banked-activity.webp"
+                 alt="Banked activity in kilounits inside a 1,000 litre reactor against days of accumulation, for three assumed medium half-lives. One day flattens at a ceiling of 50 kilounits within four days; seven days reaches 264 and is still rising at a ceiling of 352; thirty days reaches 417 against a ceiling of 1,506."
+                 width="1468" height="629" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 19.</b> Banked activity at the measured secretion rate, for three assumed medium half-lives. The half-life has not been measured for this preparation.</figcaption>
+        </figure>
+
+        <p>Culture reached OD<sub>600</sub> 3.06. At a doubling time of 29&nbsp;min in LB at 37&nbsp;&deg;C, that is about 5.9 doublings from a 1:100 inoculum, or 4 to 6&nbsp;h including the approach to stationary phase. Batch duration was not recorded, so the production rate is inferred rather than measured.</p>
+
+        <p class="ai">In the unit <a href="#dose-and-payback">Block&nbsp;3</a> works in, 7.25&nbsp;mU&nbsp;mL<sup>&minus;1</sup> is 44.0&nbsp;mg of ACC cleared per litre of supernatant per hour, or 1.056&nbsp;g per day.</p>
+          </div>
+        </div>
+
+        <div class="chap__end">
+          <p class="chap__eyebrow">Conclusion</p>
+
+        <p>The CcaSR literature provides a starting point for translating a desired promoter response into a green-light intensity. In our assay, the samyQ construct produced a detectable ACC deaminase signal in the culture supernatant, while the csn result was below the detection limit. This supports carrying samyQ forward for testing.</p>
+
+        <p>The measured activity is not yet precise enough to establish production capacity: it came from one well and falls below the assay's quantification limit. The light-response curve comes from published reporter measurements, and several steps used to estimate when active enzyme would reach the plant rely on assumptions rather than measurements of our construct and delivery system. The resulting response-time estimate is therefore a planning scenario, not a validated operating time.</p>
+
+        <p>Block&nbsp;2 establishes a promising secretion signal and a framework for light control. It does not yet show how much enzyme a given stress level requires or how quickly a field-ready dose can be produced. Those are the key measurements needed before the <a href="#stress-index">Block&nbsp;1</a> demand signal can be converted into a dependable production schedule.</p>
+        </div>
+
+      </section>
+
+      <!-- ================================ 4 · BLOCK 3 · DOSE, FREQUENCY, PAYBACK -->
+      <section class="sec pl-3" id="dose-and-payback">
+        <h2 data-toc="Dose and payback">Block 3 &middot; Dose and payback</h2>
+
+        <div class="lede-c"><p>How much protectant, and how many reactors?</p></div>
+
+        <p>Blocks 1 and 2 end in units nobody farms with: a stress index, and a titre in mU&nbsp;mL<sup>&minus;1</sup>. This block turns them into litres, machines and New Taiwan dollars for waterlogging in the second rice crop, which is the stress <a href="#stress-index">Block&nbsp;1</a> can actually count and the one this enzyme acts on most strongly.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 453">
+            <img src="../assets/img/model/dose-chain-plate-to-tank.webp"
+                 alt="Four boxes under the title the whole calculation. One plate, 1.67 millilitres over 100 square centimetres, measured. One hectare, 1,670 litres of neat culture, arithmetic. A rice canopy, 4,008 litres for one application, modelled. In the tank, 400 litres of water plus concentrate, what the farmer handles. Arrows between them read times ten to the eighth divided by 100, times 2.4, and divided by 10 concentrate. A note says only the first box is measured on a plant, the third carries a band of 2,806 to 5,878 litres, and the third box multiplies by the field area in hectares."
+                 width="1600" height="453" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 20.</b> From one plate to one application. Step&nbsp;2 is arithmetic on a measured rate. Step&nbsp;3 is the only modelled step, and it carries the widest uncertainty in the block.</figcaption>
+        </figure>
+
+        <details class="fold">
+          <summary>Assumptions</summary>
+          <div class="fold__body">
+
+        <p>Working scenario, not a validated field dose: about 4,082&nbsp;L/ha of culture-equivalent per modelled pass. It follows from a reported plate treatment, an assumed plate area, and an unvalidated rice-canopy correction. The minimum effective dose and the actual per-pass amount for rice have not yet been measured. The seasonal pass counts below are likewise historical simulations under a provisional trigger and an unmeasured protection lifetime.</p>
+
+        <p class="ai">The figures and tables in this block carry 4,008&nbsp;L/ha, which is the same chain with the canopy correction rounded to 2.4; 4,082&nbsp;L/ha is the unrounded 2.444, 1.8% higher and well inside the 2,806 to 5,878&nbsp;L band the correction already spans.</p>
+          </div>
+        </details>
+
+        <div class="rail rail--seg" data-rail data-rail-top>
+          <div class="seg">
+            <div class="rail__strip seg__track" role="tablist" aria-label="Block 3: dose and payback">
+              <button class="rail__btn seg__btn pl-3" role="tab" type="button" id="t-how-much" aria-controls="p-how-much" aria-selected="true">How much is needed</button>
+              <button class="rail__btn seg__btn pl-3" role="tab" type="button" id="t-where-from" aria-controls="p-where-from" aria-selected="false">Where the numbers come from</button>
+              <button class="rail__btn seg__btn pl-3" role="tab" type="button" id="t-make-and-worth" aria-controls="p-make-and-worth" aria-selected="false">Can we make it, is it worth it</button>
+            </div>
+          </div>
+          <div class="rail__panel chap pl-3" role="tabpanel" id="p-how-much" aria-labelledby="t-how-much">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="how-much" data-toc="How much is needed">Result 1 &middot; How much protectant is needed?</h3>
+            </header>
+
+        <p>This is the most important result. Everything that leads to the calculation in Result&nbsp;1 is set out in <a href="#where-from">Result&nbsp;2</a>.</p>
+
+        <p>Nothing in the science changes with field size. Every figure here is the same per-hectare rate multiplied by area. A farmer with 1&nbsp;&#20998; and a farmer with 10&nbsp;&#20844;&#38913; face the identical calculation. Only two things fail to scale cleanly: reactor units round up to whole machines, and whether a season fires at all is set by the weather, not by how much land you have.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Litres of neat culture by field size, for one application, a median season that fires, and the worst season on record</caption>
+            <thead><tr><th>Land size</th><th class="num">One application</th><th class="num">A season that fires (9 passes)</th><th class="num">Worst on record (17 passes)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1&nbsp;&#20998; (0.097&nbsp;ha)</th><td class="num">389&nbsp;L</td><td class="num">3,499&nbsp;L</td><td class="num">6,609&nbsp;L</td></tr>
+              <tr><th scope="row">5&nbsp;&#20998; (0.485&nbsp;ha)</th><td class="num">1,944&nbsp;L</td><td class="num">17,493&nbsp;L</td><td class="num">33,043&nbsp;L</td></tr>
+              <tr><th scope="row">1&nbsp;&#30002; (0.970&nbsp;ha)</th><td class="num">3,887&nbsp;L</td><td class="num">34,986&nbsp;L</td><td class="num">66,085&nbsp;L</td></tr>
+              <tr><th scope="row">1&nbsp;&#20844;&#38913; (1.000&nbsp;ha)</th><td class="num"><b>4,008&nbsp;L</b></td><td class="num"><b>36,072&nbsp;L</b></td><td class="num"><b>68,136&nbsp;L</b></td></tr>
+              <tr><th scope="row">3&nbsp;&#20844;&#38913; (3.000&nbsp;ha)</th><td class="num">12,024&nbsp;L</td><td class="num">108,216&nbsp;L</td><td class="num">204,408&nbsp;L</td></tr>
+              <tr><th scope="row">10&nbsp;&#20844;&#38913; (10.000&nbsp;ha)</th><td class="num">40,080&nbsp;L</td><td class="num">360,720&nbsp;L</td><td class="num">681,360&nbsp;L</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">Litres of neat culture. One application is diluted into 400&nbsp;L of tank mix per hectare.</p>
+
+        <h4>Amount of protectant, by land size and stress level</h4>
+
+        <p>Two inputs. Field size sets the litres per application, and the stress level sets how many applications the season needs. The stress bar is not a made-up scale: its four stops are the only four outcomes that occur in 25 years of &#38642;&#26519; record, with how often each one happened.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 462">
+            <img src="../assets/img/model/season-calculator-quiet.webp"
+                 alt="A calculator panel with a field size of 1.00 公頃 and a stress slider at its lowest stop. A line reads quiet season, no dekad crosses the trigger, 17 of 25 seasons including 2024. Four figures below: 4,008 litres for one application with 400 litres in the tank, zero applications this season, zero litres as the season total with the reactor idle, and 68,136 litres as the worst case for sizing at 17 applications in 2001 and 2008."
+                 width="1600" height="462" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="ai"><b>Figure 21.</b> One hectare on a quiet season. No dekad crosses the release trigger, so nothing is sprayed and the reactor stays idle. 17 of the 25 seasons on record look like this, 2024 among them.</figcaption>
+        </figure>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 450">
+            <img src="../assets/img/model/season-calculator-two-windows.webp"
+                 alt="The same calculator panel with the stress slider at the third stop. A line reads two stress windows, two separate runs, 2 of 25: 2007 and 2023. The figures below read 4,008 litres for one application with 400 litres in the tank, 12 applications this season, 48,096 litres as the season total with 4,800 litres of tank mix, and the same 68,136 litre worst case."
+                 width="1600" height="450" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="ai"><b>Figure 22.</b> The same hectare with two stress windows, which happened in 2 of the 25 seasons, 2007 and 2023: 12 applications, 48,096&nbsp;L of culture across the season and 4,800&nbsp;L of tank mix.</figcaption>
+        </figure>
+          </div>
+          <div class="rail__panel chap pl-3" role="tabpanel" id="p-where-from" aria-labelledby="t-where-from">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="where-from" data-toc="Where the numbers come from">Result 2 &middot; Where those numbers come from</h3>
+            </header>
+
+        <p>Three things to justify: the dose we measured, the correction we modelled, and how often a field needs it. Then one question that could undo all three.</p>
+
+        <h4>The dose, and why it is a ceiling rather than a requirement</h4>
+
+        <p>Experiment&nbsp;#9 sprayed 1.67&nbsp;mL of filtered supernatant onto a plate of seven-day-old <i>Arabidopsis</i>. A recorded volume over a known area is a rate, and a rate scales to a hectare without any modelling in between.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">What the per-hectare dose rests on, quantity by quantity, with whether each was measured or assumed</caption>
+            <thead><tr><th>Quantity</th><th class="num">Value</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Volume applied</th><td class="num">1.67&nbsp;mL</td><td>From the protocol <span class="prov prov--ours">Measured</span></td></tr>
+              <tr><th scope="row">Plate area</th><td class="num">100&nbsp;cm<sup>2</sup></td><td>Reconstructed, never written down <span class="prov prov--assum">Assumed</span></td></tr>
+              <tr><th scope="row">Rate per hectare</th><td class="num">1,670&nbsp;L</td><td>Arithmetic</td></tr>
+              <tr><th scope="row">Our measured titre</th><td class="num">7.2514&nbsp;mU&nbsp;mL<sup>&minus;1</sup></td><td>Above LOD, below LOQ <span class="prov prov--ours">Measured</span></td></tr>
+              <tr><th scope="row">Activity delivered</th><td class="num">12.1&nbsp;kU&nbsp;ha<sup>&minus;1</sup></td><td>Arithmetic</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The experiment changed salt level and timing, but not the amount. So 1,670&nbsp;L/ha is a dose that worked, not the smallest dose that works, and the true minimum sits somewhere at or below it. One plate with neat, 1:3, 1:10 and 1:30 arms would find it, and every litre on this page would move with the answer.</p>
+
+        <h4>The canopy correction, the one modelled step</h4>
+
+        <p>A seedling plate and a rice canopy are not the same target. Rice carries far more leaf, so it catches much more of the spray, and then shares it over much more surface. Those two effects pull in opposite directions, and the second wins.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1600 / 640">
+            <img src="../assets/img/model/canopy-correction.webp"
+                 alt="Two panels. A seedling plate at leaf area index 0.115 catches 5.6 per cent of the spray, giving 0.486 per unit of leaf. A rice canopy at leaf area index 4.5 catches 89.5 per cent, giving 0.199 per unit of leaf. A note reads rice catches 16 times more spray but has 39 times more leaf to share it among, so each leaf gets 0.41 times as much and the dose is multiplied by 2.44. This is a model, not a measurement."
+                 width="1600" height="640" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 23.</b> The canopy correction. Rice catches 16&times; more spray and carries 39&times; more leaf to share it among, so the dose is multiplied by 2.44&times;. This is a model, not a measurement.</figcaption>
+        </figure>
+
+        <h4>How often a field actually needs treating</h4>
+
+        <p><a href="#stress-index">Block&nbsp;1</a> rebuilt its stress index dekad by dekad for every &#38642;&#26519;&#32291; second crop (&#20108;&#26399;) from 2001 to 2025. A dekad (a 10-day period) qualifies for release when the share of stress this enzyme can act on, here waterlogging, reaches 1% expected loss on its own.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Applications per season and the culture they need, on four bases, with what each basis is good for</caption>
+            <thead><tr><th>Basis</th><th class="num">Applications</th><th class="num">Culture, L/ha</th><th>What it is for</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Averaged over all 25 seasons</th><td class="num">3.28</td><td class="num">13,146</td><td><b>Budgeting only.</b> No season ever looks like this</td></tr>
+              <tr><th scope="row">A median season that fires</th><td class="num"><b>9</b></td><td class="num"><b>36,072</b></td><td><b>The realistic planning case</b></td></tr>
+              <tr><th scope="row">90th percentile</th><td class="num">12</td><td class="num">48,096</td><td>A defensible basis for sizing capacity</td></tr>
+              <tr><th scope="row">Worst on record, 2001 and 2008</th><td class="num">17</td><td class="num">68,136</td><td>What the hardware has to survive</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Enzyme entering the leaf</h4>
+
+        <p>This does not enter the arithmetic, because whatever uptake happened on the plate is already inside the 1,670&nbsp;L. It matters for a different reason. If an intact enzyme cannot cross into a rice leaf, then no amount of volume fixes it, and the canopy correction is correcting the wrong thing.</p>
+
+        <figure class="fig fig--chart wide">
+          <div class="fig__frame" style="--fr: 1549 / 569">
+            <img src="../assets/img/model/molecule-pore-sizes.webp"
+                 alt="Horizontal bars on a logarithmic size axis in nanometres under the title the cuticle is shut, the stoma is wide open. Water 0.3, sucrose 1.0, cuticle aqueous pore 4.5 in red, ACCD subunit 5.9, ACCD active tetramer 9.4, and open stomatal pore 2,000. A pale vertical band marks the cuticle pore width, and both enzyme bars extend past it."
+                 width="1549" height="569" loading="lazy" decoding="async" />
+          </div>
+          <figcaption><b>Figure 24.</b> Sizes on a log scale. The enzyme is excluded from the cuticle by two-fold. The open stomatal pore is not the barrier it looks like here: along that route the size-exclusion limit is about 10&nbsp;nm, and the 9.4&nbsp;nm tetramer clears it only just.</figcaption>
+        </figure>
+
+        <p>Rice is amphistomatous: stomata on both leaf surfaces, upper density comparable to or slightly above the lower. Most crops keep theirs on the underside, where a spray never lands. For us that helps, because droplets settle on a surface that actually has the pores.</p>
+
+        <div class="figs figs--2">
+          <figure class="fig fig--photo">
+            <div class="fig__frame" style="--fr: 254 / 254">
+              <img src="../assets/img/model/rice-stomata-adaxial.webp"
+                   alt="Light micrograph of the upper surface of a rice leaf, with rows of stomata running parallel to the veins."
+                   width="254" height="254" loading="lazy" decoding="async" />
+            </div>
+            <figcaption><b>Figure 25.</b> Rice leaf, upper (adaxial) surface, 186.7 stomata per mm<sup>2</sup>.</figcaption>
+          </figure>
+          <figure class="fig fig--photo">
+            <div class="fig__frame" style="--fr: 249 / 252">
+              <img src="../assets/img/model/rice-stomata-abaxial.webp"
+                   alt="Light micrograph of the lower surface of a rice leaf, with denser rows of stomata between the veins."
+                   width="249" height="252" loading="lazy" decoding="async" />
+            </div>
+            <figcaption><b>Figure 26.</b> Lower (abaxial) surface, 621.0 per mm<sup>2</sup>. A spray lands on the upper one.</figcaption>
+          </figure>
+        </div>
+          </div>
+          <div class="rail__panel chap pl-3" role="tabpanel" id="p-make-and-worth" aria-labelledby="t-make-and-worth">
+            <header class="chap__hero">
+              <h3 class="chap__title" id="make-and-worth" data-toc="Can we make it, is it worth it">Result 3 &middot; Can we make it, and is it worth it</h3>
+            </header>
+
+        <h4>On-time delivery</h4>
+
+        <p><a href="#optogenetic-kinetics">Block&nbsp;2</a> gives the reactor a production rate of 34,807&nbsp;mU per reactor-litre per day at our titre, which is 0.2083 reactor-litre-days for every litre of culture. Lead time for one application is then the culture volume divided by total vessel volume, plus the 7.3&nbsp;h forecast lag.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Lead time for one hectare and three hectares, for fleets of two to twenty 20-litre vessels</caption>
+            <thead><tr><th>Fleet, 20&nbsp;L vessels</th><th class="num">Total volume</th><th class="num">Lead time for 1&nbsp;ha</th><th class="num">Lead time for 3&nbsp;ha</th><th>Verdict</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">2 units</th><td class="num">40&nbsp;L</td><td class="num">21.2&nbsp;d</td><td class="num">62.9&nbsp;d</td><td>Too slow to chase a forecast</td></tr>
+              <tr><th scope="row">5 units</th><td class="num">100&nbsp;L</td><td class="num">8.7&nbsp;d</td><td class="num">25.4&nbsp;d</td><td>Too slow to chase a forecast</td></tr>
+              <tr><th scope="row">10 units</th><td class="num"><b>200&nbsp;L</b></td><td class="num"><b>4.5&nbsp;d</b></td><td class="num"><b>12.8&nbsp;d</b></td><td><b>Only works with stock on hand</b></td></tr>
+              <tr><th scope="row">20 units</th><td class="num">400&nbsp;L</td><td class="num">2.4&nbsp;d</td><td class="num">6.6&nbsp;d</td><td>Only works with stock on hand</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The useful weather forecast runs about 3 days ahead. Producing a single hectare-application takes 4.5 days on a 10-unit fleet, and the worst recorded window in 2008 needed 16.4 days of lead against that 3-day forecast. The reactor cannot chase the weather. It runs continuously through the season and builds stock; the forecast decides when to spend the stock, not when to start brewing. Storage stability is therefore load bearing, and it is unmeasured.</p>
+
+        <h4>Payback, and the answer nobody wants</h4>
+
+        <p>At the official 2026 farm-gate price, a hectare of ordinary &#38642;&#26519; paddy carries NT$4,429 per crop of weather-attributable loss that this enzyme could address. Block&nbsp;3 also finds the first crop never crosses the release threshold in 25 years, so only one crop a year benefits. With 10 units at NT$30,000 each, payback is 64.7 years. Pushing efficacy to the physical ceiling of 1.0 still leaves 38.3 years. A 5-year payback would need an efficacy of 12.8, which is not a hard target, it is an impossible one.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">Annual benefit and payback period on ordinary and salt-affected land, at two efficacies, two unit counts and two unit prices</caption>
+            <thead><tr><th>Land</th><th class="num">Efficacy</th><th class="num">Units</th><th class="num">NT$/unit</th><th class="num">Benefit/yr</th><th class="num">Payback</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Ordinary paddy</th><td class="num">0.28</td><td class="num">10</td><td class="num">30,000</td><td class="num">4,635</td><td class="num">64.7&nbsp;y</td></tr>
+              <tr><th scope="row">Ordinary paddy</th><td class="num">1.00</td><td class="num">10</td><td class="num">30,000</td><td class="num">7,824</td><td class="num">38.3&nbsp;y</td></tr>
+              <tr><th scope="row">Ordinary paddy</th><td class="num">1.00</td><td class="num">10</td><td class="num">3,000</td><td class="num">7,824</td><td class="num">3.8&nbsp;y</td></tr>
+              <tr><th scope="row">Salt-affected</th><td class="num"><b>0.28</b></td><td class="num"><b>10</b></td><td class="num"><b>30,000</b></td><td class="num"><b>126,967</b></td><td class="num"><b>2.4&nbsp;y</b></td></tr>
+              <tr><th scope="row">Salt-affected</th><td class="num">0.28</td><td class="num">50</td><td class="num">30,000</td><td class="num">126,967</td><td class="num">11.8&nbsp;y</td></tr>
+              <tr><th scope="row">Salt-affected</th><td class="num">1.00</td><td class="num">10</td><td class="num">30,000</td><td class="num">444,724</td><td class="num">0.7&nbsp;y</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </div>
+        </div>
+
+        <div class="chap__end">
+          <p class="chap__eyebrow">Limitations</p>
+
+        <p>Three experiments could change our estimates substantially: measuring how long the enzyme lasts on leaves, finding the minimum effective dose, and measuring spray capture on rice canopies.</p>
+
+        <h4>Where improvements need to be made</h4>
+
+        <p>Four errors survived into drafts of this page before we caught them. We list them because a model that has never been wrong in public has usually not been checked.</p>
+
+        <div class="tablewrap">
+          <table class="data">
+            <caption class="visually-hidden">An error caught in an earlier draft of this block, and why it was wrong</caption>
+            <thead><tr><th>What we had</th><th>Why it was wrong</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">&ldquo;The enzyme passes with room to spare&rdquo;</th><td>We compared a 9.4&nbsp;nm tetramer with the ~2,000&nbsp;nm stomatal aperture. The aperture is not the barrier. The size-exclusion limit of about 10&nbsp;nm is, and we clear it only just.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="ai">The draft writes out one of the four. The other three are not recorded anywhere, so they are not listed here.</p>
+
+        <h4>What would overturn this</h4>
+
+        <p>Measuring rice leaf area and spray capture directly would replace the canopy correction, which alone spans 1.68 to 3.52. Until those are done, 4,082&nbsp;L/ha should be read as a modelled scenario, neither a validated requirement nor an established upper bound.</p>
+        </div>
+
+      </section>
+
+
+      <!-- ================================================== 5 · CONCLUSION ======= -->
+      <section class="sec" id="conclusion">
+        <h2>Conclusion</h2>
+
+        <p class="ai"><a href="#stress-index">Block&nbsp;1</a> ends with a stress index fitted to 25 years of county harvests: 32% less county error than the no-weather trend in the second crop, and a price on every index level, about 4% of yield or NT$7,539/ha at a moderate first-crop season. <a href="#optogenetic-kinetics">Block&nbsp;2</a> ends at the reactor outlet: useful lamp control between demand 0.015 and 0.94, 7.3&nbsp;h from decision to enzyme in the leaf, and 7.25&nbsp;mU&nbsp;mL<sup>&minus;1</sup> of secreted activity, above detection and below quantitation. <a href="#dose-and-payback">Block&nbsp;3</a> turns both into the number a farmer would act on.</p>
+
+        <p>Given that the crop is rice, how much protectant does a farmer need for a field of a given size? Under the current assumptions, the calculator gives a modelled scenario of about 4,082&nbsp;litres of culture-equivalent per hectare per pass, formulated into 400&nbsp;litres of tank mix. This is not yet a validated rice dose or a minimum effective amount. The historical pass count is also conditional on a provisional stress trigger and an unmeasured protection lifetime. Land-size scaling is straightforward; the biological dose is not.</p>
+
+        <p>A number on its own is not a model. Getting to this one forced us to reconsider not just the dose, but how ReLEAF would actually work in the field.</p>
+
+        <div class="ledger">
+          <div class="ledger__no">
+            <b>1 &middot; From production to application</b>
+            <p>A 10-unit reactor fleet needs 4.5 days to produce one hectare's application, longer than our three-day forecast window. We would need to produce and store culture in advance. Our weather analysis also showed that one stress window can require multiple sprays, with the number depending on how long the enzyme remains effective on leaves. Both storage stability and spray lifetime remain untested.</p>
+          </div>
+          <div class="ledger__no">
+            <b>2 &middot; From <i>Arabidopsis</i> to rice</b>
+            <p>Our <i>Arabidopsis</i> results already reach the ceiling of our efficacy calculation. More experiments under similar conditions won't answer the question that matters: whether ReLEAF works on rice. Our next step is to test rice in soil, measuring fresh weight, root length and applied volume, while finding the minimum effective dose and measuring spray capture on rice leaves.</p>
+          </div>
+          <div class="ledger__no">
+            <b>3 &middot; From a general solution to a specific need</b>
+            <p>Our model estimates a 64.7-year payback on ordinary paddy, compared with 2.4 years on salt-affected coastal land. These are projections, but the difference changes where ReLEAF might be useful.</p>
+          </div>
+        </div>
+
+        <div class="ledger">
+          <div class="ledger__no">
+            <b>And one thing we cannot fix this year</b>
+            <p>The payback in <a href="#make-and-worth">section&nbsp;4</a> is priced on salinity. The spray schedule in <a href="#where-from">section&nbsp;3</a> is counted from waterlogging dekads. Salinity is chronic and sits in the soil every day, so it has no event for a forecast to catch, and <a href="#stress-index">Block&nbsp;1</a> does not carry it in the index. Making the two agree means rebuilding the release rule around salt-sensitive growth stages, which would need roughly 15 applications over a 30-day window instead of 9. We know this is the largest open problem in the model. We would rather state it than paper over it.</p>
+          </div>
+        </div>
+
+        <p>We began by trying to calculate how much protectant a farmer would need. We ended up discovering how much we still need to learn before that number can be used in a real field. For us, that is the purpose of the model: not just to produce an estimate, but to show exactly what needs to be tested before ReLEAF can move beyond the lab.</p>
+      </section>
+
+
+      <section class="refs" id="references">
+        <h2 data-no-toc>References</h2>
+
+        <h3 data-no-toc>Block 1 &middot; Stress index</h3>
+        <ol>
+          <li>Agriculture and Food Agency, Ministry of Agriculture (&#36786;&#31918;&#32626;). County rice yield statistics, every season from 2001. The record the stress index is fitted and tested against, and the source of the realised 2026 first-crop yields.</li>
+          <li>ERA5 daily reanalysis for the historical fit, and Central Weather Administration (&#20013;&#22830;&#27683;&#35937;&#32626;) station data for live use. The weather inputs behind every stress term.</li>
+          <li>Official 2026 farm-gate paddy price, NT$25.7/kg, used for every NT$ figure on this page.</li>
+          <li>Grattan, S.R. et al. (2002) rice salt-tolerance yield response, the black line in Figure&nbsp;10, with the older Maas&ndash;Hoffman guideline shown for comparison.</li>
+          <li>Shultana, R. et al. (2020), the 8&nbsp;dS/m reference point marked on Figure&nbsp;10.</li>
+          <li>Our wet lab: <i>Arabidopsis</i> salinity experiment&nbsp;#9, buffer or ACCD at three timings against 0, 75 and 100&nbsp;mM NaCl, 15 days on agar.</li>
+        </ol>
+
+        <h3 data-no-toc>Block 2 &middot; Optogenetic kinetics</h3>
+        <ol start="7">
+          <li>Castillo-Hair, S.M., Baerman, E.A., Fujita, M., Igoshin, O.A., Tabor, J.J. (2019) Optogenetic control of <i>Bacillus subtilis</i> gene expression. <i>Nature Communications</i> 10:3099. <a href="https://doi.org/10.1038/s41467-019-10906-6" target="_blank" rel="noopener">doi:10.1038/s41467-019-10906-6</a>. Source of <i>K</i><sub>&frac12;</sub> = 4.66 &plusmn; 0.63 and <i>n</i> = 1.88 &plusmn; 0.16, of the <i>ho1</i> and <i>pcyA</i> requirement, and of the response kinetics in Figure&nbsp;16.</li>
+          <li>ACC deaminase kinetics: <i>Pseudomonas putida</i> UW4, <i>K</i><sub>m</sub> 3.4&nbsp;mM, <i>k</i><sub>cat</sub> 146&nbsp;min<sup>&minus;1</sup>.</li>
+          <li>ACC deaminase quaternary structure: homotetramer, ~144&nbsp;kDa, 36.5&nbsp;kDa per subunit.</li>
+          <li><i>B. subtilis</i> heterologous secretion yields, 4&nbsp;mg&nbsp;L<sup>&minus;1</sup> to 200&nbsp;mg&nbsp;L<sup>&minus;1</sup>.</li>
+          <li><i>B. subtilis</i> doubling time 28&ndash;30&nbsp;min in LB at 37&nbsp;&deg;C.</li>
+          <li>Our wet lab: DNPH ACC deaminase activity assay, 2026-10-07, FlexA A<sub>540</sub> readings, <i>n</i> = 1.</li>
+        </ol>
+
+        <h3 data-no-toc>Block 3 &middot; Dose and payback</h3>
+        <ol start="13">
+          <li>Our wet lab: <i>Arabidopsis</i> salinity experiment&nbsp;#9, phase&nbsp;3 application protocol, three sprays from a sterilised nozzle at 10&nbsp;cm, calibrated at 1.67&nbsp;mL per three sprays in the companion heat protocol. Recorded on <a href="../plant/">Plants</a>. The source of the applied volume behind 1,670&nbsp;L/ha.</li>
+          <li>Our wet lab: DNPH ACC deaminase activity assay, 2026-10-07, 7.2514&nbsp;mU&nbsp;mL<sup>&minus;1</sup> supernatant, above the limit of detection and below the limit of quantitation. Every litre figure scales with it.</li>
+          <li><a href="#stress-index">Block&nbsp;1</a> rebuilt dekad by dekad for every &#38642;&#26519;&#32291; second crop (&#20108;&#26399;), 2001 to 2025, from Agriculture and Food Agency yields and ERA5 daily weather. The source of the release count, of the 17 quiet seasons out of 25, and of the 2001 and 2008 worst case.</li>
+          <li>Rice leaf area index 4.5 at panicle initiation against 0.115 on a seedling plate, and the spray-capture fraction at each. The canopy correction of 2.44&times; is modelled from these, not measured.</li>
+          <li>Cuticular aqueous pores 4 to 5&nbsp;nm, against the 9.4&nbsp;nm active tetramer; organosilicone surfactants drive stomatal mass flow (Knoche 1994). Behind Figure&nbsp;24.</li>
+          <li>Rice stomatal density: IR64, 186.7&nbsp;mm<sup>&minus;2</sup> adaxial and 621.0&nbsp;mm<sup>&minus;2</sup> abaxial. Figures&nbsp;25 and&nbsp;26.</li>
+          <li>ACC deaminase quaternary structure: homotetramer, about 144&nbsp;kDa, 36.5&nbsp;kDa per subunit, giving the 9.4&nbsp;nm hydrodynamic size.</li>
+          <li><a href="../geospatial-analysis/">Geospatial Analysis</a>: capital cost NT$30,000 per unit, unit density by soil type, and the salt-affected profit figures behind the 2.4-year payback.</li>
+          <li>Official 2026 farm-gate paddy price, NT$25.7/kg, behind the NT$4,429 per crop of addressable loss on ordinary &#38642;&#26519; paddy.</li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
+  <nav class="pagenav" aria-label="Neighbouring pages">
+    <a class="is-prev" href="../notebook/"><b>Previous</b><span>Notebook</span></a>
+    <a class="is-next" href="../hardware/"><b>Next</b><span>Hardware</span></a>
+  </nav>
+
+  <footer class="footer2">
+    <div class="footer2__inner">
+        <div>
+          <h3>Project</h3>
+          <ul>
+          <li><a href="../description/">Description</a></li>
+          <li><a href="../biomanufacturing/">Biomanufacturing</a></li>
+          <li><a href="../engineering/">Engineering</a></li>
+          <li><a href="../development/">Development</a></li>
+          <li><a href="../contribution/">Contribution</a></li>
+          <li><a href="../results/">Results</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Wet Lab</h3>
+          <ul>
+          <li><a href="../experiments/">Experiments</a></li>
+          <li><a href="../parts/">Parts</a></li>
+          <li><a href="../plant/">Plants</a></li>
+          <li><a href="../measurement/">Measurement</a></li>
+          <li><a href="../safety-and-security/">Safety</a></li>
+          <li><a href="../notebook/">Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Dry Lab</h3>
+          <ul>
+          <li><a href="../model/">Math Model</a></li>
+          <li><a href="../hardware/">Hardware</a></li>
+          <li><a href="../software/">Digital Twin</a></li>
+          <li><a href="../protein-design/">Protein Design</a></li>
+          <li><a href="../drylab-notebook/">Dry Lab Notebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engagement</h3>
+          <ul>
+          <li><a href="../human-practices/">Integrated Human Practices</a></li>
+          <li><a href="../education/">Education</a></li>
+          <li><a href="../entrepreneurship/">Entrepreneurship</a></li>
+          <li><a href="../sustainability/">Sustainability</a></li>
+          <li><a href="../laws-and-regulations/">Laws and Regulations</a></li>
+          <li><a href="../geospatial-analysis/">Geospatial Analysis</a></li>
+          <li><a href="../data-physicalization/">Data Physicalization</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Team</h3>
+          <ul>
+          <li><a href="../team/">Members</a></li>
+          <li><a href="../attributions/">Attribution</a></li>
+          <li><a href="../milestone/">Milestone</a></li>
+          </ul>
+        </div>
+      <div class="footer2__legal">
+        <p><b>ReLEAF</b> &middot; GEMS Taiwan &middot; iGEM 2026 &middot; Biomanufacturing Village</p>
+        <p>&copy; 2026 &middot; Content on this wiki is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+        <p>The repository used to create this website is available at <a href="https://gitlab.igem.org/2026/gems-taiwan">gitlab.igem.org/2026/gems-taiwan</a>.</p>
+        <p>Nothing on this wiki is fetched from a server outside iGEM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/data/site-nav.js" fetchpriority="high"></script>
+  <script src="../assets/js/nav.js" fetchpriority="high"></script>
+  <script src="../assets/js/page.js" fetchpriority="high"></script>
+  <script src="../assets/js/engage.js"></script>
+  <script src="../assets/vendor/katex/katex.min.js"></script>
+  <script src="../assets/js/math.js"></script>
+  <script src="../coach/data/model.js?v=1012134635"></script>
+  <script src="../coach/coach.js?v=1012134635"></script>
+</body>
+</html>

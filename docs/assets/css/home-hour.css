@@ -1,0 +1,202 @@
+/* =============================================================================
+   ReLeaf homepage: 02 THE HOUR (simplified 29 Sep, set left in round 3)
+   -----------------------------------------------------------------------------
+   The damage starts before anyone can see it, and protection arrives after
+   the signs. Set in the rhythm of the threat and the gap: the shared
+   .pb-title on the left, the line full width under it, then the closing
+   words.
+
+   THE LINE, from 900px. One line from three days before the heat (the
+   forecast) to about a week after it: -3 to 9 days on a grid of 24
+   columns, two a day. The forecast starts on column 1, day 0 on 7, the
+   first sign (about day 3) on 13, and protection arriving ends on 25.
+   Three rows: the moments above the line, the line, the unseen damage
+   below it. The list of moments is a subgrid of the figure's rows, so the
+   line always sits between them whatever the text wraps to. The grey
+   stretch is the warning; the rust stretch is the damage, faint while
+   nobody can see it and full by the time protection arrives.
+
+   BELOW 900px the line stands on end and the moments are in plain flow,
+   each drawing its own stretch of the line down to the next.
+
+   RESTING STATE IS THE FINISHED STATE. The scroll-driven draw at the end of
+   this file runs only where animation-timeline is supported and motion is
+   allowed; it only ever moves transform and opacity.
+   ========================================================================== */
+
+.hr3 {
+  background: var(--white);
+  padding: clamp(4rem, 10vh, 7rem) 0;
+}
+.hr3__head { max-width: none; }
+.hr3__head .pb-lede { margin-bottom: 0; text-wrap: pretty; }
+
+/* -------------------------------------------------------------- the line --- */
+
+.hr3-fig { --line: 6px; margin: clamp(2.5rem, 6vh, 4rem) 0 0; }
+.hr3-line { position: relative; border-radius: var(--line); background: var(--gray-100); }
+.hr3-warn, .hr3-harm { position: absolute; display: block; border-radius: inherit; }
+
+.hr3-moments { list-style: none; margin: 0; padding: 0; }
+.hr3-m { position: relative; display: flex; flex-direction: column; gap: .25rem; }
+.hr3-when {
+  font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gray-500); font-variant-numeric: tabular-nums;
+}
+.hr3-what {
+  font-size: clamp(1.0625rem, .98rem + .3vw, 1.25rem);
+  font-weight: 600; line-height: 1.25; letter-spacing: -.012em; color: var(--black);
+}
+.hr3-m--fore .hr3-what { color: var(--leaf-700); }
+.hr3-m--start .hr3-what { color: var(--rust-700); }
+/* the mark on the line, drawn by each moment so it moves with it */
+.hr3-m::before {
+  content: ""; position: absolute;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--white); border: 2.5px solid var(--rust-700);
+  box-sizing: border-box;
+}
+.hr3-m--fore::before { border-color: var(--leaf-700); background: var(--leaf-700); }
+.hr3-m--check::before { border-color: var(--black); background: var(--black); }
+
+/* wide: the line across ------------------------------------------------------ */
+@media (min-width: 900px) {
+  .hr3-fig {
+    --gap: 1.1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto var(--line) auto;
+    row-gap: var(--gap);
+  }
+  .hr3-line { grid-row: 2; grid-column: 1; }
+  .hr3-warn { inset: 0 auto 0 0; width: 25%; background: var(--leaf-500); border-radius: var(--line) 0 0 var(--line); }
+  .hr3-harm {
+    inset: 0 0 0 25%;
+    background: linear-gradient(90deg, rgb(154 61 34 / .14), rgb(154 61 34 / .5) 14%, var(--rust-700));
+    border-radius: 0 var(--line) var(--line) 0;
+  }
+  .hr3-moments {
+    grid-row: 1 / 4; grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    grid-template-rows: subgrid;
+  }
+  .hr3-m { grid-row: 1; align-self: end; padding-right: var(--sp-5); }
+  .hr3-m--fore  { grid-column: 1 / 7; }
+  .hr3-m--seen  { grid-column: 13 / 19; }
+  .hr3-m--check { grid-column: 19 / 25; justify-self: end; padding-right: 0; align-items: flex-end; text-align: right; max-width: 19rem; }
+  .hr3-m--start { grid-row: 3; grid-column: 7 / 17; align-self: start; }
+  .hr3-m::before { left: -7px; bottom: calc(-1 * var(--gap) - var(--line) / 2 - 7px); }
+  .hr3-m--start::before { bottom: auto; top: calc(-1 * var(--gap) - var(--line) / 2 - 7px); }
+  .hr3-m--check::before { left: auto; right: -7px; }
+}
+
+/* narrow: the line on end, the moments in flow --------------------------------- */
+@media (max-width: 899.98px) {
+  .hr3-fig { max-width: 34rem; }
+  .hr3-line { display: none; }
+  .hr3-moments { padding-left: 2.25rem; }
+  .hr3-m { padding-bottom: var(--sp-6); }
+  .hr3-m--seen { padding-bottom: clamp(8rem, 26vw, 12rem); }   /* the wait */
+  .hr3-m--check { padding-bottom: 0; }
+  .hr3-m::before { left: calc(-2.25rem + .5rem + var(--line) / 2 - 7px); top: .05rem; }
+  /* each moment draws the line down to the next one */
+  .hr3-m::after {
+    content: ""; position: absolute;
+    left: calc(-2.25rem + .5rem); top: 1rem; bottom: .05rem; width: var(--line);
+  }
+  .hr3-m--fore::after  { background: var(--leaf-500); border-radius: var(--line) var(--line) 0 0; }
+  .hr3-m--start::after { background: linear-gradient(180deg, rgb(154 61 34 / .14), rgb(154 61 34 / .5)); }
+  .hr3-m--seen::after  { background: linear-gradient(180deg, rgb(154 61 34 / .5), var(--rust-700)); border-radius: 0 0 var(--line) var(--line); }
+  .hr3-m--check::after { content: none; }
+}
+
+/* -------------------------------------------------- the line under the title --- */
+/* 7 Oct, round 2 (owner): what was a closing paragraph under the figure is
+   the section's lede, directly under the title. */
+.hr3-say {
+  margin: 0; max-width: 44rem;
+  text-wrap: pretty;
+}
+/* 9 Oct (Jacquelyn): the lede holds one line where the column can carry it */
+@media (min-width: 1000px) {
+  .hr3-say { max-width: none; white-space: nowrap; }
+}
+
+/* ---------------------------------------- the draw, tied to the scroll --- */
+/* The figure is the timeline: the line grows from the forecast to the next
+   check as the figure rises into view, and each moment arrives as the line
+   reaches it. Scrolling back runs it back. On phones each moment arrives on
+   its own as it enters. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hr3-warn, .hr3-harm, .hr3-m {
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+      animation-duration: auto;
+    }
+    .hr3-m { animation-name: hr3-arrive; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+
+    @media (min-width: 900px) {
+      .hr3-fig { view-timeline: --hr3 block; }
+      .hr3-warn, .hr3-harm, .hr3-m { animation-timeline: --hr3; }
+      .hr3-warn, .hr3-harm { animation-name: hr3-grow; transform-origin: left center; }
+      .hr3-warn { animation-range: entry 5% entry 35%; }
+      .hr3-harm { animation-range: entry 35% cover 35%; }
+      .hr3-m--fore  { animation-range: entry 5% entry 30%; }
+      .hr3-m--start { animation-range: entry 30% entry 55%; }
+      .hr3-m--seen  { animation-range: entry 45% entry 75%; }
+      .hr3-m--check { animation-range: cover 25% cover 35%; }
+    }
+    @media (max-width: 899.98px) {
+      .hr3-m { animation-timeline: view(); animation-range: entry 0% entry 80%; }
+    }
+  }
+}
+@keyframes hr3-grow   { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes hr3-arrive { from { opacity: 0; transform: translateY(.75rem); } to { opacity: 1; transform: none; } }
+
+/* ------------------------------------------------ 1 Oct, students' pass --- */
+/* The forecast is only a warning, not ReLeaf's green: it goes neutral, and
+   green on this page stays with the reactor. */
+.hr3-m--fore .hr3-what { color: var(--black); }
+.hr3-m--fore::before { border-color: var(--gray-700); background: var(--gray-700); }
+@media (min-width: 900px) {
+  .hr3-warn { background: var(--gray-400); }
+  /* the three moments above the line start on one line: each fills the row
+     and reads from the top, and its mark stays pinned to the line below */
+  .hr3-m:not(.hr3-m--start) { align-self: stretch; justify-content: flex-start; }
+  .hr3-m--fore { grid-column: 1 / 7; padding-right: var(--sp-4); }
+}
+@media (max-width: 899.98px) {
+  .hr3-m--fore::after { background: var(--gray-400); }
+}
+/* the title keeps a small gap to its lede, and the lede the gap to the figure */
+.hr3__head .pb-title { margin-bottom: var(--sp-3); }
+/* 1 Oct, round 2 (owner: no orange text on the homepage). The damage keeps
+   its rust on the line; its words are black like the other moments. */
+.hr3-m--start .hr3-what { color: var(--black); }
+
+/* ------------------------------------------------ 7 Oct (owner) ------------ */
+/* No captions under the moments. Two icons bracket the gap the section is
+   about: the forecast that comes early, and the hour that has run out by the
+   time anything can be done (8 Oct: it was a sprayer, which said protection
+   had arrived — the one thing this section must not promise yet). */
+.hr3-ico {
+  width: 2.25rem; height: 2.25rem; margin-bottom: .5rem;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+  overflow: visible;
+}
+.hr3-ico__fill { fill: var(--white); }
+.hr3-ico__dot { stroke-width: 2.6; }
+.hr3-m--fore .hr3-ico { color: var(--gray-700); }
+.hr3-m--check .hr3-ico { color: var(--black); }
+/* the closing line is the section's point: one size up, two sentences */
+
+@media (min-width: 900px) {
+  /* with icons on two of them, the three moments above the line share a
+     baseline: each sits at the foot of the row, on the line */
+  .hr3-m:not(.hr3-m--start) { justify-content: flex-end; }
+}
+.hr3-ico { width: 2.75rem; height: 2.75rem; stroke-width: 1.6; }
