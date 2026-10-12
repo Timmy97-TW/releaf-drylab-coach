@@ -23,7 +23,8 @@ CFG = json.loads((ROOT / "pages.json").read_text())
 PAGES = [(p["slug"], p["title"], p["prize"], p.get("short", p["title"])) for p in CFG["pages"]]
 SKIP_IN_PAGE = {p["slug"]: p.get("skip", []) for p in CFG["pages"]}  # big folders left on the live wiki
 LIVE = CFG["live_wiki"]
-PRIZE_SHORT = {"model": "Best Model", "software": "Best Software", "measurement": "Best Measurement"}
+PRIZE_SHORT = {"model": "Best Model", "software": "Best Software", "measurement": "Best Measurement",
+               "hardware": "Best Hardware"}
 
 
 def flat(slug):
@@ -102,11 +103,17 @@ def main(src):
         skip = SKIP_IN_PAGE.get(slug, [])
         shutil.copytree(src / slug, DOCS / slug, dirs_exist_ok=True,
                         ignore=lambda d, names: [n for n in names if n in skip])
-        if "/" in slug:   # a subpage needs its parent's stylesheets even when the parent is not built
+        if "/" in slug:   # a subpage needs its parent's shared files, even when the parent is not built
             par = slug.split("/")[0]
             (DOCS / par).mkdir(parents=True, exist_ok=True)
             for f in (src / par).iterdir():
-                if f.is_file() and f.name != "index.html" and not (DOCS / par / f.name).exists():
+                if f.name == "index.html":
+                    continue
+                if f.is_dir():
+                    if (f / "index.html").exists():   # another page of its own, not a shared asset folder
+                        continue
+                    shutil.copytree(f, DOCS / par / f.name, dirs_exist_ok=True)
+                elif not (DOCS / par / f.name).exists():
                     shutil.copy2(f, DOCS / par / f.name)
         used = {i for n in a["notes"] for i in n.get("excerpts", [])}
         data = {"page": slug, "title": title, "prizeName": prize, "summary": a.get("summary"),
@@ -174,7 +181,7 @@ def winners_html(W, page_titles):
     return f"""
     <section class="lp-win" id="winners">
       <h2>The teams we compare against</h2>
-      <p>Undergraduate and overgraduate winners of the three iGEM special prizes our dry lab pages are written for, 2023 to 2025. Each name opens the page that won it; each year opens iGEM's results for that year. A blank cell means the two collegiate sections were combined that year, or that no winner could be verified from the results page.</p>
+      <p>Undergraduate and overgraduate winners of the four iGEM special prizes our dry lab and hardware pages are written for, 2023 to 2025. Each name opens the page that won it; each year opens iGEM's results for that year. A blank cell means the two collegiate sections were combined that year, or that no winner could be verified from the results page.</p>
       <div class="lp-win__scroll"><table class="lp-win__table">
         <thead><tr><th scope="col">Prize</th>{head}</tr></thead>
         <tbody>{rows}</tbody>
@@ -250,7 +257,7 @@ def landing(built, bank, wiki=""):
     <img src="assets/img/logo.png" alt="ReLeaf logo" width="44" height="44" />
     <p class="lp-eyebrow">ReLeaf · GEMS Taiwan · iGEM 2026</p>
     <h1>Dry lab writing coach</h1>
-    <p class="lp-lede">Our Math Model, Protein Design and Digital Twin pages as they stand on the wiki, with notes in the margin. Each note sits beside a passage from a team that won the matching iGEM special prize in 2023, 2024 or 2025, so you can see how they wrote the same part. Open a page, read down the margin, and fix your own words in the wiki.</p>
+    <p class="lp-lede">Our Math Model, Protein Design, Digital Twin and hardware pages as they stand on the wiki, with notes in the margin. Each note sits beside a passage from a team that won the matching iGEM special prize in 2023, 2024 or 2025, so you can see how they wrote the same part. Open a page, read down the margin, and fix your own words in the wiki.</p>
   </header>
   <main class="lp-main">
     <section class="lp-grid">{"".join(cards)}

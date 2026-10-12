@@ -24,6 +24,10 @@
   "protein-design/molecular-dynamics": {
    "notes": 42,
    "broken": []
-  }
+  },
+  "hardware/bioreactor": null,
+  "hardware/photometer": null,
+  "hardware/diopal": null,
+  "hardware/hydroponics": null
  }
 }
