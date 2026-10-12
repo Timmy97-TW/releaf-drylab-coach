@@ -89,7 +89,8 @@ The costed table is the strongest in the bank: quantity, component, cost in EUR,
 line total in EUR, line total in USD, with the exchange rate and its date in the header row
 ("1€= $1.27 on 14/10/2014"), and a live vendor link per non-obvious part (Mouser for the
 TSL235R-LF, Dialight 550-2505F for the LED, Lee Filters Medium Yellow 010 and Twickenham Green
-736). Subtotals are given for the OD-only and the combined build.
+736). Subtotals are given per build: the OD-only device totals 46.01 EUR or 58.45 USD, the
+fluorescence-only device 46.06 EUR or 58.52 USD, which is where the page's "$60" comes from.
 
 Downloads are listed as a block: cuvette-holder STL, casing SVG, lid SVG, and two Arduino
 sketchbooks, one per build. The construction manual is twelve photographs, each with its own
@@ -659,8 +660,11 @@ is tighter per paragraph, but it is one section at the end rather than the spine
 
 ## Candidates rejected
 
-Thirty-eight pages were opened and triaged, twenty-eight of them rendered and measured. The
-field, with why each was not used.
+Thirty-nine candidate pages were fetched here, of which twenty-seven rendered with real content
+and were measured; the other twelve hit the CloudFront block described under Source notes. Two
+parallel search sweeps probed a wider set by direct fetch and reported back, and everything they
+surfaced that was worth keeping is either in this bank or named below. The field, with why each
+was not used.
 
 Photometer and OD instruments:
 
