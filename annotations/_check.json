@@ -1,11 +1,20 @@
 {
- "wiki": "467343c 2026-10-12 Digital Twin: two sentences the students wrote that the page had not taken",
+ "wiki": "d0b160b 2026-10-12 Digital Twin: five fixes the review found in our own orange prose",
  "pages": {
   "model": null,
-  "software": null,
-  "protein-design": null,
+  "software": {
+   "notes": 65,
+   "broken": []
+  },
+  "protein-design": {
+   "notes": 13,
+   "broken": []
+  },
   "protein-design/methodology": null,
   "protein-design/sprints": null,
-  "protein-design/molecular-dynamics": null
+  "protein-design/molecular-dynamics": {
+   "notes": 42,
+   "broken": []
+  }
  }
 }
