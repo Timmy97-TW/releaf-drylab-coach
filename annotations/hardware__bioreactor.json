@@ -64,17 +64,27 @@
       "gap": "All five winner slots are present and three of them are stronger than any precedent: the need argument, the design history, and a Limitations part the winners do not have at all. The gap is where the weight sits. Slot four, the demonstration, is the slot four of five winners put last or second to last, and here it is one sentence in 3.4 buried inside a 9,700-word engineering record, while two of the four tracks that record is built on are empty headings. Slot five is positioned correctly and is the weakest content on the page. The practical move is to lift the integrated run and the containment platings into one demonstration block a judge meets early, and to spend the words saved on finishing Part 6."
     },
     "extras": [
-      "The Results row \"Plateau in the reactor Partial OD600 0.8-0.9 in 2 h at 37 degrees C\" gives the flask plateau as about 0.6-0.8 in 3.1. Our Digital Twin page says \"reactor 0.90 by 145 min, flask 0.83 by 278 min\", so the flask figure here reads low. Check both arms against the workbook.",
-      "The blot band is at about 42 kDa here and our Math Model page gives the ACC deaminase subunit as 36.5 kDa with a 144 kDa tetramer. A band running 15% above the subunit mass is normal and worth one clause, because a reader who has both pages open will try to reconcile them.",
-      "The segment list is in centimetres (7.5 cm) and the main assembly in inches (3-inch, 2-inch, 4-inch, 6-inch). Use one unit throughout, because tube length sets the loop volume.",
+      "The hero figure's \"Servo valveSwitches to the sampler\" is the only mention of a servo valve on the page. The loop description gives a pinch valve on the return and dual Luer valves for sampling, and the materials list has neither a servo nor a pinch valve. Name the part that is fitted.",
+      "Section 2 runs 2.1, 2.2, 2.3, 2.5. Either 2.4 was deleted or its number was skipped. Nothing cross-references 2.4, so no pointer is broken, but a judge counting sections will notice.",
+      "The Results row \"Shell side grew no colonies ... the lumen plate beside one of them grew\" stops mid-sentence. It does not say what the lumen plate grew, and that is the point: the plate that should grow did. Write \"beside a lumen-side plate that grew colonies\".",
+      "Growth cycle 1 reports \"Final OD600 readings were 0.304 in the tube and 0.48 in the medium reservoir\", and its own Figure 4 caption says the reactor went \"from about 0.17 to 0.3-0.37 by the end of the run\". Our Digital Twin page says \"reactor 0.17 to 0.37\". The 0.48 sits above all three.",
+      "Cycle 2 gives the flask plateau as OD600 about 0.6-0.8. Our Digital Twin page says \"flask 0.83 by 278 min\" and fits the flask arm reaching 0.83. Check both arms against the workbook.",
+      "Table 1's OD column reads 62.5 au for 2 mL of titanium dioxide, where Table 2 reads 0.5785 au for 2 mL in the same cell. The two tables cannot both be OD600 in the same units. Say what au is and how it is computed.",
+      "The three cycle 1 spacings (5.5 cm, 10 cm, 2 cm) are the fixed geometry for every later build and carry no tolerance, although V1 failed because loose mounts let that geometry drift. One tolerance per spacing is the thing a rebuilder cannot work out alone.",
+      "Cycle 6's Learn says \"Test 1, 2-40 mg\" where the fit label and the figure caption both say 2 to 41 mg, with n 39. One of the two is a typo.",
+      "Table 4's LED row gives green at about 526 nm. Our DiOPAL page says around 535 nm and our Math Model page says 535 nm activates CcaS; red is 670 here and 672 on the Math Model. Agree one pair across the wiki and cite it once.",
+      "Table 4 lists a \"3 m green-light LED strip\" and nothing else about it: no intensity at the vessel wall, no uniformity, no delivered dose, no part number. Humboldt measured light at 24 positions at three settings. One reading at the vessel wall, at the working setting, would do.",
+      "Section 5.1's whole argument rests on the B. subtilis diameter of 0.25 to 1.0 um, and no source is given for it. Cite the measurement, and say whether the 0.2 um figure is a nominal rating or an absolute one.",
+      "The blot band is at about 42 kDa here and our Math Model page gives the ACC deaminase subunit as 36.5 kDa, with a 144 kDa tetramer and a 9.4 nm hydrodynamic size. The 9.4 nm against a 200 nm pore is the number that supports \"passes the protectant freely\" in 2.5, and it is on the wrong page.",
+      "The segment list is in centimetres (7.5 cm) and the main assembly in inches (3-inch, 2-inch, 4-inch, 6-inch). Use one unit, because tube length sets the loop volume.",
+      "The stage walk in 2.5 is headed \"as designed\", and three of its parts are not in the build: the pinch valve is outlined for integration cycle 2, and the shell-side optical sensor and pH regulator have no line in the materials list. One word per stage, fitted or designed, settles it.",
       "\"Build\" under growth cycle 2 and under photometer cycle 1 are empty headings. If the build is in the figure, say \"As in Figure 6\" so the heading is not blank.",
-      "Bioreactor v2 and v3 in 3.4 are headings with a cycle label and nothing else. One line each saying what they would test makes them outlined work instead of gaps.",
-      "\"Filter parts 11 / 11 parts\" and \"No parts match that filter\" are both rendered, so the filter control prints a contradiction in its default state.",
-      "The materials list has 11 line items and the table shows 12 component rows. Say in the heading that the reference spectrophotometer is counted separately.",
-      "PES, BPT, TPU and TMP are each used without expansion at least once, and PES is the membrane the whole device depends on. Expand each on first use.",
-      "\"Engineered B. subtilis\" in 3.4 never says which strain or which construct, while 3.1's headers name WB800 and the Twin page names 168 with the v2t1 construct. Name the strain in the test paragraph.",
-      "Figure 21 is referenced in 2.3 and 3.3 and appears in 3.4. If the dashboard is the evidence for the monitoring claim in 2.3, one dashboard image belongs there.",
+      "Bioreactor v2 and v3 in 3.4 are headings with a cycle label and nothing else, and 3.4's \"What it settled\" box repeats its Learn line. One sentence each on what v2 and v3 would test, and the box can carry the one new clause.",
+      "\"Filter parts 11 / 11 parts\" and \"No parts match that filter\" are both rendered, so the filter control prints a contradiction in its default state. The list also has 11 line items against 12 component rows; say in the heading that the reference spectrophotometer is counted separately.",
+      "PES, BPT and TPU are each used without expansion, and PES is the membrane the whole device depends on. Expand each on first use.",
       "\"Illustrative: ... The machine is the compact B2 as proposed\" is the only mention of a B2 on the page. Say what B2 is, or name the build the way 3.4 does.",
+      "\"With a constrained timescale, the team could not complete everything it had in mind\" apologises before naming the two goals. A judge only needs the goals.",
+      "Figure 25's caption calls the package \"Three-channel\" where the heading says three-chamber and the body says \"single-channel prototype\", and it introduces a camera that appears nowhere else on the page. Pick chamber or channel, and explain the camera or drop it.",
       "The Summary says containment \"rests on two platings of shell-side medium\" and 7.1 says the same in its own words two parts later. One of the two can be a pointer."
     ]
   },
@@ -84,79 +94,70 @@
       "type": "mistake",
       "anchor": "Either side of the membranePressure sensors ×4",
       "title": "Four pressure sensors or three",
-      "body": "This panel says four. Section 3.3 and Table 4 name three, feed, retentate and permeate. The materials list in 6.1 has \"Pressure sensor 3\". The assembly draft gives each of the four membrane segments \"1x pressure transducer\", which is four again. Count them on the rig and use one number in all four places.",
+      "body": "This panel says four, and Table 4 and section 3.3 name three, feed, retentate and permeate. The materials list in 6.1 has \"Pressure sensor 3\", while the assembly draft gives each of the four membrane segments \"1x pressure transducer\", which is four again. Count them on the rig and use one number in all four places.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
       "id": "br-002",
-      "type": "mistake",
-      "anchor": "Servo valveSwitches to the sampler",
-      "title": "A servo valve appears only here",
-      "body": "This is the only mention of a servo valve on the page. The loop description gives a pinch valve on the return and dual Luer valves for sampling, and the materials list has neither a servo nor a pinch valve. Name the part that is actually fitted.",
-      "after": "Luer valveSwitches to the sampler",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-003",
       "type": "cut",
       "anchor": "How it keeps the cells in",
       "title": "These four numbers appear four times",
       "body": "300 mL, 94 mL/min, 0.2 um and 200 rpm are given here, again in the Summary strip, again in 2.5's two bullet lists and again in Table 4. Repetition is the thing your hardware editor asked you to cut hardest. Keep them in the Summary strip, where a judge who reads nothing else will see them, and drop this list.",
+      "after": "How it keeps the cells in\nOne closed culture loop. One membrane wall. Nothing leaves it whole.",
       "excerpts": []
     },
     {
-      "id": "br-004",
+      "id": "br-003",
       "type": "mistake",
       "anchor": "Cells stay in. Protectant crosses.",
       "title": "Two cards share one number",
-      "body": "This card and the one above it are both numbered 04, so the walk reads 01, 02, 03, 04, 04, 05, 06, and the route list above it has six stops against seven cards. The two cards also say one thing. Merge them and the numbering fixes itself.",
+      "body": "This card and the one above it are both numbered 04, so the walk reads 01, 02, 03, 04, 04, 05, 06, and the route list above has six stops against seven cards. The two cards also say one thing. Merge them and the numbering fixes itself.",
       "after": "The culture runs inside hollow fibres. Their walls have 0.2 µm pores, so cells stay in and protectant crosses.",
       "excerpts": []
     },
     {
-      "id": "br-005",
+      "id": "br-004",
       "type": "praise",
       "anchor": "Illustrative: the liquids and everything that moves or glows",
       "title": "The figure says what it assumed",
-      "body": "A moving diagram is the easiest place on a hardware page to overstate a device, and this credit line lists exactly which parts of it are drawn rather than measured, down to \"flow direction assumed\". It also says the machine shown is the proposed compact B2 and not the rig the results come from, which is the distinction a judge most needs.",
+      "body": "A moving diagram is the easiest place on a hardware page to overstate a device, and this credit line lists which parts of it are drawn and not measured, down to \"flow direction assumed\". It also says the machine shown is the proposed compact B2 and not the rig the results come from, which is the distinction a judge most needs.",
       "excerpts": [
         "hwp-bioreactor-2015-aachen-03"
       ],
       "excerpt_note": "Aachen gives a full protocol and then says plainly what the experiment was not for. Same move: fence the claim before anyone over-reads it."
     },
     {
-      "id": "br-006",
+      "id": "br-005",
       "type": "praise",
       "anchor": "Nine design‑build‑test‑learn cycles on one perfusion loop, from a prototype that leaked in June to an integrated run in September.",
       "title": "The first line counts and admits",
-      "body": "One sentence gives the number of cycles, the span of months and the failure the work started from. A judge learns the shape of the record and that you report what broke, before any claim arrives.",
+      "body": "One sentence gives the number of cycles, the span of months and the failure the work started from. A judge learns the shape of the record, and that you report what broke, before any claim arrives.",
       "excerpts": [
         "hardware-2024-OG-aachen-01"
       ],
       "excerpt_note": "Aachen's opening lands the need, the device and the reader in three sentences. Yours lands the scope and the honesty in one."
     },
     {
-      "id": "br-007",
+      "id": "br-006",
       "type": "restructure",
       "anchor": "The culture reached OD600 0.8–0.9 in two hours at 37 °C",
       "title": "Four results in one paragraph",
-      "body": "This paragraph carries the growth result, the long photometer run, the western blot and the containment caveat in four clauses joined by commas. A judge who reads only the summary has to unpick them. One sentence per claim, in the order the Results strip uses.",
+      "body": "This paragraph carries the growth result, the long photometer run, the western blot and the containment caveat in clauses joined by commas. A judge who reads only the summary has to unpick them. One sentence per claim, in the order the Results strip uses.",
       "after": "The culture reached OD600 0.8-0.9 in two hours at 37 °C. The in-line photometer logged a culture for [hours] with no sampling event. ACC deaminase was detected on the shell side by western blot. Containment rests on two platings of shell-side medium, both of which grew no colonies, and neither states a replicate count.",
       "excerpts": []
     },
     {
-      "id": "br-008",
+      "id": "br-007",
       "type": "mistake",
       "anchor": "the in‑line photometer logged a culture past 400 hours with no sampling event",
       "title": "Our own pages give this run two lengths",
-      "body": "Our Digital Twin page says \"21 July to 8 August 2026: 434 hours of B. subtilis 168 at 22 °C, 2,671 valid rows, no sample drawn.\" This page and the photometer page say more than 400 hours with 2,132 points over the first 336. If it is one run, one page is wrong; if they are two windows of it, each page has to name its window. The strain differs too, WB800 here and 168 there.",
+      "body": "Our Digital Twin page says \"21 July to 8 August 2026: 434 hours of B. subtilis 168 at 22 °C, 2,671 valid rows, no sample drawn.\" This page and the photometer page say more than 400 hours with 2,132 points over the first 336. If it is one run, one page is wrong; if they are two windows of it, each page has to name its window, and this one should say what the hours after 336 show. The strain differs too, WB800 here and 168 there.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-009",
+      "id": "br-008",
       "type": "clarify",
       "anchor": "the 0.2 µm pore stops whole cells and nothing smaller",
       "title": "This sentence can be read two ways",
@@ -165,47 +166,46 @@
       "excerpts": []
     },
     {
-      "id": "br-010",
-      "type": "praise",
-      "anchor": "Eight further cycles are outlined and not yet written, the whole pressure‑and‑flow track among them.",
-      "title": "You count what is not written",
-      "body": "Most pages let an empty section speak for itself. This one puts the number of unwritten cycles in the summary and names the track that is missing entirely. A judge who then finds four empty headings in 3.3 has already been told.",
-      "excerpts": [
-        "hardware-2025-OG-tudarmstadt-06"
-      ],
-      "excerpt_note": "TUDarmstadt describes a component at part level and reports it unfinished in the same paragraph. Yours does it for a whole track."
-    },
-    {
-      "id": "br-011",
-      "type": "mistake",
-      "anchor": "the lumen plate beside one of them grew",
-      "title": "This row stops mid-sentence",
-      "body": "The clause does not say what the lumen plate grew. Section 5.1 says colonies grew from the lumen side, and that is the point: the plate that should grow did, so the shell-side result is not a failed plating. Finish the sentence.",
-      "after": "both clean, beside a lumen-side plate that grew colonies",
-      "excerpts": []
-    },
-    {
-      "id": "br-012",
+      "id": "br-009",
       "type": "clarify",
       "anchor": "Photometer needs no calibration Measured raw output within 4% of the BioDrop, across two TiO2 runs",
       "title": "Say which number the four percent is",
-      "body": "Section 3.2 gives three different figures for the same agreement: a median paired difference of 3.8% in test 2, a test 1 fit of y = 1.10x - 0.04, and an RMSE of 0.011 OD600. \"Within 4%\" is the first of those and it comes from one run, not two. Name the statistic and the run so a judge can find it.",
+      "body": "Section 3.2 gives three figures for the same agreement: a median paired difference of 3.8% in test 2, a test 1 fit of y = 1.10x - 0.04, and an RMSE of 0.011 OD600. \"Within 4%\" is the first of those and it comes from one run, not two. Name the statistic and the run so a judge can find it.",
       "after": "Photometer needs no calibration Measured raw output within a median 3.8% of the BioDrop in test 2, and a second TiO2 run agrees independently",
       "excerpts": []
     },
     {
-      "id": "br-013",
+      "id": "br-010",
       "type": "praise",
       "anchor": "Breach detection Untested pressure transducers and a droplet sensor are fitted; no breach or alarm test is on record",
       "title": "A headline row that says untested",
-      "body": "This row sits in the strip a judge reads first and it labels one of your own safety claims untested, with the reason in the same line. No page in the precedent set puts a confidence label on a headline claim.",
+      "body": "This row sits in the strip a judge reads first and it labels one of your own safety claims untested, with the reason in the same line. No page in either evidence bank puts a confidence label on a headline claim.",
       "excerpts": [
         "hardware-2025-OG-tudarmstadt-06"
       ],
-      "excerpt_note": "TUDarmstadt reports an unfinished component in the same breath as its specification. You do it where it costs most, in the summary."
+      "excerpt_note": "TUDarmstadt reports an unfinished component in the same breath as its specification. You do it where it costs most, in the summary.",
+      "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-014",
+      "id": "br-011",
+      "type": "restructure",
+      "anchor": "Fouling and service life Untested transmembrane pressure is logged; no fouling trend over a multi‑day run",
+      "title": "The strip mixes results with gaps",
+      "body": "Six rows, and three of them report a measurement while three report that no measurement exists. A judge scanning this cannot tell at a glance what the machine can do. Group the measured capabilities, each with its range, and put the untested items under one line of their own, which is how 7.1 already handles them.",
+      "after": "Not established yet Fouling and service life, breach detection, and how much product reaches the harvest stream (7.1).",
+      "excerpts": []
+    },
+    {
+      "id": "br-012",
+      "type": "restructure",
+      "anchor": "Our original design put the engineering in the soil.",
+      "title": "Two paragraphs before the point",
+      "body": "The first two paragraphs give the history and the third gives the argument, which is the strongest sentence on the page. On a 9,700-word page a judge may not reach it. One paragraph carries the same content and puts the payoff two sentences sooner.",
+      "after": "Our original design put the engineering in the soil: a transgenic plant growth-promoting rhizobacterium would colonize the roots and produce protectant where the plant needed it, with no delivery and no hardware. The flaw was control. Once a transgenic organism is released, expression, dose and spread are no longer ours to set, and the bacteria travel with soil and water.",
+      "excerpts": []
+    },
+    {
+      "id": "br-013",
       "type": "praise",
       "anchor": "A release problem became a containment problem, and containment is something hardware can solve.",
       "title": "The best sentence on the page",
@@ -213,10 +213,11 @@
       "excerpts": [
         "hardware-2025-OG-tudarmstadt-01"
       ],
-      "excerpt_note": "TUDarmstadt builds its need in four moves and ends on what a device would have to do. Yours gets there in one sentence."
+      "excerpt_note": "TUDarmstadt builds its need in four moves and ends on what a device would have to do. Yours gets there in one sentence.",
+      "ballot": "Does the hardware you developed address a need or problem in synthetic biology?"
     },
     {
-      "id": "br-015",
+      "id": "br-014",
       "type": "cut",
       "anchor": "Bacillus subtilis WB800 is well characterized, industrially proven, and native to the rhizosphere.",
       "title": "Strain biology belongs to the wet lab",
@@ -225,10 +226,10 @@
       "excerpts": [
         "hardware-2025-UG-cornell-04"
       ],
-      "excerpt_note": "Cornell lets the organism on a hardware page only as a requirement: what it needs, next to what the part delivers."
+      "excerpt_note": "Cornell lets the organism onto a hardware page only as a requirement: what it needs, next to what the part delivers."
     },
     {
-      "id": "br-016",
+      "id": "br-015",
       "type": "mistake",
       "anchor": "the longest run with the membrane module fitted is about 53 hours (7.2)",
       "title": "Our Twin page has a longer membrane run",
@@ -237,27 +238,16 @@
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-017",
+      "id": "br-016",
       "type": "cut",
       "anchor": "Many peptides degrade in storage, often require a cold chain, and lose potency before use.",
       "title": "Two paragraphs that argue the market",
-      "body": "Section 1.3 argues shelf life, cold chain and freight cost, none of it hardware and none of it sourced. One sentence carries the consequence a hardware judge needs, which is that the machine has to make the protectant where it is used. The rest belongs on the project description or entrepreneurship page.",
+      "body": "Section 1.3 argues shelf life, cold chain and freight cost, none of it hardware and none of it sourced. One sentence carries the consequence a hardware judge needs, which is that the machine has to make the protectant where it is used. The rest belongs on the project description or the entrepreneurship page.",
       "after": "Many peptides degrade in storage and need a cold chain, so the protectant has to be made where it is used. That is the requirement this reactor is built against.",
       "excerpts": []
     },
     {
-      "id": "br-018",
-      "type": "praise",
-      "anchor": "RELEAF runs predict → produce → protect.",
-      "title": "The device placed in one line",
-      "body": "Three words and the reader knows which stage of the project this machine is and what hands it its input. The strip underneath does the same for the three instruments, upstream, this device, embedded. A judge arriving from any other page is oriented in two sentences.",
-      "excerpts": [
-        "hardware-2023-OG-evry-04"
-      ],
-      "excerpt_note": "Evry justifies a second device in one sentence from the first device's need. Same economy."
-    },
-    {
-      "id": "br-019",
+      "id": "br-017",
       "type": "clarify",
       "anchor": "The AIoT stage predicts plant stress and issues a light signal",
       "title": "AIoT and LPA are never spelled out",
@@ -266,45 +256,45 @@
       "excerpts": []
     },
     {
-      "id": "br-020",
-      "type": "mistake",
-      "anchor": "A machine intended to run unattended on a farm must be able to report its own condition.",
-      "title": "Section 2.4 is missing",
-      "body": "The next heading is 2.5, so either 2.4 was deleted or its number was skipped. Nothing on the page cross-references 2.4, so no pointer is broken, but a judge counting sections will notice. Renumber, or drop the numbers the way your editor's edit does.",
+      "id": "br-018",
+      "type": "restructure",
+      "anchor": "A batch reactor must be opened to be harvested, and every opening is a containment event and a contamination risk.",
+      "title": "This heading repeats the paragraph above",
+      "body": "Section 2.1 has already said that exchanging medium while the culture runs is the point of perfusion. The subheading then makes the same argument as a comparison. One paragraph holds both, and a judge meets the argument once.",
+      "after": "Exchanging medium while the culture runs is the point of perfusion: waste leaves, nutrients arrive, and the run does not have to stop. A batch reactor has to be opened to be harvested, and every opening is a containment event. Perfusion moves product out through a barrier that retains the organism, so the vessel stays closed from inoculation to shutdown. No medium feed was fitted in integration v1, so continuous exchange is not yet tested (7.1).",
       "excerpts": []
     },
     {
-      "id": "br-021",
+      "id": "br-019",
+      "type": "restructure",
+      "anchor": "All of it reports to one operator interface (Figure 21).",
+      "title": "This points three hundred lines ahead",
+      "body": "Figure 21 is the integration dashboard and it does not appear until 3.4, at the end of the engineering record; 3.3 points at it too. A reader in 2.3 cannot see the thing the monitoring claim rests on. Say what the interface shows, here, where the claim is made.",
+      "after": "All of it reports to one operator interface: OD600 with its sample and reference channels, flow rate, and feed, retentate and permeate pressure with the transmembrane pressure computed from them (3.4).",
+      "excerpts": []
+    },
+    {
+      "id": "br-020",
       "type": "praise",
       "anchor": "Everything in the record below refers to one of two fluid paths. They meet only at the membrane wall.",
       "title": "Two paths named before the detail",
-      "body": "This gives the reader the one abstraction the rest of the page depends on, in two short sentences, before a single component appears. Everything after it can then be placed by saying which side it is on.",
+      "body": "This gives the reader the one abstraction the rest of the page depends on, in two short sentences, before a single component appears. Everything after it can then be placed by saying which side it sits on.",
       "excerpts": [
         "hwp-bioreactor-2019-humboldt-01"
       ],
-      "excerpt_note": "Humboldt's opening doubles as a specification sheet, so a reader can decide in one paragraph whether the instrument suits them. Yours does the same job for the plumbing."
+      "excerpt_note": "Humboldt's opening doubles as a specification sheet, so a reader can decide in one paragraph whether the instrument suits them. Yours does that job for the plumbing."
     },
     {
-      "id": "br-022",
+      "id": "br-021",
       "type": "cut",
       "anchor": "Medium reservoir → peristaltic pump → in‑line photometer → fiber lumens → back to the reservoir.",
       "title": "The loop is walked three times",
-      "body": "This arrow line gives the route in eleven words. The hero cards above walk it in seven panels, and \"The system, stage by stage\" below walks it again in eight. Keep this line and keep the stages that add something the line does not, which are the harvest, the sensing and the delivery. Stages 1 to 4 repeat this sentence.",
+      "body": "This arrow line gives the route in eleven words. The hero cards above walk it in seven panels and \"The system, stage by stage\" below walks it again in eight. Keep this line, and keep only the stages that add what it cannot: the harvest, the sensing and the delivery. Stages 1 to 4 repeat this sentence.",
+      "after": "Medium reservoir → peristaltic pump → in-line photometer → fiber lumens → back to the reservoir. Contains the organism, and is closed for the duration of the run; the only access is the dual Luer valve in the bill of materials, used for bleed and sampling.",
       "excerpts": []
     },
     {
-      "id": "br-023",
-      "type": "praise",
-      "anchor": "The pump acts on the outside of the tubing only, so the fluid path is not breached at the pump head.",
-      "title": "A containment claim with its mechanism",
-      "body": "One clause of mechanism and one of consequence. A reader who has never seen a peristaltic pump now knows why that pump was chosen and what it buys, and the claim is checkable against the part.",
-      "excerpts": [
-        "hardware-2024-OG-aachen-02"
-      ],
-      "excerpt_note": "Aachen writes its device for a stranger who might build it. This sentence is in that register."
-    },
-    {
-      "id": "br-024",
+      "id": "br-022",
       "type": "cut",
       "anchor": "shell‑side medium plated in cycle 1 produced no colonies (5.1). The stream was cell‑free in both platings on record.",
       "title": "Two sentences, one fact",
@@ -313,7 +303,7 @@
       "excerpts": []
     },
     {
-      "id": "br-025",
+      "id": "br-023",
       "type": "clarify",
       "anchor": "Shell‑side fluid passes a pH regulator on its way out to the delivery stages.",
       "title": "The pH regulator is never specified",
@@ -323,74 +313,36 @@
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-026",
-      "type": "clarify",
-      "anchor": "Culture returns down the lumens and through a pinch valve to the reservoir.",
-      "title": "Mark which stages are fitted",
-      "body": "The walk is headed \"as designed\", and three of its parts are not in the build: this pinch valve is listed in Table 4 as outlined for integration cycle 2, and the shell-side optical sensor and pH regulator have no line in the materials list. A reader cannot tell which stages exist. One word per stage, fitted or designed, settles it.",
-      "after": "Culture returns down the lumens to the reservoir. A pinch valve on that return is outlined for integration cycle 2 and is not fitted yet (3.4).",
-      "excerpts": []
-    },
-    {
-      "id": "br-027",
-      "type": "praise",
-      "anchor": "What crosses the membrane wall and goes to the field is the protectant together with anything else below the 0.2 µm pore",
-      "title": "You name what the barrier passes",
-      "body": "Naming \"medium components, vesicles, debris\" is what makes the containment argument honest, and no precedent in the bank says what its own barrier fails to stop. The last clause, that the Luer valves are the one place procedure still matters, tells a reader exactly where the human risk sits.",
-      "excerpts": [
-        "hwp-bioreactor-2019-humboldt-03"
-      ],
-      "excerpt_note": "Humboldt turns a plot into a working range and says what would extend it. You turn a pore rating into a stated limit."
-    },
-    {
-      "id": "br-028",
-      "type": "praise",
-      "anchor": "Four tracks, each with its own design–build–test–learn cycles",
-      "title": "The record's shape given up front",
-      "body": "Four tracks named in one sentence, in a physical order, with the convention for unwritten cycles stated before the reader meets one. For a record of nine cycles this paragraph is what keeps a judge from getting lost.",
-      "excerpts": []
-    },
-    {
-      "id": "br-029",
+      "id": "br-024",
       "type": "mistake",
       "anchor": "Culture B. subtilis WB800 at room temperature (22 °C)",
-      "title": "This run may not be WB800",
-      "body": "Our Digital Twin page says \"Every reactor run before October used B. subtilis 168\" and lists both June runs as 168. Both headers in 3.1 say WB800. The two pages cannot both be right about June. Check the lab record and write one strain on both pages, because the strain is part of every growth number here.",
+      "title": "The strain here may be the wrong one",
+      "body": "Our Digital Twin page says \"Every reactor run before October used B. subtilis 168\" and lists both June runs as 168, where both headers in 3.1 say WB800. The two pages cannot both be right about June. Check the lab record and write one strain on both pages, because the strain is part of every growth number here.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-030",
-      "type": "mistake",
-      "anchor": "Final OD600 readings were 0.304 in the tube and 0.48 in the medium reservoir",
-      "title": "Your own caption ends this run lower",
-      "body": "Figure 4's caption says the bioreactor culture went \"from about 0.17 to 0.3-0.37 by the end of the run\", and our Digital Twin page says \"reactor 0.17 to 0.37\". The 0.48 reservoir reading sits above all of those. Either it is a different time point, and the sentence should say which, or it is a typo.",
+      "id": "br-025",
+      "type": "restructure",
+      "anchor": "The loop ran at room temperature. The peristaltic pump reached the target flow rate of 94 mL/min, but the trial ended early when medium leaked at the pump.",
+      "title": "Lead with the thing that ended the run",
+      "body": "The paragraph opens on the flow rate holding, puts the leak in a subordinate clause, and then calls the OD readings final. A reader meets the numbers before learning the run was cut short, so \"final\" reads as a planned endpoint. Put the leak first.",
+      "after": "The loop ran at room temperature and ended early when medium leaked at the pump head. Up to that point the peristaltic pump held the target 94 mL/min. The last OD600 readings before the stop were 0.304 in the tube and [value] in the medium reservoir (Figure 4).",
       "excerpts": []
     },
     {
-      "id": "br-031",
-      "type": "praise",
-      "anchor": "To check whether any viable cells had crossed the membrane, 2 mL of medium was drawn from the shell side and plated on LB agar.",
-      "title": "The volume plated is on the page",
-      "body": "The question, the volume, the medium and the result in one sentence, and the next clause fences the claim to a single plating. That is the whole containment test written so another team could repeat it.",
-      "excerpts": [
-        "hwp-bioreactor-2015-aachen-03"
-      ],
-      "excerpt_note": "Aachen gives the protocol and then names what the experiment was not for. Same discipline, fewer words."
-    },
-    {
-      "id": "br-032",
+      "id": "br-026",
       "type": "praise",
       "anchor": "Single plating; replicate count and incubation time and temperature were not recorded (5.1).",
       "title": "A caption that states its own n",
-      "body": "Only one page in either evidence bank puts measurement conditions in its captions, and none of them lists the conditions that were not recorded. This clause costs you nothing and it is the reason a judge will believe the rest of your platings.",
+      "body": "Only one page in either evidence bank puts measurement conditions in its captions, and none of them lists the conditions that were not recorded. This clause costs you nothing and it is why a judge will believe the rest of your platings.",
       "excerpts": [
         "hardware-2025-OG-tudarmstadt-06"
       ],
       "excerpt_note": "TUDarmstadt is the only precedent whose captions carry measurement conditions. Yours carry the missing ones too."
     },
     {
-      "id": "br-033",
+      "id": "br-027",
       "type": "restructure",
       "anchor": "The divergent OD600 values between the tube and the reservoir indicated poor growth and pointed to two hardware limitations for the next cycle.",
       "title": "Two limitations, then three fixes",
@@ -399,7 +351,7 @@
       "excerpts": []
     },
     {
-      "id": "br-034",
+      "id": "br-028",
       "type": "suggest",
       "anchor": "the bioreactor reached its plateau (OD600 ~0.8–0.9) after 2 hours, the flask (OD600 ~0.6–0.8) after 4.5 hours",
       "title": "Say what would have counted as success",
@@ -407,11 +359,11 @@
       "excerpts": [
         "hwp-bioreactor-2015-aachen-01"
       ],
-      "excerpt_note": "Aachen fixes the success criterion first: hold each dilution rate for three reactor volumes and see whether OD stays constant within sampling error.",
+      "excerpt_note": "Aachen fixes the criterion first: hold each dilution rate for three reactor volumes and see whether OD stays constant within sampling error. The reader knows what would have counted as failure.",
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-035",
+      "id": "br-029",
       "type": "praise",
       "anchor": "Both arms used the same medium and temperature, but that is not a controlled comparison.",
       "title": "You take your own result apart",
@@ -422,81 +374,36 @@
       "excerpt_note": "Aachen fences off a sensor test so nobody reads it as a bioprocess result. You fence off your own headline growth claim."
     },
     {
-      "id": "br-036",
+      "id": "br-030",
       "type": "mistake",
       "anchor": "passing the culture through a flow cuvette with a 0.2 mm path",
       "title": "Our Twin page says ten times this",
-      "body": "This page and the photometer page say a 0.2 mm path. The Digital Twin page says a 2 mm flow cuvette three times, and its own arithmetic supports 2 mm: \"a path length factor of 5.0, so a 2 mm cell is reported on a 1 cm equivalent scale\", and 10 mm over 2 mm is 5. At 0.2 mm that factor would be 50. Your cycle 5 notes record the dashboard reporting five times the computed value. Path length scales OD directly, so measure the cuvette and write one figure on all three pages.",
+      "body": "This page and the photometer page say a 0.2 mm path. The Digital Twin page says a 2 mm flow cuvette three times, and its own arithmetic supports 2 mm: \"a path length factor of 5.0, so a 2 mm cell is reported on a 1 cm equivalent scale\", and 10 mm over 2 mm is 5. At 0.2 mm that factor would be 50, and your own cycle 5 notes record the dashboard reporting five times the computed value. Path length scales OD directly, so measure the cuvette and write one figure on all three pages.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-037",
-      "type": "praise",
-      "anchor": "Fixing everything else made the lens position the single variable.",
-      "title": "One variable, said in one line",
-      "body": "The method is justified by what it isolates, and the next sentences say what it bought: real distances for the CAD instead of guesses. The closing clause, \"We did not have to guess at them\", is the reason the three spacings that follow can be trusted.",
-      "excerpts": [
-        "hwp-photometer-2014-aachen-06"
-      ],
-      "excerpt_note": "Aachen writes assembly for someone holding the parts. This is the same voice applied to a measurement."
+      "id": "br-031",
+      "type": "restructure",
+      "anchor": "These are its design–build–test–learn cycles; the instrument itself, part by part, has its own record.",
+      "title": "Put the pointer before the track",
+      "body": "This clause tells the reader that part-level detail lives elsewhere, and it arrives at the end of the paragraph that opens a track running nearly two hundred lines. Anyone looking for a part number has read the whole track by then. Move it to the first line.",
+      "after": "The in-line flow-cell photometer is the optical-density monitoring subsystem of the bioreactor; the instrument itself, part by part, has its own record. What follows is its design-build-test-learn cycles.",
+      "excerpts": []
     },
     {
-      "id": "br-038",
-      "type": "suggest",
-      "anchor": "LED tip to lens",
-      "title": "Three spacings and no tolerance",
-      "body": "These three distances are the fixed geometry for every build after cycle 1 and they are given to the nearest half centimetre with no tolerance. V1 then failed because loose mounts let the geometry drift, so you already know the alignment is sensitive. One tolerance per spacing is what a team rebuilding this cannot work out for itself.",
-      "excerpts": [
-        "hwp-photometer-2014-aachen-06"
-      ],
-      "excerpt_note": "Aachen's construction steps give what to glue where and what changes between builds. Numbers a builder can hold to.",
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-039",
-      "type": "praise",
-      "anchor": "It parks in the light and stays there until flow happens to push it out, so a single bubble can corrupt a long stretch of readings.",
-      "title": "A fault explained by its mechanism",
-      "body": "The reader learns why a horizontal light path fails, not only that it did, and the next build follows from this sentence without having to be announced. A judge can check the reasoning without the data.",
-      "excerpts": [
-        "hardware-2024-UG-ubc-04"
-      ],
-      "excerpt_note": "UBC introduces a feature by the prototype that forced it. Your V2 is forced by this paragraph."
-    },
-    {
-      "id": "br-040",
+      "id": "br-032",
       "type": "praise",
       "anchor": "Adjustability helped during alignment and hurt everywhere else.",
       "title": "A design rule from one build",
-      "body": "Nine words turn a build annoyance into a rule another team can use. This is the move the 2024 undergraduate winner was rewarded for, and you do it in one line.",
+      "body": "Nine words turn a build annoyance into a rule another team can use, and the paragraph above it has already given the mechanism. This is the move the 2024 undergraduate winner was rewarded for.",
       "excerpts": [
         "hardware-2024-UG-ubc-02"
       ],
       "excerpt_note": "UBC turns a printer tolerance problem into a transferable design rule. Same shape, shorter."
     },
     {
-      "id": "br-041",
-      "type": "mistake",
-      "anchor": "[TABLE] Table 1 V2 readings",
-      "title": "Table 1 is on a different scale",
-      "body": "The OD column here reads 62.5 au for 2 mL of titanium dioxide. Table 2, two cycles later, reads 0.5785 au for 2 mL in the same cell. The two tables cannot both be OD600 in the same units. Say what au is and how it is computed, or correct the figure.",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-042",
-      "type": "praise",
-      "anchor": "The reference channel held at 92.5 lux across both readings.",
-      "title": "The control read before the claim",
-      "body": "You check that the source was stable before attributing the drop to the sample, and then say exactly which inference that licenses. Two sentences, and the table above becomes evidence instead of numbers.",
-      "excerpts": [
-        "hwp-photometer-2019-tu-darmstadt-02"
-      ],
-      "excerpt_note": "TU Darmstadt states how two instruments were read against each other before reporting agreement. Same order of operations."
-    },
-    {
-      "id": "br-043",
+      "id": "br-033",
       "type": "praise",
       "anchor": "The optics were not the main problem. Our calibration procedure was.",
       "title": "A diagnosis that corrects yourselves",
@@ -507,7 +414,7 @@
       "excerpt_note": "TU Darmstadt reports its instrument reading low and then explains the mechanism in its own calibration. Yours finds the error in the procedure and says so."
     },
     {
-      "id": "br-044",
+      "id": "br-034",
       "type": "clarify",
       "anchor": "the roughly 20% disagreement we had been attributing to our optics was largely a procedural artifact",
       "title": "The twenty percent is not on the page",
@@ -516,27 +423,16 @@
       "excerpts": []
     },
     {
-      "id": "br-045",
+      "id": "br-035",
       "type": "mistake",
       "anchor": "Photometer · Cycle 4",
-      "title": "V3 is missing from the version list",
+      "title": "A version is missing from the list",
       "body": "The builds run V1, V2, an unnumbered \"Angled stand\", then V4. There is no V3 anywhere on the page. If the angled stand is V3, call it V3. If it is not, say what V3 was, because a reader meeting V4 after V2 assumes a build was dropped from the record.",
       "after": "Photometer · Cycle 4 · V3",
       "excerpts": []
     },
     {
-      "id": "br-046",
-      "type": "praise",
-      "anchor": "We put the tilt in a wedge under the body instead of the optics, which keeps the cycle 1 beam geometry untouched",
-      "title": "A change that protects what works",
-      "body": "The design decision is justified by what it does not disturb, and the second half gives a reader the knob to turn: reprint the wedge at a different angle without touching the alignment. That is a reproducible design, not only a finished one.",
-      "excerpts": [
-        "hardware-2023-OG-evry-05"
-      ],
-      "excerpt_note": "Evry names the rejected alternative and the reason it lost. You name the alternative placement and what it would have cost."
-    },
-    {
-      "id": "br-047",
+      "id": "br-036",
       "type": "clarify",
       "anchor": "Doubling the titanium dioxide only moved the reading by a factor of 1.56, which we cannot yet explain from this data alone.",
       "title": "Name the two explanations you have",
@@ -548,61 +444,7 @@
       "excerpt_note": "TU Darmstadt gives the threshold above which a reading is usable and draws the general rule. A named limit beats a general caution."
     },
     {
-      "id": "br-048",
-      "type": "praise",
-      "anchor": "It moved 6.4% between the blank and the samples, and the reference beam is split off before the sample, so nothing in the cuvette should be able to change it.",
-      "title": "The number, then why it is impossible",
-      "body": "You compute the drift from your own table, say why the geometry forbids it, list the two candidates and then draw the consequence: a reference channel we cannot trust is a reference channel we cannot correct with. We checked the arithmetic and 18.33 over 17.23 is 6.4%.",
-      "excerpts": [
-        "hwp-photometer-2014-aachen-05"
-      ],
-      "excerpt_note": "Aachen reports two calibration coefficients and then judges the gap between them. Same habit of grading your own number."
-    },
-    {
-      "id": "br-049",
-      "type": "praise",
-      "anchor": "Titanium dioxide tells us the optics work, but it does not move, does not grow, and does not produce bubbles.",
-      "title": "You fence off what a standard proves",
-      "body": "Three clauses say what the stable scatterer cannot test, and the next sentence sets the bar the instrument still has to clear. A judge reading a calibration section is looking for exactly this sentence and usually does not find it.",
-      "excerpts": [
-        "hwp-bioreactor-2015-aachen-03"
-      ],
-      "excerpt_note": "Aachen says plainly what its side experiment was not for. Yours says what its standard was not for."
-    },
-    {
-      "id": "br-050",
-      "type": "praise",
-      "anchor": "A photometer that responds to the lights being switched on is not measuring the sample.",
-      "title": "The requirement stated as a failure",
-      "body": "The snap-in covers are justified by naming the failure they prevent, in one sentence a non-specialist understands immediately. Every one of the three V4 changes is written this way, which is why that bullet list reads faster than the prose around it.",
-      "excerpts": [
-        "hardware-2024-OG-aachen-02"
-      ],
-      "excerpt_note": "Aachen addresses a stranger who might build the device. This bullet does the same for a design choice."
-    },
-    {
-      "id": "br-051",
-      "type": "suggest",
-      "anchor": "The instrument runs on an Arduino UNO Q. Both lux sensors report over the same bus.",
-      "title": "Name the software and who wrote it",
-      "body": "The dashboard is the only way to read this instrument and the page never names the program, its version, its author or where it lives. Our Digital Twin page does: \"the Arduino App Lab application our instructor Chars wrote for the Uno Q board on BR-01\", interface v4.13. Humboldt's answer to this ballot question was one tagged release holding assembly instructions, parts list and software together.",
-      "excerpts": [
-        "hardware-2025-UG-cornell-06"
-      ],
-      "excerpt_note": "Cornell names the deliverable another team needs and itemises what is in it. One sentence, and the reader knows what to download.",
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-052",
-      "type": "clarify",
-      "anchor": "The run passed 400 hours.",
-      "title": "Say where the other sixty hours are",
-      "body": "The run passed 400 hours and Figure 16 traces the first 336. Nothing says what the remaining hours show or why the trace stops, and our Digital Twin page puts the total at 434. One sentence closes it.",
-      "after": "The run passed 400 hours. Figure 16 traces the first 336 h, the window captured from the live dashboard; the remaining hours [what they show].",
-      "excerpts": []
-    },
-    {
-      "id": "br-053",
+      "id": "br-037",
       "type": "mistake",
       "anchor": "The run covers lag through decline in one unbroken series, which is the thing a manual sampling routine cannot produce.",
       "title": "The Twin page calls the decline a fault",
@@ -611,18 +453,17 @@
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-054",
-      "type": "praise",
-      "anchor": "each reading is a burst of 14, and 42.9% and 14.3% are exactly 6 and 2 of 14",
-      "title": "An inconsistency chased to its cause",
-      "body": "A rejection rate that looked impossible is resolved by arithmetic a reader can redo, and you say that the rule had to be written down before filtered data could be published. That is a judge's own objection answered before they raise it.",
-      "excerpts": [
-        "hwp-photometer-2014-aachen-05"
-      ],
-      "excerpt_note": "Aachen reports two independently measured coefficients and then judges the gap. Yours resolves the gap and names the rule it needed."
+      "id": "br-038",
+      "type": "clarify",
+      "anchor": "The dashboard expects a sample‑to‑reference ratio near 10:1 and we measured 5.3× to 6.4×, so either the split ratio or the expectation is wrong.",
+      "title": "Say which splitter is fitted",
+      "body": "Our photometer page says a 90:10 splitter and our Digital Twin page says the splitter ran at 9:1. Both come to the 10:1 expectation, and your measurement is about half of it. Name the part and its rated split, so a reader can tell whether the part or the expectation is at fault.",
+      "after": "The dashboard expects a sample-to-reference ratio near 10:1, set by the [part] splitter rated at [split], and we measured 5.3x to 6.4x, so either the part or the expectation is wrong.",
+      "excerpts": [],
+      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-055",
+      "id": "br-039",
       "type": "praise",
       "anchor": "with the factor, all three snapshots above reproduce with one K ≈ 9.16",
       "title": "A formula a reader can check",
@@ -630,68 +471,28 @@
       "excerpts": [
         "hwp-photometer-2019-tu-darmstadt-02"
       ],
-      "excerpt_note": "TU Darmstadt gives the correlation coefficient and the transform. You give the formula and show it closing on your own data."
+      "excerpt_note": "TU Darmstadt gives the correlation coefficient and the transform it fitted. You give the formula and show it closing on your own data."
     },
     {
-      "id": "br-056",
-      "type": "clarify",
-      "anchor": "The dashboard expects a sample‑to‑reference ratio near 10:1 and we measured 5.3× to 6.4×, so either the split ratio or the expectation is wrong.",
-      "title": "Say which splitter is fitted",
-      "body": "Our photometer page says a 90:10 splitter and our Digital Twin page says the splitter ran at 9:1. Both come to the 10:1 expectation, and your measurement is about half of it. Name the part and its rated split, so a reader can tell whether the part or the expectation is at fault.",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-057",
-      "type": "praise",
-      "anchor": "In Test 2 the 5 mg BioDrop reading breaks monotonicity",
-      "title": "Exclusions justified and still drawn",
-      "body": "Two points are excluded, each on a stated objective ground, and both stay on the plot as open markers. The clause that puts the error in the reference measurement because the paired RELEAF reading is on trend is the part a judge will trust.",
-      "excerpts": [
-        "hwp-photometer-2014-aachen-05"
-      ],
-      "excerpt_note": "Aachen judges the gap between its own two coefficients instead of picking the better one. Same refusal to quietly tidy data."
-    },
-    {
-      "id": "br-058",
+      "id": "br-040",
       "type": "clarify",
       "anchor": "plotted as RELEAF against BioDrop, Test 1 has a slope near 1 and an intercept near 0",
-      "title": "A slope of 1.10 is ten percent",
+      "title": "Near one hides a ten percent gap",
       "body": "The fit printed under this sentence is y = 1.10x - 0.04. A slope of 1.10 means the two instruments differ by about 10% at the top of the range, which is not \"near 1\" for a reader who is about to trust a reading. Give the number and what it costs.",
       "after": "plotted as RELEAF against BioDrop, Test 1 gives a slope of 1.10 and an intercept of -0.04, so our reading runs about 10% above the BioDrop at the top of the range",
       "excerpts": []
     },
     {
-      "id": "br-059",
+      "id": "br-041",
       "type": "mistake",
       "anchor": "RELEAF photometer y = 0.03x + 0.0448 · R² 0.9999 · n 18BioDrop y = 0.0318x + 0.00163 · R² 0.9998 · n 19",
       "title": "The excluded point comes off the wrong fit",
-      "body": "Test 2's exclusion is a BioDrop reading, so the BioDrop fit should be the one that loses a point. Here the BioDrop has n 19 and RELEAF n 18. The direct-agreement fit below also has n 19, and a paired plot cannot hold more points than its shorter series. Check all three counts against the workbook.",
+      "body": "Test 2's exclusion is a BioDrop reading, so the BioDrop fit should be the one that loses a point. Here the BioDrop has n 19 and RELEAF n 18. The direct-agreement fit below it also has n 19, and a paired plot cannot hold more points than its shorter series. Check all three counts against the workbook.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-060",
-      "type": "mistake",
-      "anchor": "Test 1, 2–40 mg: 0.030 against 0.031 OD600",
-      "title": "Test 1 runs to 41 mg, not 40",
-      "body": "The fit label and the figure caption above both say 2 to 41 mg, with n 39. This line says 2 to 40 mg. One of the two is a typo and a reader checking the workbook stops here.",
-      "after": "Test 1, 2-41 mg: 0.030 against 0.031 OD600",
-      "excerpts": []
-    },
-    {
-      "id": "br-061",
-      "type": "praise",
-      "anchor": "the BioDrop is itself the slightly less linear of the two instruments against the ground‑truth standard",
-      "title": "You argue against your own plan",
-      "body": "The cycle was built to produce a calibration transform and it concludes the transform would make the readings worse, with the reason given as a comparison against the mass standard instead of against the reference instrument. Then you say every reading in the record is raw, which tells a judge no number on the page has been quietly adjusted.",
-      "excerpts": [
-        "hwp-photometer-2019-tu-darmstadt-03"
-      ],
-      "excerpt_note": "TU Darmstadt keeps validation separate from calibration and runs fresh samples through the fit. You go one step further and reject the fit."
-    },
-    {
-      "id": "br-062",
+      "id": "br-042",
       "type": "cut",
       "anchor": "Two properties emerged from this cycle.",
       "title": "This paragraph repeats the Learn above it",
@@ -700,7 +501,7 @@
       "excerpts": []
     },
     {
-      "id": "br-063",
+      "id": "br-043",
       "type": "cut",
       "anchor": "The calibration transform this track was built to produce turned out to be unnecessary.",
       "title": "The third telling of one finding",
@@ -709,7 +510,7 @@
       "excerpts": []
     },
     {
-      "id": "br-064",
+      "id": "br-044",
       "type": "suggest",
       "anchor": "Four cycles are outlined here and none has been run.",
       "title": "The dashboard already has the numbers",
@@ -721,32 +522,11 @@
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-065",
-      "type": "clarify",
-      "anchor": "Transmembrane pressure is the quantity they would measure, and it is the record's highest open parameter (7.2).",
-      "title": "Say what a healthy TMP looks like",
-      "body": "This section names TMP as its subject and the record's highest open parameter without a number anywhere: no expected range, no alarm threshold, no value from the log that is already running. Section 5.2 makes an abnormally low TMP a safety signal, so the threshold is a safety number too.",
-      "after": "Transmembrane pressure is the quantity they would measure, and it is the record's highest open parameter (7.2). We expect [range] bar on a clean module at 94 mL/min, and 5.2 treats anything below [threshold] as a possible breach.",
-      "excerpts": [],
-      "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
-    },
-    {
-      "id": "br-066",
-      "type": "praise",
-      "anchor": "ACC deaminase is placed under a constitutive promoter so the strain expresses continuously, which removes light control as a variable.",
-      "title": "One variable removed, and said so",
-      "body": "The biology on this page is doing the one job it should do on a hardware page, which is to make the test about the loop. Saying so in the sentence that introduces the cycle stops a judge reading this as an optogenetics result.",
-      "excerpts": [
-        "hardware-2025-UG-cornell-04"
-      ],
-      "excerpt_note": "Cornell lets the organism in only as a requirement and a constraint. Yours lets it in as a variable deliberately held still."
-    },
-    {
-      "id": "br-067",
+      "id": "br-045",
       "type": "suggest",
       "anchor": "Engineered B. subtilis was run in the system and ACC deaminase was secreted across the membrane (Figure 22).",
       "title": "The one integrated run gets one line",
-      "body": "This is the demonstration the proof-of-concept question turns on, and it is a single sentence whose caption carries more than it does. Give the run its conditions here: strain, medium, volume, temperature, duration and flow. TUDarmstadt crosses into biology exactly once per device and that one paragraph has all of them.",
+      "body": "This is the demonstration the proof-of-concept question turns on, and it is a single sentence whose caption carries more than it does. Give the run its conditions here: strain, medium, volume, temperature, duration and flow. The strain matters most, because 3.1 names WB800 and our Digital Twin page names 168 with the v2t1 construct.",
       "after": "Engineered B. subtilis [strain] was run in the loop in [medium] at [temperature] for [duration] at 94 mL/min, and ACC deaminase was detected in shell-side medium sampled from 14 to 44 h (Figure 22).",
       "excerpts": [
         "hardware-2025-OG-tudarmstadt-07"
@@ -755,86 +535,46 @@
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-068",
+      "id": "br-046",
       "type": "clarify",
       "anchor": "ACC deaminase was successfully secreted to the shell side, but expression is weak.",
       "title": "Weak against what",
-      "body": "\"Weak\" has no reference here. A blot band is weak relative to a loading control, to the lumen-side lanes or to a standard. Say which comparison you mean and what the next measurement would be. 7.2 already names it, so the pointer is written.",
+      "body": "\"Weak\" has no reference here. A blot band is weak relative to a loading control, to the lumen-side lanes or to a standard. Say which comparison you mean and what the next measurement would be. Section 7.2 already names it, so the pointer is written.",
       "after": "ACC deaminase reached the shell side. The band is faint against the lumen-side lanes on the same blot, so the amount crossing is small and has not been quantified (7.2).",
       "excerpts": []
     },
     {
-      "id": "br-069",
-      "type": "suggest",
-      "anchor": "the ACC deaminase band is marked at ~42 kDa. At this size a shell‑side band is faint at best.",
-      "title": "Give the protein a size the pore can judge",
-      "body": "The release claim in 2.5 rests on the protectant being small enough to pass a 0.2 um pore, and a kDa figure does not settle that. Our Math Model page has the number that does: the active enzyme is a homotetramer of about 144 kDa with a 9.4 nm hydrodynamic size, against a 200 nm pore. Put that comparison beside the blot and \"passes the protectant freely\" stops being an assertion.",
-      "excerpts": [
-        "hardware-2025-UG-cornell-04"
-      ],
-      "excerpt_note": "Cornell puts what the part delivers next to what the organism needs. Same move: the pore next to the molecule.",
-      "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
-    },
-    {
-      "id": "br-070",
+      "id": "br-047",
       "type": "praise",
-      "anchor": "The values below are the ones stated elsewhere in this record and in the draft assembly guide (6.2); where the final design's value is not yet recorded, the row says so.",
+      "anchor": "The values below are the ones stated elsewhere in this record and in the draft assembly guide (6.2)",
       "title": "Specifications traced to their run",
       "body": "Both bioreactor precedents state their specifications as settled facts without saying which run established them. This sentence, and the cycle pointer in each row, make the table an audit of the record instead of a claim about the machine. The rows that disagree with themselves are visible because of it.",
       "excerpts": [
         "hwp-bioreactor-2019-humboldt-01"
       ],
-      "excerpt_note": "Humboldt's opening gives configurations, volumes and ranges as a specification sheet. Yours adds the provenance that theirs leaves out."
+      "excerpt_note": "Humboldt's opening gives configurations, volumes and ranges as a specification sheet. Yours adds the provenance theirs leaves out.",
+      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-071",
+      "id": "br-048",
       "type": "mistake",
       "anchor": "about 371 mL/min on the 4 September integration‑v1 dashboard (Figure 21)",
       "title": "Two flow rates, four times apart",
-      "body": "Recording both without choosing is honest and it leaves a reader unable to use either. 94 mL/min appears five times elsewhere on the page as the flow rate. Say which is the design setting and what the other one was: a different pump, a different tube bore, or a dashboard reading in different units.",
+      "body": "Recording both without choosing is honest, and it leaves a reader unable to use either. 94 mL/min appears five times elsewhere on the page as the flow rate. Say which is the design setting and what the other one was: a different pump, a different tube bore, or a dashboard reading in different units.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-072",
-      "type": "mistake",
-      "anchor": "The assembly guide's parts list has two 1 L reservoirs and a 100 mL one.",
-      "title": "Three reservoir sets in one record",
-      "body": "This row holds two of them, 300 mL in a 500 mL vessel and the guide's two 1 L plus a 100 mL. The materials list in 6.1 has a third, \"Reservoir 2\" with no volumes. A reader buying glassware cannot tell which set to buy or what each vessel is for.",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-073",
+      "id": "br-049",
       "type": "mistake",
       "anchor": "Feed, retentate and permeate read about 0.20 bar each on the 4 September dashboard",
       "title": "Equal pressures mean zero TMP",
-      "body": "If all three read 0.20 bar, the transmembrane pressure computed from them is about zero, and 3.3 calls TMP the record's highest open parameter. Either the figures are rounded past the difference that matters, or the transducers were reading the same point. Give the three values to the precision the dashboard shows, and the TMP that follows.",
+      "body": "If all three read 0.20 bar, the transmembrane pressure computed from them is about zero, and 3.3 calls TMP the record's highest open parameter. Either the figures are rounded past the difference that matters, or the transducers were reading the same point. Give the three values to the precision the dashboard shows, the TMP that follows, and the range you would accept on a clean module.",
       "excerpts": [],
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-074",
-      "type": "suggest",
-      "anchor": "3 m green‑light LED strip, switched by the stress prediction to induce expression (1.4).",
-      "title": "The induction light is never measured",
-      "body": "This strip is the part that turns the machine on, and the page gives its length and nothing else: no intensity at the vessel wall, no uniformity, no delivered dose, no part number. Humboldt measured light at 24 positions at three settings and published the distribution inside the vessel. One reading at the vessel wall, at the working setting, would be enough here.",
-      "excerpts": [
-        "hwp-bioreactor-2019-humboldt-01"
-      ],
-      "excerpt_note": "Humboldt's opening states the wavelength range the instrument delivers, because that is what a phototroph user has to check.",
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-075",
-      "type": "mistake",
-      "anchor": "green at about 526 nm to switch expression on and red at about 670 nm to switch it off (CcaS–CcaR)",
-      "title": "Green is 535 nm on our other pages",
-      "body": "Our DiOPAL page says \"Around 535 nm, which induces protectant expression\" and our Math Model page says \"Green light at 535 nm activates the sensor kinase CcaS\". Red is 670 here and 672 on the Math Model. The brochure draft is the only source for 526 nm. Agree one pair across the wiki and cite it once.",
-      "excerpts": []
-    },
-    {
-      "id": "br-076",
+      "id": "br-050",
       "type": "cut",
       "anchor": "Making sure synthetic organisms do not enter the wild is a responsibility for everyone working with genetically modified organisms.",
       "title": "Two sentences that say nothing yet",
@@ -843,27 +583,16 @@
       "excerpts": []
     },
     {
-      "id": "br-077",
-      "type": "suggest",
-      "anchor": "its pore size, 0.2 µm, is smaller than the cell diameter of B. subtilis, 0.25 to 1.0 µm",
-      "title": "The safety claim needs a citation",
-      "body": "All of 5.1 rests on this one range and no source is given for it. A judge checking a containment argument will look for one. Say also whether the 0.2 um figure is a nominal rating or an absolute one, because a nominal rating passes some particles above its size and that matters more here than anywhere else on the page.",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
+      "id": "br-051",
+      "type": "restructure",
+      "anchor": "From shell‑side medium, in both platings on record: cycle 1, and a lumen‑and‑shell comparison in which the lumen plate grew.",
+      "title": "The number arrives before the test",
+      "body": "This block opens the section with a result and two figure pointers for a test the reader has not met. The principle and the test are both just below it. Lead with the barrier and the test, and let the zero land after them, where it means something.",
+      "after": "Containment is by size exclusion at the membrane, and it was tested directly: medium from both sides of the running reactor was plated and compared. No colonies grew from the shell side, in either plating on record.",
+      "excerpts": []
     },
     {
-      "id": "br-078",
-      "type": "praise",
-      "anchor": "Drawn to scale from the values above: the membrane's 0.2 µm pore, and B. subtilis cells at the smallest and largest diameters quoted.",
-      "title": "A caption that says what is not to scale",
-      "body": "The caption names the two values drawn, states the conclusion a reader should take from the drawing, and then says the wall is not to scale so nobody reads a thickness off it. That last clause is the one almost every page forgets.",
-      "excerpts": [
-        "hardware-2025-OG-tudarmstadt-06"
-      ],
-      "excerpt_note": "TUDarmstadt's captions carry measurement conditions. Yours carries the limits of the drawing."
-    },
-    {
-      "id": "br-079",
+      "id": "br-052",
       "type": "praise",
       "anchor": "An earlier version of this specification claimed a 50 kDa molecular‑weight cut‑off and stated that the membrane retains secreted membrane vesicles.",
       "title": "A retraction, in public, with the reason",
@@ -874,7 +603,7 @@
       "excerpt_note": "Aachen reports a second, worse result instead of dropping it, and grades the degradation. Yours reports a wrong claim instead of deleting it."
     },
     {
-      "id": "br-080",
+      "id": "br-053",
       "type": "suggest",
       "anchor": "Neither has been tried against a deliberate leak or a deliberate breach, so the alarm path is not yet tested (7.1).",
       "title": "Both alarms are an afternoon's test",
@@ -882,11 +611,11 @@
       "excerpts": [
         "hardware-2024-UG-ubc-01"
       ],
-      "excerpt_note": "UBC sets a target, measures against it, and reports what the measurement turned out to depend on. A pass condition makes a safety test reportable.",
+      "excerpt_note": "UBC sets a target, measures against it, and reports what the measurement turned out to depend on. A pass condition is what makes a safety test reportable.",
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-081",
+      "id": "br-054",
       "type": "mistake",
       "anchor": "Every line is costed, so the figure above is the build cost.",
       "title": "This cannot be the build cost",
@@ -895,7 +624,7 @@
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-082",
+      "id": "br-055",
       "type": "suggest",
       "anchor": "Costs are as entered on the team's component sheet, in New Taiwan dollars.",
       "title": "Re-enter the sheet with unit costs",
@@ -908,25 +637,41 @@
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-083",
-      "type": "clarify",
-      "anchor": "about US$960 at the sheet's own conversion",
-      "title": "Say which total the dollars convert",
-      "body": "US$960 is about NT$30,450, the sheet total with the reference spectrophotometer, and not the NT$16,450 the previous sentence calls the build cost. As written the dollar figure reads as the build cost. Name the figure it converts and give the rate.",
-      "after": "and its total adds the column, NT$30,450, or about US$960 at the sheet's own rate of [rate] on [date]",
-      "excerpts": []
+      "id": "br-056",
+      "type": "restructure",
+      "anchor": "The sheet does not say whether a price is per unit or per line",
+      "title": "The caveat arrives after the total",
+      "body": "The block above prints NT$16,450 and the sentence \"Every line is costed, so the figure above is the build cost\", and the qualification only turns up here, under the table. US$960 is also about NT$30,450, the total with the spectrophotometer, and not the figure called the build cost. Say what the number is before giving it.",
+      "after": "The sheet does not say whether a price is per unit or per line, so the figure below is the sum of its cost column and not a verified build cost. Costs are as entered on the team's component sheet, in New Taiwan dollars: NT$16,450 for the parts, NT$30,450 with the reference spectrophotometer, about US$960 at the sheet's own rate on [date].",
+      "excerpts": [
+        "hardware-2025-UG-cornell-05"
+      ],
+      "excerpt_note": "Cornell qualifies its bill of materials in the sentence straight after it, which is why its headline price is believable.",
+      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-084",
+      "id": "br-057",
+      "type": "suggest",
+      "anchor": "The build, segment by segmentworking draft",
+      "title": "No files and no licence for the build",
+      "body": "This is the only one of our four hardware pages with no downloadable geometry, and none of the four states a licence on its designs. The dashboard is unnamed here too, while our Digital Twin page credits \"the Arduino App Lab application our instructor Chars wrote for the Uno Q board on BR-01\" at interface v4.13. Aachen 2015 carries a licence in every footer and releases its control software under GPL v3; Humboldt puts assembly instructions, parts list and software in one tagged release.",
+      "excerpts": [
+        "hardware-2025-UG-cornell-06"
+      ],
+      "excerpt_note": "Cornell names the deliverable another team needs and itemises what is in it. One sentence, and the reader knows what to download.",
+      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
+    },
+    {
+      "id": "br-058",
       "type": "mistake",
       "anchor": "One segment connects each of the membrane's four ports",
       "title": "The two parts lists do not add up",
-      "body": "Four segments at two Luer valves each is eight, plus the four in the main assembly list is twelve, against \"Luer valve 5\" in 6.1. Each segment also takes one filter and one pressure transducer, which is four of each, against \"Air filter 1\" and \"Pressure sensor 3\". A reader buying from 6.1 cannot build the segments in 6.2. Make the two lists agree, with quantities.",
+      "body": "Four segments at two Luer valves each is eight, plus the four in the main assembly list is twelve, against \"Luer valve 5\" in 6.1. Each segment also takes one filter and one pressure transducer, which is four of each, against \"Air filter 1\" and \"Pressure sensor 3\". The reservoirs are a third case: two 1 L and a 100 mL here, \"Reservoir 2\" in 6.1, and a 500 mL vessel in Table 4. A reader buying from 6.1 cannot build the segments in 6.2.",
       "excerpts": [],
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-085",
+      "id": "br-059",
       "type": "clarify",
       "anchor": "Cut the tubing into three sections, A, B and C.",
       "title": "Say how long each section is",
@@ -936,18 +681,19 @@
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-086",
+      "id": "br-060",
       "type": "praise",
       "anchor": "Hold the right port facing up and feed 3–5 drops of water into it with a dropper, then slowly rotate the handle of the center valve and watch for leaks.",
       "title": "A check written for someone holding it",
-      "body": "The quantity, the orientation, the action and then the fault tree, in two sentences and in the second person. This is the best-written passage in the reproduction section and it is the register the rest of the guide needs.",
+      "body": "The quantity, the orientation, the action, then the fault tree, in two sentences and in the second person. This is the best-written passage in the reproduction section and it is the register the rest of the guide needs.",
       "excerpts": [
         "hwp-photometer-2014-aachen-06"
       ],
-      "excerpt_note": "Aachen's construction steps tell a reader what to glue where and what changes between builds. Same voice."
+      "excerpt_note": "Aachen's construction steps tell a reader what to glue where and what changes between builds. Same voice.",
+      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-087",
+      "id": "br-061",
       "type": "mistake",
       "anchor": "Connect the other end of the In‑Shell segment to one end of the flow cuvette with a 3‑inch tube.",
       "title": "Which optical device is this",
@@ -956,53 +702,31 @@
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-088",
+      "id": "br-062",
       "type": "suggest",
       "anchor": "Connect a 2‑inch tube from the “Out” of a filter to another hole in the cap of the shell‑side reservoir.",
       "title": "The guide stops after eight steps",
-      "body": "This is the last step, and the machine is not built: no lumen-side plumbing, no culture reservoir, no photometer, no pH sensor, no droplet sensor, no stirrer placement, no LED strip, no priming and no sterilisation. TUDarmstadt publishes seven numbered steps with a photograph each. Finishing this from material already on the page is the single biggest thing you can do for the reproduction question.",
+      "body": "This is the last step, and the machine is not built: no lumen-side plumbing, no culture reservoir, no photometer, no pH sensor, no droplet sensor, no stirrer placement, no LED strip and no priming. TUDarmstadt publishes seven numbered steps with a photograph each. Finishing this from material already on the page is the single biggest thing you can do for the reproduction question.",
       "excerpts": [
         "hardware-2025-UG-cornell-06"
       ],
-      "excerpt_note": "Cornell names its operating manual and itemises what is in it: assembly, operation, precautions, and the differences between variants.",
+      "excerpt_note": "Cornell names its operating manual and itemises it: assembly, operation, precautions, and the differences between variants.",
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-089",
-      "type": "suggest",
-      "anchor": "The build, segment by segmentworking draft",
-      "title": "No files and no licence for the build",
-      "body": "This is the only one of our four hardware pages with no downloadable geometry, and none of the four states a licence on its designs. Aachen 2015 carries a licence in every footer and releases its control software under GPL v3; Humboldt puts assembly instructions, parts list and software in one tagged release. Say where the CAD, the print files and the dashboard code live, and under what licence.",
-      "excerpts": [
-        "hardware-2025-UG-cornell-06"
-      ],
-      "excerpt_note": "Cornell's one sentence about its manual is the cheapest version of this. Name the artifact and what is in it.",
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-090",
+      "id": "br-063",
       "type": "suggest",
       "anchor": "B. subtilis WB800; engineered strains in the 400 h run and integration v1",
       "title": "No sterilisation anywhere in the guide",
-      "body": "Section 6.3 gives the organism, the medium, the inoculum and the temperature, and nothing on the page says how any of it is sterilised or which parts survive an autoclave. The membrane cartridge, the printed photometer body and the pumps cannot go in together. Cornell answers this in one sentence by naming a dedicated autoclave configuration and assembling the rest afterwards.",
+      "body": "Section 6.3 gives the organism, the medium, the inoculum and the temperature, and nothing on the page says how any of it is sterilised or which parts survive an autoclave. The membrane cartridge, the printed photometer body and the pumps cannot go in together. The medium needs the same treatment: LB has several recipes and the page never says which, or whether it carries an antibiotic, where our Digital Twin page says the WB800 repeat ran \"under antibiotic selection\".",
       "excerpts": [
         "hardware-2025-UG-cornell-03"
       ],
-      "excerpt_note": "Cornell lists its materials and then justifies them by one consequence: the assembly can be autoclaved. Biology enters a hardware page as a constraint.",
+      "excerpt_note": "Cornell lists its materials and justifies them by one consequence: the assembly can be autoclaved, so a dedicated autoclave configuration was designed. Biology enters a hardware page as a constraint.",
       "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
     },
     {
-      "id": "br-091",
-      "type": "clarify",
-      "anchor": "LB, 300 mL working volume",
-      "title": "Name the medium precisely",
-      "body": "LB has several standard recipes and the page never says which, or whether it carries an antibiotic. Our Digital Twin page says the WB800 repeat ran \"under antibiotic selection\". A team reproducing your growth curves needs the recipe and the selection.",
-      "after": "LB [recipe], 300 mL working volume, with [antibiotic] at [concentration] where selection is used",
-      "excerpts": [],
-      "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-    },
-    {
-      "id": "br-092",
+      "id": "br-064",
       "type": "praise",
       "anchor": "Containment with an n. Two platings, with no replicate count stated for either, and no incubation conditions for the first.",
       "title": "The gap named as an experiment",
@@ -1013,18 +737,7 @@
       "excerpt_note": "Humboldt converts a validation plot into a working range and says what would extend it. Yours does that for eight claims at once."
     },
     {
-      "id": "br-093",
-      "type": "praise",
-      "anchor": "No aeration path is described for the cycle 2 rig (the later assembly draft adds a vent filter, 6.2), and dissolved oxygen was not measured, so oxygen limitation is not excluded.",
-      "title": "An alternative explanation left open",
-      "body": "You offer a competing cause for your own headline growth result and say what would rule it out. Our Digital Twin page reaches the same place from the other side, that stirring was added \"to give the aerobe more oxygen\". A judge reading both pages finds them agreeing on a weakness, which is rarer than agreeing on a result.",
-      "excerpts": [
-        "hwp-bioreactor-2015-aachen-03"
-      ],
-      "excerpt_note": "Aachen refuses to let a sensor test be read as a bioprocess result. You refuse to let a plateau be read as a throughput limit."
-    },
-    {
-      "id": "br-094",
+      "id": "br-065",
       "type": "mistake",
       "anchor": "The longest recording known to have the membrane module fitted is about two days (53 h, integration cycle 1).",
       "title": "Check this against run four",
@@ -1033,20 +746,20 @@
       "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
     },
     {
-      "id": "br-095",
+      "id": "br-066",
       "type": "clarify",
       "anchor": "The 400 h photometer record was drawn from the bioreactor loop, in the doc's words.",
       "title": "In the doc's words is not a source",
-      "body": "\"The doc\" appears in 4.1, in 6.1 and here, and the page never says what it is or where a reader could see it. If it is an internal working document, cite it by name and date. If the claim is yours, own it, and say whether the membrane module was fitted for that run, because that is the whole question this block is asking.",
-      "after": "The 400 h photometer record was drawn from the bioreactor loop, recorded in [document, date]. Whether the membrane module was fitted for it is [answer].",
+      "body": "\"The doc\" appears in 4.1, in 6.1 and here, and the page never says what it is or where a reader could see it. If it is an internal working document, cite it by name and date. If the claim is yours, own it, and say whether the membrane module was fitted for that run, because that is the question this block is asking.",
+      "after": "The 400 h photometer record was drawn from the bioreactor loop, recorded in [document, date]. The membrane module [was or was not] fitted for it.",
       "excerpts": []
     },
     {
-      "id": "br-096",
+      "id": "br-067",
       "type": "suggest",
       "anchor": "A multi-day run with the photometer logging continuously, to establish that the loop is stable over the timescale a field deployment needs.",
       "title": "Nobody outside the team has touched it",
-      "body": "Five of these items are experiments and artifacts and none of them is a person. Ballot question two asks about user testing, and no one outside the hardware sub-team is named anywhere on this page. The cheapest answer is one person building from 6.2 and writing down where they got stuck, which tests the documentation question in the same afternoon. UBC ran five sessions on a bioreactor of its own and named the testers and their expertise.",
+      "body": "Five items here, and not one of them is a person. Ballot question two asks about user testing, and nobody outside the hardware sub-team is named anywhere on this page. The cheapest answer is one person building the four membrane segments from 6.2 and writing down where they got stuck, which audits the documentation question in the same afternoon. UBC ran five sessions on a bioreactor of its own and named the testers and their expertise.",
       "excerpts": [
         "hardware-2024-UG-ubc-03",
         "hardware-2024-UG-ubc-05"
@@ -1055,27 +768,7 @@
       "ballot": "Did the team conduct user testing and learn from user feedback?"
     },
     {
-      "id": "br-097",
-      "type": "praise",
-      "anchor": "A costed BOM against a named commercial perfusion system.",
-      "title": "A deployability list, not a wish list",
-      "body": "Five items, each an experiment or an artifact with a purpose stated in the same line, and this last one names the comparison that would make the cost argument land. A judge reads this as a plan instead of an apology.",
-      "excerpts": [
-        "hwp-bioreactor-2019-humboldt-04"
-      ],
-      "excerpt_note": "Humboldt gives the reason for publishing a price before the price, because other iGEM teams are short of money. Your last bullet is that reason turned into a task."
-    },
-    {
-      "id": "br-098",
-      "type": "cut",
-      "anchor": "With a constrained timescale, the team could not complete everything it had in mind.",
-      "title": "Start with the two goals",
-      "body": "The first clause apologises and the second names the two goals. A judge only needs the second.",
-      "after": "Two goals are still open: the three-chamber bioreactor, and a quick-slot refill for B. subtilis and medium.",
-      "excerpts": []
-    },
-    {
-      "id": "br-099",
+      "id": "br-068",
       "type": "cut",
       "anchor": "The three‑chamber concept arose while we were researching which protectants our B. subtilis should produce and secrete.",
       "title": "The protectant search is wet lab",
@@ -1084,24 +777,16 @@
       "excerpts": []
     },
     {
-      "id": "br-100",
+      "id": "br-069",
       "type": "mistake",
       "anchor": "ACC deaminase, LEA peptide and BoPep4",
       "title": "Two protectant names are wrong",
-      "body": "Our Protein Design pages write BoPEP4 throughout, and the LEA molecule is LEA14, which those pages describe as \"the ordered/globular protein LEA14\" and deliberately distinguish from the disordered peptides in the family. \"LEA peptide\" and \"BoPep4\" appear only here. Use the names the wet lab uses.",
+      "body": "Our Protein Design pages write BoPEP4 throughout, and the LEA molecule is LEA14, which those pages call \"the ordered/globular protein LEA14\" and deliberately distinguish from the disordered peptides in the family. \"LEA peptide\" and \"BoPep4\" appear only here. Use the names the wet lab uses.",
       "after": "ACC deaminase, LEA14 and BoPEP4",
       "excerpts": []
     },
     {
-      "id": "br-101",
-      "type": "mistake",
-      "anchor": "The lid lifts, the front window clears, and the camera moves down the three chambers in turn.",
-      "title": "A camera and a channel appear once",
-      "body": "This caption introduces a camera that appears nowhere else on the page, and calls the package \"Three-channel\" where the heading above says three-chamber and the body says \"single-channel prototype\". Pick chamber or channel and use it everywhere, and either explain the camera or leave it out of the caption.",
-      "excerpts": []
-    },
-    {
-      "id": "br-102",
+      "id": "br-070",
       "type": "praise",
       "anchor": "Nothing here has been built — it is the packaged arrangement the single‑channel prototype is a step toward",
       "title": "A CAD figure labelled unbuilt",
