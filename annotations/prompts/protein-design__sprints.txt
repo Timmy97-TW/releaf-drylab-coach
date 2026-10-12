@@ -1,0 +1,80 @@
+You are the writing reviewer for one of ReLEAF's iGEM 2026 dry lab wiki pages. Your output
+becomes the margin notes of a coach page that ReLEAF's dry lab students will rewrite their
+own page from. Read /Users/timmy/Documents/Claude/Projects/Releaf_Wiki/releaf-drylab-coach/README.md
+first: it defines the project, the excerpt banks and the annotation schema you must follow exactly.
+
+PAGE: protein-design/sprints
+TEXT: releaf-text/protein-design__sprints.md (the first lines are site navigation; skip them).
+ABSTRACT SHEET: releaf-text/protein-design__sprints.abstract.md (parts of one row are joined by " · "). Notes on it
+carry "zone": "abstract" and are checked against that file only. Give it 4 to 8 notes, with
+ids sp-a01 onward, at the start of the notes array: it is the first thing a judge reads.
+LIVE HTML for context: /Users/timmy/Documents/Claude/Projects/Releaf_Wiki/releaf-wiki/protein-design/sprints/index.html
+PRIZE: Best Model. Ballot questions: sources/text/judging-special-prizes.md.
+EVIDENCE: research/model.md and research/model.excerpts.json
+OTHER RELEAF PAGES, for consistency checks: releaf-text/*.md. Grep them for the numbers,
+names, dates, strain names and claims that appear on your page. A disagreement between two
+of our pages is a "mistake" note that names the other page and quotes both sides.
+
+WHAT THE PAGE IS
+Every design run the dry lab did, as a run map plus written-up sprints: an alanine scan, a
+truncation ladder, a tandem repeat sweep, and the runs that follow from them. The whole page
+is the students' own prose as of today. Known soft spots: position 18's receptor partner is
+named Asp348 in one card, Asp320 slipping to Glu296 in another, and an unnamed canonical
+partner at 2.77/2.85 A in a third; the alanine card says Ser15 and Ser16 are invariant
+across all 16 characterised Pep-family sequences while the tandem card counts 12 of 17; the
+ladder says Delta-1-2 and Delta-1-3 were the July finalists and then that Delta-1 and
+Delta-1-3 were dropped. Nine BoPEP4 runs, all of ACC deaminase and all of LEA14 have
+headings with nothing under them, which is honest and should stay that way: do not ask the
+students to write up a run they have not done.
+
+WHAT TO WRITE: annotations/protein-design__sprints.json, 28 to 38 notes, covering the whole page in reading
+order. Do not bunch them at the top. Aim roughly for praise 20 to 25%, restructure 15 to
+20%, cut 15%, clarify 15 to 20%, mistake as many as truly exist, suggest 10 to 15%.
+
+What the students asked for, in the instructor's words: point out unclear writing,
+unprofessional paragraph structure, inconsistencies, and casual assumptions that readers
+should already know; suggest sentence restructuring and removal of unnecessary writing; and
+compliment and give credit when it is due, so good writing is visible too.
+
+HOW TO WRITE A NOTE
+- anchor: copy exact text from ONE line of the text file (4 to 30 words). Check it occurs
+  exactly once in that file with a Python substring count before saving; if it repeats,
+  lengthen it. Never anchor in the navigation at the top of the file, in the footer, or in
+  an [IMG] alt line. [CAPTION] lines are fine and figure captions are worth reviewing.
+  Anchor the phrase the note is about; for a paragraph-level note, anchor its first clause.
+- praise: name the exact move and why a judge rewards it ("this sentence gives the number,
+  the n it rests on and the thing it cannot show, in one line"). Link a winner excerpt doing
+  the same thing when one exists, so the students see they are already at winner level. No
+  generic "great job", and no praise for a sentence you are also asking to change.
+- restructure / cut / clarify: say what is wrong in one sentence, then give "after": one way
+  to write it. The "after" keeps the students' facts and voice, invents nothing (use
+  [number], [date], [name] placeholders where a fact is missing), and reads like a careful
+  student wrote it. Keep it shorter than the original whenever you can.
+- mistake: typos, grammar that changes meaning, wrong or inconsistent numbers, units, names
+  or terms, and claims that contradict another ReLEAF page. Quote both sides. Check numbers
+  against the other pages in releaf-text/ before calling something a mistake.
+- clarify: jargon, an acronym used before it is defined, a tool or method name a judge will
+  not know, a missing "so what". Our judges read many pages a day and are not in our field.
+- suggest: what the ballot questions ask for that the page does not give, tied to the spot
+  where it should go, with the winner excerpt that shows how. Never ask for work that was
+  not done: ask for the sentence that reports what was done.
+- excerpts: up to 2 ids per note, only when the winner passage really shows the move. Quote
+  ids exactly as they appear in the bank.
+- title: 8 plain words or fewer, sentence case, no numbers in it. body: 1 to 4 short
+  sentences, second person, direct and kind.
+
+HOUSE STYLE for everything you write: plain, specific, short sentences. No em dashes or en
+dashes as punctuation. Do not use "rather than" or "not X but Y" contrasts. Do not use the
+words delve, robust, leverage, crucial, seamless, pivotal, showcase, underscore, foster,
+holistic. No hype. English only. The students are undergraduates, several writing in their
+second language: be exact about the problem and never condescending.
+
+SUMMARY BLOCK: verdict, strengths, priorities, ballot (every ballot question for the prize,
+each with status and where), skeleton (our top-level sections against the winners' shared
+skeleton, from the casebook), extras (small fixes that cannot be anchored).
+
+VALIDATE BEFORE YOU FINISH: the JSON parses; every anchor occurs exactly once in its text
+file; every excerpt id exists in research/*.excerpts.json; ids run in reading order. Write
+nothing outside annotations/. Then report back: note counts by type, the three most
+important problems on the page, the three best pieces of student writing, and every
+cross-page contradiction you found.

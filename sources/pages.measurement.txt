@@ -1,0 +1,6 @@
+measurement-2025-UG-epfl https://2025.igem.wiki/epfl/measurement
+measurement-2025-OG-aalto-helsinki https://2025.igem.wiki/aalto-helsinki/measurement
+measurement-2024-UG-austin-utexas https://2024.igem.wiki/austin-utexas/measurement
+measurement-2024-OG-kuleuven https://2024.igem.wiki/kuleuven/measurement
+measurement-2023-UG-william-and-mary https://2023.igem.wiki/william-and-mary/measurement
+measurement-2023-OG-estonia-tuit https://2023.igem.wiki/estonia-tuit/measurement

@@ -1,0 +1,14 @@
+ABSTRACT PASS (8 Oct, after the wiki update 4b52192)
+
+The page you reviewed now opens on a student-drawn banner and an abstract sheet: a one-sentence lead, a short paragraph with two key messages in bold, a middle column (outcomes / goals / modules, each with a short label and line) and an "On this page" map of the numbered sections with a one-line description each. It is built only from the students' own sentences, so most of it repeats lines from the body. It is the first thing a judge reads.
+
+The text of the sheet is in engagement-writing-coach/releaf-text/{PAGE}.abstract.md (parts of one row are separated by " · "). The body text has been re-extracted to releaf-text/{PAGE}.md; all your existing notes still match it exactly once, so leave them as they are.
+
+Add 6–10 notes on the abstract sheet to annotations/{PAGE}.json:
+- Each gets "zone": "abstract" and an id {PREFIX}-a01, {PREFIX}-a02… in reading order. Put them at the start of the notes array.
+- anchor: exact text from ONE part of ONE line of the abstract file (never across a " · " separator), 3–30 words, occurring exactly once in the abstract file. Uniqueness is checked against the abstract file only.
+- What to look at: does the lead sentence state what this page shows (or is it scene-setting)? Are the two bolded messages the ones a judge should remember, and does the paragraph read as a summary or as copied fragments? Does every number or claim agree with the body and with other pages (quote both)? Do the middle-column labels and lines make sense on their own to someone who has not read the page? Do the section-map lines describe their sections, and do the names match the headings? Credit what works, and link a winner excerpt where a winner's page opening does the job well (the casebooks describe each winner's opening).
+- Same rules as before for types, "after" (keeps their facts, invents nothing, [placeholders]), excerpts, house style, high-school level.
+- If the abstract creates a problem bigger than one of your current summary.priorities, add it to priorities (keep the list to six at most). Small slips that cannot be anchored go in summary.extras.
+
+Validate: JSON parses; every abstract anchor occurs exactly once in the .abstract.md file and inside a single part; every body anchor still occurs exactly once in the body file; ids unique; excerpt ids exist. Report back in five lines or fewer: counts by type for the abstract notes, and the single most important thing wrong or right with the sheet.

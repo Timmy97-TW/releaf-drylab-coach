@@ -1,0 +1,36 @@
+{"key": "software",
+ "name": "Best Software",
+ "also_known_as": "Best Software Tool (the name used on the 2023, 2024 and 2025 results pages)",
+ "page": "software",
+ "ballot": [
+   "How well is the software compatible with, and does it leverage, existing synthetic biology standards? (e.g. SBOL, other RFCs, data formats, etc.)",
+   "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "Can the software be useful to other projects?",
+   "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)",
+   "Is the software user-friendly?",
+   "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
+ ],
+ "winners": [
+   {"year": 2025, "track": "UG", "team": "BIT-China", "url": "https://2025.igem.wiki/bit-china/software", "verified": true,
+    "note": "Tie. The 2025 results page lists BIT-China and EPFL together under Undergrad / Winner for Best Software Tool."},
+   {"year": 2025, "track": "UG", "team": "EPFL", "url": "https://2025.igem.wiki/epfl/software", "verified": true,
+    "note": "Tie with BIT-China. EPFL also won Best Hardware-adjacent work on the same project; the software page covers the drone stack."},
+   {"year": 2025, "track": "OG", "team": "Marburg", "url": "https://2025.igem.wiki/marburg/software", "verified": true,
+    "note": "Tie. The 2025 results page lists Marburg and Munich together under Overgrad / Winner."},
+   {"year": 2025, "track": "OG", "team": "Munich", "url": "https://2025.igem.wiki/munich/software", "verified": true,
+    "note": "Tie with Marburg. Munich was also a 2025 Best Model nominee; the software page is MESA Designer."},
+   {"year": 2024, "track": "UG", "team": "Vilnius-Lithuania", "url": "https://2024.igem.wiki/vilnius-lithuania/software", "verified": true,
+    "note": "Sole undergraduate winner. The page documents a remote monitoring and control interface for their own bioreactor, the closest case in the set to ReLeaf's Digital Twin."},
+   {"year": 2024, "track": "OG", "team": "UniMuenster", "url": "https://2024.igem.wiki/unimuenster/software", "verified": true,
+    "note": "Sole overgraduate winner. The page is a command-line Python package for low-throughput machine-learning protein engineering."},
+   {"year": 2023, "track": "UG", "team": "Fudan", "url": "https://2023.igem.wiki/fudan/software", "verified": true,
+    "note": "Sole undergraduate winner. The page serves at /fudan/software and /fudan/software.html; it carries four tools (pRAP web UI, KineticHub, RAP Builder, Parthub 2)."},
+   {"year": 2023, "track": "OG", "team": "INSAENSLyon1", "url": "https://2023.igem.wiki/insaenslyon1/software", "verified": true,
+    "note": "Sole overgraduate winner. Shortest page in the set (about 2,200 words). Their own heading misspells the award as \"Best Sotfware award\"."}
+ ],
+ "source_notes": [
+   "All three results pages (competition.igem.org/results/<year>?tab=special-prizes) name the award \"Best Software Tool\" in 2023, 2024 and 2025. The 2026 judging handbook renames it \"Best Software\".",
+   "2025 is tied in both collegiate tracks, so this prize has eight winners across the three years, not six. No year in this range shows combined collegiate sections for this award: Undergrad, Overgrad and High School are listed separately every year.",
+   "Winner links on the results pages point at teams.igem.org team records, not at wiki pages. Each wiki URL above was reached by the standard /<team-slug>/software address and confirmed by rendering it; every render returned a page whose own heading is Software and whose content matches the team's prize-winning tool.",
+   "High School winners (GreatBay-SCIE 2023, BKEA 2024, Lambert-GA 2025) are outside the brief's two collegiate tracks and are not included."
+ ]}

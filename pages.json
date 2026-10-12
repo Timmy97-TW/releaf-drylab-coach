@@ -1,0 +1,12 @@
+{
+  "wiki_repo": "https://github.com/Timmy97-TW/releaf-wiki.git",
+  "live_wiki": "https://2026.igem.wiki/gems-taiwan/",
+  "pages": [
+    {"slug": "model", "title": "Math Model", "short": "Math Model", "prize": "Best Model"},
+    {"slug": "software", "title": "Digital Twin", "short": "Digital Twin", "prize": "Best Software, Best Measurement"},
+    {"slug": "protein-design", "title": "Protein Design", "short": "Protein Design", "prize": "Best Model", "skip": ["triage", "restraints", "generate", "assembly", "packaging"]},
+    {"slug": "protein-design/methodology", "title": "Protein Design · Methodology", "short": "Methodology", "prize": "Best Model"},
+    {"slug": "protein-design/sprints", "title": "Protein Design · Sprints and Results", "short": "Sprints", "prize": "Best Model"},
+    {"slug": "protein-design/molecular-dynamics", "title": "Protein Design · Molecular Dynamics", "short": "Molecular Dynamics", "prize": "Best Model"}
+  ]
+}

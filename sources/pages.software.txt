@@ -1,0 +1,8 @@
+software-2023-UG-fudan https://2023.igem.wiki/fudan/software
+software-2023-OG-insaenslyon1 https://2023.igem.wiki/insaenslyon1/software
+software-2024-UG-vilnius-lithuania https://2024.igem.wiki/vilnius-lithuania/software
+software-2024-OG-unimuenster https://2024.igem.wiki/unimuenster/software
+software-2025-UG-bit-china https://2025.igem.wiki/bit-china/software
+software-2025-UG-epfl https://2025.igem.wiki/epfl/software
+software-2025-OG-marburg https://2025.igem.wiki/marburg/software
+software-2025-OG-munich https://2025.igem.wiki/munich/software

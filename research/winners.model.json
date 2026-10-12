@@ -1,0 +1,22 @@
+{"key": "model", "name": "Best Model", "also_known_as": "",
+ "page": "model",
+ "ballot": [
+   "How impressive is the modeling or computational approach?",
+   "Did the model or computational approach help the team understand, predict, or design a part, device, or system?",
+   "Did the team use experimental or other relevant data to develop, train, or validate the model or computational approach?",
+   "Does the modeling or computational approach provide a good example for others?"
+ ],
+ "winners": [
+   {"year": 2025, "track": "UG", "team": "Peking", "url": "https://2025.igem.wiki/peking/model", "verified": true,
+    "note": "Single winner, no tie. Both collegiate sections awarded separately in 2025."},
+   {"year": 2025, "track": "OG", "team": "Heidelberg", "url": "https://2025.igem.wiki/heidelberg/model", "verified": true,
+    "note": "Heidelberg's second Best Model win in three years (2024 UG, 2025 OG). Different project: PHOENICS, not PICasSO."},
+   {"year": 2024, "track": "UG", "team": "Heidelberg", "url": "https://2024.igem.wiki/heidelberg/model", "verified": true,
+    "note": "The page the team already knows. Verified from the 2024 results page, not from Heidelberg's own wiki."},
+   {"year": 2024, "track": "OG", "team": "UToronto", "url": "https://2024.igem.wiki/utoronto/model", "verified": true,
+    "note": "Same university as the 2023 OG winner but registered under a different team name: 'Toronto' in 2023, 'UToronto' in 2024. The results pages list them as distinct teams (teams.igem.org/4615 and /5230)."},
+   {"year": 2023, "track": "UG", "team": "ZJU-China", "url": "https://2023.igem.wiki/zju-china/model", "verified": true,
+    "note": "Single winner, no tie."},
+   {"year": 2023, "track": "OG", "team": "Toronto", "url": "https://2023.igem.wiki/toronto/model", "verified": true,
+    "note": "Listed as 'Toronto' (teams.igem.org/4615). See the UToronto 2024 note on the name change."}
+ ]}

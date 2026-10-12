@@ -1,0 +1,343 @@
+[
+ {
+  "id": "software-2025-og-mrb-01",
+  "prize": "software",
+  "team": "Marburg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/marburg/software",
+  "section": "mATChmaker",
+  "function": "page-opening",
+  "text": "We observed the same limitation in our project — while we successfully generated numerous hybrid NRPSs, many failed to produce detectable peptides. Specifically, during our first attempt at derivatization by Golden Gate cloning, only 27 % of combinations were catalytically active. Knowing beforehand which units work together and which do not would save us and other researchers a lot of time and resources and this is why we developed mATChmaker - a software tool to guide NRPS hybrid design.",
+  "why_it_works": "Names the problem, then makes the team's own measured failure the reason the tool exists: 27 % of their hybrid combinations worked. A judge learns what the tool is for and why it was needed in three sentences, with a number doing the arguing.",
+  "teaches": [
+   "structure",
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "software-2025-og-mrb-02",
+  "prize": "software",
+  "team": "Marburg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/marburg/software",
+  "section": "mATChmaker",
+  "function": "audience-framing",
+  "text": "During the integration of bioinformatic tools into our pipelines, we encountered many problems with dependency conflicts and requirements for specific operating systems. Some programs could take our drylab team members a day to install correctly, meaning that they are essentially inaccessible to people without coding experience. To make our drylab work easily available to future iGEM teams and researchers, we developed our software tool mATChmaker.",
+  "why_it_works": "States the user-friendliness problem as a cost in time ('a day to install correctly') and names who is shut out, before any architecture is mentioned. The reader accepts the Docker decision in the next paragraph because the problem was quantified first.",
+  "teaches": [
+   "clarity",
+   "audience",
+   "evidence"
+  ]
+ },
+ {
+  "id": "software-2025-og-mrb-03",
+  "prize": "software",
+  "team": "Marburg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/marburg/software",
+  "section": "mATChmaker",
+  "function": "reuse",
+  "text": "Since mATChmaker unifies both pipelines into one software, it eliminates the need for separate installations or configurations. More advanced users can use a Jupyter Notebook interface to combine different parts of our pipelines and integrate their own functions by adding new Python scripts under workspace/utils/ and calling them in main.py. More information about this is given in our developer’s guide , which was specifically tailored towards more experienced bioinformaticians eager to use our tool. The modular design of our software allows rapid integration of additional algorithms, visualization tools, or data-processing utilities.",
+  "why_it_works": "Writes extensibility as an instruction, not a promise: the exact directory to add a script to and the file that calls it, plus a separate developer's guide for a second kind of reader. A future team can act on this sentence.",
+  "teaches": [
+   "reuse",
+   "clarity",
+   "evidence"
+  ]
+ },
+ {
+  "id": "software-2025-og-mrb-04",
+  "prize": "software",
+  "team": "Marburg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/marburg/software",
+  "section": "Automated Structure Prediction",
+  "function": "validation",
+  "text": "Structures containing one of the remaining 24 donor units were evaluated using two criteria: The two T domains should be bound to opposite ends of the C domain and the Ppant arm substrates should extend into the C domain. 49 structures were correctly folded, representing 68 % of the 72 condensation complexes excluding split genes and epimerisation domains.",
+  "why_it_works": "Gives the two pass criteria before the score, then the score with its denominator and the cases excluded from it. The 68 % is checkable because the reader knows what was counted and what was thrown out.",
+  "teaches": [
+   "evidence",
+   "validation",
+   "concision"
+  ]
+ },
+ {
+  "id": "software-2025-og-mun-01",
+  "prize": "software",
+  "team": "Munich",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/munich/software",
+  "section": "Input-Output Pipeline",
+  "function": "reuse",
+  "text": "The tools output is composed of different files with customizable options. Industry-standard GenBank files compatible with all major molecular biology software including Geneious Prime, SnapGene and Benchling are the default. Each functional domain is properly annotated with feature tags for easy visualization and modification.\nAdditionally we provide the option of creating codon-optimized sequences for the target organism with avoided restriction sites for standard cloning methods these include: RFC10, RFC12, RFC1000, BioBrick standards, any custom restriction sites or a pre-assembled iGEM Registry Compatible Collection.",
+  "why_it_works": "Answers the standards question by naming the formats and the standards by number (GenBank, RFC10, RFC12, RFC1000, BioBrick) and the three commercial tools the output opens in. Compatibility is shown as a list of names a reader can check, not as the word 'compatible'.",
+  "teaches": [
+   "standards",
+   "reuse",
+   "evidence"
+  ]
+ },
+ {
+  "id": "software-2025-og-mun-02",
+  "prize": "software",
+  "team": "Munich",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/munich/software",
+  "section": "Experimental Foundation",
+  "function": "validation",
+  "text": "Key validation examples:\nFKBP & FRB based rapamycin sensor : Our tool generates the exact construct validated as the original MESA Receptor Daringer et al. (2014)\nVEGF-sensing scFv based MESA: Reproduced design is validated by existing experiments (Schwarz et al., 2017)\nGFP-sensing MESA: Employed anti-GFP nanobodies as binder domains for detecting GFP, reproducable with our SAbDab search tool (Edelstein et al., 2020)",
+  "why_it_works": "Validates a design tool by making it regenerate three constructs that were already published and tested, each with its citation. The tool is scored against results it did not produce.",
+  "teaches": [
+   "validation",
+   "evidence",
+   "structure"
+  ]
+ },
+ {
+  "id": "software-2025-og-mun-03",
+  "prize": "software",
+  "team": "Munich",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/munich/software",
+  "section": "Vision for iGEM and Beyond",
+  "function": "reuse",
+  "text": "Looking at past iGEM projects, we see immense potential for MESA adoption. Teams like Munich 2022 (working on CAR T-Cell activation), SMMU-China 2019 (creating a synthetic receptors toolkit), and UTokyo 2023 (creating IL-6 biosensors) could have accelerated their development timelines from months to days using our software.",
+  "why_it_works": "Counter-example: three real teams are named, but only as teams who 'could have' used the tool, and the time saved is guessed. Compare Fudan, who name two teams that actually used their software and changed it.",
+  "teaches": [
+   "evidence",
+   "reuse",
+   "overclaiming"
+  ]
+ },
+ {
+  "id": "software-2023-ug-fud-01",
+  "prize": "software",
+  "team": "Fudan",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/fudan/software",
+  "section": "Overview",
+  "function": "reuse",
+  "text": "To make RAP user-friendly, we have designed an intuitive Web UI with tutorials; and for advanced usage of RAP, we have provided a series of RESTFul APIs. To compatible with existing sequence manipulation tools, we have adopted the GenBank format (opens new window) to save sequences, which is an existing standards, and the sequences can be used in external tools such as SnapGene (opens new window). In order to get feedback from external users to improve user-friendliness, we have collaborated with other iGEM teams (SCUT-China iGEM 2023 (opens new window) and Nanjing-China iGEM 2023 (opens new window)) to improve the software. Meanwhile, sequences predicted and generated by our RAP, has been validated by experiments (opens new window).",
+  "why_it_works": "Four ballot questions answered in one paragraph, each with a named artefact: a Web UI and tutorials, RESTful APIs, the GenBank format and SnapGene, two named iGEM teams who used the tool and fed back, and wet-lab validation of its output. Nothing here is a claim without a referent.",
+  "teaches": [
+   "reuse",
+   "evidence",
+   "standards",
+   "structure"
+  ]
+ },
+ {
+  "id": "software-2023-ug-fud-02",
+  "prize": "software",
+  "team": "Fudan",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/fudan/software",
+  "section": "Assumption 1",
+  "function": "assumption",
+  "text": "We expect the optimal state of intracellular metabolism to be flux-balanced, so we should take steady-state constraint into consideration, which can be expressed as:\nflux1=flux2=...=fluxn\nWith this assumption, it prevents metabolic stress caused by flux imbalance and permits the cell to be in a state of flux balance.",
+  "why_it_works": "The assumption is given a heading of its own, stated as an equation, and then followed by what it buys. A reader can disagree with the assumption without having to reverse-engineer it from the result.",
+  "teaches": [
+   "assumptions",
+   "structure",
+   "clarity"
+  ]
+ },
+ {
+  "id": "software-2023-ug-fud-03",
+  "prize": "software",
+  "team": "Fudan",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/fudan/software",
+  "section": "Implementation",
+  "function": "evidence-with-numbers",
+  "text": "We built the RAP Builder with Python 3.10. RAP Builder's Monte Carlo algorithm has a good search efficiency and can get a suitable sequence in a range of up to 1,000 iterations (Figure 17).",
+  "why_it_works": "A performance number for the software itself, not for the biology: the search converges within 1,000 iterations, with a figure behind it. This is the kind of number the ballot's code question asks for and most pages never give.",
+  "teaches": [
+   "evidence",
+   "performance",
+   "concision"
+  ]
+ },
+ {
+  "id": "software-2023-og-ins-01",
+  "prize": "software",
+  "team": "INSAENSLyon1",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/insaenslyon1/software",
+  "section": "How to install it",
+  "function": "audience-framing",
+  "text": "A command prompt, often referred to as 'cmd,' is a means of interacting with your computer, a daily task performed with a slightly less user-friendly interface compared to the graphical interface. However, don't worry, we will provide you with all the instructions you need to use it in order to access our app!",
+  "why_it_works": "Assumes the reader has never opened a terminal, says so without condescension, and teaches the four commands they will need. The install section is written for the biologist who will actually run the tool.",
+  "teaches": [
+   "audience",
+   "clarity",
+   "documentation"
+  ]
+ },
+ {
+  "id": "software-2023-og-ins-02",
+  "prize": "software",
+  "team": "INSAENSLyon1",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/insaenslyon1/software",
+  "section": "Example of use",
+  "function": "method",
+  "text": "To illustrate this, suppose you want to replicate the steps we performed to obtain the patterns used in our laboratory experiments. You can do this using the Git project you installed earlier.\n- First, access the dataset containing the \"oxa48\" gene in fasta format and an E. Coli genome.\n- In the Gene section, select the \"oxa48\" gene (JF388_29535).\n- In the Genome section, select the \"genome.fna\" file.\n- Check the box to display all patterns.\n- Select a size of 20 and a \"NGG\" motif.\n- Finally, select a mutation window from 13 to 16.",
+  "why_it_works": "Hands the reader the team's own experiment as a worked example: the exact gene, the genome file, and every parameter value, so anyone can reproduce the result the wet lab used. Reuse is demonstrated by making one real run repeatable.",
+  "teaches": [
+   "reproducibility",
+   "reuse",
+   "evidence"
+  ]
+ },
+ {
+  "id": "software-2023-og-ins-03",
+  "prize": "software",
+  "team": "INSAENSLyon1",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/insaenslyon1/software",
+  "section": "Implementation",
+  "function": "limitation",
+  "text": "However, it is important to note that the training data was based on the E. Coli genome, which differs considerably from the multiple species present in our beta-lactamase database.\nWe have provided a simplified notebook to enable other teams to explore using these methods with their own training and test data, which they could generate. We chose not to include this AI approach in our final software due to poor results due to our training dataset. However, our functions still allow us to get the gene context needed for the AI approach and could be implemented by future iGEM teams.",
+  "why_it_works": "Reports a part of the tool that failed, names the reason (training data from one genome, applied to many species), says it was cut from the release, and leaves the working pieces behind for whoever tries next. The limitation ends in something another team can use.",
+  "teaches": [
+   "limitation",
+   "honesty",
+   "reuse"
+  ]
+ },
+ {
+  "id": "software-2024-ug-vln-01",
+  "prize": "software",
+  "team": "Vilnius-Lithuania",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/vilnius-lithuania/software",
+  "section": "Introduction",
+  "function": "page-opening",
+  "text": "Monitoring and ensuring optimal bacterial growth conditions can often be a time-consuming task due to the long periods required for bacteria to grow and replicate. This was no exception in our wet lab activities, as our bioreactor required constant supervision and in-person presence in the lab. Additionally, identifying problems and when they occurred was challenging. To address this, we developed a remote interface for the bioreactor, reducing the time required for supervision and automating data collection by storing bioreactor readings in a remote database.",
+  "why_it_works": "Opens on the lab problem, not the software: bacteria take a long time to grow, so someone had to sit with the bioreactor, and faults were hard to place in time. The tool is introduced as the answer to that in one sentence.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "audience"
+  ]
+ },
+ {
+  "id": "software-2024-ug-vln-02",
+  "prize": "software",
+  "team": "Vilnius-Lithuania",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/vilnius-lithuania/software",
+  "section": "Architecture",
+  "function": "method",
+  "text": "- PostgreSQL Database: This relational database stores all bioreactor measurements and control settings, ensuring data persistence and easy access for both users and automated processes.\n- Python Flask Server: Acts as the backend, providing RESTful endpoints to read and write data to the database. Additionally, it handles automated processes such as sending alert emails when bioreactor readings exceed preset thresholds.\n- Arduino Client: The microcontroller in the bioreactor communicates with the system through REST APIs, sending real-time measurements (temperature, pH, turbidity) to the server and fetching updated control values like mixing speed and temperature settings. This integration allows the hardware to operate in sync with user inputs.",
+  "why_it_works": "Each component gets its name, its technology and the job it does, and the microcontroller entry says exactly how the hardware and the server talk. An architecture diagram is readable in prose because every box has a verb.",
+  "teaches": [
+   "architecture",
+   "clarity",
+   "structure"
+  ]
+ },
+ {
+  "id": "software-2024-ug-vln-03",
+  "prize": "software",
+  "team": "Vilnius-Lithuania",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/vilnius-lithuania/software",
+  "section": "Conclusion",
+  "function": "limitation",
+  "text": "Out of the five planned MVPs, we successfully implemented four. Unfortunately, MVP5, which involved the glucose monitoring system, was incomplete due to time constraints and complexity. However, the current system provides a robust and efficient solution for remotely monitoring and controlling the bioreactor.\nSoftware like this is oftentimes pricey, which many projects can not afford. Our software is designed to be compatible with any bioreactor, making it easily accessible for future iGEM teams. This adaptability ensures that future teams can integrate the software into their projects without extensive customization.",
+  "why_it_works": "Counts the planned features, says four of five shipped, and names the one that did not and why. The reuse claim in the second half ('compatible with any bioreactor') is asserted with no test behind it, which is the weaker half of the same paragraph.",
+  "teaches": [
+   "limitation",
+   "honesty",
+   "overclaiming"
+  ]
+ },
+ {
+  "id": "software-2024-og-unm-01",
+  "prize": "software",
+  "team": "UniMuenster",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/unimuenster/software",
+  "section": "Abstract",
+  "function": "page-opening",
+  "text": "Our tool allows access to machine learning assisted protein engineering in low-throughput settings. It can help you in case you too want to improve some protein’s activity, stability or any other characteristic, but are limited in your measuring capability to only few rounds of a small number of measurements. The command line tool works on Windows, Linux and MacOS and is distributed as an easy-to-install python package.",
+  "why_it_works": "Written in the second person to the reader who might install it: the situation you are in, what the tool does about it, the platforms it runs on and how it is distributed. A judge who will not install anything still learns what it is and who it is for.",
+  "teaches": [
+   "audience",
+   "clarity",
+   "concision"
+  ]
+ },
+ {
+  "id": "software-2024-og-unm-02",
+  "prize": "software",
+  "team": "UniMuenster",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/unimuenster/software",
+  "section": "Introduction",
+  "function": "validation",
+  "text": "We took a modular implementation approach for easy expandability and used the Typer library to bundle our software into a tool which can comfortably be used through the command line. Our modules communicate through easy-to-parse .csv files, so at any step it is possible to use some different tool and inject the results into our workflow. To ensure the quality of our tutorial we tested it both for Windows and Linux, and additionally tasked one of our team members, who didn’t have any python or command line experience, with following the installation guide and all the usage examples, to great success.",
+  "why_it_works": "User-friendliness is tested rather than claimed: the install guide was run on two operating systems and then handed to a team member with no Python or command-line experience. The evidence is a person, named by their lack of expertise.",
+  "teaches": [
+   "validation",
+   "audience",
+   "evidence"
+  ]
+ },
+ {
+  "id": "software-2025-ug-bit-01",
+  "prize": "software",
+  "team": "BIT-China",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/bit-china/software",
+  "section": "Development Iteration Process",
+  "function": "loop-closing",
+  "text": "V1: Scraped biological parts data from all past participating teams. Built a simple search page. Successfully found the light-controlled promoters we needed through this platform, significantly improving our team's search efficiency.\nV2: Expanded the scope to other tracks beyond biological parts. Integrated a large language model to break down long paragraphs from wiki pages into structured information fields.",
+  "why_it_works": "Version 1 is scored by whether it solved the problem that caused the team to build it, which was finding light-controlled promoters for their own project. The first release is evidence, not a milestone.",
+  "teaches": [
+   "loop-closing",
+   "evidence",
+   "structure"
+  ]
+ },
+ {
+  "id": "software-2025-ug-epf-01",
+  "prize": "software",
+  "team": "EPFL",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/epfl/software",
+  "section": "Overview",
+  "function": "page-opening",
+  "text": "Our software began with the drone, but it doesn’t end there. It now powers the entire Pyronix workflow: automating flights and simulations, retrieving and analyzing biological data, and running the statistical tests that link design to results. The stack plays well with synthetic biology standards (SBOL/SBOL3) and open formats (CSV/JSON/YAML), and it integrates smoothly with external tools via clean Python APIs, ROS nodes, and a simple CLI. It’s easy to use and well documented, with examples and a ROS installation tutorial PDF provided below. Under the hood, the codebase is thoughtfully structured and commented, supported by architecture diagrams, CI tests, and containerized environments for full reproducibility.",
+  "why_it_works": "One paragraph walks straight down the ballot: standards, formats, integration, ease of use, documentation, code structure, diagrams, CI, containers. Useful as a checklist and a warning, since almost every claim in it is an adjective the rest of the page never proves.",
+  "teaches": [
+   "structure",
+   "standards",
+   "overclaiming"
+  ]
+ }
+]

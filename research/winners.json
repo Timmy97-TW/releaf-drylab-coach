@@ -1,0 +1,239 @@
+{
+ "results": "https://competition.igem.org/results/{year}?tab=special-prizes",
+ "prizes": [
+  {
+   "key": "model",
+   "name": "Best Model",
+   "also_known_as": "",
+   "page": "model",
+   "ballot": [
+    "How impressive is the modeling or computational approach?",
+    "Did the model or computational approach help the team understand, predict, or design a part, device, or system?",
+    "Did the team use experimental or other relevant data to develop, train, or validate the model or computational approach?",
+    "Does the modeling or computational approach provide a good example for others?"
+   ],
+   "winners": [
+    {
+     "year": 2025,
+     "track": "UG",
+     "team": "Peking",
+     "url": "https://2025.igem.wiki/peking/model",
+     "verified": true,
+     "note": "Single winner, no tie. Both collegiate sections awarded separately in 2025."
+    },
+    {
+     "year": 2025,
+     "track": "OG",
+     "team": "Heidelberg",
+     "url": "https://2025.igem.wiki/heidelberg/model",
+     "verified": true,
+     "note": "Heidelberg's second Best Model win in three years (2024 UG, 2025 OG). Different project: PHOENICS, not PICasSO."
+    },
+    {
+     "year": 2024,
+     "track": "UG",
+     "team": "Heidelberg",
+     "url": "https://2024.igem.wiki/heidelberg/model",
+     "verified": true,
+     "note": "The page the team already knows. Verified from the 2024 results page, not from Heidelberg's own wiki."
+    },
+    {
+     "year": 2024,
+     "track": "OG",
+     "team": "UToronto",
+     "url": "https://2024.igem.wiki/utoronto/model",
+     "verified": true,
+     "note": "Same university as the 2023 OG winner but registered under a different team name: 'Toronto' in 2023, 'UToronto' in 2024. The results pages list them as distinct teams (teams.igem.org/4615 and /5230)."
+    },
+    {
+     "year": 2023,
+     "track": "UG",
+     "team": "ZJU-China",
+     "url": "https://2023.igem.wiki/zju-china/model",
+     "verified": true,
+     "note": "Single winner, no tie."
+    },
+    {
+     "year": 2023,
+     "track": "OG",
+     "team": "Toronto",
+     "url": "https://2023.igem.wiki/toronto/model",
+     "verified": true,
+     "note": "Listed as 'Toronto' (teams.igem.org/4615). See the UToronto 2024 note on the name change."
+    }
+   ],
+   "pages": [
+    "model",
+    "protein-design",
+    "protein-design/methodology",
+    "protein-design/sprints",
+    "protein-design/molecular-dynamics"
+   ],
+   "link_pages": [
+    "model",
+    "protein-design"
+   ]
+  },
+  {
+   "key": "software",
+   "name": "Best Software",
+   "also_known_as": "Best Software Tool (the name used on the 2023, 2024 and 2025 results pages)",
+   "page": "software",
+   "ballot": [
+    "How well is the software compatible with, and does it leverage, existing synthetic biology standards? (e.g. SBOL, other RFCs, data formats, etc.)",
+    "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+    "Can the software be useful to other projects?",
+    "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)",
+    "Is the software user-friendly?",
+    "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
+   ],
+   "winners": [
+    {
+     "year": 2025,
+     "track": "UG",
+     "team": "BIT-China",
+     "url": "https://2025.igem.wiki/bit-china/software",
+     "verified": true,
+     "note": "Tie. The 2025 results page lists BIT-China and EPFL together under Undergrad / Winner for Best Software Tool."
+    },
+    {
+     "year": 2025,
+     "track": "UG",
+     "team": "EPFL",
+     "url": "https://2025.igem.wiki/epfl/software",
+     "verified": true,
+     "note": "Tie with BIT-China. EPFL also won Best Hardware-adjacent work on the same project; the software page covers the drone stack."
+    },
+    {
+     "year": 2025,
+     "track": "OG",
+     "team": "Marburg",
+     "url": "https://2025.igem.wiki/marburg/software",
+     "verified": true,
+     "note": "Tie. The 2025 results page lists Marburg and Munich together under Overgrad / Winner."
+    },
+    {
+     "year": 2025,
+     "track": "OG",
+     "team": "Munich",
+     "url": "https://2025.igem.wiki/munich/software",
+     "verified": true,
+     "note": "Tie with Marburg. Munich was also a 2025 Best Model nominee; the software page is MESA Designer."
+    },
+    {
+     "year": 2024,
+     "track": "UG",
+     "team": "Vilnius-Lithuania",
+     "url": "https://2024.igem.wiki/vilnius-lithuania/software",
+     "verified": true,
+     "note": "Sole undergraduate winner. The page documents a remote monitoring and control interface for their own bioreactor, the closest case in the set to ReLeaf's Digital Twin."
+    },
+    {
+     "year": 2024,
+     "track": "OG",
+     "team": "UniMuenster",
+     "url": "https://2024.igem.wiki/unimuenster/software",
+     "verified": true,
+     "note": "Sole overgraduate winner. The page is a command-line Python package for low-throughput machine-learning protein engineering."
+    },
+    {
+     "year": 2023,
+     "track": "UG",
+     "team": "Fudan",
+     "url": "https://2023.igem.wiki/fudan/software",
+     "verified": true,
+     "note": "Sole undergraduate winner. The page serves at /fudan/software and /fudan/software.html; it carries four tools (pRAP web UI, KineticHub, RAP Builder, Parthub 2)."
+    },
+    {
+     "year": 2023,
+     "track": "OG",
+     "team": "INSAENSLyon1",
+     "url": "https://2023.igem.wiki/insaenslyon1/software",
+     "verified": true,
+     "note": "Sole overgraduate winner. Shortest page in the set (about 2,200 words). Their own heading misspells the award as \"Best Sotfware award\"."
+    }
+   ],
+   "source_notes": [
+    "All three results pages (competition.igem.org/results/<year>?tab=special-prizes) name the award \"Best Software Tool\" in 2023, 2024 and 2025. The 2026 judging handbook renames it \"Best Software\".",
+    "2025 is tied in both collegiate tracks, so this prize has eight winners across the three years, not six. No year in this range shows combined collegiate sections for this award: Undergrad, Overgrad and High School are listed separately every year.",
+    "Winner links on the results pages point at teams.igem.org team records, not at wiki pages. Each wiki URL above was reached by the standard /<team-slug>/software address and confirmed by rendering it; every render returned a page whose own heading is Software and whose content matches the team's prize-winning tool.",
+    "High School winners (GreatBay-SCIE 2023, BKEA 2024, Lambert-GA 2025) are outside the brief's two collegiate tracks and are not included."
+   ],
+   "pages": [
+    "software"
+   ],
+   "link_pages": [
+    "software"
+   ]
+  },
+  {
+   "key": "measurement",
+   "name": "Best Measurement (2026 name)",
+   "also_known_as": "Best Measurement in 2023, 2024 and 2025 as well; the name did not change",
+   "page": "software",
+   "ballot": [
+    "Could the measurement(s) be reproduced by other iGEM teams?",
+    "Are the methods or protocols described well?",
+    "Could it be useful to other projects?",
+    "Did the team validate and calibrate their measurement process appropriately for their approach?"
+   ],
+   "winners": [
+    {
+     "year": 2025,
+     "track": "UG",
+     "team": "EPFL",
+     "url": "https://2025.igem.wiki/epfl/measurement",
+     "verified": true,
+     "note": "Results page titles it 'Burn Measurement'. Four nominees listed (BUCT-China, McMaster-Canada, NU-Kazakhstan, Shanghaitech-China); no tie. The page's protocol detail sits in a linked PDF and the /epfl/protocols cards open in modals, so neither renders."
+    },
+    {
+     "year": 2025,
+     "track": "OG",
+     "team": "Aalto-Helsinki",
+     "url": "https://2025.igem.wiki/aalto-helsinki/measurement",
+     "verified": true,
+     "note": "Four nominees (AshesiGhana, BohemiaBio, Groningen, Stuttgart); no tie."
+    },
+    {
+     "year": 2024,
+     "track": "UG",
+     "team": "Austin-utexas",
+     "url": "https://2024.igem.wiki/austin-utexas/measurement",
+     "verified": true,
+     "note": "Listed on the results page as 'Austin-utexas'; the wiki brands itself 'UT Austin'. Protocols live on https://2024.igem.wiki/austin-utexas/experiments, which renders as a stub because its protocol bodies are collapsed."
+    },
+    {
+     "year": 2024,
+     "track": "OG",
+     "team": "KULeuven",
+     "url": "https://2024.igem.wiki/kuleuven/measurement",
+     "verified": true,
+     "note": "Two nominees (Freiburg, UppsalaUniversity); no tie."
+    },
+    {
+     "year": 2023,
+     "track": "UG",
+     "team": "William-and-Mary",
+     "url": "https://2023.igem.wiki/william-and-mary/measurement",
+     "verified": true,
+     "note": "The two microscopy guides the page is built around are PDFs behind https://2023.igem.wiki/william-and-mary/guide-book, which renders as a 164-word wrapper; the measurement page itself carries the full argument at 12,400 words."
+    },
+    {
+     "year": 2023,
+     "track": "OG",
+     "team": "Estonia-TUIT",
+     "url": "https://2023.igem.wiki/estonia-tuit/measurement",
+     "verified": true,
+     "note": "Page is titled 'MEASUREMENTS'. One nominee (Toulouse-INSA-UPS); no tie."
+    }
+   ],
+   "pages": [
+    "software"
+   ],
+   "link_pages": [
+    "software"
+   ]
+  }
+ ],
+ "precedents": []
+}

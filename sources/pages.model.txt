@@ -1,0 +1,6 @@
+model-2025-UG-peking https://2025.igem.wiki/peking/model
+model-2025-OG-heidelberg https://2025.igem.wiki/heidelberg/model
+model-2024-UG-heidelberg https://2024.igem.wiki/heidelberg/model
+model-2024-OG-utoronto https://2024.igem.wiki/utoronto/model
+model-2023-UG-zju-china https://2023.igem.wiki/zju-china/model
+model-2023-OG-toronto https://2023.igem.wiki/toronto/model

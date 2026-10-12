@@ -1,0 +1,20 @@
+{"key": "measurement", "name": "Best Measurement (2026 name)", "also_known_as": "Best Measurement in 2023, 2024 and 2025 as well; the name did not change",
+ "page": "software",
+ "ballot": ["Could the measurement(s) be reproduced by other iGEM teams?",
+            "Are the methods or protocols described well?",
+            "Could it be useful to other projects?",
+            "Did the team validate and calibrate their measurement process appropriately for their approach?"],
+ "winners": [
+   {"year": 2025, "track": "UG", "team": "EPFL", "url": "https://2025.igem.wiki/epfl/measurement", "verified": true,
+    "note": "Results page titles it 'Burn Measurement'. Four nominees listed (BUCT-China, McMaster-Canada, NU-Kazakhstan, Shanghaitech-China); no tie. The page's protocol detail sits in a linked PDF and the /epfl/protocols cards open in modals, so neither renders."},
+   {"year": 2025, "track": "OG", "team": "Aalto-Helsinki", "url": "https://2025.igem.wiki/aalto-helsinki/measurement", "verified": true,
+    "note": "Four nominees (AshesiGhana, BohemiaBio, Groningen, Stuttgart); no tie."},
+   {"year": 2024, "track": "UG", "team": "Austin-utexas", "url": "https://2024.igem.wiki/austin-utexas/measurement", "verified": true,
+    "note": "Listed on the results page as 'Austin-utexas'; the wiki brands itself 'UT Austin'. Protocols live on https://2024.igem.wiki/austin-utexas/experiments, which renders as a stub because its protocol bodies are collapsed."},
+   {"year": 2024, "track": "OG", "team": "KULeuven", "url": "https://2024.igem.wiki/kuleuven/measurement", "verified": true,
+    "note": "Two nominees (Freiburg, UppsalaUniversity); no tie."},
+   {"year": 2023, "track": "UG", "team": "William-and-Mary", "url": "https://2023.igem.wiki/william-and-mary/measurement", "verified": true,
+    "note": "The two microscopy guides the page is built around are PDFs behind https://2023.igem.wiki/william-and-mary/guide-book, which renders as a 164-word wrapper; the measurement page itself carries the full argument at 12,400 words."},
+   {"year": 2023, "track": "OG", "team": "Estonia-TUIT", "url": "https://2023.igem.wiki/estonia-tuit/measurement", "verified": true,
+    "note": "Page is titled 'MEASUREMENTS'. One nominee (Toulouse-INSA-UPS); no tie."}
+ ]}

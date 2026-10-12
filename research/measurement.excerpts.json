@@ -1,0 +1,367 @@
+[
+ {
+  "id": "measurement-2025-ug-epfl-01",
+  "prize": "measurement",
+  "team": "EPFL",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/epfl/measurement",
+  "section": "Reasons behind the measurement choice",
+  "function": "method",
+  "text": "With limited access to specialized fire-testing equipment, we designed a practical, reproducible protocol focused on what we could measure well. To capture the key effects of fire on wood, we chose burn damage as a function of time and temperature gradient, the most intuitive and scalable metrics for our constraints.",
+  "why_it_works": "They name the constraint first, then pick the metric that the constraint allows, so the modest setup reads as a design decision instead of a shortfall.",
+  "teaches": [
+   "structure",
+   "evidence",
+   "voice"
+  ]
+ },
+ {
+  "id": "measurement-2025-ug-epfl-02",
+  "prize": "measurement",
+  "team": "EPFL",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/epfl/measurement",
+  "section": "Quantitative Analysis",
+  "function": "evidence-with-numbers",
+  "text": "To assess the contribution of individual components, partial formulations (cellulose alone; cellulose + silica) and a protein lysate control were compared against water (n = 3 each). None of these conditions differed significantly from water following Bonferroni correction (p = 0.1023 for cellulose; p = 0.4705 for cellulose + silica; p = 1.0000 for lysate).",
+  "why_it_works": "A flat null result carries its n, its correction for multiple comparisons and each exact p value, so the reader can check the claim rather than take it.",
+  "teaches": [
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2025-ug-epfl-03",
+  "prize": "measurement",
+  "team": "EPFL",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/epfl/measurement",
+  "section": "Quantitative Analysis",
+  "function": "limitation",
+  "text": "Thus, under the current experimental design and limited sample size, the protective contribution of SRSF1 cannot be confirmed statistically. Notably, the lysate condition displayed a relatively large measurement error, which may reflect uncontrolled sources of variability such as fluctuations in wind or flame intensity.",
+  "why_it_works": "The team's own engineered protein failed to beat the control and they say so in one sentence, then name the likely source of the noise instead of explaining the result away.",
+  "teaches": [
+   "evidence",
+   "voice",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2025-og-aalto-01",
+  "prize": "measurement",
+  "team": "Aalto-Helsinki",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/aalto-helsinki/measurement",
+  "section": "Introduction",
+  "function": "page-opening",
+  "text": "Once we had successfully produced and purified intrinsic factor (IF) proteins from multiple species, our priority became figuring out how to evaluate them in a way that would guide future design choices for oral vitamin B12 supplementation. Rather than running isolated tests, we planned a measurement sequence where each experiment would answer a different question and each answer would shape what we looked for next.",
+  "why_it_works": "Two sentences say what was already in hand, what the measurements were for, and that the order of the experiments was itself a decision.",
+  "teaches": [
+   "structure",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2025-og-aalto-02",
+  "prize": "measurement",
+  "team": "Aalto-Helsinki",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/aalto-helsinki/measurement",
+  "section": "In-vitro Antibody Interference Measurement: Indirect ELISA",
+  "function": "uncertainty",
+  "text": "For example, our leftmost standard (0.1 ng/mL) gives us an idea of the lowest IF concentration that can be reliably detected above background. So, values that are much lower than this are not confidently distinguishable from background absorbance. Conversely, the highest standard (50 ng/mL) approaches the upper plateau of the curve, where the assay starts to saturate. As can be seen from the graph, the absorbance here is maximal; meaning higher concentrations will not give proportionally higher signals and should be diluted before being quantified.",
+  "why_it_works": "The calibration curve is read out loud at both ends: the lowest point that beats background and the concentration where the assay saturates, with the instruction that follows from each.",
+  "teaches": [
+   "evidence",
+   "clarity",
+   "assumed-knowledge"
+  ]
+ },
+ {
+  "id": "measurement-2025-og-aalto-03",
+  "prize": "measurement",
+  "team": "Aalto-Helsinki",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/aalto-helsinki/measurement",
+  "section": "Elemental Analysis: Microwave Plasma Atomic Emission Spectroscopy (MP-AES) for Cobalt Quantification in Bound B12",
+  "function": "uncertainty",
+  "text": "MP‑AES analysis of nitric acid digests prepared from our intrinsic factor–vitamin B12 binding reactions produced cobalt signals below the reliable detection capability of method on the instrument used, with readbacks typically in the 20–30 µg/L range but a validated practical LOD of approximately 50 µg/L in this proteinaceous, acidified matrix; therefore, cobalt concentrations for all samples are reported as \"< 50 µg/L (LOQ)\" with no numeric values used in calculations or comparisons",
+  "why_it_works": "A whole measurement came back under the detection limit and is reported as a censored value, with the readbacks shown and explicitly excluded from any arithmetic.",
+  "teaches": [
+   "evidence",
+   "voice"
+  ]
+ },
+ {
+  "id": "measurement-2025-og-aalto-04",
+  "prize": "measurement",
+  "team": "Aalto-Helsinki",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/aalto-helsinki/measurement",
+  "section": "IF-Vitamin B12 Binding Assay",
+  "function": "reuse",
+  "text": "Low protein concentrations in the recombinant IF preparations initially led to inconsistent spectrophotometer readings, increasing the sample measurement volume from 1.5 µL to 2 µL improved reproducibility. Buffer composition was another critical factor, in which the initial HEPES-based binding buffer yielded poor blank readings, and switching to alternative formulations such as Tris + NaCl did not improve results. Ultimately, re-adjusting the pH of the original HEPES buffer restored clean baselines, highlighting the importance of precise pH control.",
+  "why_it_works": "Each failure is logged as symptom, change, result, which is what the next team needs and what a clean protocol alone would hide.",
+  "teaches": [
+   "evidence",
+   "loop-closing",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2024-ug-utexas-01",
+  "prize": "measurement",
+  "team": "Austin-utexas",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/austin-utexas/measurement",
+  "section": "Challenges in Measuring OD600 when working with RFP Expressing Cells",
+  "function": "assumption",
+  "text": "A common method for quantifying the cell density of cultures is to measure the optical density (OD) of samples at a wavelength of 600 nm. While this setting works in most cases, problems can arise when measuring the cell density of RFP fluorescent cultures. The wavelength of 600 nm falls within the mScarlet's absorption spectrum2. This is an issue, as absorption of light can increase cell density readings and cause lower fluorescence per cell readings3. To avoid obtaining skewed results of OD measurements using mScarlet in our project, we adjusted our protocol to measure OD at a wavelength of 660 nm that is beyond the typical mScarlet absorption range, ensuring more accurate fluorescence and cell density measurements.",
+  "why_it_works": "A standard reading is shown to be wrong for this particular culture, the reason is given in one clause, and the protocol change follows from it.",
+  "teaches": [
+   "assumed-knowledge",
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2024-ug-utexas-02",
+  "prize": "measurement",
+  "team": "Austin-utexas",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/austin-utexas/measurement",
+  "section": "OD660 to Cell Count Standard Calibration Curve",
+  "function": "uncertainty",
+  "text": "Additionally, Figure 2B presents the same data plotted on a logarithmic scale, which helps to visualize lower particle concentrations. It highlights how the sensitivity of OD600 measurements decreases at lower particle counts around an OD600 value of 0.1. This indicates that our plate reader may not provide accurate readings for values at or below OD600 of 0.1.",
+  "why_it_works": "They state where their own instrument stops being trustworthy and give the number, which turns a calibration curve into a usable range.",
+  "teaches": [
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2024-ug-utexas-03",
+  "prize": "measurement",
+  "team": "Austin-utexas",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/austin-utexas/measurement",
+  "section": "Characterized Constitutive Antibiotic Resistance Promoter Library",
+  "function": "definition",
+  "text": "We chose fluorescence per cell as the presentation unit because it provides a more reliable basis for comparison. Since measurement tools vary in sensitivity and settings for OD and fluorescence readings, using fluorescence per cell offers a standardized, calibrated metric. Additionally, this unit accounts for variations in growth rates and cell densities at the time of measurement, ensuring a more accurate representation of our data.",
+  "why_it_works": "The unit is justified before any result is reported in it, so a reader knows what is being compared and why the number travels between labs.",
+  "teaches": [
+   "clarity",
+   "consistency",
+   "evidence"
+  ]
+ },
+ {
+  "id": "measurement-2024-ug-utexas-04",
+  "prize": "measurement",
+  "team": "Austin-utexas",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/austin-utexas/measurement",
+  "section": "OD660 to Cell Count Standard Calibration Curve",
+  "function": "assumption",
+  "text": "Although particle count does value is not directly equivalent to cell count, an iGEM Interlab study found that “based on our results, we recommend calibrating OD to estimated cell count using serial dilution of silica microspheres, which produces highly precise calibration”5. Thus, we used the particle count per OD600 value as our cell count per OD600.",
+  "why_it_works": "The substitution of particle count for cell count is flagged as a substitution and sourced, rather than being quietly folded into the conversion.",
+  "teaches": [
+   "evidence",
+   "assumed-knowledge"
+  ]
+ },
+ {
+  "id": "measurement-2024-og-kuleuven-01",
+  "prize": "measurement",
+  "team": "KULeuven",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/kuleuven/measurement",
+  "section": "1.1 Introduction",
+  "function": "method",
+  "text": "We started out a qualitative assessment with a gradient agar toxicity assay, where we initially evaluated bacterial growth by measuring the length of growth streaks along the metal concentration gradient (Fig. 1a). However, we observed that this approach introduced variability and potential inaccuracies, as the growth length might not consistently reflect the true tolerance of the bacteria to metal ions. To address this issue, we transitioned to a spot-based assay, which provides a more reliable measurement of bacterial growth and tolerance.",
+  "why_it_works": "The first assay is reported as discarded, with the reason it could not be trusted, so the replacement arrives already justified.",
+  "teaches": [
+   "structure",
+   "evidence",
+   "loop-closing"
+  ]
+ },
+ {
+  "id": "measurement-2024-og-kuleuven-02",
+  "prize": "measurement",
+  "team": "KULeuven",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/kuleuven/measurement",
+  "section": "2.1 Introduction",
+  "function": "limitation",
+  "text": "Even though, the OD600 is widely used to assess bacterial growth characteristics, it has to be mentioned that this assay does have some disadvantages. Since OD600 measures cell density based on light scattering, both living and dead cells contribute to the reading. This means that while the assay provides insights into bacterial growth, it cannot directly assess survival.",
+  "why_it_works": "A plain statement of what the reading cannot distinguish, placed in the section that uses the reading rather than in a limitations list at the end.",
+  "teaches": [
+   "assumed-knowledge",
+   "evidence"
+  ]
+ },
+ {
+  "id": "measurement-2024-og-kuleuven-03",
+  "prize": "measurement",
+  "team": "KULeuven",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/kuleuven/measurement",
+  "section": "3.3.1 Standard Caliberation Curve",
+  "function": "validation",
+  "text": "To quantify the concentration of metal ions in bacterial samples, a standard calibration curve was generated using known concentrations of Cu ions (25, 50, 75, 100, 150, 200, 250 and 300 mg/L) . The standard solutions were diluted from a stock solution in 0.85% saline to ensure consistency with the sample matrix, as bacterial samples would also be suspended in saline.",
+  "why_it_works": "The standards are made up in the same matrix as the samples, and the sentence says why, which is the difference between a curve that transfers and one that does not.",
+  "teaches": [
+   "evidence",
+   "consistency"
+  ]
+ },
+ {
+  "id": "measurement-2024-og-kuleuven-04",
+  "prize": "measurement",
+  "team": "KULeuven",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/kuleuven/measurement",
+  "section": "Results and Discussion",
+  "function": "loop-closing",
+  "text": "Our observations show that most strains experience significant cell death around 200 mg/L. At 50 mg/L, however, the OD600 readings for nearly all strains were consistent, suggesting this as an optimal concentration for subsequent experiments for the colorimetric assay.",
+  "why_it_works": "The measurement is shown deciding the next experiment's working concentration, which is the shortest proof that it was worth taking.",
+  "teaches": [
+   "loop-closing",
+   "evidence"
+  ]
+ },
+ {
+  "id": "measurement-2023-ug-wm-01",
+  "prize": "measurement",
+  "team": "William-and-Mary",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/william-and-mary/measurement",
+  "section": "Summary",
+  "function": "page-opening",
+  "text": "Measurement in soil synthetic biology experiments, compared to laboratory experiments in a flask or tube, faces many challenges in accuracy and quantitation. First, bacteria tend to attach to soil particles, and the opacity and autofluorescence of these soil particles interferes with fluorescence-based methods, such as spectrometry and fluorescence microscopy. Separation procedures are often unable to capture the whole bacterial community, and are biased towards specific taxa and metabolic states. Thus, our project focused on conducting multiple measurement approaches for each variable that was examined.",
+  "why_it_works": "The opening is about why measurement is hard here specifically, and the strategy falls out of the difficulty rather than being announced.",
+  "teaches": [
+   "structure",
+   "clarity",
+   "evidence"
+  ]
+ },
+ {
+  "id": "measurement-2023-ug-wm-02",
+  "prize": "measurement",
+  "team": "William-and-Mary",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/william-and-mary/measurement",
+  "section": "Direct Microscopic Enumeration and Fluorescent Intensity Quantitation",
+  "function": "limitation",
+  "text": "We set the lower threshold higher than typical TRITC fluorescence intensity values of M. smegmatis pMLCherry (integrated) and M. smegmatis untransformed, but lower than typical TRITC fluorescence intensity values for M. smegmatis pCherry3. This statistical insignificance is representative of the limitation of the analysis method, not of biological results,since we know that M. smegmatis untransformed in sterile soil and M. smegmatis pCherry3 in sterile soil microcosms contained some level of bacteria, confirmed by plating.",
+  "why_it_works": "A non-significant result is attributed to the analysis method and not to biology, with the independent measurement that proves which it was.",
+  "teaches": [
+   "evidence",
+   "clarity",
+   "loop-closing"
+  ]
+ },
+ {
+  "id": "measurement-2023-ug-wm-03",
+  "prize": "measurement",
+  "team": "William-and-Mary",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/william-and-mary/measurement",
+  "section": "Fluorescence Microscopy Calibration & Standardization",
+  "function": "audience-framing",
+  "text": "An additional problem is the lack of clarity in published methods, as many papers include that they calibrated their microscope with a certain calibration tool (fluorescent microspheres, stained fluorescent slides, etc.), but do not elaborate on what specifically they are calibrating or how (Ichihara, 2019; Gardner et al. 2000; Moll et al., 2001). This poses a challenge to undergraduate iGEM teams, as new researchers often do not know what may be “obvious” to experts in the field.",
+  "why_it_works": "They name the gap their own page is about to fill, and say who is hurt by it, which justifies the length of everything that follows.",
+  "teaches": [
+   "assumed-knowledge",
+   "structure",
+   "voice"
+  ]
+ },
+ {
+  "id": "measurement-2023-ug-wm-04",
+  "prize": "measurement",
+  "team": "William-and-Mary",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/william-and-mary/measurement",
+  "section": "Direct Plating of Bacteria and Phage",
+  "function": "method",
+  "text": "First, for all plaque assays, we included a negative control of solely untransformed M. smegmatis; any results indicating plaques on a negative control caused all results from that plating session to not be included in our data analysis. All plates were also reviewed by at least two different independent sources, one being Dr. Saha whom has extensive experience in reviewing counts on phage plates. If there were any disagreements between the independent reviewers they discussed to resolve them, and if they couldn’t reach an agreement we averaged their estimated values.",
+  "why_it_works": "Three rules that make hand counting defensible: a negative control that can void a session, two independent readers, and a stated way to settle disagreements.",
+  "teaches": [
+   "evidence",
+   "consistency",
+   "clarity"
+  ]
+ },
+ {
+  "id": "measurement-2023-og-estonia-01",
+  "prize": "measurement",
+  "team": "Estonia-TUIT",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/estonia-tuit/measurement",
+  "section": "Results",
+  "function": "method",
+  "text": "It is noteworthy that fluorescence intensities among different GFP-target constructs significantly varied, suggesting that the viral sequence introduced into the 3'-UTR of the transcript may influence mRNA stability (not shown). Reduced mRNA stability, in turn, leads to impaired translation and decreased GFP fluorescence. For this reason, to compare the impact of shRNAs on GFP reporter expression, we normalized the GFP fluorescence for each strain with shRNA to the data obtained for its parent strain without shRNA expression.",
+  "why_it_works": "A confound is spotted in the readout itself, explained mechanistically, and then normalised away by pairing every strain with its own parent.",
+  "teaches": [
+   "evidence",
+   "clarity",
+   "consistency"
+  ]
+ },
+ {
+  "id": "measurement-2023-og-estonia-02",
+  "prize": "measurement",
+  "team": "Estonia-TUIT",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/estonia-tuit/measurement",
+  "section": "Further advancements of the yeast siRNA assay",
+  "function": "limitation",
+  "text": "While the first round of experiments confirmed efficient RNAi by the tested shRNAs, we were not able to detect quantitative differences in the efficiencies of these shRNAs, because most of them caused comparative partial suppression of the GFP reporter (Fig. 9, fluorescence dropping to GFP negative background level). In these strains shRNAs are expressed from a high copy number 2μ plasmid, which ensures extremely high expression. In future experiments, we could consider expressing shRNAs from a CEN plasmid, which exists in lower numbers within yeast cells, thereby resulting in reduced shRNA expression.",
+  "why_it_works": "The assay worked and still could not rank the things it was built to rank, because it saturated; the fix is named and costed in one sentence.",
+  "teaches": [
+   "evidence",
+   "voice",
+   "loop-closing"
+  ]
+ },
+ {
+  "id": "measurement-2023-og-estonia-03",
+  "prize": "measurement",
+  "team": "Estonia-TUIT",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/estonia-tuit/measurement",
+  "section": "ABSTRACT",
+  "function": "reuse",
+  "text": "This approach promises immediate, quantifiable siRNA assessment, cost-efficiency, scalability, and circumvents ethical concerns associated with animal testing. While we use this approach to address the global bee population decline caused by DWV, this system could be modified to optimize shRNAs or siRNAs for any desirable target.",
+  "why_it_works": "One sentence separates the method from the project it was built for, which is what lets another team see themselves using it.",
+  "teaches": [
+   "clarity",
+   "structure"
+  ]
+ }
+]

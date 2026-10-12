@@ -1,0 +1,376 @@
+[
+ {
+  "id": "model-2024-ug-heidelberg-01",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/heidelberg/model",
+  "section": "Our Model DaVinci",
+  "function": "page-opening",
+  "text": "Engineering the spatial 3D genome organization by artificially inducing DNA-DNA interactions with our PICasSO “staple” proteins offers profoundly new avenues in synthetic biology and genomics. Still, trial-and-error iterations through various staple designs and experimental conditions can be labor-intensive, costly, and time-consuming. To overcome this limitation, we developed DaVinci , an in silico model for rapid engineering and prototyping of our PICasSO system. DaVinci acts as a digital twin to PICasSO and is designed to understand the forces acting on the DNA in presence of PICasSO staple proteins, refine experimental parameters and optimize the spatial connections between protein staples and target DNA. To accomplish this task, we divided the problem into three parts.",
+  "why_it_works": "Four sentences get a judge from the biology to the reason a model exists: the experiments are slow, costly and labour-intensive, so a digital twin replaces the trial and error. The model is named and given a job before any method appears.",
+  "teaches": [
+   "structure",
+   "clarity",
+   "audience-framing"
+  ]
+ },
+ {
+  "id": "model-2024-ug-heidelberg-02",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/heidelberg/model",
+  "section": "DaVinci in a Nutshell",
+  "function": "definition",
+  "text": "- Input: staple target DNA sequence, experimental condition, and staple protein structure\n- Output stapling feasibility, staple design, and binding characteristics including binding energy and dynamics\n- Assumes only Newtonian mechanics and conventional base pair interactions",
+  "why_it_works": "Three bullets declare what the model takes, what it returns, and what physics it assumes. The scope of a long page is fixed in about forty words, so a reader knows what not to expect from it.",
+  "teaches": [
+   "structure",
+   "concision",
+   "assumed-knowledge"
+  ]
+ },
+ {
+  "id": "model-2024-ug-heidelberg-03",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/heidelberg/model",
+  "section": "Coarse-grained Molecular Dynamics",
+  "function": "assumption",
+  "text": "To represent genomic DNA while limiting computation time, we decided to implement a minimal viable system. Simulating whole genomes is quite complex and not needed to study the basic effects of DNA-DNA interaction by our staples. We decided to implement our interacting DNA in the form of plasmids, as we argued that these better represent genomes than just linear DNA strands. Adding to that, circular plasmids show constraints regarding orientation, making them more realistic than freely moving linear strands. Additionally, this approach supports our wet lab experiments in which we also used a plasmid based system to simulate enhancer hijacking in mammalian cells.",
+  "why_it_works": "The simplification is named, costed and justified three ways: it is cheaper, it is argued to be more realistic than linear DNA, and it matches the system the wet lab actually used. The next sentence goes further and sets the simulated plasmid to the same 5 kb as the bench one.",
+  "teaches": [
+   "evidence",
+   "loop-closing",
+   "clarity"
+  ]
+ },
+ {
+  "id": "model-2024-ug-heidelberg-04",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/heidelberg/model",
+  "section": "Static Molecular Interaction Predictions",
+  "function": "uncertainty",
+  "text": "For this construct, we observed a positive ΔG of 175±97kCal⋅mol−1 for dissociation, suggesting that the reverse process — protein binding — occurs spontaneously over time. Comparing this result with wet lab data highlights discrepancies, as they measured ΔG=9.256±10.676⋅kCal⋅mol−1 using EMSA. This can also be compared to literature with an estimate of ΔG=10.7±11.48⋅kCal⋅mol−1 (Jessica J. Hollenbeck et al., 2001). Even though our calculation is within the 1.6 deviation of the experimental data, this is due to a large error in the calculation. Moreover, when visualizing the trajectory, DNA strand separation was observed, suggesting an unnatural event. Thus, this calculation will require further investigation to improve accuracy.",
+  "why_it_works": "The model's number is put beside the team's own EMSA measurement and a published value, all three with error bars. The apparent agreement is then refused: it holds only because the computed error is huge. A second independent check, the trajectory, confirms the result is wrong.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "voice"
+  ]
+ },
+ {
+  "id": "model-2024-ug-heidelberg-05",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/heidelberg/model",
+  "section": "Comparing macroscopic conditions",
+  "function": "limitation",
+  "text": "The resulting trajectories were compared using the Hausdorff- and the Frechét metrics (Seyler et al., 2015). The range and specific simulation temperatures were optimized using the design of experiment theory developed by Plackett and Burman and implemented within the pyDOE package (Baudin & Christopoulou, 2018; PLACKETT & BURMAN, 1946). For this we developed, and implemented the plan, of how to set up experiments, using an optimal number of experiments. We generated data for those experiments but were not able to process it, as we generated more than 2 TB of data, whose alignment of trajectories did not finish running.",
+  "why_it_works": "A planned temperature sweep is reported as unfinished, with the reason given as a number (more than 2 TB) rather than an apology. The design is still described, so the reader can see what was intended and judge the gap.",
+  "teaches": [
+   "voice",
+   "evidence",
+   "concision"
+  ]
+ },
+ {
+  "id": "model-2025-og-heidelberg-01",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/heidelberg/model",
+  "section": "Underlying Assumptions",
+  "function": "assumption",
+  "text": "To strike a balance between feasibility and an accurate reflection of the biological complexity, we adopted a set of assumptions, which we developed in close collaboration with various experts in systems biology. Most importantly, our central assumption is that the system operates at steady-state, which is a common simplification in mathematical biology, assuming equilibrium concentrations of components that remain constant over time (Mathematical Biology. Vol. 1, c.f. Interview Dr. Pahle). This is appropriate, because our system is based on rapid phosphorylation and dephosphorylation of existing cellular components, instead of relying on significantly slower expression. Therefore, switching between the cell's inactive and active state occurs dynamically, quickly establishing equilibrium conditions that allow for steady-state simplification (Goldbeter & Koshland, 1984).",
+  "why_it_works": "The central assumption is named in one clause, then defended by mechanism: phosphorylation is fast, so equilibrium is reached quickly. It cites a textbook, a paper and an interview with a named expert, which turns a convenience into a decision.",
+  "teaches": [
+   "evidence",
+   "clarity",
+   "structure"
+  ]
+ },
+ {
+  "id": "model-2025-og-heidelberg-02",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/heidelberg/model",
+  "section": "Results: Wet lab binder and metric validation",
+  "function": "validation",
+  "text": "The ranking of the experimentally validated binders was subsequently compared to BindCraft-derived i_pTM scores, as well as KD-based rankings acquired through our US simulations and Prodigy. For this, the Kendall's τ as well as Spearman correlation metric were utilized, whereas Kendall's τ is better suited for quantifying ranking similarity for the small sample size of n = 5 binders (Kendall, 1938). We found that both the US-derived ranking showed the better alignment with the experimental data than the BindCraft i_pTM ranking, with a Kendall's τUS = 0.80 compared to τBindCraft = −0.20 (Table 4), whereas Prodigy also performed relatively well with a Kendall's τProdigy = 0.40.",
+  "why_it_works": "The in silico rankings are scored against a wet lab ranking the model never saw, and the statistic is chosen because the sample is small (n = 5) rather than because it flatters. The team's own generator scores negative, and that is printed.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "loop-closing"
+  ]
+ },
+ {
+  "id": "model-2025-og-heidelberg-03",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/heidelberg/model",
+  "section": "Results: Wet Lab Validation of Circuit Switch Behavior",
+  "function": "limitation",
+  "text": "The slight upward deviation in the fitted nH value could be due to experimental noise, minor cooperative effects not accounted for in the model, or simplifications in the model itself. However, these small discrepancies do not change the core conclusion: the system's dose-response curve is slow-switching. This level of agreement is sufficient for early-stage screening to identify and exclude designs with clearly undesirable characteristics and to prioritize architectures for more detailed in-vitro characterization.",
+  "why_it_works": "A predicted Hill coefficient of 1.002 against a fitted 1.373 is explained by three candidate causes, one of them the model's own simplifications. Then the two sentences that keep the reader: the conclusion that survives the mismatch, and the standard of accuracy this model actually needs to be useful.",
+  "teaches": [
+   "uncertainty",
+   "clarity",
+   "evidence"
+  ]
+ },
+ {
+  "id": "model-2025-og-heidelberg-04",
+  "prize": "model",
+  "team": "Heidelberg",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/heidelberg/model",
+  "section": "Outlook",
+  "function": "reuse",
+  "text": "The current database is limited to a selection of components with measured or well-characterized parameter values, but the framework is designed to be easily extendable. The process of database generation is fully automated. Users provide a structured table with allowed parameter values, and the pipeline systematically generates all possible permutations. These combinations are then evaluated using the model, and the resulting descriptors are recorded for each configuration. To expand the database, users can simply add new components with their respective kinetic parameters, including protein binding domains for additional ligands, additional LZs for fine tuned substrate recruitment dynamics and enzymes for tailored catalytic activity. The pipeline will automatically characterize all newly generated combinations, which could uncover previously inaccessible switching behaviors.",
+  "why_it_works": "The limitation and the hand-off are the same paragraph: here is what the database does not yet cover, here is the exact input another team supplies to extend it, and here is what the pipeline then does on its own.",
+  "teaches": [
+   "loop-closing",
+   "structure",
+   "evidence"
+  ]
+ },
+ {
+  "id": "model-2024-og-utoronto-01",
+  "prize": "model",
+  "team": "UToronto",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/utoronto/model",
+  "section": "Abstract",
+  "function": "page-opening",
+  "text": "Plasmids are essential vectors in synthetic biology, facilitating the delivery of genetic material in bacterial systems. However, the generation of novel plasmid sequences with targeted functionalities presents a significant challenge, and no experimentally validated models exist for reliably designing biologically viable, de novo plasmids. We present a novel plasmid generation pipeline that integrates machine learning with experimental validation to produce functional plasmid sequences. Utilizing a custom Byte Pair Encoding tokenizer and the Mamba2 state-space model architecture, our model efficiently handles the long and complex nature of plasmid DNA. The model was trained in two phases: pre-training on a comprehensive dataset of over 137,000 plasmid sequences, followed by fine-tuning on specific target sequences.",
+  "why_it_works": "The gap is stated as an absence that can be checked (no experimentally validated models exist), then the claim, then the architecture, then the size of the training set. Four moves, no adjectives doing the work.",
+  "teaches": [
+   "structure",
+   "evidence",
+   "concision"
+  ]
+ },
+ {
+  "id": "model-2024-og-utoronto-02",
+  "prize": "model",
+  "team": "UToronto",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/utoronto/model",
+  "section": "Batch 1",
+  "function": "loop-closing",
+  "text": "This encouraged us to dive deeper into the batch and select top sequences for in vitro validation. An initial set of 6 oris, a mix of Class A and Class B was selected. However, after attempting to design these plasmids in Wet Lab, Class A plasmids were deemed to be too difficult to test at this stage, as their machinery is more complex and difficult to detect. This Wet Lab - Dry Lab iteration meant that instead 5 promising Class B oris were delivered to Wet Lab. Finally, one promising protein was also selected. None of the oris in this batch worked.",
+  "why_it_works": "The wet lab sends a prediction back: Class A plasmids are too hard to test, so the shortlist is rebuilt and the reason is given. Then the six-word verdict on the whole batch. The failure gets its own sentence instead of being buried in a clause.",
+  "teaches": [
+   "loop-closing",
+   "voice",
+   "concision"
+  ]
+ },
+ {
+  "id": "model-2024-og-utoronto-04",
+  "prize": "model",
+  "team": "UToronto",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/utoronto/model",
+  "section": "Key Ori Features and Classes",
+  "function": "limitation",
+  "text": "These negative scores suggest poor alignment between the generated sequences and the class B elements.\nThese negative scores are likely due to a lack of sequence variability in the class B elements that were used. For example, only one version of the P2 promoter and RNA II region (From E. coli ColE1 plasmid) were used, limiting the accuracy of the alignments. Using a set of variants for each sequence could improve alignment scores. However, the lack of established consequence sequences for a P2 promoter and RNA II coding region make this a difficult next step to pursue.",
+  "why_it_works": "A negative result, a diagnosis of why it is negative (one reference sequence rather than a set), the fix that would follow, and then the admission that the fix is blocked too. Four steps, and no retreat into 'further work is needed'.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "structure"
+  ]
+ },
+ {
+  "id": "model-2024-og-utoronto-05",
+  "prize": "model",
+  "team": "UToronto",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/utoronto/model",
+  "section": "Protein Selection",
+  "function": "evidence-with-numbers",
+  "text": "Most of the DNA sequences from batch 3 that align with the AMR database are too short to form a viable protein (less than 300mAA) when blasted for ORFs for amino acid sequence translation. Out of a batch of 10,000 sequences, 140 DNA sequences were found to have aligned with the AMRFinderPlus database above the minimum 20% coverage to reference sequences, and only 6 translated amino acid sequences were predicted to form viable 3D protein structures.\nOne good indicator of the model performance is the lack of overfitting. As seen in the percentage coverage of reference length, half of the selected predicted proteins are only ~50% in comparison to wild type.",
+  "why_it_works": "The funnel is reported at every stage, 10,000 sequences down to 140 down to 6, so a reader sees the yield and not only the survivors. The overfitting check is then run against the model's own output and reported as a number.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "clarity"
+  ]
+ },
+ {
+  "id": "model-2025-ug-peking-03",
+  "prize": "model",
+  "team": "Peking",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/peking/model",
+  "section": "Overall Structural Stability of Protein Complex",
+  "function": "uncertainty",
+  "text": "Radius of gyration (Rg) characteristics: Total Rg remained stable at 3.02±0.03 nm throughout 100 ns simulation with only 0.99% coefficient of variation, demonstrating good overall compactness without significant expansion or contraction. Axial Rg analysis showed:\nX-axis Rg: 1.5-2.8 nm, mean 2.1±0.17 nm, coefficient of variation 8.2%;",
+  "why_it_works": "A mean, a standard deviation and a coefficient of variation for each axis, with the simulation length attached to the global figure. The spread is reported as a property of the trajectory instead of being hidden behind a single mean.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "concision"
+  ]
+ },
+ {
+  "id": "model-2025-ug-peking-02",
+  "prize": "model",
+  "team": "Peking",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/peking/model",
+  "section": "Validation of Simulation System Equilibrium",
+  "function": "uncertainty",
+  "text": "Temperature and pressure dynamics: Temperature rapidly increased to 300 K during initial NVT equilibration (0-50 ps), then stabilized at 300±0.5 K with Gaussian distribution (mean 300 K, standard deviation 0.3 K); pressure gradually converged to 1±50 atm from initial fluctuations (-400~200 atm) during NPT equilibration, with amplitude ≤20 atm by 200 ps; density stabilized at 1000±2 kg/m³ after 100 ps NPT equilibration, consistent with liquid water density. All parameters met physiological steady-state standards, validating the rationality of the simulation environment.",
+  "why_it_works": "Every number carries a tolerance and a settling time, and the paragraph exists to show the simulation box is trustworthy before any biology is read out of it. Equilibration is treated as a result to report, not a setup step to skip.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "structure"
+  ]
+ },
+ {
+  "id": "model-2025-ug-peking-04",
+  "prize": "model",
+  "team": "Peking",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/peking/model",
+  "section": "Assumptions",
+  "function": "assumption",
+  "text": "Gβγ Concentration Correlation Assumption: The concentration of activated G protein βγ subunits (Gβγ) is directly linked to the concentration of the hH3R-Ste2 receptor complex, that is, the degree of receptor activation directly reflects the release amount of Gβγ.\nHill Coefficient Assumption: The binding of the transcription factor Ste12 to DNA does not consider cooperative effects for the time being, and the Hill coefficient is set to n=1, meaning that each binding site is independent of each other.",
+  "why_it_works": "Two of five listed assumptions, each named as an assumption and then translated into its consequence by a 'that is' or 'meaning that' clause. The Hill one shows the pattern: the value chosen, then what choosing it commits the model to.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "assumed-knowledge"
+  ]
+ },
+ {
+  "id": "model-2023-ug-zju-01",
+  "prize": "model",
+  "team": "ZJU-China",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/zju-china/model",
+  "section": "Overview",
+  "function": "page-opening",
+  "text": "In order to resist the damage of viruses to plants, we designed saRNA-based plant vaccines, and modeled the processes of virus infection, vaccine transport and delivery, efficacy time, antigen-antibody matching, etc. The whole modeling adopts a cross-scale model, from the macroscopic infection process to the microscopic molecular transport, combined with the neural network model and finite element method, and compared with the experimental results, to provide explanations and feasibility demonstrations for biological phenomena. The entire model is divided into four parts:",
+  "why_it_works": "One sentence names the four processes modelled, the next names the scales and the methods and says the results were compared against experiment, and the third hands over to the parts list. A judge knows the shape of the page before the first equation.",
+  "teaches": [
+   "structure",
+   "concision",
+   "clarity"
+  ]
+ },
+ {
+  "id": "model-2023-ug-zju-02",
+  "prize": "model",
+  "team": "ZJU-China",
+  "year": 2023,
+  "track": "UG",
+  "url": "https://2023.igem.wiki/zju-china/model",
+  "section": "2.2 Wiener process in vascular bundle",
+  "function": "validation",
+  "text": "(2) With the increase of distance, the amount of mRNA decreases, which is the same as the finite element simulation result.\n(3) With the increase of the bp number of mRNA, it is clear that the movement efficiency of the GFP mRNA group is higher than that of the RUBY mRNA group, that is, the larger physical configuration molecules as particle streams, their transport is slower, consistent with the finite element results",
+  "why_it_works": "Two separate predictions of the simulation are each checked against a qPCR measurement, including one that compares two mRNA lengths against each other. Agreement is claimed on direction of effect and nothing stronger.",
+  "teaches": [
+   "evidence",
+   "loop-closing",
+   "uncertainty"
+  ]
+ },
+ {
+  "id": "model-2023-og-toronto-01",
+  "prize": "model",
+  "team": "Toronto",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/toronto/model",
+  "section": "1. Purpose",
+  "function": "page-opening",
+  "text": "Escherichia coli can be genetically modified to uptake methane from landfill sites, mitigating the pollutive impact of methane production. The Dry Lab division aims to provide genetic addition, knock-out, and over-expression targets for improved methane uptake. We made use of well-established modelling and simulation tools such as Flux Balance Analysis as well novel implementations of scanning algorithms to produce results. The key targets reported are frdABCD (knockout), MEOHDH, MEOHtrpp, MEOHtex(overexpression), FDH (addition). These results were validated through literature. Experimental validation will follow.",
+  "why_it_works": "The opening names the deliverable the dry lab owes the wet lab, lists the five gene targets by name, and then separates what has been validated from what has not in two short sentences.",
+  "teaches": [
+   "structure",
+   "evidence",
+   "concision"
+  ]
+ },
+ {
+  "id": "model-2023-og-toronto-02",
+  "prize": "model",
+  "team": "Toronto",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/toronto/model",
+  "section": "3.1. Motivation",
+  "function": "loop-closing",
+  "text": "Additionally, the implementation of many algorithms was primarily optimized for producing helpful and productive results for experimental teams. For example, the knockout algorithm (Section ???) prioritizes increased granularity in results in order to clearly distinguish between the top identified knockout targets. This was motivated by the fact that due to time limitations, the experimental team could only test one knockout prediction, and higher certainty and distinction between targets was greatly valuable.",
+  "why_it_works": "The wet lab's budget changes the algorithm: the experimental team could test one knockout, so the ranking was built to separate the top candidates sharply. A constraint from the bench is given as the reason for a design choice inside the model.",
+  "teaches": [
+   "loop-closing",
+   "clarity",
+   "evidence"
+  ]
+ },
+ {
+  "id": "model-2023-og-toronto-03",
+  "prize": "model",
+  "team": "Toronto",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/toronto/model",
+  "section": "5.2 Limitations and Applications",
+  "function": "limitation",
+  "text": "In the second case, which is, in fact, one of the top targets for overexpression predicted by our algorithms, a small increase in fluxes through Triose-phosphate isomerase (TPI) correlates with the highest growth rates. However, as can be observed from Figure 6, this relationship is not uniformly positive throughout the entire possible flux ranges. This makes TPI a less than ideal candidate for overexpression than what FSEOF suggests.",
+  "why_it_works": "The team takes one of its own headline overexpression targets and shows it is probably an artefact of the method. Admitting that a published result of yours is weak, in the section where a reader will look for it, is the strongest credibility move on any of these pages.",
+  "teaches": [
+   "uncertainty",
+   "evidence",
+   "voice"
+  ]
+ },
+ {
+  "id": "model-2023-og-toronto-04",
+  "prize": "model",
+  "team": "Toronto",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/toronto/model",
+  "section": "5.2 Limitations and Applications",
+  "function": "assumption",
+  "text": "One of the main limitations of FSEOF and FSEOF-like methods is their oversimplification of phenotypic expression landscape. It assumes that an increasing tendency in flux through a given reaction as the flux through the enforced objective increases means an increase in flux will always correspond to an increase in enforced objective. In reality, there might be biological mechanisms in place to prevent wasteful use of energy spent on an abnormally high biochemical process within an organism, as well as other unforeseen phenotypic behaviors.",
+  "why_it_works": "The assumption buried inside a borrowed algorithm is written out in plain words, and then the biology that breaks it is named. This is what it looks like to state an assumption you inherited rather than chose.",
+  "teaches": [
+   "clarity",
+   "evidence",
+   "assumed-knowledge"
+  ]
+ }
+]
