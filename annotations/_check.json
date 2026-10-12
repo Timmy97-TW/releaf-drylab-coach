@@ -27,7 +27,10 @@
   },
   "hardware/bioreactor": null,
   "hardware/photometer": null,
-  "hardware/diopal": null,
+  "hardware/diopal": {
+   "notes": 60,
+   "broken": []
+  },
   "hardware/hydroponics": null
  }
 }
