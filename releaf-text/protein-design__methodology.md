@@ -312,4 +312,6 @@ Predictions were run across the signal peptide panel rather than on a single ass
 - Lorenz, R. et al. ViennaRNA Package 2.0. Algorithms for Molecular Biology 6, 26 (2011).
 - Teufel, F. et al. SignalP 6.0 predicts all five types of signal peptides using protein language models. Nature Biotechnology 40, 1023 to 1025 (2022).
 - Koller, T. & Bent, A. F. FLS2 and BRI1 receptor kinases use distinct docking sites for the co-receptor BAK1. Plant Physiology 164, 1196 to 1208 (2014).
+- Jumper, J. et al. Highly accurate protein structure prediction with AlphaFold. Nature 596, 583 to 589 (2021).
+- Abramson, J. et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. Nature 630, 493 to 500 (2024).
 [IMG]

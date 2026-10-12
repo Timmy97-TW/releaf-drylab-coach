@@ -185,10 +185,12 @@ The 25 August progress report gives 0.084 bar and 0.90–0.96× theory for the s
 Wall shear can be computed from the pressure drop or from the flow rate, and the two agree to 2.8%. Against that margin, the 20% disagreement in October is a fault.
 R2 calibrated
 ### Photometer and BioDrop calibration against TiO₂ doses
-On 23 August 2026, cumulative TiO₂ additions gave 45 paired points between the in-line photometer and the BioDrop spectrophotometer (Figure 3). Scoring both against the known dose, not against each other, showed that both degrade above 30 mg in different ways. The BioDrop keeps its slope but scatters (R² 0.85, SD 0.12). The photometer stays precise (R² 0.99, SD 0.022) but its response per milligram falls.
+On 23 August 2026, cumulative TiO₂ additions gave 45 paired points between the in-line photometer and the BioDrop spectrophotometer (Figure 3). Scoring both against the known dose, not against each other, showed that both degrade above 30 mg in different ways. Over the 16 points above 30 mg the BioDrop keeps its slope but scatters (R² 0.85, SD 0.12), while the photometer stays precise (R² 0.99, SD 0.022) and its response per milligram falls.
 [IMG] In-line photometer and BioDrop readings against known TiO2 dose, showing the BioDrop losing linearity above 30 mg.
 [CAPTION] Figure 3. Both instruments against the known dose. Source: Inline photometer to biodrop.xlsx.
 A Gaussian process was fitted as a check. Inside its range the linear fit wins (RMSE 0.0235 against 0.0254) and is kept. Past OD 1.2, linear error rises to 0.1715 while the GP holds 0.067, and the GP found its own limit at OD 1.55. Its 95% band covered only 88.9% of held-out points, so its intervals are too narrow. Up to OD 1.2 the photometer regresses on the BioDrop with slope 1.018, R² 0.995, residual SD 0.024 OD. TiO₂ shows linearity, not cell number.
+[FOLD] To reconcile before the freeze
+Those two figures are the window above 30 mg alone. Measurement quotes the whole series, where both instruments fit the mass standard above R² 0.999, and calls the photometer calibration-free because it needs no fit against the BioDrop. One dataset, two ranges, two pages that do not say which. The lamp is also an amber LED here and 600 nm there, and an OD600 claim needs one answer.
 #### The silica repeat, 10 October
 On 10 October 2026 the same loop ran the calibration iGEM's protocol actually asks for: silica in 2.5 mg steps from 2.5 to 100 mg in 500 mL of 1% SDS, read at every step on the BioDrop and on both photometer builds, and logged in-line every five seconds for 4 h 27 min. Against the reference the current build is one to one to OD 2.5 (slope 0.995, intercept −0.07) and reads about 0.33 low above it, where the BioDrop's own values are reconstructed from dilutions. The instrument comparison is on the photometer page; three findings belong here, because the twin reads this log rather than the spreadsheet.
 The reference channel has a warm-up. It rose from 289 to 324 lux over the first two hours and then held flat, a 12% change with no fault behind it. That channel is exactly what R3's sensor axis scores, so a run started from cold would raise a sensor alarm on its own warm-up. A twin reading this instrument has to wait the warm-up out or model it, and until it does, the first two hours of any batch are not scoreable.
@@ -248,6 +250,7 @@ We ran 102 hours of perfusion, 2 to 6 September 2026, with B. subtilis 168 secre
 | 0.310
 | 17%
 A two-state Kalman filter (level and slope) beats persistence at every horizon, by less as the horizon grows. Global linear and exponential fits did worse than persistence at short horizons.
+Most of the run is above the linear limit. The 12-hour median OD rose from 1.06 to 3.75, so R4 forecasts the photometer reading, not biomass. The model comparison still holds, because every model forecasts the same signal.
 [IMG] Forecast error against horizon for persistence, local linear, global linear, exponential and Kalman models on the 102-hour run.
 [CAPTION] Figure 5. Walk-forward error by horizon. Source: walkforward_0902_results.csv.
 [FOLD] Why the other forecasts fall behind
@@ -389,6 +392,7 @@ The rig app knows the reactor but not the field: it has no forecast, no leaf sen
 1007UI.html · MIT licence Open full screen →
 [CAPTION] Figure 13. The rewritten interface on simulated data. With no board or leaf sensor attached, process values come from the model in the file and the leaf is simulated from the live forecast; every screen says so.
 One idea needs no new hardware: a chromoprotein downstream of the protectant, so the photometer reports product as well as biomass. Whether two signals separate in one cuvette, and how far from 600 nm the second peak must sit, is open.
+The farmer never sees this screen. What they see is the ReLEAF phone app on Entrepreneurship, which turns the same readings into a collection alert, a dilution ratio for their crop and a one-click reorder.
 The rig app's interlocks, board-side recording, bubble rejection and calibration bookkeeping each exist because a run failed without them. Until the rewrite carries these over, the rig app records and the rewrite is tested on its recordings. Nothing on this page was measured by the rewrite.
 ## 6.Gaps and limits
 ### Must have, yet to have
@@ -425,7 +429,7 @@ The rig app's interlocks, board-side recording, bubble rejection and calibration
 | one afternoon
 ### Current limits
 - The loop is not closed. Valves move under software control, but every decision about the culture, above all induction, still goes through a person. That makes it a digital shadow with actuation [1, 2].
-- n = 1 almost everywhere. Four runs of 168, two logged in-line, differing in temperature, module and strain: one run behind R3, part of one behind R4, one plate behind R5.
+- n = 1 almost everywhere. Four runs of 168, two logged in-line, differing in temperature, module and strain: one run behind R3, part of one behind R4, one plate behind R5. The 102 hour log also records the reference beam, so it can be a second test case for the trust layer without a new run.
 - 37 °C fits, 22 °C operation. At 22 °C growth is 28 times slower but plateaus at OD 1.454, within noise of the 37 °C plateau reached in five hours. The cost is time, not yield, but rate parameters do not transfer.
 - Beer–Lambert at scale. On the path runs 3 and 4 used, the photometer is linear only to about OD 1.2 in a 2 mm cell, so most of the 102 hour run sits above it and R4 forecasts the photometer reading rather than biomass. The splitter path reads one to one against the reference to OD 2.5 (the silica repeat), but that is a different configuration and does not retrofit the earlier runs. A dense culture will also attenuate induction light in a way nothing on the rig measures.
 - Trans-membrane pressure is below transducer resolution at the operating point, so lumen ΔP is used instead.

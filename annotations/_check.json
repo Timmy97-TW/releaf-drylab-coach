@@ -1,13 +1,10 @@
 {
- "wiki": "ecd4ff9 2026-10-12 Merge branch 'sync/pd-md-1012'",
+ "wiki": "467343c 2026-10-12 Digital Twin: two sentences the students wrote that the page had not taken",
  "pages": {
   "model": null,
   "software": null,
   "protein-design": null,
-  "protein-design/methodology": {
-   "notes": 1,
-   "broken": []
-  },
+  "protein-design/methodology": null,
   "protein-design/sprints": null,
   "protein-design/molecular-dynamics": null
  }
