@@ -31,6 +31,20 @@ product crossing a membrane that holds the cells back. Watch for: section 2 jump
 2.5; the loop is described twice, once as a list of stages and once as prose; and the page has
 to keep the biology on the wet lab's pages, which its editor enforces strictly.
 
+TWO CONFLICTS ALREADY FOUND, which your notes should carry to the exact sentences that cause
+them. Check both yourself in releaf-text/ before you write, then write them.
+
+1. **The cuvette path length differs by a factor of ten between pages.** This page and the
+   bioreactor page say a 0.2 mm flow cuvette. The Digital Twin page says a 2 mm flow cuvette,
+   three times. Path length scales OD directly, so they cannot both be right. The Digital Twin
+   page also says the splitter configuration uses "a path length factor of 5.0, so a 2 mm cell
+   is reported on a 1 cm equivalent scale", and 10 mm over 2 mm is exactly 5. That arithmetic
+   is evidence, not proof. Quote both sides and let the team decide.
+2. **The long run is described twice with different numbers.** Here: "more than 400 hours,
+   2,132 points logged over the first 336". Digital Twin: 434 hours with 2,671 valid rows. If
+   these are the same run, one page is wrong; if they are different windows of it, both should
+   say which window.
+
 THE HOUSE STYLE THESE PAGES ARE MEANT TO FOLLOW, set by Jacquelyn Inocencio, the student editor
 for hardware, in a line-by-line edit of the LPA, photometer and bioreactor pages:
 one continuous scroll; no visible section numbers and no "Figure N" anywhere, with captions as

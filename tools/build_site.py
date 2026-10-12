@@ -181,7 +181,7 @@ def winners_html(W, page_titles):
     return f"""
     <section class="lp-win" id="winners">
       <h2>The teams we compare against</h2>
-      <p>Undergraduate and overgraduate winners of the four iGEM special prizes our dry lab and hardware pages are written for, 2023 to 2025. Each name opens the page that won it; each year opens iGEM's results for that year. A blank cell means the two collegiate sections were combined that year, or that no winner could be verified from the results page.</p>
+      <p>Undergraduate and overgraduate winners of the four iGEM special prizes our dry lab and hardware pages are written for, 2023 to 2025. Each name opens the page that won it; each year opens iGEM's results for that year. A blank cell means the award was not given in that section that year, that the two collegiate sections were combined, or that no winner could be verified from the results page. Best Hardware has no 2023 undergraduate winner: the slot on iGEM's results page is empty.</p>
       <div class="lp-win__scroll"><table class="lp-win__table">
         <thead><tr><th scope="col">Prize</th>{head}</tr></thead>
         <tbody>{rows}</tbody>

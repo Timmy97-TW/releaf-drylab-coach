@@ -1,0 +1,342 @@
+[
+ {
+  "id": "hwp-photometer-2014-aachen-01",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/OD/F_device",
+  "section": "OD/F Device",
+  "function": "page-opening",
+  "text": "Measuring Optical Density (OD) or absorbance is one of the indispensable elements in the field of microbiology. One question that has to be answered often is how many cells are in a suspension? Here, the OD can give a hint. However, the commercially available [http://www.laboratory-equipment.com/laboratory-equipment/cell-density-meter.php OD meters] are expensive and limit its application and usage in low budget institutions.\nTherefore, here we present our OD/F Device. The device is specifically designed for biohackspaces, Do It Yourself (DIY), community laboratories and schools. With our OD/F Device, we aim to enable precise and inexpensive scientific research.",
+  "why_it_works": "Three sentences establish the measurement, the question it answers and the barrier (cost) before the device is named, then paragraph two names the readers it is for. The instrument is justified by who cannot afford the alternative.",
+  "teaches": [
+   "structure",
+   "audience-framing",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-02",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/OD/F_device",
+  "section": "Achievements",
+  "function": "assumption",
+  "text": "Commercially available equipment uses lasers and a set of two fine filters, one between laser and sample and one between sample and sensor. To reduce the cost, our OD/F Device uses a simpler measuring principle: it is designed with one low-cost filter, between sample and sensor, and illuminates with an LED instead of a laser. Nevertheless, one main goal was to produce an inexpensive device. Given that, we therefore had to compromise some of the measurement quality, were we still able to produce stable, precise and good data?",
+  "why_it_works": "States the cheaper design choice, names exactly what was given up against the commercial design (one filter instead of two, LED instead of laser), then turns the cost of that choice into the question the section will answer.",
+  "teaches": [
+   "evidence",
+   "structure",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-03",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/OD/F_device",
+  "section": "Achievements",
+  "function": "reuse",
+  "text": "Have we been re-inventing the wheel? No! In fact, you can find some DIY posts for turbidity meters such as [http://www.thingiverse.com/thing:74415 turbidity sensors]. However, a proper assessment of their linearity as well as a calculated OD-value are missing.",
+  "why_it_works": "Asks the question a judge is already thinking, then answers it by naming the prior art and the one thing it failed to document. Positions the page as the missing documentation rather than the missing invention.",
+  "teaches": [
+   "evidence",
+   "structure",
+   "reuse"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-04",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/Notebook/Engineering/ODF",
+  "section": "Technical Components",
+  "function": "section-intro",
+  "text": "While the casing and the cuvette holder are custom made, most of the parts are pre-made and can be readily bought. The previous section lists all needed parts. To get all these parts for creating your own OD/F Device is easy using the internet. Thus all potential customers have a market access to the used components.",
+  "why_it_works": "Introduces the parts table by splitting the build into custom and off-the-shelf, and says the off-the-shelf half can simply be bought. A reader knows what the table is for before reading a row of it.",
+  "teaches": [
+   "structure",
+   "reuse",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-05",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/Notebook/Engineering/ODF",
+  "section": "Experiments",
+  "function": "uncertainty",
+  "text": "It is interesting to observer that function $g$, mapping the true OD of our device to the true OD of the photospectrometer, are close together for both P. putida and S. cerivisae, as seen by the regression coefficient. In fact, 3.416 and 3.461 are such close together, that the minor deviation could be just measuring inaccuracy. Therefore, we fix the regression coefficient for converting true OD of our device to true OD of the photospectrometer to an average of 3.432 .",
+  "why_it_works": "Two independent calibration coefficients are reported, then judged: the gap between them is small enough to be measurement error, so the two are averaged into one fixed constant. The reasoning for collapsing them is shown, not assumed.",
+  "teaches": [
+   "evidence",
+   "uncertainty",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-06",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/Notebook/Engineering/ODF",
+  "section": "Construction Steps",
+  "function": "method",
+  "text": "Next we want to assemble the cuvette holders. On the side with the square hole attach the light-to-frequency sensor with glue. For the OD case place the orange LED opposite, or for fluorescence, the LED in the hole in the bottom. Make sure to close any remaining open hole! Please attach a piece of filter foil (approx. $7 \\times 7 mm^2$) from the inside in front of the light to frequency converter. Forceps is highly recommended.",
+  "why_it_works": "An assembly step written for someone holding the parts: what to glue where, what changes between the OD and fluorescence builds, a dimension for the filter foil, a warning not to leave a hole open, and the tool that makes it possible.",
+  "teaches": [
+   "reproducibility",
+   "clarity",
+   "method"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2014-aachen-07",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2014,
+  "track": null,
+  "url": "https://2014.igem.org/Team:Aachen/Notebook/Engineering/ODF",
+  "section": "Light Filters",
+  "function": "limitation",
+  "text": "The fluorescence protein [http://parts.igem.org/Part:BBa_E0040 GFPmut3b] has a peak excitation at 501 nm and a peak emission at 511 nm - too close together for our low-cost filters to block the excitation light but transmit the emitted light. Thus, we chose to excite at around 485 nm reduce false positive results below 500 nm. However, no adequate filter for these settings could be found. Eventually, using the dark greenish [http://leefilters.com/lighting/colour-details.html#736 Twickenham Green] filter only little amounts of light shorter than 500 nm gets through, reducing any bias from excitation illumination significantly. Unfortunately, the transmission rate of this filter is quite bad, 20% only, for the target emission wavelength of 511 nm.",
+  "why_it_works": "Walks through why no filter fitted the spectral overlap, names the compromise chosen, then gives the number that quantifies what it cost: 20% transmission at the wavelength being measured. The admission is specific enough to act on.",
+  "teaches": [
+   "honesty",
+   "evidence",
+   "limitation"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2018-tsinghua-a-01",
+  "prize": "hardware",
+  "team": "Tsinghua-A",
+  "year": 2018,
+  "track": null,
+  "url": "https://2018.igem.org/Team:Tsinghua-A/Hardware",
+  "section": "Overview",
+  "function": "page-opening",
+  "text": "In order to achieve portable and simple field allergy detection, we designed and manufactured the hardware testing equipment for this project - a small, inexpensive ($20) system, including a device can measure OD600 and fluorescence intensity, and a small automatic vibration device avoiding the sinking of cells.\nThe device supports battery or micro USB for power supply. According to the prompts on the display, you can get started quickly; the device will judge your allergies based on the cell concentration and fluorescence intensity after a certain period of reaction.",
+  "why_it_works": "The first sentence carries the purpose, the form factor, the price and the two quantities measured. The second says what a user does and what the device then tells them, so the reader has the whole instrument in two sentences.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "audience-framing"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2018-tsinghua-a-02",
+  "prize": "hardware",
+  "team": "Tsinghua-A",
+  "year": 2018,
+  "track": null,
+  "url": "https://2018.igem.org/Team:Tsinghua-A/Hardware",
+  "section": "Overview",
+  "function": "reuse",
+  "text": "In addition to the detection applied to this project, this device can also be used in other environments where fast and portable spectrophotometric detection or fluorescence intensity detection is needed.\nWe refer to the design of Team Aachen, 2014, but our Devices are more automated and miniaturized.",
+  "why_it_works": "Separates the instrument from the project it was built for, so another lab can see itself as the user, then credits the team it was derived from and states in one clause what this version changed.",
+  "teaches": [
+   "reuse",
+   "honesty",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2018-tsinghua-a-03",
+  "prize": "hardware",
+  "team": "Tsinghua-A",
+  "year": 2018,
+  "track": null,
+  "url": "https://2018.igem.org/Team:Tsinghua-A/Hardware",
+  "section": "Test method",
+  "function": "method",
+  "text": "We made two groups of a series of cells samples with different concentration by gradient dilution. And we used OD function of our device and spectrophotometer to test the sample respectively. By this way, we can get a relation between the readout of our kit and the real OD value. If the relation is linear, we can use a linear model to analyze and predict.",
+  "why_it_works": "The validation method in four sentences: two independent dilution series, both instruments on the same samples, what the comparison yields, and the condition (linearity) under which a model would be allowed. The test is stated before the result.",
+  "teaches": [
+   "method",
+   "evidence",
+   "structure"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2018-tsinghua-a-04",
+  "prize": "hardware",
+  "team": "Tsinghua-A",
+  "year": 2018,
+  "track": null,
+  "url": "https://2018.igem.org/Team:Tsinghua-A/Hardware",
+  "section": "Result",
+  "function": "validation",
+  "text": "Taking the OD values measured by spectrophotometer as real values, it is obvious that the real OD values can be derived from the readout of our device, which means that our device is able to measure the OD value of samples accurately.",
+  "why_it_works": "Names which instrument is being treated as truth before interpreting the fit, which is the sentence that makes a comparison against a reference mean anything.",
+  "teaches": [
+   "validation",
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-photometer-2018-tsinghua-a-05",
+  "prize": "hardware",
+  "team": "Tsinghua-A",
+  "year": 2018,
+  "track": null,
+  "url": "https://2018.igem.org/Team:Tsinghua-A/Hardware",
+  "section": "The overall design",
+  "function": "limitation",
+  "text": "We use reden filter paper as our filters, which is usually used in photography. It is not as good as professional filter but it is cheaper and easy to obtain in China.",
+  "why_it_works": "A one-line limitation attached to the component it belongs to: the filter is worse than the professional part, and the two reasons it was chosen anyway are cost and local availability.",
+  "teaches": [
+   "honesty",
+   "limitation",
+   "reproducibility"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-ethz-01",
+  "prize": "hardware",
+  "team": "ETH Zurich",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:ETH_Zurich/core/hardware",
+  "section": "Optical Density Measurement Device",
+  "function": "method",
+  "text": "First, the peristaltic pump is activated for 10 seconds in order to get fresh culture into the cuvette. Then, we wait for 3 seconds in order to let possible bubbles float up. In the next step, we do the dark value measurement with the LED switched off, followed by 8 sequential measurements with the LED turned on. The raw sensor value represents the difference between the dark value and the mean of all light values.",
+  "why_it_works": "The measurement cycle as a timed sequence, with the reason for each wait given inline: ten seconds to replace the culture, three for bubbles to clear, a dark reading, then eight lit readings, and the arithmetic that turns them into one value.",
+  "teaches": [
+   "method",
+   "reproducibility",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-ethz-02",
+  "prize": "hardware",
+  "team": "ETH Zurich",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:ETH_Zurich/core/hardware",
+  "section": "Dry Test",
+  "function": "evidence-with-numbers",
+  "text": "The temperature control loop was working fine, but we observed that the temperature was rising and falling very slowly, especially far from the ambient temperature. This was mainly caused by the limited heat transport power (TEC1-12705, ~50W) of the thermoelectric peltier element. Therefore, we replaced it with a more powerful thermoelectric peltier element, the TEC1-12715 with a heat transport power of roughly 140 Watts.",
+  "why_it_works": "A failure told as symptom, measured cause and fix, where the cause is a component spec and the fix is a part number with a bigger number attached. The reader can check the diagnosis.",
+  "teaches": [
+   "evidence",
+   "honesty",
+   "method"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-ethz-03",
+  "prize": "hardware",
+  "team": "ETH Zurich",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:ETH_Zurich/core/hardware",
+  "section": "Dry Test",
+  "function": "limitation",
+  "text": "The online optical density flow-through cuvettes were all leaking after some time of use. Increasing the silicone fillings viscosity by mixing in starch helped first, but turned out to be a temporary solution only. We therefore created a custom lid for the cuvette, which we printed on our 3D printer. By glueing it into the cuvette, we didn't have any more leakage issues.",
+  "why_it_works": "Reports the fix that only appeared to work and says it was temporary, before giving the one that held. Keeping the failed intermediate step is what stops another team repeating it.",
+  "teaches": [
+   "honesty",
+   "limitation",
+   "reproducibility"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-ethz-04",
+  "prize": "hardware",
+  "team": "ETH Zurich",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:ETH_Zurich/core/hardware",
+  "section": "Decontamination",
+  "function": "other",
+  "text": "We constructed the device in a way that all components in contact with the biological material are disassemblable and either autoclavable or easily replaced and thus disposable as autoclave waste. The reactor containers are lab-grade Erlenmeyer flasks. The free tubes as well as those within the peristaltic pumps consist of autoclavable silicone and can easily be removed from the peristaltic pumps.",
+  "why_it_works": "Makes the containment claim an argument about construction rather than a promise: every part touching culture is either removable and autoclavable or disposable, and the page says which parts those are.",
+  "teaches": [
+   "safety",
+   "evidence",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-humboldt-01",
+  "prize": "hardware",
+  "team": "Humboldt Berlin",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:Humboldt_Berlin/Hardware",
+  "section": "Introduction",
+  "function": "page-opening",
+  "text": "The openPBR is a low-cost, easy to assemble and reliable option to cultivate phototrophic organisms. We have developed it as an open-source platform to operate as you need it. It comes in several setups, from nine cultivation vessels to three flat panels with a minimum width of 15 mm and up to a volume of 190 ml. It provides users with the ability to measure optical density at wavelengths from 400 nm to 800 nm, online and provides a .csv file output. All parts are openly available and even gas supply is exactly adjustable through a rotameter, depending on the needs of your organism and setup. We want to offer scientists a simple and versatile cultivation platform.",
+  "why_it_works": "The opening doubles as a specification sheet: configurations, vessel widths, volumes, wavelength range, output format. A reader can decide in one paragraph whether this instrument fits their organism.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "reproducibility"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-humboldt-02",
+  "prize": "hardware",
+  "team": "Humboldt Berlin",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:Humboldt_Berlin/Hardware",
+  "section": "Calibration",
+  "function": "validation",
+  "text": "After calibration, we measured other random samples both with our reference photometer (Expected OD) and with the openPBR (Figure 2). We also plotted the “ideal correlation”, meaning expected value = measured value, in order to get an idea of how good the openPBR measurements were.",
+  "why_it_works": "Validation is separated from calibration: fresh samples, not the ones the fit was built from, and an identity line plotted so the reader can see the deviation rather than be told about it.",
+  "teaches": [
+   "validation",
+   "evidence",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-humboldt-03",
+  "prize": "hardware",
+  "team": "Humboldt Berlin",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:Humboldt_Berlin/Hardware",
+  "section": "Calibration",
+  "function": "limitation",
+  "text": "From this we can conclude that, while the openPBR measurements between OD = 0 and OD = 1 are quite reliable, further calibrating points are needed in order to improve the range beyond OD = 1.",
+  "why_it_works": "Converts the validation plot into a working range and says what would extend it. The limit is given as a number a user can respect, not as a general caution.",
+  "teaches": [
+   "limitation",
+   "honesty",
+   "uncertainty"
+  ]
+ },
+ {
+  "id": "hwp-bioreactor-2019-humboldt-04",
+  "prize": "hardware",
+  "team": "Humboldt Berlin",
+  "year": 2019,
+  "track": "OG",
+  "url": "https://2019.igem.org/Team:Humboldt_Berlin/Hardware",
+  "section": "Pricing",
+  "function": "evidence-with-numbers",
+  "text": "Since we are a non-profit team of our own, we know that financing is one of the limiting and most problematic challenges of this contest. So it was important to us, that every iGEM team who wants to continue our project ,or any new project using a phototrophic organism, has a low-price but efficient way to fulfill their great ideas. For only 588 € it is possible to rebuild our bioreactor that offers many opportunities to design a set-up tailored to the needs of innovative projects.",
+  "why_it_works": "Gives the reason for publishing a price before the price: other iGEM teams are short of money. The total is a single figure a team can check against its budget.",
+  "teaches": [
+   "reuse",
+   "audience-framing",
+   "evidence"
+  ]
+ }
+]

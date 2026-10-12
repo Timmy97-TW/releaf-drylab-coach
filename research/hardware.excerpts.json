@@ -1,0 +1,478 @@
+[
+ {
+  "id": "hardware-2023-OG-evry-01",
+  "prize": "hardware",
+  "team": "Evry-Paris-Saclay",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+  "section": "Hardware",
+  "function": "reuse",
+  "text": "Our primary objective was not only to support our project but also to ensure our hardware designs were well-documented. This would allow easy replication and use by the broader community. Our commitment to this philosophy influenced our choices throughout, including the selection of components and the extensive use of 3D printed parts.",
+  "why_it_works": "The need for the hardware and the promise to document it arrive in the same breath, before any device is described. Replication is named as a design constraint that drove component choice, not as an afterthought.",
+  "teaches": [
+   "reuse",
+   "structure",
+   "audience"
+  ]
+ },
+ {
+  "id": "hardware-2023-OG-evry-02",
+  "prize": "hardware",
+  "team": "Evry-Paris-Saclay",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+  "section": "96-well microplates lighter",
+  "function": "limitation",
+  "text": "Our initial prototype had an array of white LEDs (Figure 1). The control system, powered by an Arduino microcontroller, could dim these LEDs collectively. We initially aimed to control each of the 96 LEDs in the matrix individually through multiplexing. By rapidly \"scanning\" each LED position between 200-9000Hz, we hoped the entire matrix would seem lit at once, given that the human eye can typically only detect up to about 100Hz. By varying the duration each LED was on, we also intended to control individual LED intensities. However, this method wasn't as effective as we'd hoped. Since only one LED lit up at a time, the maximum intensity of each LED was effectively reduced by a factor of 96.",
+  "why_it_works": "A plan is described in full, then killed by one number: multiplexing cut each LED to a ninety-sixth of its intensity. The reader learns the physics of the failure, so the fix that follows is understandable rather than arbitrary.",
+  "teaches": [
+   "honesty",
+   "evidence",
+   "structure"
+  ]
+ },
+ {
+  "id": "hardware-2023-OG-evry-03",
+  "prize": "hardware",
+  "team": "Evry-Paris-Saclay",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+  "section": "96-well microplates lighter",
+  "function": "evidence-with-numbers",
+  "text": "The LED matrix was powered column-wise and consisted of 8 rows and 12 columns. This meant a total power requirement of 12 x 350mA = 4.2A and 8 x 2.82V = 22.56V. To power our setup, we used a transformer to convert standard 220V AC from a wall socket to 24V DC. Meanwhile, the microcontroller and other control components ran on 12V DC, which we derived using a buck converter.",
+  "why_it_works": "The power budget is shown as arithmetic a reader can check, and every supply rail is accounted for. Two multiplications are what make the claim that this needed a custom control system credible.",
+  "teaches": [
+   "evidence",
+   "reproducibility",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2023-OG-evry-04",
+  "prize": "hardware",
+  "team": "Evry-Paris-Saclay",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+  "section": "Lux Sensor",
+  "function": "section-intro",
+  "text": "Given the need to calibrate our light illuminator and to enhance the precision of our protocols, combined with a tight budget, we decided to create our own light intensity (lux) detector (Figure 5). This decision was particularly valuable for our optogenetic project, as acquiring a professional probe spectrometer wasn't feasible within our experimental timeline.",
+  "why_it_works": "A second device is justified in one sentence by the first device's need: the illuminator had to be calibrated and a commercial probe was out of budget. The constraint is stated plainly instead of being hidden.",
+  "teaches": [
+   "structure",
+   "clarity",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hardware-2023-OG-evry-05",
+  "prize": "hardware",
+  "team": "Evry-Paris-Saclay",
+  "year": 2023,
+  "track": "OG",
+  "url": "https://2023.igem.wiki/evry-paris-saclay/hardware",
+  "section": "Digital microfluidics lab automation platform",
+  "function": "method",
+  "text": "However, as we delved deeper into the project, we realized that automation could be beneficial beyond just the screening phase. It could streamline various other protocols integral to our work. We initially considered high-throughput solutions, particularly robotic liquid handlers. But given our budget, performance needs, and tight timelines, we decided against it.",
+  "why_it_works": "The rejected alternative is named, costed in three words (budget, performance, timelines) and dropped, then the next alternative is narrowed the same way. A chain of two rejections is what makes the final choice look reasoned.",
+  "teaches": [
+   "structure",
+   "decisions",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2024-UG-ubc-01",
+  "prize": "hardware",
+  "team": "UBC-Vancouver",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/",
+  "section": "Testing Mk. 1",
+  "function": "evidence-with-numbers",
+  "text": "To ensure proper bubbling in our bioreactor, we adjusted the current and voltage to the DC motor using a power supply until it produced the desired bubbling rate (2 / sec). However, we realized that these metrics changed depending on the depth of the tubing. We decided to set a standard metric at 100 mL below surface level and found that 9 V and 0.9 A produced the desired bubbling rate. With this test, we were able to establish that a 9V battery would be a sufficient power source for mark 1.",
+  "why_it_works": "A target is set (two bubbles per second), the measurement is found to depend on tubing depth, so a standard depth is fixed and only then is the working voltage and current reported. Defining the condition is what makes the number repeatable.",
+  "teaches": [
+   "reproducibility",
+   "evidence",
+   "measurement"
+  ]
+ },
+ {
+  "id": "hardware-2024-UG-ubc-02",
+  "prize": "hardware",
+  "team": "UBC-Vancouver",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/",
+  "section": "Lessons Learned from Mk.1 (Internally)",
+  "function": "limitation",
+  "text": "Considering the time we spent using a Dremel tool to sand parts down, it would probably be worth our while in the future to add tolerances and extra space to our parts due to 3D printer error that can cause abrasiveness between moving parts or prints that have fits to them.",
+  "why_it_works": "A build annoyance is turned into a transferable design rule: add tolerance for printer error on parts that have to fit or move. The lesson is stated as what they would do next time, not as an excuse.",
+  "teaches": [
+   "honesty",
+   "reuse",
+   "decisions"
+  ]
+ },
+ {
+  "id": "hardware-2024-UG-ubc-03",
+  "prize": "hardware",
+  "team": "UBC-Vancouver",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/",
+  "section": "Learning through iHP Integration & User Feedback",
+  "function": "audience-framing",
+  "text": "We attempted to gain user feedback on Mk.1 from local collaborators that were external to our team. To begin, we took our bioreactor to the Biomedical Research Facility at UBC with our iHP contact Maggie Chopra, we identified four key areas of progression that future work can target:",
+  "why_it_works": "User testing is written as an event with a place, a named contact outside the team, and a count of what came back. The four areas are then listed as problems with the device, not as compliments.",
+  "teaches": [
+   "user testing",
+   "honesty",
+   "structure"
+  ]
+ },
+ {
+  "id": "hardware-2024-UG-ubc-04",
+  "prize": "hardware",
+  "team": "UBC-Vancouver",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/",
+  "section": "Pressure Relief Valve",
+  "function": "loop-closing",
+  "text": "Taking from experiences on Mark 1, internal pressure relief is an important part of being able to inflow and outflow reagents and substances. This provides a passive filtered-air inflow and outflow which could help heat and cool the bioreactor depending on its location.",
+  "why_it_works": "A feature is introduced by the earlier prototype that forced it. One clause ties the pressure relief valve back to a problem the reader has already been told about, which is what makes an iteration read as learning.",
+  "teaches": [
+   "user testing",
+   "structure",
+   "decisions"
+  ]
+ },
+ {
+  "id": "hardware-2024-UG-ubc-05",
+  "prize": "hardware",
+  "team": "UBC-Vancouver",
+  "year": 2024,
+  "track": "UG",
+  "url": "https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/",
+  "section": "Learning through iHP Integration & User Feedback",
+  "function": "audience-framing",
+  "text": "Once again, we incorporated iHP feedback from two external stakeholders, Ahmed Kabil & Taehyeon Kim from the Kelly McNagny Lab. These are both senior PhD Candidates exploring Immunology & Stem Cell Biology at UBC. They provided valuable insights into the potential applications and limitations of our bioreactors in their immunological research, and made design suggestions that would allow the bioreactors to potentially be used for Mammalian cells.",
+  "why_it_works": "The testers are named, their expertise is stated, and what their expertise bought is specific: suggestions for extending the reactor to mammalian cells. Credentials are given because they explain why this feedback was worth acting on.",
+  "teaches": [
+   "user testing",
+   "audience",
+   "evidence"
+  ]
+ },
+ {
+  "id": "hardware-2024-OG-aachen-01",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/aachen/hardware",
+  "section": "Affordable Personalized Cancer Care",
+  "function": "page-opening",
+  "text": "Our project directly addresses these challenges by developing a microfluidic chip system - CRC-on-a-Chip - where human HT-29 colorectal cancer cells are cultured, along with the MAIK measurement system. Designed as a rapid test, this concept offers a low-cost and accessible alternative for quickly assessing therapy effectiveness on patient-specific tumor samples. By providing a simple and affordable solution, it has the potential to bring personalized medicine to resource-limited settings, where traditional diagnostics are often out of reach.",
+  "why_it_works": "The opening names the need, the device, and who it is for in three sentences, and the words that matter are low-cost, rapid and resource-limited settings. The reader knows what problem the hardware solves before any component appears.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "audience"
+  ]
+ },
+ {
+  "id": "hardware-2024-OG-aachen-02",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/aachen/hardware",
+  "section": "What is MAIK?",
+  "function": "reuse",
+  "text": "MAIK is a flexible, easily customizable measurement system designed for colorimetric applications. It consists of a tailor-made casing that securely houses sensors, LEDs, and your sample to ensure accurate and reproducible measurements. Whether you’re working in synthetic biology, chemistry, or physics, MAIK provides you with the tools to make your experiments more efficient and precise.",
+  "why_it_works": "The device is described to a stranger who might build it, in the second person: your sample, your experiments. Naming three fields it suits is a concrete claim of usefulness beyond the project.",
+  "teaches": [
+   "reuse",
+   "audience",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2024-OG-aachen-03",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/aachen/hardware",
+  "section": "Results",
+  "function": "limitation",
+  "text": "In addition to Ponceau S, we also measured Resazurin. While the results were not as optimal as those obtained with Ponceau S, the calibration curve for Resazurin still provided usable data. Although the sensitivity and accuracy of the Resazurin measurements were slightly lower, our system remains effective for applications involving this dye. Importantly, we were still able to collect and analyze samples with Resazurin, yielding results that, while not as precise, were sufficient for interpretation and further experimentation.",
+  "why_it_works": "A second, worse result is reported rather than dropped, and the degradation is graded: less optimal, slightly lower sensitivity, still usable. The reader is told how much worse, and what it is still good for.",
+  "teaches": [
+   "honesty",
+   "evidence",
+   "uncertainty"
+  ]
+ },
+ {
+  "id": "hardware-2024-OG-aachen-04",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/aachen/hardware",
+  "section": "Cost Estimation of MAIK",
+  "function": "evidence-with-numbers",
+  "text": "Depending on the 3D printing material used, MAIK can be even cheaper in terms of material costs, as can be seen in Table 1. It can also be stated that MAIK is generally an inexpensive measuring unit in which simple color measurements can be carried out with sufficient accuracy.",
+  "why_it_works": "The cost conclusion is tied to the table above it and to a choice the reader controls, the print material. A cost claim that names the variable behind it is one another team can reproduce.",
+  "teaches": [
+   "evidence",
+   "reuse",
+   "reproducibility"
+  ]
+ },
+ {
+  "id": "hardware-2024-OG-aachen-05",
+  "prize": "hardware",
+  "team": "Aachen",
+  "year": 2024,
+  "track": "OG",
+  "url": "https://2024.igem.wiki/aachen/hardware",
+  "section": "Results of Cultivating Cells on the Chips",
+  "function": "method",
+  "text": "In order to possibly improve the adhesion of the cells, a slide coated with PDMS was used as the underside of the chip in one of the interaction cycles instead of a plain glass slide. As there was no clear improvement in the adhesion of the cell to PDMS under the microscope compared to glass (see Figure 4), we stayed with the simple glass slide for cost reasons.",
+  "why_it_works": "An attempted improvement that did not work is reported in two sentences, with the reason for reverting given as cost rather than as failure. Naming the alternative and why it lost is more convincing than only showing the winner.",
+  "teaches": [
+   "honesty",
+   "decisions",
+   "evidence"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-01",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Best Undergraduate Hardware 2025",
+  "function": "page-opening",
+  "text": "The Product Development Subteam has designed and built the Adaptive Reaction Chamber (ARC) bioreactor family tailored for two coculture model organisms: E. coli and Synechococcus. To accommodate the diverse requirements of these microbes, the bioreactor features a fully modular assembly. This design not only provides an ideal deployment platform for the PRoSPER project but also serves as a comprehensive benchtop bioreactor solution synthetic biology community.",
+  "why_it_works": "The first sentence says what was built, for which two organisms, and what makes it unusual. The second claim, that it also serves as a benchtop reactor for the wider community, is the ballot's usefulness question answered in the opening.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "reuse"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-02",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Best Undergraduate Hardware 2025",
+  "function": "audience-framing",
+  "text": "In response to the specific needs of the PRoSPER project and the broader demands of synthetic biology bioreactor applications, we integrated a key interview with Dr. Hans Carlson and independently designed and fabricated the following variants of the ARC bioreactor family.",
+  "why_it_works": "One named interview is credited as an input to the design in the sentence that introduces the variants. It is thin as user testing goes, but it names a person and places the conversation before the build.",
+  "teaches": [
+   "user testing",
+   "structure",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-03",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Build for PRoSPER - and for your own ideas",
+  "function": "method",
+  "text": "The top section of the reactor is CNC-machined from aluminum alloy and equipped with four stainless steel hose barbs. The combination of stainless steel, aluminum alloy, and internal silicone tubing makes the entire assembly autoclavable. Based on this, we designed a dedicated autoclave configuration, which allows the sterilized components to be assembled later with non-autoclavable parts. This ensure a rigorous and contamination-free sterile workflow.",
+  "why_it_works": "Material choices are listed and then justified by one consequence: the assembly can be autoclaved. The sterile workflow that follows is a design decision about where the instrument stops and the biology begins.",
+  "teaches": [
+   "decisions",
+   "reproducibility",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-04",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Build for PRoSPER - and for your own ideas",
+  "function": "evidence-with-numbers",
+  "text": "Each COB LED module is equipped with a 12V 16W COB LED panel capable of delivering up to 1000 lumens of brightness. At the working distance within ARC, a single panel can provide up to 37 klux of brightness, which is more than sufficient to support Synechococcus which requires 3000 lux. In the final tests, only 20% brightness was needed to achieve optimal illumination with 2 modules.",
+  "why_it_works": "Three numbers in order: what the part can deliver, what the organism needs, and what was actually used. Stating the requirement next to the capability turns a specification into evidence of fitness.",
+  "teaches": [
+   "evidence",
+   "measurement",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-05",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Build for PRoSPER - and for your own ideas",
+  "function": "uncertainty",
+  "text": "The prices listed above are for reference only. For example, the CNC-machined Top Mount refers to the ARC-B version; other versions would be less expensive, as the CNC machining of the biofilm carrier slots in ARC-B involves higher complexity and precision.",
+  "why_it_works": "The bill of materials is immediately qualified: these prices are for one variant, and another would be cheaper for a named reason. A costed parts list with its own caveat is more useful than a single headline figure.",
+  "teaches": [
+   "uncertainty",
+   "reproducibility",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hardware-2025-UG-cornell-06",
+  "prize": "hardware",
+  "team": "Cornell",
+  "year": 2025,
+  "track": "UG",
+  "url": "https://2025.igem.wiki/cornell/hardware",
+  "section": "Build for PRoSPER - and for your own ideas",
+  "function": "reuse",
+  "text": "Meanwhile, we also prepared a general operating manual containing detailed assembly guidelines and operation guidelines. It contains detailed descriptions of the precautions in operation, the assembly of autoclave configuration, and the specific structural differences among different variants.",
+  "why_it_works": "The deliverable another team needs is named and its contents are itemised: assembly, operation, precautions, and the differences between variants. One sentence tells the reader the manual exists and what is in it.",
+  "teaches": [
+   "reuse",
+   "reproducibility",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-01",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "Motivation",
+  "function": "page-opening",
+  "text": "Microgravity significantly alters cellular growth, mobility, gene expression and biofilm formation [1, 2]. As parabolic flights are too short for long biological experiments and launches are expensive and limited, random positioning machines (RPMs) are used to simulate microgravity for an extended time in the lab. However, as commercial RPMs cost around 8.000$-50.000$ [3] they are inaccessible to many student labs and iGEM teams. Luckily, there are existing DIY solutions [3]; We discovered two GitLab projects describing DIY RPMs with a protocol and STL-data for printing (by Wahab Kawafi and Core Electronics). However, neither was validated to prove real microgravity simulation, and most published RPMs are either too expensive or described in overly complex, inaccessible papers [4].",
+  "why_it_works": "The need is built in four moves: why microgravity matters, why existing methods fail, what commercial kit costs, and what the two existing DIY designs still lack. The gap the project fills is the last clause, that neither was validated.",
+  "teaches": [
+   "clarity",
+   "structure",
+   "evidence"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-02",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "Motivation",
+  "function": "assumption",
+  "text": "The assumptions are that (i) the reorientation is fast enough to prevent sedimentation, (ii) slow enough to avoid centrifugal or shear artifacts, (iii) all orientations are sampled uniformly. Under these conditions, the RPM provides a functional microgravity environment without eliminating gravity itself, but by neutralizing its directional bias. Under these conditions, the RPM mimics the loss of a fixed gravity direction, reducing sedimentation and convection in small samples. However, gravity’s magnitude is unchanged, so hydrostatic pressure and weight remain, thus the machine cannot reproduce the true freefall environment of orbital microgravity [3, 5].",
+  "why_it_works": "Three assumptions are numbered, then the consequence of their holding is stated, then the limit is drawn: gravity's magnitude is unchanged, so this is not orbital freefall. The device's claim is bounded by its own author.",
+  "teaches": [
+   "assumptions",
+   "honesty",
+   "clarity"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-03",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "Validation in silico of µg with an accelerometer",
+  "function": "validation",
+  "text": "As written in the protocol with the usage of a mobile phone's IMU (lsm6dso from STMicro) and the app phyphox we were able to verify that the average effective gravity is in the range of microgravity, precisely between 0,028-0,070 g as depicted in Figure 5. By adjusting the motor steps per min (i.e. feedrate), it is also possible to modularly simulate different gravitational forces such as Martian gravity.",
+  "why_it_works": "The instrument is validated against a measurement with a named sensor, a named app and a numeric range, and the same knob is then shown to reach a different gravity level. A built-it claim becomes a measured one.",
+  "teaches": [
+   "validation",
+   "evidence",
+   "measurement"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-04",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "Discussion",
+  "function": "validation",
+  "text": "To test whether this difference was noticeable, several team members, without prior knowledge of which tube had been rotated, were asked to identify the RPM sample. Everyone could correctly recognize it.",
+  "why_it_works": "A qualitative effect is made into a test by removing the testers' knowledge of which sample was which. Two sentences convert a picture into evidence, and the design of the check is what does it.",
+  "teaches": [
+   "validation",
+   "evidence",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-05",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "User insight and usage",
+  "function": "audience-framing",
+  "text": "We demonstrated the Random Positioning Machine (RPM) to team members Eva Schätzlein and David Sipos, who expressed great interest in using it for ground-based experiments simulating microgravity. They provided several valuable technical remarks and suggestions for further optimization:",
+  "why_it_works": "Outside researchers are named, their project and their interest are stated, and the feedback that follows is a list of four concrete technical limits of the device. This is what user testing looks like when the users are the people who would run it.",
+  "teaches": [
+   "user testing",
+   "audience",
+   "honesty"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-06",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "OD Measurement",
+  "function": "limitation",
+  "text": "To accurately monitor the cell density of Bacillus subtilis culture, we developed a DIY optical density (OD) sensor. It uses an orange LED (emission spectrum 590–625 nm) and a photodiode to measure the turbidity of the liquid culture. We successfully built a working circuit for the optical sensor, but could not test or integrate it into the bioreactor within the project timeframe.",
+  "why_it_works": "A component is described with its part-level detail and then reported unfinished in the same paragraph: built, but neither tested nor integrated in time. The admission sits with the thing it concerns rather than in a future-work list.",
+  "teaches": [
+   "honesty",
+   "structure",
+   "limitations"
+  ]
+ },
+ {
+  "id": "hardware-2025-OG-tudarmstadt-07",
+  "prize": "hardware",
+  "team": "TUDarmstadt",
+  "year": 2025,
+  "track": "OG",
+  "url": "https://2025.igem.wiki/tudarmstadt/hardware",
+  "section": "Culture test:",
+  "function": "evidence-with-numbers",
+  "text": "In order to find out whether our DIY-bioreactor was able to support life we filled it with ~1.7 L LB Media and inoculated it with a 10 ml liquid culture of wild-type Bacillus subtilis 168. Growth progression was documented after 24 hours. Comparing the media after inoculation and 24 hours later, it is recognizable that it turned turbid after 24 hours caused by bacterial growth inside the bioreactor.",
+  "why_it_works": "The functional test is a culture: volume, inoculum, strain, time and the observation that settles it. The instrument is shown to do the one thing it exists for, with enough numbers to run it again.",
+  "teaches": [
+   "evidence",
+   "validation",
+   "reproducibility"
+  ]
+ }
+]

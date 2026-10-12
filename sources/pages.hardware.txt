@@ -1,0 +1,7 @@
+hardware-2025-UG-cornell https://2025.igem.wiki/cornell/hardware
+hardware-2025-OG-tudarmstadt https://2025.igem.wiki/tudarmstadt/hardware
+hardware-2024-UG-ubc-vancouver https://2024.igem.wiki/ubc-vancouver/hardware
+hardware-2024-UG-ubc-vancouver-bioreactor https://2024.igem.wiki/ubc-vancouver/hardware/bioreactor/
+hardware-2024-UG-ubc-vancouver-pump https://2024.igem.wiki/ubc-vancouver/hardware/microfluidic-pump/
+hardware-2024-OG-aachen https://2024.igem.wiki/aachen/hardware
+hardware-2023-OG-evry-paris-saclay https://2023.igem.wiki/evry-paris-saclay/hardware
