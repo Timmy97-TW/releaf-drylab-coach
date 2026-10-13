@@ -1,12 +1,12 @@
 {
- "wiki": "387d5e4 2026-10-13 Digital Twin: a fifth shorter, field sensors moved up, and the October run taken out",
+ "wiki": "0a3583e 2026-10-13 Digital Twin at three quarters of its length; one cuvette path across the wiki",
  "pages": {
   "model": {
    "notes": 63,
    "broken": []
   },
   "software": {
-   "notes": 52,
+   "notes": 42,
    "broken": []
   },
   "protein-design": {
@@ -26,11 +26,11 @@
    "broken": []
   },
   "hardware/bioreactor": {
-   "notes": 65,
+   "notes": 64,
    "broken": []
   },
   "hardware/photometer": {
-   "notes": 69,
+   "notes": 68,
    "broken": []
   },
   "hardware/diopal": {

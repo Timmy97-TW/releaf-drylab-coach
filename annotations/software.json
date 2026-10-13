@@ -1,57 +1,56 @@
 {
  "page": "software",
  "summary": {
-  "verdict": "The page is much closer to a winner's page than it was on 12 October. It is about a fifth shorter, the results run in a clear order, and four things the first review said a Best Software judge could not find are now on it: what the three programs are, how to run the rig app, what the log contains and what licence the code carries. On validation it was already past the winners we read and it still is, with a baseline detector, a walk-forward forecast, a leave-one-arm-out table and a forecast fixed by hash. Three things hold it back now. The code has no address a judge can clone and the iGEM GitLab mirror is still a promise, which is an eligibility matter. Several sentences claim more than the result beneath them shows, such as a plate that \"works as a scale-down model of the reactor\" before any reactor test. And thirteen notes below are marked mistake, each quoting this page against itself or against another ReLEAF page, the cuvette path length first among them. By a rough count of the live HTML about two thirds of the words are the instructor's; the students' own sentences are mostly in R2 to R6, and that is where the praise below sits.",
+  "verdict": "The page is much closer to a winner's page than it was on 12 October. It is about a quarter shorter at roughly 6,230 words, it runs in six sections, and four things the first review said a Best Software judge could not find are on it: what the three programs are, how to run the rig app, what the log contains and what licence the code carries. Most of the contradictions found in the last round are fixed, including the cuvette path, run 1's readings and the plate prior, which now says \"whether it transfers to the reactor has not been tested\". On validation it is still ahead of the winners we read, with a baseline detector, a walk-forward forecast and a leave-one-arm-out table. Two things hold it back. The code has no address a judge can clone and the iGEM GitLab mirror is still a promise, which is an eligibility matter. And the protocols are unfinished: the TiO2 run, the pressure sweep and the trust layer's score cannot yet be repeated from the page. By a rough count of the live HTML about two thirds of the words are the instructor's; the students' own sentences are mostly in R2 to R6, and that is where the praise below sits.",
   "strengths": [
    "An argument in one sentence. \"Without manual sampling, the reactor's own instruments are the only record of the batch, and they drift as they wear\" sets up everything after it, and it is a student sentence.",
    "Validation against something. R3 scores the trust layer against a plain step detector on the same data, R5 scores the Kalman filter against persistence at four horizons with a walk-forward rule stated in one line, and R6 holds out each light arm in turn. No winning software page we read compares its tool to a simpler method.",
-   "A prediction registered before the experiment, with its hash, its pass criteria in a table, and the promise that the score goes in whichever way it falls.",
    "Measurement reporting in the newest sections. R4 gives its sites, runs, interval and 540 paired readings before any result and reports the wetness channel as untested. The silica repeat gives a protocol in one sentence and a dilute-and-restore check with SD and n at each level.",
-   "Limits placed beside the results they limit. R5 says it \"forecasts the photometer reading, not biomass\" directly under its table, R3 says it has been shown \"on one run with one event of each kind\", and the page applies its own definition to itself and calls the system a digital shadow."
+   "Limits placed beside the results they limit. R5 says it \"forecasts the photometer reading, not biomass\" directly under its table, R3 says it has been shown \"on one run with one event of each kind\", R6 says the transfer to the reactor has not been tested, and the page applies its own definition to itself and calls the system a digital shadow."
   ],
   "priorities": [
-   "Put the code where a judge can get it. Make the iGEM GitLab mirror live and print its full address in the abstract, in section 5 and in section 7. Then name the script, the log and the command behind the trust layer, so \"the 434 h batch comes with it as a test case\" is something a reader can run.",
-   "Settle the facts that disagree before the freeze. The cuvette is 2 mm here and on Measurement, and 0.2 mm on both Hardware pages and Contribution. Run 1's reactor readings differ between the table and the fold beside it. R2 and section 7 disagree about which instrument is the less linear. The plate-reader well is 150 µL here and 100 µL on Measurement. Fibre-break detection is unbuilt here and running on Safety. The photometer is \"Calibrated\" in this ledger and \"uncalibrated\" in Measurement's.",
-   "Narrow five claims to what was shown. The plate prior has been tested on plate arms only. Green light cost no growth, and induction has no blot behind it. \"1.2 to 1.9 °C\" leaves out the room site. The limit that ends \"the cost is time, not yield\" compares plateaus the page has no common scale for. The introduction describes in the present tense a twin that section 6 says is not yet built.",
-   "Finish the protocols. The TiO2 run still lacks its step size, its liquid, its blank and its wait. R1 lacks the hold time per pump setting. R3 never says what the score on either axis is. The photometer has a ceiling and no stated floor, on a page where two runs start near zero.",
+   "Put the code where a judge can get it. Make the iGEM GitLab mirror live and print its full address in the abstract, in section 4 and in section 6. Then name the script, the log and the command behind the trust layer, so \"the 434 h batch comes with it as a test case\" is something a reader can run.",
+   "Finish the protocols. The TiO2 run still lacks its step size, its liquid, its blank and its wait. R1 lacks the hold time per pump setting. R3 never says what the score on either axis is, or when the 120-hour window was chosen. The photometer has a ceiling and no stated floor, on a page where two runs start near zero.",
+   "Settle the two facts that still disagree across pages. R2 says the photometer's \"response per milligram falls\" while Measurement says \"the BioDrop is slightly less linear than our own photometer\". The containment bullet says a broken fibre \"shows up\" in trans-membrane pressure, the limits say that pressure is \"below transducer resolution at the operating point\", and Safety says monitoring \"ensures early detection\".",
+   "Give the reader what stands behind four sentences that stay as written. Say which sites \"1.2 to 1.9 °C\" covers, what \"28 times slower\" is measured against, that expression in the green arms was not confirmed, and that the introduction describes a design. Put \"replayed\" in the trust layer's ledger row and OD in place of \"biomass\" in the plate prior's.",
    "Help a judge use the software. Add a numbered walkthrough for one interface and a figure of the three parts, say who wrote the rewrite and the analysis scripts, and report whether anyone outside the dry lab has run any of it."
   ],
   "ballot": [
    {
     "question": "How well is the software compatible with, and does it leverage, existing synthetic biology standards? (e.g. SBOL, other RFCs, data formats, etc.)",
     "status": "partial",
-    "where": "2 What the reactor measures now; 5 What survives which failure",
-    "note": "The page now says the log is plain CSV with a fixed 73-column header and follows no standard such as SBOL, and it names 26 of the columns; the six provenance tags are labels on the page and only temperature carries its source in the log."
+    "where": "2 What the reactor measures now; 4 What survives which failure",
+    "note": "The page says the log is plain CSV with a fixed 73-column header and follows no standard such as SBOL, and it names 26 of the columns; the six provenance tags are labels on the page and only temperature carries its source in the log."
    },
    {
     "question": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
     "status": "strong",
-    "where": "3 Results (R3, R5, R6) and 4 Registered forecast",
-    "note": "A baseline detector, a walk-forward comparison, a leave-one-arm-out table and a hash-registered forecast are ahead of the winners we read, with two caveats: each rests on one run or one plate, and the forecast is not yet scored."
+    "where": "3 Results (R3, R5, R6)",
+    "note": "A baseline detector, a walk-forward comparison and a leave-one-arm-out table are ahead of the winners we read, with two caveats: each rests on one run or one plate, and the trust layer's score and window are not yet defined on the page."
    },
    {
     "question": "Can the software be useful to other projects?",
     "status": "partial",
-    "where": "7 For other teams",
+    "where": "6 For other teams",
     "note": "Seven transferable methods are offered and one comes with a dataset, but no file, script or command is named and no user outside the team is reported."
    },
    {
     "question": "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)",
     "status": "partial",
-    "where": "7 For other teams (serial protocol); 5 What survives which failure (log)",
-    "note": "Two lines of the serial protocol and the log's column groups are now shown; the protocol belongs to the rewrite, which has measured nothing, and its fields carry no names or units."
+    "where": "6 For other teams (serial protocol); 4 What survives which failure (log)",
+    "note": "Two lines of the serial protocol and the log's column groups are shown; the protocol belongs to the rewrite, which has measured nothing, and its fields carry no names or units."
    },
    {
     "question": "Is the software user-friendly?",
     "status": "partial",
-    "where": "5 The software that runs the reactor",
+    "where": "4 The software that runs the reactor",
     "note": "Two live embeds, an English and Traditional Chinese interface and a normal range behind every information mark, against no walkthrough of either interface and no account of anyone else using it."
    },
    {
     "question": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)",
     "status": "partial",
-    "where": "5 The software that runs the reactor",
-    "note": "A three-part description with file names, a run route and a Licence card are new; still missing are a clone address, the live GitLab mirror, an architecture figure, an English README and any description of tests."
+    "where": "4 The software that runs the reactor",
+    "note": "A three-part description with file names, a run route and a Licence card are there; still missing are a clone address, the live GitLab mirror, an architecture figure, an English README and any description of tests."
    },
    {
     "question": "Could the measurement(s) be reproduced by other iGEM teams?",
@@ -63,30 +62,29 @@
     "question": "Are the methods or protocols described well?",
     "status": "partial",
     "where": "R2 The silica repeat; R4",
-    "note": "Two sections read as protocols and the TiO2 run now carries its doses and volume, but the page's first calibration is still half a protocol."
+    "note": "Two sections read as protocols and the TiO2 run carries its doses and volume, but the page's first calibration is still half a protocol."
    },
    {
     "question": "Could it be useful to other projects?",
     "status": "strong",
-    "where": "7 For other teams",
+    "where": "6 For other teams",
     "note": "Give every sensor a companion that cannot see what it measures, shown twice on this page on two different instruments, is the most reusable idea here."
    },
    {
     "question": "Did the team validate and calibrate their measurement process appropriately for their approach?",
     "status": "partial",
     "where": "R2, R3, R4",
-    "note": "Calibration against a known dose, a dilute-and-restore check and a sensor bias reported in the section that uses the sensor are strong; against them stand no lower limit of detection, a cuvette path that differs tenfold between our pages, and two statements about which instrument is less linear."
+    "note": "Calibration against a known dose, a dilute-and-restore check and a sensor bias reported in the section that uses the sensor are strong; against them stand no lower limit of detection and a disagreement with Measurement about which instrument is the less linear."
    }
   ],
   "skeleton": {
    "releaf": [
     "1 Introduction",
     "2 What the reactor measures now",
-    "3 Results (R1 to R6)",
-    "4 Registered forecast",
-    "5 The software that runs the reactor",
-    "6 Gaps and limits",
-    "7 For other teams"
+    "3 Results (Runs, R1 to R6)",
+    "4 The software that runs the reactor",
+    "5 Gaps and limits",
+    "6 For other teams"
    ],
    "winners": [
     "What it is and who needs it",
@@ -99,16 +97,16 @@
     "Limits and future work",
     "Repository, licence, references"
    ],
-   "gap": "Section 5 now carries components, a run route and the log format in prose, which closes most of the gap the first review found. Three winner sections are still absent: a usage section with a numbered walkthrough, an architecture figure, and a repository line with an address. The order also differs. Winners say what the tool is and how to run it before they validate it; here four sections of results come first, so a software judge meets the software at section 5."
+   "gap": "Section 4 carries components, a run route and the log format in prose, which closes most of the gap the first review found. Three winner sections are still absent: a usage section with a numbered walkthrough, an architecture figure, and a repository line with an address. The order also differs. Winners say what the tool is and how to run it before they validate it; here the results come first, so a software judge meets the software at section 4."
   },
   "extras": [
    "BR-01 is never introduced. The abstract opens \"BR-01 has grown B. subtilis four times\" and the introduction says \"Local data from BR-01\". Write \"our perfusion bioreactor, BR-01\" at first use in each.",
    "\"This is the rig as designed.\" sits under a table in a section headed \"What the reactor measures now\". Move it above the table, as you did for the field sensors with \"Today's rig software reads none of these channels.\"",
-   "\"In the log only temperature carries its source, in temp_src; the columns are under What survives which failure.\" The second half points at a fold title three sections away. Write \"the column list is in section 5\".",
+   "\"In the log only temperature carries its source, in temp_src; the columns are under What survives which failure.\" The second half points at a fold title in another section. Write \"the column list is in section 4\".",
    "\"which justifies using the model as a soft sensor for flow\": flow is measured by the turbine meter and tagged in-line, and the soft channels in your table are lumen ΔP, TMP and fouling ratio. The 1.03 agreement is also at one flow, with \"No point was held out.\" Say what the model is used for and where.",
    "\"Axial non-uniformity is 28% against a 20% target\": the term is never defined and the target has no source. Give each a clause.",
    "\"Past OD 1.2 the linear fit's error rises from 0.0235 to 0.1715\" follows \"residual SD 0.024 OD\". Name the error measure, give the number of points, and use one precision for both.",
-   "\"enough time for a controller to drop the faulty feed\": on a perfusion reactor \"feed\" reads as medium. R3's last paragraph has the clearer wording: \"mark OD unreliable and pause forecasts\".",
+   "\"enough time for a controller to drop the faulty feed\": on a perfusion reactor \"feed\" reads as medium. Write \"to stop using the OD reading\".",
    "\"flagged 23% of sensor anomalies and 0.8% of biological shifts\" has no counts behind the percentages, and the table's \"35–36%\" is a range for a single share. Give the denominators.",
    "\"settles kLa (45.7 against 60 h⁻¹)\": neither number has a source on any page, and Biomanufacturing says the culture \"needs a kLa of 12.5 h−1\". Say what 45.7 and 60 are estimates of. \"Neither probe can be autoclaved\" also needs the two probes named, because the channel table says \"None fitted\".",
    "\"The probe is fitted but has not been answering, so the app runs on a typed temperature.\" Every reactor temperature on the page, including \"434 hours at 22 °C\", is therefore a set value. Say so once, in the run table.",
@@ -119,7 +117,7 @@
    "\"Valves move under software control\" in the limits: the channel table has one commanded pinch valve and four Luer valves \"Turned by hand; no actuator yet\". Write \"The pinch valve moves under software control\".",
    "\"Beer–Lambert at scale.\" is the only limit heading that does not say what the limit is. \"Linear range of the photometer\" would.",
    "\"The SHT31 matched the nominal temperature of each site.\" Say where each nominal value comes from, so the reader knows the air probe was checked against something other than itself.",
-   "The key results row \"Reads 1.2 to 1.9 °C warm against the same air; wetness untested\" should follow whatever you decide for the R4 sentence about the room site.",
+   "The key results row \"Reads 1.2 to 1.9 °C warm against the same air; wetness untested\" should name the two sites it covers once the R4 sentence does.",
    "The light array has three names across our pages. This page says \"light-programmable array (LPA)\"; Dry Lab Notebook says \"ran them on DiOPAL in the incubator\" and \"the 19 September OptoLPA ACCD run\". Use one name, or give the others once in brackets.",
    "The live weather source differs from Math Model. This page: \"Open-Meteo, hourly, five days back and three ahead\". Math Model: \"Central Weather Administration (中央氣象署) station data for live use\". If these are two feeds for two jobs, say so on both pages.",
    "Engineering still says the reference channel \"flagged the window as untrustworthy while it was happening\". This page now says \"The alarm was computed afterwards from the log\". This page has it right; ask Engineering to match.",
@@ -175,36 +173,13 @@
   },
   {
    "id": "dt-a14",
-   "type": "mistake",
+   "type": "clarify",
    "anchor": "24 h biomass within 7% on held-out arms",
    "title": "The held-out arms are plate arms",
-   "body": "The row is called Plate-to-reactor prior, and the 7% comes from holding out one light arm of the same plate. Nothing has been carried to the reactor yet; the forecast that tests that is the Pending row below. R2 also says \"every OD on this page is an optical reading\", so \"biomass\" should be OD here.",
+   "body": "The row is called Plate-to-reactor prior, and the 7% comes from holding out one light arm of the same plate. R6 now says it plainly: \"whether it transfers to the reactor has not been tested\". Let the ledger say the same. R2 also says \"every OD on this page is an optical reading\", so \"biomass\" should be OD here.",
    "after": "24 h OD within 7% on held-out arms of one plate; not yet tested on the reactor",
    "excerpts": [],
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-a15",
-   "type": "mistake",
-   "anchor": "Slope 1.018 against the BioDrop to OD 1.2, R² 0.995; both also scored against a known dose",
-   "title": "Calibrated here, uncalibrated on Measurement",
-   "body": "This row's status word is \"Calibrated\". Measurement's ledger describes the same instrument as \"Within 3.8% of a $15,000 BioDrop, uncalibrated, R² = 0.9999\" and its text says \"we treat calibration as unnecessary\". R2 explains the difference in a paragraph, but the two ledgers still use opposite words. Say here whether the 1.018 slope is applied to logged readings, and pick a status word both pages can use.",
-   "after": "Compared with the BioDrop (slope 1.018 to OD 1.2, R² 0.995) and with a known dose; the fit is [applied / not applied] to logged readings",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-a06",
-   "type": "praise",
-   "anchor": "Growth rate and shape fixed by hash before the batch",
-   "title": "The status word in every result row",
-   "body": "Your Key results ledger gives every row a one-word status: Worked, Partial, Calibrated, Bench, Pending. A judge can read the whole claim list in ten seconds and knows which rows to trust. \"Pending\" on a forecast that is not yet scored is the column working as it should. Keep it, and keep Partial and Bench honest when the numbers improve.",
-   "excerpts": [
-    "software-2024-ug-vln-03"
-   ],
-   "excerpt_note": "Vilnius counts four of five planned features shipped and names the one that did not. Your status column does the same job in one word per row.",
    "zone": "abstract"
   },
   {
@@ -234,7 +209,7 @@
    "type": "clarify",
    "anchor": "From these it works out when to switch on green light to start protectant production, which protectant, and how much.",
    "title": "Present tense for a design",
-   "body": "This paragraph and the one above describe the twin in the present tense. Section 2 says \"Today's rig software reads none of these channels\", green light is tagged planned, and your limits say every decision about the culture \"still goes through a person\". A judge who learns that in section 6 will reread the introduction as a claim. Say here what is designed and what runs.",
+   "body": "This paragraph and the one above describe the twin in the present tense. Section 2 says \"Today's rig software reads none of these channels\", green light is tagged planned, and your limits say every decision about the culture \"still goes through a person\". A judge who learns that in section 5 will reread the introduction as a claim. Say here what is designed and what runs.",
    "after": "From these the twin is designed to work out when to switch on green light, which protectant to make, and how much. None of that runs yet: today's software reads only the reactor, and a person makes every decision (Gaps and limits).",
    "excerpts": []
   },
@@ -249,23 +224,6 @@
    ],
    "excerpt_note": "Munich answers the standards question by naming formats a reader can check. Your provenance tags are the same kind of answer, and they are yours.",
    "ballot": "How well is the software compatible with, and does it leverage, existing synthetic biology standards? (e.g. SBOL, other RFCs, data formats, etc.)"
-  },
-  {
-   "id": "dt-103",
-   "type": "mistake",
-   "anchor": "600 nm amber LED, 2 mm flow cuvette, sample and reference lux sensors",
-   "title": "Two millimetres or a fifth of one",
-   "body": "You give the cuvette as 2 mm here and again in sections 4 and 5, and Measurement's parts list agrees: \"a 2 mm flow cuvette\". Hardware's photometer page says \"A 600 nm LED shines through a 0.2 mm flow cuvette\", its bioreactor page says \"a flow cuvette with a 0.2 mm path\", and Contribution lists a \"0.2 mm short optical path\". The path length sits under every OD on this page. Your silica paragraph gives \"a path-length factor of 5.0\", which fits 2 mm scaled to 1 cm, so check the part and correct whichever pages are wrong.",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
-   "id": "dt-104",
-   "type": "mistake",
-   "anchor": "Hand samples to 27 h: reactor 0.17 to 0.37, flask to 2.46",
-   "title": "Run one has two sets of readings",
-   "body": "This row has the reactor rising from 0.17 to 0.37. The fold below it says \"The bioreactor stayed between 0.083 and 0.194\" and \"read 0.197 at 24 h\", and 0.197 is outside its own band. Hardware's bioreactor page sides with the table: \"from about 0.17 to 0.3–0.37 by the end of the run\". Check the spreadsheet and make the table, the fold and Hardware give one set of numbers.",
-   "excerpts": []
   },
   {
    "id": "dt-105",
@@ -310,8 +268,8 @@
    "id": "dt-106",
    "type": "mistake",
    "anchor": "while the photometer stays precise (R² 0.99, SD 0.022) and its response per milligram falls",
-   "title": "Which instrument stops being linear",
-   "body": "This sentence says the BioDrop \"keeps its slope but scatters\" and the photometer's \"response per milligram falls\". That makes the photometer the steadier one and the less linear one above 30 mg. Section 7 says the same test \"showed our in-line photometer was the more linear of the two\", and Measurement says \"the BioDrop is slightly less linear than our own photometer\". Results uses a word every page could share: \"our instrument is the steadier of the two\". Decide which instrument bends, then use one word everywhere.",
+   "title": "Which instrument is the less linear",
+   "body": "This sentence says the BioDrop \"keeps its slope but scatters\" and the photometer's \"response per milligram falls\". That makes the photometer the more precise one and the less linear one above 30 mg, and section 6 now agrees with \"the more precise of the two above 30 mg\". Measurement still says \"the BioDrop is slightly less linear than our own photometer\", and Hardware's bioreactor page calls it \"the slightly less linear of the two instruments\". Results has a word every page could share: \"our instrument is the steadier of the two\". Ask those two pages to use it.",
    "excerpts": [],
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
   },
@@ -406,15 +364,6 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-111",
-   "type": "mistake",
-   "anchor": "Four-quadrant streaks gave 168 colony morphology, which argues against a gross contaminant",
-   "title": "A streak from a run with no sample",
-   "body": "R3 opens with \"no sample drawn\" and the abstract repeats it. A streak plate needs culture, so one of the two statements needs a qualifier. If the streaks were made when the run ended, say so here. If they were made during the run, the 434 hours were sampled, and the headline should say how often.",
-   "after": "Streaks made [when] gave 168 colony morphology, which argues against a gross contaminant",
-   "excerpts": []
-  },
-  {
    "id": "dt-030",
    "type": "praise",
    "anchor": "It has been shown on one run with one event of each kind; a detection rate needs deliberate faults on unseen batches",
@@ -449,11 +398,11 @@
   },
   {
    "id": "dt-113",
-   "type": "mistake",
+   "type": "clarify",
    "anchor": "Sharing the same air, the two sensors should agree, yet the leaf sensor read 1.2 to 1.9 °C warmer once settled",
-   "title": "The range leaves out the room",
-   "body": "Your table gives the room a site mean of +0.47 °C and a first run of −0.09, so \"1.2 to 1.9\" covers the incubator and the stairwell only. The words \"once settled\" also meet the paragraph under Figure 7, which says \"Five minutes is not long enough for it to settle\". The same range is repeated in the abstract, the ledger, the limits and section 7. Say which sites it comes from, or give the full spread.",
-   "after": "Sharing the same air, the two sensors should agree, yet the leaf sensor read 1.2 to 1.9 °C warmer in the incubator and the stairwell, and from −0.09 to +0.97 °C at the room site, where it was still climbing.",
+   "title": "Say which sites the range covers",
+   "body": "Your table gives the room a site mean of +0.47 °C and a first run of −0.09, so \"1.2 to 1.9\" describes the incubator and the stairwell. The words \"once settled\" also meet the paragraph under Figure 7, which says \"Five minutes is not long enough for it to settle\". The range can stay as the headline. One clause naming the two sites, and one saying the room was still climbing, would stop a judge checking the table and finding a third answer.",
+   "after": "Sharing the same air, the two sensors should agree, yet the leaf sensor read 1.2 to 1.9 °C warmer in the incubator and the stairwell. At the room site it was still climbing, from −0.09 to +0.97 °C across the three runs.",
    "excerpts": [],
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
   },
@@ -511,11 +460,11 @@
   },
   {
    "id": "dt-117",
-   "type": "mistake",
+   "type": "clarify",
    "anchor": "Across these six light arms, green induction costs no growth",
-   "title": "Green light, yes; induction, not shown",
-   "body": "The data show that green light cost no growth. Whether the green arms were induced is a separate claim, and Measurement says of the Western blot from these samples: \"Neither scan in the draft carries a readable band, so neither is reproduced here and no expression claim rests on them.\" Until a blot shows expression, write light where you now write induction.",
-   "after": "Across these six light arms, green light costs no growth: r spans 0.279 to 0.317 h⁻¹, within one standard error, and the weakest-green arm reaches the highest plateau. Whether the green arms were induced is not shown, because the Western blot from these samples has no readable band (Measurement).",
+   "title": "Say what stands behind induction",
+   "body": "The data show that green light cost no growth. A judge who follows the word \"induction\" to Measurement will read, of the Western blot from these samples: \"Neither scan in the draft carries a readable band, so neither is reproduced here and no expression claim rests on them.\" The sentence can stay as it is. Add one clause saying that expression in the green arms was not confirmed, so the two pages read as one account.",
+   "after": "Across these six light arms, green induction costs no growth: r spans 0.279 to 0.317 h⁻¹, within one standard error, and the weakest-green arm reaches the highest plateau. Expression in the green arms was not confirmed, because the Western blot from these samples has no readable band (Measurement).",
    "excerpts": []
   },
   {
@@ -537,56 +486,6 @@
    "title": "What the observed column contains",
    "body": "Measurement's table for this run gives the red arms at 24 h as \"1.026, 0.969, 1.026\" with a blank of 0.059, so your 0.967, 0.910 and 0.967 are blank-subtracted. Measurement also says each green arm is three tubes and each red arm is one, and that the culture is \"WB800 + CcaSR\". None of that is on this page, and neither is the model behind \"Without the prior\". Put all four in a line under the table.",
    "after": "Observed values are the 24 h readings on Measurement minus the 0.059 blank. Each green value is the mean of three tubes and each red value is one tube, all of WB800 carrying CcaS/CcaR. \"Without the prior\" is [the model fitted to that arm's own readings to 8 h].",
-   "excerpts": [],
-   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?"
-  },
-  {
-   "id": "dt-119",
-   "type": "mistake",
-   "anchor": "The plate works as a scale-down model of the reactor, as in biomanufacturing process transfer [3].",
-   "title": "The reactor has not been tested yet",
-   "body": "The leave-one-arm-out test shows the prior predicts an unseen arm of the same plate. It does not show that the plate predicts the reactor. Section 4 says the forecast that tests this \"has not been scored yet\", and your June fold reports the stirred reactor growing at four times the plate rate. State what was shown and point at the test.",
-   "after": "On the plate, the prior predicts an arm it has not seen. Whether it predicts the reactor is what the registered forecast in section 4 tests.",
-   "excerpts": [],
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
-  },
-  {
-   "id": "dt-047",
-   "type": "praise",
-   "anchor": "To test the twin's forecast, we registered it before a reactor run of B. subtilis WB800 with constitutive ACC deaminase secretion",
-   "title": "Nobody else in this prize does this",
-   "body": "A forecast fixed by hash before the run, with its pass criteria in a table and the promise that the score goes in whichever way it falls. None of the eight Best Software winners and none of the six Best Measurement winners we read registered a prediction. Keep the hash, keep the table, and keep the promise.",
-   "excerpts": [
-    "software-2025-og-mrb-04"
-   ],
-   "excerpt_note": "Marburg states its pass criteria before the score, which is the closest any winner comes. You state yours before the experiment.",
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
-  },
-  {
-   "id": "dt-120",
-   "type": "suggest",
-   "anchor": "The forecast file is prereg_forecast_20261002.json",
-   "title": "Let the reader check the hash",
-   "body": "A registered forecast is as strong as the reader's ability to check it. The page prints the hash with its middle cut out, gives no date in words, and does not link the file, which sits in software/figures/ beside the figure script. Print the whole hash, the date, and the commit that first carried the file.",
-   "after": "The forecast file is software/figures/prereg_forecast_20261002.json, registered on [date] in commit [id]. Its SHA-256 is [all 64 characters].",
-   "excerpts": [],
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
-  },
-  {
-   "id": "dt-121",
-   "type": "mistake",
-   "anchor": "Why only the growth rate is scored",
-   "title": "Three criteria or one",
-   "body": "This fold says \"only r is scored\", and R6 says \"the registered forecast predicts r alone\". The table directly above lists three predictions, each with a pass criterion: growth rate, curve shape and time to reach OD 0.5. A time to reach OD 0.5 also depends on the OD scale, which this fold says has no cross-calibration yet. Say which rows will be scored and on which scale, or take two rows out.",
-   "excerpts": [],
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
-  },
-  {
-   "id": "dt-122",
-   "type": "mistake",
-   "anchor": "were fitted on the plate-reader scale in a 150 µL well",
-   "title": "The well volume differs from Measurement",
-   "body": "You give the plate-reader well as 150 µL. Measurement's procedure for the same run says: \"From each of the 12 tubes take 200 µL: 100 µL for OD600 and 100 µL for Western blot.\" The volume sets the depth of liquid the plate reader looks through, so it matters to the cross-calibration this fold is about. Check the notebook and make both pages agree.",
    "excerpts": [],
    "ballot": "Could the measurement(s) be reproduced by other iGEM teams?"
   },
@@ -639,11 +538,11 @@
   },
   {
    "id": "dt-127",
-   "type": "mistake",
+   "type": "clarify",
    "anchor": "At 22 °C growth is 28 times slower but plateaus at OD 1.454, within noise of the 37 °C plateau",
-   "title": "A comparison the page cannot make",
-   "body": "No growth rate at 22 °C appears anywhere on the page, so \"28 times slower\" has nothing to be checked against. No 37 °C run here plateaus near 1.454 either: run 2 held 0.84, the plate's K is 1.005 on the plate-reader scale, and run 4's temperature is not given. The reading is also above the OD 1.2 limit of the path it was taken on. Give the two rates and name the 37 °C plateau, or drop \"the cost is time, not yield\".",
-   "after": "At 22 °C growth is 28 times slower ([rate] against [rate] h⁻¹ in [which run]) and plateaus at OD 1.454 on the in-line scale. That reading is above the OD 1.2 limit of its path, so we cannot yet say whether the plateau matches 37 °C.",
+   "title": "Give the numbers behind the comparison",
+   "body": "No growth rate at 22 °C appears on the page, so a reader cannot see what \"28 times slower\" is measured against. The 37 °C plateau is not named either: run 2 held 0.84, the plate's K is 1.005 on the plate-reader scale, and run 4's temperature is not given. Give the two rates and name the plateau you compare with. It is also worth saying that 1.454 is above the OD 1.2 limit of the path it was read on.",
+   "after": "At 22 °C growth is 28 times slower ([rate] against [rate] h⁻¹ in [which run]) but plateaus at OD 1.454, within noise of the 37 °C plateau of [value] in [which run], so the cost is time, not yield, and rate parameters do not transfer.",
    "excerpts": []
   },
   {
@@ -674,12 +573,12 @@
    "ballot": "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)"
   },
   {
-   "id": "dt-130",
+   "id": "dt-132",
    "type": "mistake",
-   "anchor": "A broken fibre shows up as a trans-membrane pressure anomaly, and those transducers are already logged, so detection is a software change.",
-   "title": "Three versions of fibre-break detection",
-   "body": "Here detection is \"a software change\", so it is not built. Your own limits say \"Trans-membrane pressure is below transducer resolution at the operating point\", and that is the signal this bullet relies on. Safety describes it as running: \"Real-time monitoring of transmembrane pressure ensures early detection of membrane integrity failure\". Agree one sentence with the Safety authors and use it on both pages.",
-   "after": "A broken fibre should change the pressures across the membrane, and those transducers are already logged. We have not tested this: trans-membrane pressure is below transducer resolution at the operating point.",
+   "anchor": "Trans-membrane pressure is read five times a second and logged, and a broken fibre shows up in it as an anomaly.",
+   "title": "A detection claim the limits contradict",
+   "body": "The reworded bullet is firmer than the one it replaced: it now says a broken fibre \"shows up\" in the reading. Your own limits say \"Trans-membrane pressure is below transducer resolution at the operating point, so lumen ΔP is used instead\", and no fibre has been broken on purpose to test it. Safety goes further: \"Real-time monitoring of transmembrane pressure ensures early detection of membrane integrity failure\". Write what is true today on both pages: the pressures are logged, and detection is expected and untested.",
+   "after": "Trans-membrane pressure is read five times a second and logged. A broken fibre should show up in it as an anomaly; we have not tested this, and at the operating point the reading is below transducer resolution.",
    "excerpts": []
   },
   {
@@ -1107,6 +1006,136 @@
    "excerpts": [],
    "resolved": "2026-10-13",
    "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-a06",
+   "type": "praise",
+   "anchor": "Growth rate and shape fixed by hash before the batch",
+   "title": "The status word in every result row",
+   "body": "Your Key results ledger gives every row a one-word status: Worked, Partial, Calibrated, Bench, Pending. A judge can read the whole claim list in ten seconds and knows which rows to trust. \"Pending\" on a forecast that is not yet scored is the column working as it should. Keep it, and keep Partial and Bench honest when the numbers improve.",
+   "excerpts": [
+    "software-2024-ug-vln-03"
+   ],
+   "excerpt_note": "Vilnius counts four of five planned features shipped and names the one that did not. Your status column does the same job in one word per row.",
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-111",
+   "type": "mistake",
+   "anchor": "Four-quadrant streaks gave 168 colony morphology, which argues against a gross contaminant",
+   "title": "A streak from a run with no sample",
+   "body": "R3 opens with \"no sample drawn\" and the abstract repeats it. A streak plate needs culture, so one of the two statements needs a qualifier. If the streaks were made when the run ended, say so here. If they were made during the run, the 434 hours were sampled, and the headline should say how often.",
+   "after": "Streaks made [when] gave 168 colony morphology, which argues against a gross contaminant",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-119",
+   "type": "mistake",
+   "anchor": "The plate works as a scale-down model of the reactor, as in biomanufacturing process transfer [3].",
+   "title": "The reactor has not been tested yet",
+   "body": "The leave-one-arm-out test shows the prior predicts an unseen arm of the same plate. It does not show that the plate predicts the reactor. Section 4 says the forecast that tests this \"has not been scored yet\", and your June fold reports the stirred reactor growing at four times the plate rate. State what was shown and point at the test.",
+   "after": "On the plate, the prior predicts an arm it has not seen. Whether it predicts the reactor is what the registered forecast in section 4 tests.",
+   "excerpts": [],
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-047",
+   "type": "praise",
+   "anchor": "To test the twin's forecast, we registered it before a reactor run of B. subtilis WB800 with constitutive ACC deaminase secretion",
+   "title": "Nobody else in this prize does this",
+   "body": "A forecast fixed by hash before the run, with its pass criteria in a table and the promise that the score goes in whichever way it falls. None of the eight Best Software winners and none of the six Best Measurement winners we read registered a prediction. Keep the hash, keep the table, and keep the promise.",
+   "excerpts": [
+    "software-2025-og-mrb-04"
+   ],
+   "excerpt_note": "Marburg states its pass criteria before the score, which is the closest any winner comes. You state yours before the experiment.",
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-120",
+   "type": "suggest",
+   "anchor": "The forecast file is prereg_forecast_20261002.json",
+   "title": "Let the reader check the hash",
+   "body": "A registered forecast is as strong as the reader's ability to check it. The page prints the hash with its middle cut out, gives no date in words, and does not link the file, which sits in software/figures/ beside the figure script. Print the whole hash, the date, and the commit that first carried the file.",
+   "after": "The forecast file is software/figures/prereg_forecast_20261002.json, registered on [date] in commit [id]. Its SHA-256 is [all 64 characters].",
+   "excerpts": [],
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-121",
+   "type": "mistake",
+   "anchor": "Why only the growth rate is scored",
+   "title": "Three criteria or one",
+   "body": "This fold says \"only r is scored\", and R6 says \"the registered forecast predicts r alone\". The table directly above lists three predictions, each with a pass criterion: growth rate, curve shape and time to reach OD 0.5. A time to reach OD 0.5 also depends on the OD scale, which this fold says has no cross-calibration yet. Say which rows will be scored and on which scale, or take two rows out.",
+   "excerpts": [],
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-122",
+   "type": "mistake",
+   "anchor": "were fitted on the plate-reader scale in a 150 µL well",
+   "title": "The well volume differs from Measurement",
+   "body": "You give the plate-reader well as 150 µL. Measurement's procedure for the same run says: \"From each of the 12 tubes take 200 µL: 100 µL for OD600 and 100 µL for Western blot.\" The volume sets the depth of liquid the plate reader looks through, so it matters to the cross-calibration this fold is about. Check the notebook and make both pages agree.",
+   "excerpts": [],
+   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-130",
+   "type": "mistake",
+   "anchor": "A broken fibre shows up as a trans-membrane pressure anomaly, and those transducers are already logged, so detection is a software change.",
+   "title": "Three versions of fibre-break detection",
+   "body": "Here detection is \"a software change\", so it is not built. Your own limits say \"Trans-membrane pressure is below transducer resolution at the operating point\", and that is the signal this bullet relies on. Safety describes it as running: \"Real-time monitoring of transmembrane pressure ensures early detection of membrane integrity failure\". Agree one sentence with the Safety authors and use it on both pages.",
+   "after": "A broken fibre should change the pressures across the membrane, and those transducers are already logged. We have not tested this: trans-membrane pressure is below transducer resolution at the operating point.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-103",
+   "type": "mistake",
+   "anchor": "600 nm amber LED, 2 mm flow cuvette, sample and reference lux sensors",
+   "title": "Two millimetres or a fifth of one",
+   "body": "You give the cuvette as 2 mm here and again in sections 4 and 5, and Measurement's parts list agrees: \"a 2 mm flow cuvette\". Hardware's photometer page says \"A 600 nm LED shines through a 0.2 mm flow cuvette\", its bioreactor page says \"a flow cuvette with a 0.2 mm path\", and Contribution lists a \"0.2 mm short optical path\". The path length sits under every OD on this page. Your silica paragraph gives \"a path-length factor of 5.0\", which fits 2 mm scaled to 1 cm, so check the part and correct whichever pages are wrong.",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-104",
+   "type": "mistake",
+   "anchor": "Hand samples to 27 h: reactor 0.17 to 0.37, flask to 2.46",
+   "title": "Run one has two sets of readings",
+   "body": "This row has the reactor rising from 0.17 to 0.37. The fold below it says \"The bioreactor stayed between 0.083 and 0.194\" and \"read 0.197 at 24 h\", and 0.197 is outside its own band. Hardware's bioreactor page sides with the table: \"from about 0.17 to 0.3–0.37 by the end of the run\". Check the spreadsheet and make the table, the fold and Hardware give one set of numbers.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
+  },
+  {
+   "id": "dt-a15",
+   "type": "mistake",
+   "anchor": "Slope 1.018 against the BioDrop to OD 1.2, R² 0.995; both also scored against a known dose",
+   "title": "Calibrated here, uncalibrated on Measurement",
+   "body": "This row's status word is \"Calibrated\". Measurement's ledger describes the same instrument as \"Within 3.8% of a $15,000 BioDrop, uncalibrated, R² = 0.9999\" and its text says \"we treat calibration as unnecessary\". R2 explains the difference in a paragraph, but the two ledgers still use opposite words. Say here whether the 1.018 slope is applied to logged readings, and pick a status word both pages can use.",
+   "after": "Compared with the BioDrop (slope 1.018 to OD 1.2, R² 0.995) and with a known dose; the fit is [applied / not applied] to logged readings",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
   }
  ]
 }

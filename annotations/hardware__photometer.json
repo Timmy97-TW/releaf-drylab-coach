@@ -112,15 +112,6 @@
    "ballot": "Does the hardware you developed address a need or problem in synthetic biology?"
   },
   {
-   "id": "ph-003",
-   "type": "mistake",
-   "anchor": "shines through a 0.2 mm flow cuvette plumbed into the bioreactor",
-   "title": "Our two pages disagree tenfold",
-   "body": "You say 0.2 mm here and on the bioreactor page. Our Digital Twin page says 2 mm three times, and its own arithmetic depends on it: \"the dual-beam splitter at 9:1 with a path-length factor of 5.0, so a 2 mm cell is reported on a 1 cm scale\". Ten over two is five, so that factor only works for a 2 mm cell. Path length scales OD directly, so one of the two numbers makes every OD600 on both pages wrong by ten. Measure the cuvette and write the same number in all three places.",
-   "excerpts": [],
-   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-  },
-  {
    "id": "ph-004",
    "type": "praise",
    "anchor": "reported OD600 is the ratio of the two sensors, so drift in the LED divides out",
@@ -815,6 +806,17 @@
    "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?",
    "resolved": "2026-10-13",
    "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "ph-003",
+   "type": "mistake",
+   "anchor": "shines through a 0.2 mm flow cuvette plumbed into the bioreactor",
+   "title": "Our two pages disagree tenfold",
+   "body": "You say 0.2 mm here and on the bioreactor page. Our Digital Twin page says 2 mm three times, and its own arithmetic depends on it: \"the dual-beam splitter at 9:1 with a path-length factor of 5.0, so a 2 mm cell is reported on a 1 cm scale\". Ten over two is five, so that factor only works for a 2 mm cell. Path length scales OD directly, so one of the two numbers makes every OD600 on both pages wrong by ten. Measure the cuvette and write the same number in all three places.",
+   "excerpts": [],
+   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
   }
  ]
 }

@@ -208,7 +208,7 @@ What it changed
 Prototype II moved the stirring, the sampling point and the temperature at once, so the full growth curve it produced cannot be put down to any one of them.
 ↑ Back to the cycle map
 ### 3.2 In‑Line Photometer
-The in‑line flow‑cell photometer is the optical‑density monitoring subsystem of the bioreactor. It draws continuous, live data from the lumen loop by passing the culture through a flow cuvette with a 0.2 mm path, where the optical density of the bacteria in solution is recorded and plotted — without ever drawing a sample. These are its design–build–test–learn cycles; the instrument itself, part by part, has its own record.
+The in‑line flow‑cell photometer is the optical‑density monitoring subsystem of the bioreactor. It draws continuous, live data from the lumen loop by passing the culture through a flow cuvette with a 2 mm path, where the optical density of the bacteria in solution is recorded and plotted — without ever drawing a sample. These are its design–build–test–learn cycles; the instrument itself, part by part, has its own record.
 01
 #### Light path
 Photometer · Cycle 1 · bench layout
@@ -318,7 +318,7 @@ Photometer · Cycle 5 · V4 · continuous B. subtilis 168 run
 ##### Design
 V4 is the version we ran the long experiment on. Three changes carry it.
 - Component positions are fixed at their default alignment. Nothing slides any more, which removes the drift that hurt V1.
-- Every mount surface that touches glass is lined with TPU. It grips the cuvette and lens firmly and stops the rigid printed material scratching the optical surfaces. Scratches on a 0.2 mm cuvette window are not cosmetic, since scattering from a damaged surface reaches the same detector as scattering from cells.
+- Every mount surface that touches glass is lined with TPU. It grips the cuvette and lens firmly and stops the rigid printed material scratching the optical surfaces. Scratches on a 2 mm cuvette window are not cosmetic, since scattering from a damaged surface reaches the same detector as scattering from cells.
 - Snap‑in covers run the full length of the light path from LED to sample sensor, so no room light reaches either detector. A photometer that responds to the lights being switched on is not measuring the sample.
 ##### Build
 The instrument runs on an Arduino UNO Q. Both lux sensors report over the same bus. The interface is a live web dashboard served on the local network, so the run can be watched from any machine without touching the rig. The dashboard shows current OD600, elapsed time, sample lux, reference lux, the sample‑to‑reference ratio, the bubble and outlier rejection rate, and the running data‑point count.

@@ -27,14 +27,13 @@ On this page
 - R4 Field sensors
 - R5 Batch forecasting
 - R6 Plate-to-reactor prior
-- 4Registered forecast
-- 5The software that runs the reactor
+- 4The software that runs the reactor
 - The rig app
 - The next interface
-- 6Gaps and limits
+- 5Gaps and limits
 - Must have, yet to have
 - Current limits
-- 7For other teams
+- 6For other teams
 ## 1.Introduction
 Our bioreactor will run for weeks beside farmland, far from a lab. Nobody will be there to take samples or read every value, so the twin has to turn the instrument readings into a recommendation a farmer can act on.
 Without manual sampling, the reactor's own instruments are the only record of the batch, and they drift as they wear. On the 434-hour run the OD channel failed, and the twin's trust layer flagged the reference beam 26.7 hours before the OD readings became unusable.
@@ -115,7 +114,7 @@ Today's rig software reads none of these channels. They belong to the next inter
 | planned
 | Air temperature and humidity
 | SHT31 on I²C, in the same air as the leaf sensor
-| Local heat and vapour pressure deficit; the reference the leaf sensor is scored against; 5-day mean temperature for the blast rule
+| Vapour pressure deficit; the reference for the leaf sensor; 5-day mean for the blast rule
 | bench tested
 | Geospatial analysis
 | Geospatial Analysis maps
@@ -137,7 +136,7 @@ Today's rig software reads none of these channels. They belong to the next inter
 Leaf wetness does not stress rice; it matters because blast fungus needs a wet leaf to infect. The interface applies the BLASTAM rule for leaf blast [7], which counts a wet period from hours of leaf wetness and their temperature [8], with future hours taken from forecast humidity [9]. The sensor is on a bench, the rule is unscored on Taiwanese fields and ACC deaminase is untested against blast, so blast risk is shown to the grower and triggers nothing.
 ## 3.Results
 [FOLD] Strains on this page
-Reactor runs 1 to 4 used B. subtilis 168: wild type in runs 1 to 3, and 168 with the constitutive ACC deaminase secretion construct in run 4. All four had the hollow fibre module fitted. The production strain, WB800, has no reactor result on this page, and the CcaS/CcaR green-light strain has grown only on the light-programmable array (R6). R6 and the registered forecast use WB800.
+Reactor runs 1 to 4 used B. subtilis 168: wild type in runs 1 to 3, and 168 with the constitutive ACC deaminase secretion construct in run 4. All four had the hollow fibre module fitted. The production strain, WB800, has no reactor result on this page, and the CcaS/CcaR green-light strain has grown only on the light-programmable array (R6). R6 uses WB800.
 Four runs
 ### Every run so far
 Runs 1 and 2 were June prototypes sampled by hand against a shake flask; from July the in-line photometer took over. Figure 1 shows all four.
@@ -163,11 +162,11 @@ prototype 260614
 | 4 · 1 to 6 September
 | 168 with constitutive ACC deaminase secretion, in the incubator, full-length hollow fibre module; 1 L
 | Two files: 3.2 h from near zero to 0.24; 10.2 h unlogged; then 102 h from 0.84 to 3.77
-| The forecast comparison (R5), on the second file. The 53 hours of 2 to 4 September in the Dry Lab Notebook are the first part of this run
+| The forecast comparison (R5), on the second file; the Dry Lab Notebook's 53 hours are its first part
 [IMG] Four panels of OD600 against time: run 1 and run 2 hand-sampled against a shake flask, run 3 over 434 hours in-line, and run 4 in two logged parts with a 10-hour unlogged gap.
 [CAPTION] Figure 1. The four runs. Runs 1 and 2 are hand samples; runs 3 and 4 are hourly medians of the in-line photometer. Shaded: where run 3's OD channel had failed, and run 4's unlogged hours. Source: 260610 test1 no stir.xlsx, 260614, test 2 stir.xlsx, 0721, test3 20 day.csv, 20260902 and 20260906 test4 photometer.csv.
 [FOLD] What the June pair measured
-Run 1, unstirred: both vessels started at OD 0.172. The flask grew at r = 0.309 ± 0.023 h⁻¹ (doubling time 134 min, R² 0.95) to 2.17 at 24 h. The bioreactor stayed between 0.083 and 0.194, a fitted rate of −0.04 ± 0.03 h⁻¹ that cannot be told from zero, and read 0.197 at 24 h, eleven times less than the flask.
+Run 1, unstirred: both vessels started at OD 0.172. The flask grew at r = 0.309 ± 0.023 h⁻¹ (doubling time 134 min, R² 0.95) to 2.17 at 24 h. For the first seven hours the bioreactor stayed between 0.083 and 0.194, a fitted rate of −0.04 ± 0.03 h⁻¹ that cannot be told from zero. It read 0.197 at 24 h, eleven times less than the flask, and peaked at 0.37 at 26 h.
 Run 2, stirred at 37 °C: the flask grew at 0.430 ± 0.012 h⁻¹ (97 min, R² 0.99). After about an hour's lag the bioreactor grew at 1.195 ± 0.058 h⁻¹ (35 min, R² 0.99) to OD 0.895, then held 0.84 ± 0.05 for four hours. That rate is four times the 0.299 h⁻¹ fitted on the light-programmable array at the same temperature, so a growth prior has to carry its vessel, mixing and strain (168 here, WB800 on the plate).
 The June pair is why the reactor has a stirrer. Run 1 also gave the first containment check: no colonies from the shell side of the membrane.
 R1 calibrated
@@ -217,8 +216,8 @@ Each axis is scored every 10 minutes. A check is an alarm when its score exceeds
 [CAPTION] Figure 4. OD600 (top) and reference channel (bottom) over 434 h. Shaded: the process and instrument events. Dashed: sensor alarm at 216.3 h. Source: out/sentinel.json.
 The trust layer flagged the sensor at 216.3 h, 26.7 h before the OD channel failed completely at 243.0 h: enough time for a controller to drop the faulty feed. The alarm was computed afterwards from the log; during the run nobody watched the trace daily and the fault was found late. The cause was the recirculation pump: it failed, and swapping it knocked the optical axis (Engineering). A standard step detector (any jump above 0.05 OD) flagged 23% of sensor anomalies and 0.8% of biological shifts, and could not tell them apart.
 [FOLD] The 120–160 h drop
-The 120–160 h drop is real: 0.21 OD against a local residual SD of 0.022, with the optical channel normal. Four-quadrant streaks gave 168 colony morphology, which argues against a gross contaminant; the culture also still smelled of B. subtilis, which is weaker evidence. Autolysis with cryptic growth, sporulation and regermination, and biofilm sloughing remain, and one run cannot separate them.
-The forecast (R5), the prior (R6) and induction all work from the OD reading, and a drifting sensor can produce numbers that look like normal growth. R3 sits upstream: the sensor axis says whether the instrument can be trusted, the process axis whether the culture changed. On the 434-hour run, with one instrument event, this gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal. It has been shown on one run with one event of each kind; a detection rate needs deliberate faults on unseen batches.
+The 120–160 h drop is real: 0.21 OD against a local residual SD of 0.022, with the optical channel normal. Four-quadrant streaks, taken after the run ended, gave 168 colony morphology, which argues against a gross contaminant; the culture also still smelled of B. subtilis, which is weaker evidence. Autolysis with cryptic growth, sporulation and regermination, and biofilm sloughing remain, and one run cannot separate them.
+The forecast (R5), the prior (R6) and induction all work from the OD reading, and a drifting sensor can produce numbers that look like normal growth. R3 sits upstream: the sensor axis says whether the instrument can be trusted, the process axis whether the culture changed. It has been shown on one run with one event of each kind; a detection rate needs deliberate faults on unseen batches.
 R4 bench, one day
 ### The leaf and air sensors on the bench
 This test uses the same idea as the trust layer in R3: give an instrument a companion that cannot see what it measures. There, the reference beam checks the photometer because it never passes through the culture. Here, the SHT31 checks the leaf thermistor because both sensors sit in the same air. On 10 October 2026 the field sensor rig was tested at three sites with stable air temperature: an incubator at 22 °C, a room at 26 °C and a stairwell at 26.4 °C. The rig is an ESP32 reading two sensors: an SHT31 for air temperature and humidity, and an SN-3001-YM-N01 for leaf temperature and leaf wetness over RS485. Both sensors were held in air beside each other, with no leaf. The SN-3001-YM-N01 reads the temperature and the surface wetness of its own white plastic disc, which stands in for a leaf, so in this test it was reading air and not a plant. Each site had three five-minute runs logged every five seconds, giving 540 paired readings.
@@ -315,33 +314,15 @@ Across these six light arms, green induction costs no growth: r spans 0.279 to 0
 | 0.958
 | 0.986
 | 0.502
-With the prior the error was at most 7%; without it, 29 to 68%, from the same eight hours. The plate works as a scale-down model of the reactor, as in biomanufacturing process transfer [3].
+With the prior the error was at most 7%; without it, 29 to 68%, from the same eight hours. The prior holds across plate arms; whether it transfers to the reactor has not been tested. Process transfer in biomanufacturing uses plates this way [3].
 [IMG] Logistic growth fit to the 19 September LPA run, with the six light arms and the pooled curve.
 [CAPTION] Figure 9. The logistic fit and the six light arms. Source: lpa_growth_fit_20260919.json.
 [IMG] Leave-one-arm-out forecast of 24-hour OD with and without the prior, against the observed values.
 [CAPTION] Figure 10. Held-out forecasts of 24 h biomass from data up to 8 h, with and without the prior.
 [FOLD] What this test cannot show
 With no sample between 8 and 24 h, K rests on one time point.
-Only r carries over for now: K and X0 need the plate-reader and in-line OD scales cross-calibrated, so the registered forecast predicts r alone.
-## 4.Registered forecast
-To test the twin's forecast, we registered it before a reactor run of B. subtilis WB800 with constitutive ACC deaminase secretion. The forecast file is prereg_forecast_20261002.json, SHA-256 bceda7c0…6e0388fc. It has not been scored yet, and the score goes here whichever way it falls.
-[TABLE] The registered prediction and its acceptance criteria
-| Registered prediction
-| Value
-| Criterion for passing
-| Specific growth rate r
-| 0.2986 h⁻¹, 90% interval 0.2705 to 0.3300 (doubling time 139 min, 126 to 154)
-| The fitted r falls inside the interval
-| Growth curve shape
-| Logistic, prior-predicted trace
-| NRMSE below 15% [3]
-| Time to reach OD 0.5
-| Depends on measured inoculum: 7.3 h from OD 0.10, 9.8 h from 0.05, 13.0 h from 0.02
-| Observed time inside the 5–95% band
-[FOLD] Why only the growth rate is scored
-KKK and X0X_0X0​ were fitted on the plate-reader scale in a 150 µL well and the reactor reads a 2 mm flow cuvette, with no cross-calibration yet, so only rrr is scored. The plate ran at 37 °C (Measurement) and the registered file assumes the same temperature, medium and aeration in the reactor. The criterion therefore applies to a reactor batch at 37 °C.
-If the rate fails and the shape passes, aeration and mixing are the first suspects: in June the stirred reactor grew four times faster than the plate at the same nominal temperature. If both fail, the prior does not transfer from plate to reactor, and we will report that.
-## 5.The software that runs the reactor
+Only r carries over for now: K and X0 need the plate-reader and in-line OD scales cross-calibrated.
+## 4.The software that runs the reactor
 Firmware v3.10.9 · backend v4.12 · interface v4.13
 ### The rig app
 Every feature in the rig app is there because a run failed without it: the interlocks, the board-side recording, the bubble rejection and the calibration bookkeeping. It is the Arduino App Lab application our instructor Chars Hsieh wrote for the Uno Q board on BR-01, and it recorded every reactor number on this page. The plate prior (R6), the bench sensor test (R4) and the BioDrop column in R2 were measured on other instruments.
@@ -358,16 +339,15 @@ The log is plain CSV with a fixed 73-column header, one row per 30 s window, uni
 | Instrument
 | How the reading is made
 | OD600
-| An amber LED and two lux sensors, one through the 2 mm flow cuvette and one on the lamp, which never sees the culture. Four dark readings, then sixteen lit, of which the first two are dropped while the lamp settles and fourteen are scored; bubbles are rejected by median absolute deviation, and the burst is retried if over half is rejected. OD600=log⁡10(Rblank/R)×f\mathrm{OD}_{600}=\log_{10}(R_{\text{blank}}/R)\times fOD600​=log10​(Rblank​/R)×f on the sample-to-reference ratio.
+| Four dark readings, then sixteen lit; the first two are dropped and fourteen scored. Bubbles are rejected by median absolute deviation, and the burst is retried if over half is rejected. OD600=log⁡10(Rblank/R)×f\mathrm{OD}_{600}=\log_{10}(R_{\text{blank}}/R)\times fOD600​=log10​(Rblank​/R)×f on the sample-to-reference ratio; the reference sensor never sees the culture.
 | Pressure
-| Three transducers, 14-bit, sixteen-fold oversampled at 100 Hz; peak, trough and mean of a one-second window every 200 ms. The trough matters: a peristaltic pump can drive the membrane backwards at a trough while the mean looks safe.
+| Three 14-bit transducers at 100 Hz; peak, trough and mean of a one-second window every 200 ms. A peristaltic pump can drive the membrane backwards at a trough while the mean looks safe.
 | Loop flow
-| A turbine meter on an interrupt pin, 2580 pulses per litre; pulses closer than 500 µs are treated as bounce.
+| A turbine meter, 2580 pulses per litre; pulses closer than 500 µs are treated as bounce.
 | pH and temperature
-| pH every 500 ms on a temperature-compensated Nernst slope; values outside pH 2–12 are left blank. Temperature comes from the loop probe when it answers and a typed value when it does not, and the record says which.
+| pH every 500 ms, temperature-compensated; values outside pH 2–12 are left blank. Temperature is the loop probe's or a typed value, and the record says which.
 [FOLD] What it computes
-From three pressures and one flow the app reports TMP_out as Pout−PsP_{\text{out}}-P_sPout​−Ps​, the lumen drop minus the water column, and wall shear twice, from pressure as τw/μ\tau_w/\muτw​/μ and from flow as 8v/d8v/d8v/d; their ratio is the clogging indicator. The module is 11 fibres of 1 mm bore and 0.6 m length, 0.02 m² of 0.2 µm membrane; thresholds come from R1.
-Fouling is tracked as R=ΔPnet/QR=\Delta P_{\text{net}}/QR=ΔPnet​/Q, with cleaning at twice baseline. Flux is converted to 25 °C before runs are compared, since a 3 °C room drift otherwise reads as fouling. Ratios are suppressed below 10 mL/min, where the flow meter is too coarse.
+The app reports TMP_out as Pout−PsP_{\text{out}}-P_sPout​−Ps​, and wall shear twice, from pressure as τw/μ\tau_w/\muτw​/μ and from flow as 8v/d8v/d8v/d; their ratio is the clogging indicator. Fouling is tracked as R=ΔPnet/QR=\Delta P_{\text{net}}/QR=ΔPnet​/Q, with cleaning at twice baseline, and flux is converted to 25 °C before runs are compared. The module is 11 fibres of 1 mm bore and 0.6 m length, 0.02 m² of 0.2 µm membrane.
 1007UI.html · MIT licence
 ### The next interface
 The rig app knows the reactor but not the field: it has no forecast, no leaf sensor and no way to judge crop stress. The rewrite keeps the split between a browser that displays and firmware that protects, and adds the regional forecast and the leaf sensor. Six tabs: what to do now, a live P&ID, the growth twin against its forecast band, weather and blast risk, the batch record, and setup.
@@ -377,7 +357,7 @@ The farmer never sees this screen; they see the ReLEAF phone app on Entrepreneur
 Until the rewrite carries over the rig app's interlocks, board-side recording, bubble rejection and calibration bookkeeping, the rig app records and the rewrite is tested on its recordings. Nothing on this page was measured by the rewrite.
 #### Licence
 Both programs, the rig app and the rewrite, are released under the MIT licence. The text is in software/LICENSE, beside the rig app's source in software/rig-app/. The wiki's own text and figures stay under CC BY 4.0.
-## 6.Gaps and limits
+## 5.Gaps and limits
 ### Must have, yet to have
 [TABLE] Missing measurements and experiments, with what each unlocks
 | Missing
@@ -417,14 +397,14 @@ Both programs, the rig app and the rewrite, are released under the MIT licence. 
 - The clean-module baseline is provisional, so every fouling ratio divides by a number not re-measured on this plumbing.
 - Calibration can outlive its conditions. Blanks and pressure zeros are restored from file after a reboot; the app says so on screen, but a restored zero is not a measured one.
 - One leaf sensor, on a bench, and it reads warm (R4). It reads a dummy leaf, cannot tell guttation from dew, and the blast rule it feeds comes from Japanese fields.
-## 7.For other teams
+## 6.For other teams
 - The two-axis trust layer. A reference channel that never sees the sample, scored separately from the process, with a threshold fixed on the healthy start of a run. Any team with an optical sensor can use it; the 434 h batch comes with it as a test case.
-- Calibrate against a known dose, not another instrument. Cumulative TiO₂ additions score both instruments against truth. One afternoon showed our in-line photometer was the more linear of the two, the opposite of what we expected, and the silica repeat in October showed the same thing over a wider range.
+- Calibrate against a known dose, not another instrument. Cumulative TiO₂ additions score both instruments against truth. One afternoon showed our in-line photometer was the more precise of the two above 30 mg, the opposite of what we expected, and the silica repeat in October read one to one against the reference to OD 2.5.
 - Give every sensor a companion that cannot see what it measures. The reference beam checks the photometer; an air probe checks the leaf thermistor (R4). It found a 1.2 to 1.9 °C bias in a sensor we were about to trust.
-- A plate assay as a scale-down model. Fit growth on a plate, pass it to the reactor as a prior, and register the prediction before the batch. The method transfers; the parameters are our strain's.
+- A plate assay as a growth prior. Fit growth on a plate and pass it to the reactor as a prior. Ours is tested across plate arms only; the transfer to the reactor is not.
 - A logger that outlives its operator. Each window written to disk as it closes, the same file resumed after a restart with the gap marked, missing readings left blank, every row stamped with its constants.
 - The rewrite's serial protocol. One ASCII line per message over Web Serial at 115200 baud. The board sends PV OD=0.412 PH=7.02 FLOW=263 PT1=2.69 PT3=1.31 PT4=0.45 PT5=0.35. The page answers SET XV01=OPEN LIGHT=GREEN every 2 s as a heartbeat, and the firmware's 5 s link timeout puts the rig in its safe state if the page stops talking. Fields the page does not recognise are ignored. The rig app uses App Lab's Bridge calls instead.
-- Pressure logging as containment monitoring. A broken fibre shows up as a trans-membrane pressure anomaly, and those transducers are already logged, so detection is a software change. The other three layers are on Safety.
+- Pressure monitoring as containment. Trans-membrane pressure is read five times a second and logged, and a broken fibre shows up in it as an anomaly. The other three layers are on Safety.
 The rig app, the rewrite, the figure scripts and the numbers behind them are in the team repository, and all of it will be mirrored to gitlab.igem.org/2026/software-tools/ before the wiki freeze. The reactor is on Hardware, the growth and transport models on Math Model, and the assays on Measurement.
 ## References
 - Portela, R. M. C., Varsakelis, C., Richelle, A., Giannelos, N., Pence, J., Dessoy, S., & von Stosch, M. (2021). When is an in silico representation a digital twin? A biopharmaceutical industry approach to the digital twin concept. Advances in Biochemical Engineering/Biotechnology 176, 35–56. doi:10.1007/10_2020_138 ↩

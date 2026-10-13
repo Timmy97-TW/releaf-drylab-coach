@@ -356,15 +356,6 @@
    "excerpt_note": "Aachen fences off a sensor test so nobody reads it as a bioprocess result. You fence off your own headline growth claim."
   },
   {
-   "id": "br-030",
-   "type": "mistake",
-   "anchor": "passing the culture through a flow cuvette with a 0.2 mm path",
-   "title": "Our Twin page says ten times this",
-   "body": "This page and the photometer page say a 0.2 mm path. The Digital Twin page says a 2 mm flow cuvette three times, and its own arithmetic supports 2 mm: \"a path length factor of 5.0, so a 2 mm cell is reported on a 1 cm equivalent scale\", and 10 mm over 2 mm is 5. At 0.2 mm that factor would be 50, and your own cycle 5 notes record the dashboard reporting five times the computed value. Path length scales OD directly, so measure the cuvette and write one figure on all three pages.",
-   "excerpts": [],
-   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-  },
-  {
    "id": "br-031",
    "type": "restructure",
    "anchor": "These are its design–build–test–learn cycles; the instrument itself, part by part, has its own record.",
@@ -807,6 +798,17 @@
    "excerpts": [],
    "resolved": "2026-10-13",
    "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "br-030",
+   "type": "mistake",
+   "anchor": "passing the culture through a flow cuvette with a 0.2 mm path",
+   "title": "Our Twin page says ten times this",
+   "body": "This page and the photometer page say a 0.2 mm path. The Digital Twin page says a 2 mm flow cuvette three times, and its own arithmetic supports 2 mm: \"a path length factor of 5.0, so a 2 mm cell is reported on a 1 cm equivalent scale\", and 10 mm over 2 mm is 5. At 0.2 mm that factor would be 50, and your own cycle 5 notes record the dashboard reporting five times the computed value. Path length scales OD directly, so measure the cuvette and write one figure on all three pages.",
+   "excerpts": [],
+   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "0a3583e"
   }
  ]
 }

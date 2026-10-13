@@ -16,7 +16,7 @@ Photometer
 It never opens the loop
 How it reads a culture
 - 600nmamber LED
-- 0.2mmpath length
+- 2mmpath length
 - 400hunattended run
 - 2,132points logged
 01Sampling
@@ -45,12 +45,12 @@ Loading 0%
 Scroll
 ## Summary
 The photometer reads OD600 from the flowing culture without ever drawing a sample.
-A 600 nm LED shines through a 0.2 mm flow cuvette plumbed into the bioreactor’s lumen loop. A 90 : 10 splitter sends a tenth of the beam to a reference sensor before the sample, and reported OD600 is the ratio of the two sensors, so drift in the LED divides out. It ran in line for more than 400 hours, 2,132 points logged over the first 336, with nothing withdrawn from the culture.
+A 600 nm LED shines through a 2 mm flow cuvette plumbed into the bioreactor’s lumen loop. A 90 : 10 splitter sends a tenth of the beam to a reference sensor before the sample, and reported OD600 is the ratio of the two sensors, so drift in the LED divides out. It ran in line for more than 400 hours, 2,132 points logged over the first 336, with nothing withdrawn from the culture.
 The parts are estimated at $150 against the $15,000 BioDrop it was blanked against. The bill of materials in 1.1 is not yet costed.
 Wavelength
   600nm
 Path length
-  0.2mm
+  2mm
 Unattended run
   400h
 Points logged
@@ -461,7 +461,7 @@ Beam split
   90 : 10, reference taken before the sample (2.2)
 [IMG]
 Flow cuvette
-  0.2 mm path, in the lumen loop
+  2 mm path, in the lumen loop
 [IMG]
 Slit
   2 mm (3.5)
