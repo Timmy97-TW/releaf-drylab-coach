@@ -291,15 +291,6 @@
    "excerpts": []
   },
   {
-   "id": "mm-014",
-   "type": "mistake",
-   "anchor": "The values in Figure 11 come from the literature.",
-   "title": "Wrong figure number",
-   "body": "The efficacy values are in Figure 10. Figure 11 is the island yield chart in Result 3. A judge who follows the pointer lands on the wrong picture and reads the next three sentences against it.",
-   "after": "The values in Figure 10 come from the literature.",
-   "excerpts": []
-  },
-  {
    "id": "mm-015",
    "type": "clarify",
    "anchor": "Arabidopsis fresh weight at 75 millimolar sodium chloride, with and without ACC deaminase at three timings",
@@ -416,15 +407,6 @@
    "excerpts": []
   },
   {
-   "id": "mm-028",
-   "type": "mistake",
-   "anchor": "WB800 has the highest OD600 and the second-highest absorbance",
-   "title": "The absorbance rank is the other way round",
-   "body": "The table above reads A540 0.388 for WB800, 0.404 for csn and 0.423 for samyQ, so WB800 has the lowest absorbance of the three. The slip costs you evidence: highest biomass with the lowest absorbance refutes a density artefact more completely than second-highest would.",
-   "after": "WB800 has the highest OD600 and the lowest absorbance; samyQ has lower biomass and higher signal.",
-   "excerpts": []
-  },
-  {
    "id": "mm-029",
    "type": "praise",
    "anchor": "This argument is independent of the standard curve and survives any calibration error.",
@@ -515,15 +497,6 @@
    "excerpts": []
   },
   {
-   "id": "mm-039",
-   "type": "mistake",
-   "anchor": "A recorded volume over a known area is a rate",
-   "title": "The area is the part you reconstructed",
-   "body": "Your own table one paragraph below reads \"Plate area | 100 cm2 | Reconstructed, never written down | Assumed\". Calling the area known here undoes the provenance column that is the best thing in this section.",
-   "after": "A recorded volume over an assumed plate area is a rate, and a rate scales to a hectare without any modelling in between.",
-   "excerpts": []
-  },
-  {
    "id": "mm-040",
    "type": "praise",
    "anchor": "One plate with neat, 1:3, 1:10 and 1:30 arms would find it",
@@ -551,15 +524,6 @@
    "title": "Give this section a clearer place",
    "body": "This is the sharpest reasoning in Block 3 and it sits at the end of \"Where those numbers come from\", a section about numbers it says it is not part of. \"This\" also points back at the heading. Open on the question and the section stands up by itself.",
    "after": "Can an intact enzyme cross into a rice leaf? Uptake does not enter the arithmetic, because whatever happened on the plate is already inside the 1,670 L. It matters for a different reason. If the enzyme cannot cross, no amount of volume fixes it, and the canopy correction is correcting the wrong thing.",
-   "excerpts": []
-  },
-  {
-   "id": "mm-043",
-   "type": "mistake",
-   "anchor": "stomata on both leaf surfaces, upper density comparable to or slightly above the lower",
-   "title": "Your own figures say the opposite",
-   "body": "Figure 25 gives 186.7 stomata per mm2 on the upper surface and Figure 26 gives 621.0 on the lower, so the upper is about three times sparser. The References repeat 186.7 adaxial against 621.0 abaxial. This is the sentence that justifies spraying the upper surface, so correcting it changes the two sentences after it.",
-   "after": "Rice is amphistomatous: stomata sit on both surfaces, about 187 per mm2 above and 621 below. Most crops keep theirs only on the underside, where a spray never lands, so a sprayed rice leaf at least offers pores.",
    "excerpts": []
   },
   {
@@ -680,15 +644,6 @@
    "excerpts": []
   },
   {
-   "id": "mm-056",
-   "type": "mistake",
-   "anchor": "The payback in section 4 is priced on salinity. The spray schedule in section 3 is counted from waterlogging dekads.",
-   "title": "Both of these live in one section",
-   "body": "The spray schedule is \"How often a field actually needs treating\", which is inside Block 3, the same section as the payback. Section 3 is Block 2, optogenetic kinetics. Name the blocks instead of the section numbers, because the page numbers Block 1 as section 2 and a reader cannot tell which scheme you mean.",
-   "after": "The payback is priced on salinity. The spray schedule, in the same block, is counted from waterlogging dekads.",
-   "excerpts": []
-  },
-  {
    "id": "mm-057",
    "type": "praise",
    "anchor": "We know this is the largest open problem in the model.",
@@ -727,6 +682,63 @@
    "title": "This reference is listed twice",
    "body": "The Block 2 list already carries it as \"homotetramer, ~144 kDa, 36.5 kDa per subunit\". Keep one copy, in Block 3 where the 9.4 nm size is used, and give it a source. Neither copy cites anything at present.",
    "excerpts": []
+  }
+ ],
+ "resolved": [
+  {
+   "id": "mm-014",
+   "type": "mistake",
+   "anchor": "The values in Figure 11 come from the literature.",
+   "title": "Wrong figure number",
+   "body": "The efficacy values are in Figure 10. Figure 11 is the island yield chart in Result 3. A judge who follows the pointer lands on the wrong picture and reads the next three sentences against it.",
+   "after": "The values in Figure 10 come from the literature.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "mm-028",
+   "type": "mistake",
+   "anchor": "WB800 has the highest OD600 and the second-highest absorbance",
+   "title": "The absorbance rank is the other way round",
+   "body": "The table above reads A540 0.388 for WB800, 0.404 for csn and 0.423 for samyQ, so WB800 has the lowest absorbance of the three. The slip costs you evidence: highest biomass with the lowest absorbance refutes a density artefact more completely than second-highest would.",
+   "after": "WB800 has the highest OD600 and the lowest absorbance; samyQ has lower biomass and higher signal.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "mm-039",
+   "type": "mistake",
+   "anchor": "A recorded volume over a known area is a rate",
+   "title": "The area is the part you reconstructed",
+   "body": "Your own table one paragraph below reads \"Plate area | 100 cm2 | Reconstructed, never written down | Assumed\". Calling the area known here undoes the provenance column that is the best thing in this section.",
+   "after": "A recorded volume over an assumed plate area is a rate, and a rate scales to a hectare without any modelling in between.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "mm-043",
+   "type": "mistake",
+   "anchor": "stomata on both leaf surfaces, upper density comparable to or slightly above the lower",
+   "title": "Your own figures say the opposite",
+   "body": "Figure 25 gives 186.7 stomata per mm2 on the upper surface and Figure 26 gives 621.0 on the lower, so the upper is about three times sparser. The References repeat 186.7 adaxial against 621.0 abaxial. This is the sentence that justifies spraying the upper surface, so correcting it changes the two sentences after it.",
+   "after": "Rice is amphistomatous: stomata sit on both surfaces, about 187 per mm2 above and 621 below. Most crops keep theirs only on the underside, where a spray never lands, so a sprayed rice leaf at least offers pores.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "mm-056",
+   "type": "mistake",
+   "anchor": "The payback in section 4 is priced on salinity. The spray schedule in section 3 is counted from waterlogging dekads.",
+   "title": "Both of these live in one section",
+   "body": "The spray schedule is \"How often a field actually needs treating\", which is inside Block 3, the same section as the payback. Section 3 is Block 2, optogenetic kinetics. Name the blocks instead of the section numbers, because the page numbers Block 1 as section 2 and a reader cannot tell which scheme you mean.",
+   "after": "The payback is priced on salinity. The spray schedule, in the same block, is counted from waterlogging dekads.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   }
  ]
 }

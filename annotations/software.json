@@ -127,51 +127,6 @@
  },
  "notes": [
   {
-   "id": "dt-a01",
-   "type": "mistake",
-   "anchor": "No result rests on one instrument",
-   "title": "This claim is wider than the page",
-   "body": "Your own last sentence says \"almost every result rests on one run\", and R5 rests on one plate reader while R4's forecast rests on the photometer alone. Three of the seven rows below have a single instrument behind them. Narrow the claim to the results that really carry a cross-check.",
-   "after": "Four results carry a second, independent check:",
-   "excerpts": [],
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-a02",
-   "type": "restructure",
-   "anchor": "a reference beam that never sees the culture separates lamp drift from growth",
-   "title": "Four cross-checks in one sentence",
-   "body": "This sentence runs for about seventy words and lists four different cross-checks before the reader has met any of them. It is the second thing a judge reads. Give the principle its own short sentence and let the four checks follow as a list.",
-   "after": "No result rests on one instrument. A reference beam that never sees the culture separates lamp drift from growth. Wall shear is computed twice, from pressure and from flow. The photometer is scored against a known TiO₂ dose. The field leaf sensor is scored against an air probe in the same air.",
-   "excerpts": [],
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-a03",
-   "type": "mistake",
-   "anchor": "the photometer was calibrated against a known TiO₂ dose",
-   "title": "Our two pages disagree about calibration",
-   "body": "This page says the photometer \"was calibrated against a known TiO₂ dose\". Our Measurement page says the opposite about the same instrument: \"Our central contribution is a validated, calibration-free in-line OD600 measurement device\" and \"Therefore, we treat calibration as unnecessary.\" A measurement judge who opens both pages sees one experiment reported two ways. Agree on one account with the Measurement team and write it in the same words on both pages.",
-   "after": "the photometer was scored against a known TiO₂ dose",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-a04",
-   "type": "clarify",
-   "anchor": "That layer gave 26.7 hours of warning before the OD channel failed",
-   "title": "Which layer is that layer",
-   "body": "The sentence before this one names four separate cross-checks, so \"that layer\" has nothing single to point back to. Name the trust layer, and say the warning came from one event on one run, which is what your limits already admit.",
-   "after": "The trust layer gave 26.7 hours of warning before the OD channel failed, on one event in one 434-hour run.",
-   "excerpts": [
-    "measurement-2025-ug-epfl-02"
-   ],
-   "excerpt_note": "EPFL attaches n to the headline number itself, so the reader never has to look for it.",
-   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?",
-   "zone": "abstract"
-  },
-  {
    "id": "dt-a05",
    "type": "suggest",
    "anchor": "Both interfaces run live on this page",
@@ -198,26 +153,6 @@
    "zone": "abstract"
   },
   {
-   "id": "dt-a07",
-   "type": "mistake",
-   "anchor": "Slope 1.018 against BioDrop, R² 0.995, on a known dose",
-   "title": "Two different scorings in one row",
-   "body": "The slope of 1.018 and R² 0.995 come from regressing the photometer on the BioDrop up to OD 1.2. The known-dose scoring is a separate analysis with different numbers. This row reads as though one fit did both. Pick the number you want in the headline and say what it was measured against.",
-   "after": "Slope 1.018 against the BioDrop to OD 1.2, R² 0.995; both instruments also scored against a known dose",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
-   "zone": "abstract"
-  },
-  {
-   "id": "dt-001",
-   "type": "mistake",
-   "anchor": "Nobody will be there to take samples or read every value, so the digital twin makes the decisions",
-   "title": "The page later says a person decides",
-   "body": "Your Current limits say the opposite: \"every decision about the culture, above all induction, still goes through a person\", and the abstract says \"The loop is not closed.\" A judge will read this opening sentence as a claim the rest of the page withdraws. Put it in the tense you mean.",
-   "after": "Nobody will be there to take samples or read every value, so the twin has to turn the instrument readings into a recommendation a farmer can act on.",
-   "excerpts": []
-  },
-  {
    "id": "dt-002",
    "type": "praise",
    "anchor": "Without manual sampling, the reactor's own instruments are the only record of the batch, and they drift as they wear",
@@ -228,15 +163,6 @@
     "measurement-2023-ug-wm-01"
    ],
    "excerpt_note": "Both winners open on the difficulty instead of the tool. Vilnius: someone had to sit with the bioreactor. William-and-Mary: soil interferes with every fluorescence method. Your sentence does the same work in half the words."
-  },
-  {
-   "id": "dt-003",
-   "type": "restructure",
-   "anchor": "The twin also decides when to switch on green light to start protectant production, which protectant, and how much",
-   "title": "One paragraph doing five jobs",
-   "body": "This paragraph covers regional data, field sensors, local data, the induction rule, the forecast, the prior and a future assay. The reader cannot hold it. Split it in two: what the twin reads, then what it decides from it.",
-   "after": "The twin reads three kinds of data. Regional data (the weather forecast, crop-stress risk and the Geospatial Analysis maps) show when and where crops will come under stress. Field sensors beside the crop measure leaf temperature, leaf wetness, and air temperature and humidity (R6). Local data from BR-01 show how much biomass is in the loop and whether those readings can be trusted (R3).\n\nFrom these it decides when to switch on green light, which protectant and how much. Induction makes sense when the field is heading into stress and the culture can respond, and the forecast (R4) and growth prior (R5) say whether the batch will be ready in time.",
-   "excerpts": []
   },
   {
    "id": "dt-004",
@@ -264,49 +190,12 @@
    "excerpt_note": "Munich answers the standards question by naming formats a reader can check. Your provenance tags are the same kind of answer, and they are yours."
   },
   {
-   "id": "dt-006",
-   "type": "clarify",
-   "anchor": "Photometer: amber LED, 2 mm flow cuvette, sample and reference lux sensors",
-   "title": "Say the wavelength, not the colour",
-   "body": "\"Amber\" is a colour; OD600 is a wavelength claim. Our Hardware photometer page gives the number and ties the two together: \"600 nm sits in a strong amber, right in the middle of the green (~535 nm) and red (~672 nm) peaks of CcaS\". Put the number here, because a judge checking whether your OD600 is really an OD600 looks at this row.",
-   "after": "Photometer: 600 nm amber LED, 2 mm flow cuvette, sample and reference lux sensors",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
    "id": "dt-007",
    "type": "clarify",
    "anchor": "Lumen ΔP, TMP, fouling ratio",
    "title": "TMP is never written out",
    "body": "The row above this one spells out \"trans-membrane pressure\", and this row abbreviates it without ever joining the two. TMP then appears six more times on the page. Our judges read many pages a day and are not bioprocess engineers.",
    "after": "Lumen ΔP, trans-membrane pressure (TMP), fouling ratio",
-   "excerpts": []
-  },
-  {
-   "id": "dt-008",
-   "type": "restructure",
-   "anchor": "Today's rig software reads none of these.",
-   "title": "A fact that lands before its subject",
-   "body": "\"These\" has no referent yet; the table comes after this sentence. Let the reader see the channels first, then tell them nothing reads them.",
-   "after": "These are the channels outside the reactor: what the plants are experiencing, and what the weather is about to do. Today's rig software reads none of them. They belong to the next interface, and the leaf and air sensors have been on a bench but never on a plant (R6).",
-   "excerpts": []
-  },
-  {
-   "id": "dt-009",
-   "type": "cut",
-   "anchor": "The interface applies the BLASTAM rule for leaf blast [7]: a wet period counts when the leaf stays wet 10 h at 22–25 °C",
-   "title": "Six thresholds for a rule that fires nothing",
-   "body": "This fold spends a hundred words and three references on the exact hour-and-temperature table for a rule that your last sentence says \"triggers nothing\". Keep why the rule is there and the fact that it is unscored, and move the threshold table to wherever the rule is implemented.",
-   "after": "The interface applies the BLASTAM rule for leaf blast [7], which counts a wet period from leaf wetness hours and temperature, using the sensor for past hours and forecast humidity for future ones [8, 9]. The sensor is still on a bench, the rule is unscored on Taiwanese fields, and ACC deaminase is untested against blast, so blast risk is shown to the grower and triggers nothing.",
-   "excerpts": []
-  },
-  {
-   "id": "dt-010",
-   "type": "cut",
-   "anchor": "BR-01 has grown B. subtilis five times. Runs 1 and 2 were June prototypes sampled by hand against a shake flask",
-   "title": "The abstract already said this",
-   "body": "\"BR-01 has grown B. subtilis five times\" opens the abstract word for word. The chapter eyebrow above already says \"Five runs\". Start on the thing the abstract did not say.",
-   "after": "Runs 1 and 2 were June prototypes sampled by hand against a shake flask; from July the in-line photometer took over. Figure 1 shows the four finished runs.",
    "excerpts": []
   },
   {
@@ -320,37 +209,6 @@
    ],
    "excerpt_note": "Aalto logs each failure as symptom, change, result, and the casebook calls it the most reusable passage on their page. Your run table already does this.",
    "ballot": "Could it be useful to other projects?"
-  },
-  {
-   "id": "dt-012",
-   "type": "suggest",
-   "anchor": "16 August 2026: water at 22 °C, eight pump settings, once with the module fitted and once with a jumper in its place",
-   "title": "Say how many times each setting was read",
-   "body": "You give the date, the fluid, the temperature and the eight settings, which is most of a protocol. The one thing a team repeating this needs and cannot get is how many readings you took at each setting and how long you waited for the pressure to settle. Both are in your log.",
-   "after": "16 August 2026: water at 22 °C, eight pump settings, each held [number] s and read [number] times, once with the module fitted and once with a jumper in its place.",
-   "excerpts": [
-    "measurement-2024-og-kuleuven-03"
-   ],
-   "excerpt_note": "KULeuven lists every standard concentration and the matrix they were made in, so the curve can be remade. One line of that kind here fixes R1 for both measurement questions.",
-   "ballot": "Are the methods or protocols described well?"
-  },
-  {
-   "id": "dt-013",
-   "type": "restructure",
-   "anchor": "The 25 August progress report gives 0.084 bar and 0.90–0.96× theory for the same measurement",
-   "title": "Two unresolved notes left in public",
-   "body": "The page now carries two folds called \"To reconcile before the freeze\", this one and the one in R2. Each tells a judge that we have two answers for one measurement and have not chosen. In both cases you have chosen: here the next sentence says the figures are the later analysis, and in R2 the scoped figure is the right one. Put the decision in the body as a reason, and keep a fold only for what is still genuinely open.",
-   "after": "Both figures come from one spreadsheet; the 0.096 bar and 1.03× quoted here are from the later re-analysis, which corrected [what changed]. The 25 August progress report's 0.084 bar and 0.90–0.96× are superseded.",
-   "excerpts": []
-  },
-  {
-   "id": "dt-014",
-   "type": "mistake",
-   "anchor": "Wall shear can be computed from the pressure drop or from the flow rate, and the two agree to 2.8%",
-   "title": "Our notebook says ten per cent",
-   "body": "Our Dry Lab Notebook reports the same cross-check from the same measurement as agreeing \"to within 10 per cent\". The whole argument in section 5 is that October's 20% disagreement is a fault because August agreed to 2.8%. At 10% it is much less of an outlier. Settle which number is right before the freeze, because this one sentence carries the clogging indicator.",
-   "excerpts": [],
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
    "id": "dt-015",
@@ -444,24 +302,6 @@
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
   },
   {
-   "id": "dt-023",
-   "type": "restructure",
-   "anchor": "B. subtilis 168 growth log with the photometer",
-   "title": "The heading hides the result",
-   "body": "Your contents rail calls this R3 Trust layer, and the section's finding is that the trust layer caught a failing instrument. This heading names the dataset instead. Give the heading the finding.",
-   "after": "The trust layer on a 434-hour growth log",
-   "excerpts": []
-  },
-  {
-   "id": "dt-024",
-   "type": "mistake",
-   "anchor": "21 July to 8 August 2026: 434 hours of B. subtilis 168 at 22 °C, 2,671 valid rows, no sample drawn",
-   "title": "Our Hardware pages name a different strain",
-   "body": "You say 168. Our Hardware bioreactor page says of the same run: \"A continuous run of engineered B. subtilis WB800 at 22 °C, drawn from the bioreactor loop\", and Hardware photometer and Engineering say WB800 too. Results and Biomanufacturing back you (\"Every reactor number on this wiki is strain 168, run 4 included\"). Five pages, two strains, one run. Fix this first: it decides whether the page's main dataset is a wild-type or an engineered culture.",
-   "excerpts": [],
-   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?"
-  },
-  {
    "id": "dt-025",
    "type": "praise",
    "anchor": "A check is an alarm when its score exceeds the 99.5th percentile of the healthy first 120 hours",
@@ -495,32 +335,6 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-028",
-   "type": "clarify",
-   "anchor": "Contamination found no support; the culture still smelled of B. subtilis and four-quadrant streaks gave 168 morphology",
-   "title": "Say what each check ruled out",
-   "body": "Two checks are named and neither says what it excludes. A smell test and a streak plate rule out different things, and a judge grading controls needs the clause. Smell is also not a method a reader can repeat without knowing what you were comparing it to.",
-   "after": "Contamination found no support. Four-quadrant streaks gave 168 colony morphology with no second morphology, which rules out a gross bacterial contaminant; the culture also still had the characteristic B. subtilis odour, which is weaker evidence and is reported as such.",
-   "excerpts": [
-    "measurement-2023-ug-wm-04"
-   ],
-   "excerpt_note": "William-and-Mary gives each control a rule attached to it: a negative control with plaques voids the whole session. One clause per control is enough.",
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
-   "id": "dt-029",
-   "type": "suggest",
-   "anchor": "On the 434-hour run this gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal",
-   "title": "Put the n where the number is",
-   "body": "The honest bound is in the next sentence, which is the right thing to have written. Move the scope into the sentence that makes the claim, so a judge skimming the section cannot take 26.7 hours as a capability.",
-   "after": "On this one run, with one instrument event, the trust layer gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal.",
-   "excerpts": [
-    "measurement-2025-ug-epfl-02"
-   ],
-   "excerpt_note": "EPFL never states a result without its n in the same sentence. It costs four words and it closes the question a judge would otherwise ask.",
-   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?"
-  },
-  {
    "id": "dt-030",
    "type": "praise",
    "anchor": "It has been shown on one run with one event of each kind; a detection rate needs deliberate faults on unseen batches",
@@ -550,42 +364,6 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-033",
-   "type": "cut",
-   "anchor": "Global linear and exponential fits did worse than persistence at short horizons.",
-   "title": "The fold below says this better",
-   "body": "The fold directly under this sentence explains why global linear and exponential fall behind, in more detail and more clearly. Keeping both means the reader meets the same fact twice in twenty words.",
-   "after": "A two-state Kalman filter (level and slope) beats persistence at every horizon, by less as the horizon grows.",
-   "excerpts": []
-  },
-  {
-   "id": "dt-034",
-   "type": "mistake",
-   "anchor": "grew in light-programmable array wells under six light arms, read on a plate reader at five time points to 24 h",
-   "title": "Our plate map has one red intensity",
-   "body": "Your six arms are weak, medium and high red and the same three greens. Our Measurement page's plate map for this run says: \"red at 168 lux in columns 1, 3 and 5, and green at 220, 510 and 3850 lux in columns 2, 4 and 6\". If all three red columns sat at 168 lux, then R1, R2 and R3 are replicates of one condition and not three light levels, which changes what leaving one out tests.",
-   "excerpts": [],
-   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
-   "id": "dt-035",
-   "type": "clarify",
-   "anchor": "A logistic model beat logistic-with-lag by AICc and fits at NRMSE 1.9%",
-   "title": "AICc and NRMSE, both unexplained",
-   "body": "Two model-selection terms in one clause, neither expanded, in the first sentence of the section. A judge from outside modelling stops reading here. Six words of gloss keeps them.",
-   "after": "A logistic model fitted the data better than a logistic model with a lag phase, by AICc, which penalises the extra parameter. It fits at 1.9% normalised root-mean-square error (R² 0.997), against the 15% criterion for bioprocess models [3]",
-   "excerpts": []
-  },
-  {
-   "id": "dt-036",
-   "type": "restructure",
-   "anchor": "Green induction costs no growth: r spans 0.279 to 0.317 h⁻¹ across the six arms, within one standard error",
-   "title": "A strong claim, bounded two folds later",
-   "body": "This reads as a general finding about green light, and the fold below says the six arms are near-identical so the test cannot speak to a new condition. The bound belongs in the same breath as the claim.",
-   "after": "Across these six light arms, green induction costs no growth: r spans 0.279 to 0.317 h⁻¹, within one standard error, and the highest-green arm reaches the highest plateau. The arms are biologically near-identical, so this is a reproducibility result and not a test of a new condition.",
-   "excerpts": []
-  },
-  {
    "id": "dt-037",
    "type": "praise",
    "anchor": "we left out each arm in turn, fitted the other five, and predicted its 24 h OD from its first 8 hours",
@@ -605,18 +383,6 @@
    "body": "Your table gives the weak and medium green arms 0.958 and 0.975 at 24 h. Our Measurement page's table for the same 19 September run gives green at 220 and 510 lux as \"0.056, 0.083, 0.081\" and \"0.059, 0.008, 0.036\", and says: \"Cultures do not go backwards, so that row is a reading or a handling fault, not a result, and the run has not been repeated.\" R5 is the strongest evidence on the page and it rests on the row Measurement throws away. Resolve this before the freeze.",
    "excerpts": [],
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
-   "id": "dt-039",
-   "type": "restructure",
-   "anchor": "A reactor run takes days; a plate run takes 24 hours and tests six conditions.",
-   "title": "The reason for this test arrives last",
-   "body": "This is why the plate prior exists, and it sits in the closing paragraph after the whole experiment. Move it to the top of the section so the reader knows what the test is for before reading the table.",
-   "after": "A reactor run takes days; a plate run takes 24 hours and tests six conditions, so a prior fitted on a plate would let the twin forecast from the first few hours, when R4's Kalman filter has least to work with. On 19 September 2026, B. subtilis WB800 grew in light-programmable array wells...",
-   "excerpts": [
-    "software-2024-ug-vln-01"
-   ],
-   "excerpt_note": "Vilnius puts the reason the tool exists in sentence two. The casebook's commonest fault among winners is that reason arriving late."
   },
   {
    "id": "dt-040",
@@ -652,24 +418,6 @@
    ],
    "excerpt_note": "EPFL's SRSF1 paragraph and William-and-Mary's dye slides are the same shape: the number, what it was measured against, and what it means for the decision.",
    "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?"
-  },
-  {
-   "id": "dt-043",
-   "type": "clarify",
-   "anchor": "the gap opened from −0.42 °C at the start of run 1 to +1.11 °C at the end of run 3",
-   "title": "These are not the run means",
-   "body": "The table two paragraphs above gives the room's three runs as −0.09, +0.54 and +0.97. These two numbers are the first and last readings inside the runs, which is a different thing, and nothing says so. A reader checking the table against this sentence finds four numbers that do not match.",
-   "after": "the gap opened from −0.42 °C in the first readings of run 1 to +1.11 °C in the last readings of run 3, against run means of −0.09, +0.54 and +0.97",
-   "excerpts": []
-  },
-  {
-   "id": "dt-044",
-   "type": "cut",
-   "anchor": "That leaves two readings of the same data, and this test cannot separate them",
-   "title": "The same alternative, told twice",
-   "body": "Your Must-have table says this already: \"separates a site-dependent bias from an unfinished warm-up\". Two full sentences here and a table row there is one too many. Keep the short version here and let the table carry the fix.",
-   "after": "Five minutes is not long enough for it to settle, so this test cannot tell a site-dependent offset from a sensor still warming from cold. Deciding between them needs a logged start time and a longer run.",
-   "excerpts": []
   },
   {
    "id": "dt-045",
@@ -709,33 +457,6 @@
    "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
   },
   {
-   "id": "dt-048",
-   "type": "mistake",
-   "anchor": "The LPA run's temperature was not recorded",
-   "title": "Our own protocol gives the plate a temperature",
-   "body": "Our Measurement page's LPA procedure says \"Prewarm the media to 37 °C\" and \"Start the light program, incubate at 37 °C, shaking, for 8 to 10 hours total.\" This sentence is the reason the registered forecast excuses itself from a 37 °C reactor batch. If the plate also ran at 37 °C, that reason disappears and the criterion applies after all. Check the incubator setting and rewrite this clause either way.",
-   "excerpts": [],
-   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?"
-  },
-  {
-   "id": "dt-049",
-   "type": "mistake",
-   "anchor": "The same batch carries the first ACC deaminase activity assay",
-   "title": "An earlier activity assay already exists",
-   "body": "Our Math Model page reports \"DNPH ACC deaminase activity assay, 2026-10-07, 7.2514 mU mL⁻¹ supernatant\", and Development describes the same measurement. That is the day before this batch, so this is not the first. Measurement also says the readout had to be Berthelot ammonium because DNPH was unavailable, while your criterion is written in α-ketobutyrate. Say which assay and which readout you mean.",
-   "after": "The same batch carries the first ACC deaminase activity assay run on reactor permeate, with its bar set in advance",
-   "excerpts": []
-  },
-  {
-   "id": "dt-050",
-   "type": "cut",
-   "anchor": "ELISA follows on the CcaS/CcaR version once the western blot band is strong enough.",
-   "title": "The assay plan belongs on Measurement",
-   "body": "This fold is the only wet-lab assay on a software page, it has no result yet, and it ends in a plan for a second assay that depends on a third. Keep the one line that ties the assay to this batch and send the rest to Measurement, which the page already points to.",
-   "after": "The same batch carries the first ACC deaminase activity assay, with its bar set in advance: at least 1 mU/mL in cell-free permeate, n = 3, against an empty-vector permeate and a minus-ACC blank. The assay and its follow-ups are on Measurement.",
-   "excerpts": []
-  },
-  {
    "id": "dt-051",
    "type": "suggest",
    "anchor": "Firmware v3.10.9 · backend v4.12 · interface v4.13",
@@ -747,29 +468,6 @@
    ],
    "excerpt_note": "Vilnius gives every component its name, its technology and a verb, so the diagram is readable in prose. Three sentences would do the same for you.",
    "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
-  },
-  {
-   "id": "dt-052",
-   "type": "suggest",
-   "anchor": "One file, no install, served by the board on port 7000 in English or Traditional Chinese",
-   "title": "No route for a judge to the code",
-   "body": "This describes the farmer's experience, not a reader's. There is no clone URL, no dependency list, no command and nothing a judge can open on their own machine, and the Best Software rules make an open-source repository in iGEM's GitLab an eligibility item. Five of the eight winners print the clone URL and the command in the body. You have a versioned zip, a README and a licence; print them here.",
-   "after": "One file, no install, served by the board on port 7000 in English or Traditional Chinese, with an explanation and normal range behind every information mark. The source is at [repository URL] under the MIT licence; clone it and copy the sketch to an Uno Q board, or open [file] in a browser to see the interface against recorded data with no board attached.",
-   "excerpts": [
-    "software-2023-og-ins-01",
-    "software-2024-og-unm-01"
-   ],
-   "excerpt_note": "INSAENSLyon1 writes its install section for a biologist who has never opened a terminal. UniMuenster says in the abstract which platforms it runs on and how it is distributed. Both are a paragraph each.",
-   "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
-  },
-  {
-   "id": "dt-053",
-   "type": "clarify",
-   "anchor": "Derived against the provisional baseline: wall shear 4996 s⁻¹, ΔP ratio 0.83, γ ratio 1.01",
-   "title": "Three terms the reader has not met",
-   "body": "ΔP ratio and γ ratio appear here for the first time and are only defined two folds later, and \"the provisional baseline\" is explained in section 6. The paragraph that follows is about these two numbers disagreeing, so the reader needs them first.",
-   "after": "Derived: wall shear 4996 s⁻¹, and two clogging indicators, the ΔP ratio at 0.83 and the γ ratio at 1.01. Both divide today's reading by a clean-module baseline that has not been re-measured on this plumbing, so both are marked provisional.",
-   "excerpts": []
   },
   {
    "id": "dt-054",
@@ -796,6 +494,370 @@
    ],
    "excerpt_note": "Fudan names the artefact behind every claim. A licence is an artefact: name it, and put the file where the name points.",
    "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)"
+  }
+ ],
+ "resolved": [
+  {
+   "id": "dt-a01",
+   "type": "mistake",
+   "anchor": "No result rests on one instrument",
+   "title": "This claim is wider than the page",
+   "body": "Your own last sentence says \"almost every result rests on one run\", and R5 rests on one plate reader while R4's forecast rests on the photometer alone. Three of the seven rows below have a single instrument behind them. Narrow the claim to the results that really carry a cross-check.",
+   "after": "Four results carry a second, independent check:",
+   "excerpts": [],
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-a02",
+   "type": "restructure",
+   "anchor": "a reference beam that never sees the culture separates lamp drift from growth",
+   "title": "Four cross-checks in one sentence",
+   "body": "This sentence runs for about seventy words and lists four different cross-checks before the reader has met any of them. It is the second thing a judge reads. Give the principle its own short sentence and let the four checks follow as a list.",
+   "after": "No result rests on one instrument. A reference beam that never sees the culture separates lamp drift from growth. Wall shear is computed twice, from pressure and from flow. The photometer is scored against a known TiO₂ dose. The field leaf sensor is scored against an air probe in the same air.",
+   "excerpts": [],
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-a03",
+   "type": "mistake",
+   "anchor": "the photometer was calibrated against a known TiO₂ dose",
+   "title": "Our two pages disagree about calibration",
+   "body": "This page says the photometer \"was calibrated against a known TiO₂ dose\". Our Measurement page says the opposite about the same instrument: \"Our central contribution is a validated, calibration-free in-line OD600 measurement device\" and \"Therefore, we treat calibration as unnecessary.\" A measurement judge who opens both pages sees one experiment reported two ways. Agree on one account with the Measurement team and write it in the same words on both pages.",
+   "after": "the photometer was scored against a known TiO₂ dose",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-a04",
+   "type": "clarify",
+   "anchor": "That layer gave 26.7 hours of warning before the OD channel failed",
+   "title": "Which layer is that layer",
+   "body": "The sentence before this one names four separate cross-checks, so \"that layer\" has nothing single to point back to. Name the trust layer, and say the warning came from one event on one run, which is what your limits already admit.",
+   "after": "The trust layer gave 26.7 hours of warning before the OD channel failed, on one event in one 434-hour run.",
+   "excerpts": [
+    "measurement-2025-ug-epfl-02"
+   ],
+   "excerpt_note": "EPFL attaches n to the headline number itself, so the reader never has to look for it.",
+   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?",
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-a07",
+   "type": "mistake",
+   "anchor": "Slope 1.018 against BioDrop, R² 0.995, on a known dose",
+   "title": "Two different scorings in one row",
+   "body": "The slope of 1.018 and R² 0.995 come from regressing the photometer on the BioDrop up to OD 1.2. The known-dose scoring is a separate analysis with different numbers. This row reads as though one fit did both. Pick the number you want in the headline and say what it was measured against.",
+   "after": "Slope 1.018 against the BioDrop to OD 1.2, R² 0.995; both instruments also scored against a known dose",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "zone": "abstract",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-001",
+   "type": "mistake",
+   "anchor": "Nobody will be there to take samples or read every value, so the digital twin makes the decisions",
+   "title": "The page later says a person decides",
+   "body": "Your Current limits say the opposite: \"every decision about the culture, above all induction, still goes through a person\", and the abstract says \"The loop is not closed.\" A judge will read this opening sentence as a claim the rest of the page withdraws. Put it in the tense you mean.",
+   "after": "Nobody will be there to take samples or read every value, so the twin has to turn the instrument readings into a recommendation a farmer can act on.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-003",
+   "type": "restructure",
+   "anchor": "The twin also decides when to switch on green light to start protectant production, which protectant, and how much",
+   "title": "One paragraph doing five jobs",
+   "body": "This paragraph covers regional data, field sensors, local data, the induction rule, the forecast, the prior and a future assay. The reader cannot hold it. Split it in two: what the twin reads, then what it decides from it.",
+   "after": "The twin reads three kinds of data. Regional data (the weather forecast, crop-stress risk and the Geospatial Analysis maps) show when and where crops will come under stress. Field sensors beside the crop measure leaf temperature, leaf wetness, and air temperature and humidity (R6). Local data from BR-01 show how much biomass is in the loop and whether those readings can be trusted (R3).\n\nFrom these it decides when to switch on green light, which protectant and how much. Induction makes sense when the field is heading into stress and the culture can respond, and the forecast (R4) and growth prior (R5) say whether the batch will be ready in time.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-006",
+   "type": "clarify",
+   "anchor": "Photometer: amber LED, 2 mm flow cuvette, sample and reference lux sensors",
+   "title": "Say the wavelength, not the colour",
+   "body": "\"Amber\" is a colour; OD600 is a wavelength claim. Our Hardware photometer page gives the number and ties the two together: \"600 nm sits in a strong amber, right in the middle of the green (~535 nm) and red (~672 nm) peaks of CcaS\". Put the number here, because a judge checking whether your OD600 is really an OD600 looks at this row.",
+   "after": "Photometer: 600 nm amber LED, 2 mm flow cuvette, sample and reference lux sensors",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-008",
+   "type": "restructure",
+   "anchor": "Today's rig software reads none of these.",
+   "title": "A fact that lands before its subject",
+   "body": "\"These\" has no referent yet; the table comes after this sentence. Let the reader see the channels first, then tell them nothing reads them.",
+   "after": "These are the channels outside the reactor: what the plants are experiencing, and what the weather is about to do. Today's rig software reads none of them. They belong to the next interface, and the leaf and air sensors have been on a bench but never on a plant (R6).",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-009",
+   "type": "cut",
+   "anchor": "The interface applies the BLASTAM rule for leaf blast [7]: a wet period counts when the leaf stays wet 10 h at 22–25 °C",
+   "title": "Six thresholds for a rule that fires nothing",
+   "body": "This fold spends a hundred words and three references on the exact hour-and-temperature table for a rule that your last sentence says \"triggers nothing\". Keep why the rule is there and the fact that it is unscored, and move the threshold table to wherever the rule is implemented.",
+   "after": "The interface applies the BLASTAM rule for leaf blast [7], which counts a wet period from leaf wetness hours and temperature, using the sensor for past hours and forecast humidity for future ones [8, 9]. The sensor is still on a bench, the rule is unscored on Taiwanese fields, and ACC deaminase is untested against blast, so blast risk is shown to the grower and triggers nothing.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-010",
+   "type": "cut",
+   "anchor": "BR-01 has grown B. subtilis five times. Runs 1 and 2 were June prototypes sampled by hand against a shake flask",
+   "title": "The abstract already said this",
+   "body": "\"BR-01 has grown B. subtilis five times\" opens the abstract word for word. The chapter eyebrow above already says \"Five runs\". Start on the thing the abstract did not say.",
+   "after": "Runs 1 and 2 were June prototypes sampled by hand against a shake flask; from July the in-line photometer took over. Figure 1 shows the four finished runs.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-012",
+   "type": "suggest",
+   "anchor": "16 August 2026: water at 22 °C, eight pump settings, once with the module fitted and once with a jumper in its place",
+   "title": "Say how many times each setting was read",
+   "body": "You give the date, the fluid, the temperature and the eight settings, which is most of a protocol. The one thing a team repeating this needs and cannot get is how many readings you took at each setting and how long you waited for the pressure to settle. Both are in your log.",
+   "after": "16 August 2026: water at 22 °C, eight pump settings, each held [number] s and read [number] times, once with the module fitted and once with a jumper in its place.",
+   "excerpts": [
+    "measurement-2024-og-kuleuven-03"
+   ],
+   "excerpt_note": "KULeuven lists every standard concentration and the matrix they were made in, so the curve can be remade. One line of that kind here fixes R1 for both measurement questions.",
+   "ballot": "Are the methods or protocols described well?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-013",
+   "type": "restructure",
+   "anchor": "The 25 August progress report gives 0.084 bar and 0.90–0.96× theory for the same measurement",
+   "title": "Two unresolved notes left in public",
+   "body": "The page now carries two folds called \"To reconcile before the freeze\", this one and the one in R2. Each tells a judge that we have two answers for one measurement and have not chosen. In both cases you have chosen: here the next sentence says the figures are the later analysis, and in R2 the scoped figure is the right one. Put the decision in the body as a reason, and keep a fold only for what is still genuinely open.",
+   "after": "Both figures come from one spreadsheet; the 0.096 bar and 1.03× quoted here are from the later re-analysis, which corrected [what changed]. The 25 August progress report's 0.084 bar and 0.90–0.96× are superseded.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-014",
+   "type": "mistake",
+   "anchor": "Wall shear can be computed from the pressure drop or from the flow rate, and the two agree to 2.8%",
+   "title": "Our notebook says ten per cent",
+   "body": "Our Dry Lab Notebook reports the same cross-check from the same measurement as agreeing \"to within 10 per cent\". The whole argument in section 5 is that October's 20% disagreement is a fault because August agreed to 2.8%. At 10% it is much less of an outlier. Settle which number is right before the freeze, because this one sentence carries the clogging indicator.",
+   "excerpts": [],
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-023",
+   "type": "restructure",
+   "anchor": "B. subtilis 168 growth log with the photometer",
+   "title": "The heading hides the result",
+   "body": "Your contents rail calls this R3 Trust layer, and the section's finding is that the trust layer caught a failing instrument. This heading names the dataset instead. Give the heading the finding.",
+   "after": "The trust layer on a 434-hour growth log",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-024",
+   "type": "mistake",
+   "anchor": "21 July to 8 August 2026: 434 hours of B. subtilis 168 at 22 °C, 2,671 valid rows, no sample drawn",
+   "title": "Our Hardware pages name a different strain",
+   "body": "You say 168. Our Hardware bioreactor page says of the same run: \"A continuous run of engineered B. subtilis WB800 at 22 °C, drawn from the bioreactor loop\", and Hardware photometer and Engineering say WB800 too. Results and Biomanufacturing back you (\"Every reactor number on this wiki is strain 168, run 4 included\"). Five pages, two strains, one run. Fix this first: it decides whether the page's main dataset is a wild-type or an engineered culture.",
+   "excerpts": [],
+   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-028",
+   "type": "clarify",
+   "anchor": "Contamination found no support; the culture still smelled of B. subtilis and four-quadrant streaks gave 168 morphology",
+   "title": "Say what each check ruled out",
+   "body": "Two checks are named and neither says what it excludes. A smell test and a streak plate rule out different things, and a judge grading controls needs the clause. Smell is also not a method a reader can repeat without knowing what you were comparing it to.",
+   "after": "Contamination found no support. Four-quadrant streaks gave 168 colony morphology with no second morphology, which rules out a gross bacterial contaminant; the culture also still had the characteristic B. subtilis odour, which is weaker evidence and is reported as such.",
+   "excerpts": [
+    "measurement-2023-ug-wm-04"
+   ],
+   "excerpt_note": "William-and-Mary gives each control a rule attached to it: a negative control with plaques voids the whole session. One clause per control is enough.",
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-029",
+   "type": "suggest",
+   "anchor": "On the 434-hour run this gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal",
+   "title": "Put the n where the number is",
+   "body": "The honest bound is in the next sentence, which is the right thing to have written. Move the scope into the sentence that makes the claim, so a judge skimming the section cannot take 26.7 hours as a capability.",
+   "after": "On this one run, with one instrument event, the trust layer gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal.",
+   "excerpts": [
+    "measurement-2025-ug-epfl-02"
+   ],
+   "excerpt_note": "EPFL never states a result without its n in the same sentence. It costs four words and it closes the question a judge would otherwise ask.",
+   "ballot": "Could the measurement(s) be reproduced by other iGEM teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-033",
+   "type": "cut",
+   "anchor": "Global linear and exponential fits did worse than persistence at short horizons.",
+   "title": "The fold below says this better",
+   "body": "The fold directly under this sentence explains why global linear and exponential fall behind, in more detail and more clearly. Keeping both means the reader meets the same fact twice in twenty words.",
+   "after": "A two-state Kalman filter (level and slope) beats persistence at every horizon, by less as the horizon grows.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-034",
+   "type": "mistake",
+   "anchor": "grew in light-programmable array wells under six light arms, read on a plate reader at five time points to 24 h",
+   "title": "Our plate map has one red intensity",
+   "body": "Your six arms are weak, medium and high red and the same three greens. Our Measurement page's plate map for this run says: \"red at 168 lux in columns 1, 3 and 5, and green at 220, 510 and 3850 lux in columns 2, 4 and 6\". If all three red columns sat at 168 lux, then R1, R2 and R3 are replicates of one condition and not three light levels, which changes what leaving one out tests.",
+   "excerpts": [],
+   "ballot": "Did the team validate and calibrate their measurement process appropriately for their approach?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-035",
+   "type": "clarify",
+   "anchor": "A logistic model beat logistic-with-lag by AICc and fits at NRMSE 1.9%",
+   "title": "AICc and NRMSE, both unexplained",
+   "body": "Two model-selection terms in one clause, neither expanded, in the first sentence of the section. A judge from outside modelling stops reading here. Six words of gloss keeps them.",
+   "after": "A logistic model fitted the data better than a logistic model with a lag phase, by AICc, which penalises the extra parameter. It fits at 1.9% normalised root-mean-square error (R² 0.997), against the 15% criterion for bioprocess models [3]",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-036",
+   "type": "restructure",
+   "anchor": "Green induction costs no growth: r spans 0.279 to 0.317 h⁻¹ across the six arms, within one standard error",
+   "title": "A strong claim, bounded two folds later",
+   "body": "This reads as a general finding about green light, and the fold below says the six arms are near-identical so the test cannot speak to a new condition. The bound belongs in the same breath as the claim.",
+   "after": "Across these six light arms, green induction costs no growth: r spans 0.279 to 0.317 h⁻¹, within one standard error, and the highest-green arm reaches the highest plateau. The arms are biologically near-identical, so this is a reproducibility result and not a test of a new condition.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-039",
+   "type": "restructure",
+   "anchor": "A reactor run takes days; a plate run takes 24 hours and tests six conditions.",
+   "title": "The reason for this test arrives last",
+   "body": "This is why the plate prior exists, and it sits in the closing paragraph after the whole experiment. Move it to the top of the section so the reader knows what the test is for before reading the table.",
+   "after": "A reactor run takes days; a plate run takes 24 hours and tests six conditions, so a prior fitted on a plate would let the twin forecast from the first few hours, when R4's Kalman filter has least to work with. On 19 September 2026, B. subtilis WB800 grew in light-programmable array wells...",
+   "excerpts": [
+    "software-2024-ug-vln-01"
+   ],
+   "excerpt_note": "Vilnius puts the reason the tool exists in sentence two. The casebook's commonest fault among winners is that reason arriving late.",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-043",
+   "type": "clarify",
+   "anchor": "the gap opened from −0.42 °C at the start of run 1 to +1.11 °C at the end of run 3",
+   "title": "These are not the run means",
+   "body": "The table two paragraphs above gives the room's three runs as −0.09, +0.54 and +0.97. These two numbers are the first and last readings inside the runs, which is a different thing, and nothing says so. A reader checking the table against this sentence finds four numbers that do not match.",
+   "after": "the gap opened from −0.42 °C in the first readings of run 1 to +1.11 °C in the last readings of run 3, against run means of −0.09, +0.54 and +0.97",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-044",
+   "type": "cut",
+   "anchor": "That leaves two readings of the same data, and this test cannot separate them",
+   "title": "The same alternative, told twice",
+   "body": "Your Must-have table says this already: \"separates a site-dependent bias from an unfinished warm-up\". Two full sentences here and a table row there is one too many. Keep the short version here and let the table carry the fix.",
+   "after": "Five minutes is not long enough for it to settle, so this test cannot tell a site-dependent offset from a sensor still warming from cold. Deciding between them needs a logged start time and a longer run.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-048",
+   "type": "mistake",
+   "anchor": "The LPA run's temperature was not recorded",
+   "title": "Our own protocol gives the plate a temperature",
+   "body": "Our Measurement page's LPA procedure says \"Prewarm the media to 37 °C\" and \"Start the light program, incubate at 37 °C, shaking, for 8 to 10 hours total.\" This sentence is the reason the registered forecast excuses itself from a 37 °C reactor batch. If the plate also ran at 37 °C, that reason disappears and the criterion applies after all. Check the incubator setting and rewrite this clause either way.",
+   "excerpts": [],
+   "ballot": "How well was the software validated (e.g., through experimental work, test data, or benchmarking)?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-049",
+   "type": "mistake",
+   "anchor": "The same batch carries the first ACC deaminase activity assay",
+   "title": "An earlier activity assay already exists",
+   "body": "Our Math Model page reports \"DNPH ACC deaminase activity assay, 2026-10-07, 7.2514 mU mL⁻¹ supernatant\", and Development describes the same measurement. That is the day before this batch, so this is not the first. Measurement also says the readout had to be Berthelot ammonium because DNPH was unavailable, while your criterion is written in α-ketobutyrate. Say which assay and which readout you mean.",
+   "after": "The same batch carries the first ACC deaminase activity assay run on reactor permeate, with its bar set in advance",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-050",
+   "type": "cut",
+   "anchor": "ELISA follows on the CcaS/CcaR version once the western blot band is strong enough.",
+   "title": "The assay plan belongs on Measurement",
+   "body": "This fold is the only wet-lab assay on a software page, it has no result yet, and it ends in a plan for a second assay that depends on a third. Keep the one line that ties the assay to this batch and send the rest to Measurement, which the page already points to.",
+   "after": "The same batch carries the first ACC deaminase activity assay, with its bar set in advance: at least 1 mU/mL in cell-free permeate, n = 3, against an empty-vector permeate and a minus-ACC blank. The assay and its follow-ups are on Measurement.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-052",
+   "type": "suggest",
+   "anchor": "One file, no install, served by the board on port 7000 in English or Traditional Chinese",
+   "title": "No route for a judge to the code",
+   "body": "This describes the farmer's experience, not a reader's. There is no clone URL, no dependency list, no command and nothing a judge can open on their own machine, and the Best Software rules make an open-source repository in iGEM's GitLab an eligibility item. Five of the eight winners print the clone URL and the command in the body. You have a versioned zip, a README and a licence; print them here.",
+   "after": "One file, no install, served by the board on port 7000 in English or Traditional Chinese, with an explanation and normal range behind every information mark. The source is at [repository URL] under the MIT licence; clone it and copy the sketch to an Uno Q board, or open [file] in a browser to see the interface against recorded data with no board attached.",
+   "excerpts": [
+    "software-2023-og-ins-01",
+    "software-2024-og-unm-01"
+   ],
+   "excerpt_note": "INSAENSLyon1 writes its install section for a biologist who has never opened a terminal. UniMuenster says in the abstract which platforms it runs on and how it is distributed. Both are a paragraph each.",
+   "ballot": "How well is the software written and documented for future groups to extend and improve? (Code documentation, comments in the code, performance evaluation, architecture diagrams, installation and execution scripts, etc.)",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "dt-053",
+   "type": "clarify",
+   "anchor": "Derived against the provisional baseline: wall shear 4996 s⁻¹, ΔP ratio 0.83, γ ratio 1.01",
+   "title": "Three terms the reader has not met",
+   "body": "ΔP ratio and γ ratio appear here for the first time and are only defined two folds later, and \"the provisional baseline\" is explained in section 6. The paragraph that follows is about these two numbers disagreeing, so the reader needs them first.",
+   "after": "Derived: wall shear 4996 s⁻¹, and two clogging indicators, the ΔP ratio at 0.83 and the γ ratio at 1.01. Both divide today's reading by a clean-module baseline that has not been re-measured on this plumbing, so both are marked provisional.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   },
   {
    "id": "dt-056",
@@ -807,7 +869,9 @@
    "excerpts": [
     "software-2025-og-mrb-01"
    ],
-   "excerpt_note": "Marburg opens on its own measured failure, 27% of combinations active, and the tool arrives as the answer to it. Same structure, and yours covers four features at once."
+   "excerpt_note": "Marburg opens on its own measured failure, 27% of combinations active, and the tool arrives as the answer to it. Same structure, and yours covers four features at once.",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   },
   {
    "id": "dt-057",
@@ -816,7 +880,9 @@
    "title": "The page is titled Digital Twin",
    "body": "Your own fold in section 1 defines a shadow as a system where changes back still need a person, and a twin as one where they do not. This bullet says the project is the first. A judge who has read both will want the page to say so near the top, not in the eighth limit. Being a shadow and saying so is a stronger position than a twin claim the page withdraws.",
    "after": "The loop is not closed. Valves move under software control, but every decision about the culture, above all induction, still goes through a person, so by the definition in section 1 this is a digital shadow with actuation and not yet a twin [1, 2].",
-   "excerpts": []
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   },
   {
    "id": "dt-058",
@@ -830,7 +896,9 @@
     "software-2025-og-mun-01"
    ],
    "excerpt_note": "Vilnius publishes its API spec as a file; Munich prints curl calls. The route in and the route out, written as something you could type, is what this ballot question rewards.",
-   "ballot": "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)"
+   "ballot": "How well can the software be integrated with external tools/software applications? (APIs, packages, etc.)",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   },
   {
    "id": "dt-059",
@@ -839,7 +907,9 @@
    "title": "This fold belongs on Safety",
    "body": "The page already points at Safety for the other three containment layers, and this fold argues a safety case in a section about what other teams can reuse. The reusable part is one clause: pressure transducers you already log will show a broken fibre.",
    "after": "(keep one line in the For other teams list: \"Pressure logging as containment monitoring. A broken fibre shows up as a trans-membrane pressure anomaly, and those transducers are already logged, so detection is a software change. The other three layers are on Safety.\")",
-   "excerpts": []
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   }
  ]
 }

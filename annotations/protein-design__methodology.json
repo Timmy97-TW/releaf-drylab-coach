@@ -164,15 +164,6 @@
    "excerpts": []
   },
   {
-   "id": "me-008",
-   "type": "mistake",
-   "anchor": "Significantly, her ACC D recommendation was scoped towards drought and heat",
-   "title": "This caveat is printed twice",
-   "body": "Section 2.3 carries it again: \"Significantly, her ACC Deaminase recommendation was scoped towards drought and heat, not confirmed for salinity specifically, and she did not make a direct claim about ACC deaminase's effectiveness under salinity stress.\" The only differences are the abbreviation. Keep the copy in Interviews, where the interview is being reported, and cut this one to the decision it drove.",
-   "after": "Dr. Brophy suggested a third protectant, ACC deaminase, for drought and heat. Her recommendation and its limits are in Interviews below.",
-   "excerpts": []
-  },
-  {
    "id": "me-009",
    "type": "clarify",
    "anchor": "This was beneficial, as both LEA14 and BoPEP4 fail to combat one of Taiwan's largest abiotic environmental stresses",
@@ -360,16 +351,6 @@
    "after": "The published solution structure defines residues 24 to 145, but our own ensemble measurement in section 3.4 puts the disordered boundary at residue 16. We truncate at [16 or 23] because [reason], and section 3.4 states the same boundary.",
    "excerpts": [],
    "ballot": "Did the team use experimental or other relevant data to develop, train, or validate the model or computational approach?"
-  },
-  {
-   "id": "me-028",
-   "type": "mistake",
-   "anchor": "We based our inputs on two factors: 5GR8, the wwPDB crystal structure of PEPR1-AtPEP1; and Alphafold",
-   "title": "AlphaFold is spelled three ways and never cited",
-   "body": "The page writes \"Alphafold\" here, \"AlphaFold3\" twice, and \"AlphaFold 3\" in sections 3.5 and 4.3. It is the most-used tool on the page and the only heavily used one with no entry in your reference list, while CPORT and ePlant have entries and are never cited anywhere. Pick one spelling, give the version, and add the citation.",
-   "after": "We based our inputs on two things: 5GR8, the wwPDB crystal structure of PEPR1 with AtPEP1, and AlphaFold 3, DeepMind's structure predictor, which we ran through the AlphaFold Server.",
-   "excerpts": [],
-   "ballot": "Does the modeling or computational approach provide a good example for others?"
   },
   {
    "id": "me-029",
@@ -687,6 +668,31 @@
    "after": "[add an entry for every tool and paper named in the body, cite each one inline at first use, fix the HADDOCK and ViennaRNA version mismatches, and either cite CPORT and ePlant where they were used or remove them]",
    "excerpts": [],
    "ballot": "Does the modeling or computational approach provide a good example for others?"
+  }
+ ],
+ "resolved": [
+  {
+   "id": "me-008",
+   "type": "mistake",
+   "anchor": "Significantly, her ACC D recommendation was scoped towards drought and heat",
+   "title": "This caveat is printed twice",
+   "body": "Section 2.3 carries it again: \"Significantly, her ACC Deaminase recommendation was scoped towards drought and heat, not confirmed for salinity specifically, and she did not make a direct claim about ACC deaminase's effectiveness under salinity stress.\" The only differences are the abbreviation. Keep the copy in Interviews, where the interview is being reported, and cut this one to the decision it drove.",
+   "after": "Dr. Brophy suggested a third protectant, ACC deaminase, for drought and heat. Her recommendation and its limits are in Interviews below.",
+   "excerpts": [],
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
+  },
+  {
+   "id": "me-028",
+   "type": "mistake",
+   "anchor": "We based our inputs on two factors: 5GR8, the wwPDB crystal structure of PEPR1-AtPEP1; and Alphafold",
+   "title": "AlphaFold is spelled three ways and never cited",
+   "body": "The page writes \"Alphafold\" here, \"AlphaFold3\" twice, and \"AlphaFold 3\" in sections 3.5 and 4.3. It is the most-used tool on the page and the only heavily used one with no entry in your reference list, while CPORT and ePlant have entries and are never cited anywhere. Pick one spelling, give the version, and add the citation.",
+   "after": "We based our inputs on two things: 5GR8, the wwPDB crystal structure of PEPR1 with AtPEP1, and AlphaFold 3, DeepMind's structure predictor, which we ran through the AlphaFold Server.",
+   "excerpts": [],
+   "ballot": "Does the modeling or computational approach provide a good example for others?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   }
  ]
 }

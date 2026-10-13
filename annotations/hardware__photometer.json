@@ -270,15 +270,6 @@
    "ballot": "Did the team demonstrate utility and functionality in their hardware proof of concept?"
   },
   {
-   "id": "ph-018",
-   "type": "mistake",
-   "anchor": "engineered Bacillus subtilis WB800 at 22 °C, read in line through the flow cell",
-   "title": "Two pages, two strains, one run",
-   "body": "You say engineered B. subtilis WB800. Our Digital Twin page says \"434 hours of B. subtilis 168 at 22 degrees C\" and states a rule that settles it either way: \"Every reactor run before October used B. subtilis 168.\" The run started on 21 July. The temperature, the no-sampling claim and the loop all match, so this is one run with two strains written on it.",
-   "excerpts": [],
-   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
-  },
-  {
    "id": "ph-019",
    "type": "suggest",
    "anchor": "a 195.54 lx sample against a 26.67 lx reference, a ratio of 7.33×",
@@ -811,6 +802,19 @@
    "body": "The bill of materials in 1.1 lists only \"Black PLA and black TPU (soft)\", the specification sheet says \"PLA with TPU-lined seats\", and 3.3 explains the design as PLA for the structure with TPU lining. This row adds PETG-CF for the lens holder and sensor frame, which are the two parts that hold the optics. Somebody ordering filament from 1.1 cannot print plate 1.",
    "excerpts": [],
    "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?"
+  }
+ ],
+ "resolved": [
+  {
+   "id": "ph-018",
+   "type": "mistake",
+   "anchor": "engineered Bacillus subtilis WB800 at 22 °C, read in line through the flow cell",
+   "title": "Two pages, two strains, one run",
+   "body": "You say engineered B. subtilis WB800. Our Digital Twin page says \"434 hours of B. subtilis 168 at 22 degrees C\" and states a rule that settles it either way: \"Every reactor run before October used B. subtilis 168.\" The run started on 21 July. The temperature, the no-sampling claim and the loop all match, so this is one run with two strains written on it.",
+   "excerpts": [],
+   "ballot": "Is the documentation of the hardware system sufficient to enable reproduction by other teams?",
+   "resolved": "2026-10-13",
+   "resolved_at_wiki": "18b6cda"
   }
  ]
 }
