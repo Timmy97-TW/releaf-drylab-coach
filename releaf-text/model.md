@@ -167,7 +167,7 @@ At the recent typical first-crop trend yield (7,354 kg/ha) and the official 2026
 [IMG] The same interface panel switched to the second crop at stress index 0.33, also labelled mild, but reporting plus 0.7 per cent versus a normal year, plus 40 kilograms per hectare and a 25 per cent chance of losing more than five per cent.
 [CAPTION] Figure 9. The same index value, 0.33, on the second crop. It is a normal year here and a bad one there, which is why the crop is always quoted with the number.
 #### How much of that loss ACC deaminase can reach: the coefficient our wet lab sets
-Efficacy is the share of the yield a stress costs that ACC deaminase could save: 1 means all of it, 0 means none. The values in Figure 11 come from the literature. Our wet lab measured the first one directly, for salinity, in Arabidopsis (experiment #9: buffer or ACCD given one day before, together with, or one day after 0, 75 or 100 mM NaCl; 15 days on agar). We then carried the result to rice grain yield with published rice studies.
+Efficacy is the share of the yield a stress costs that ACC deaminase could save: 1 means all of it, 0 means none. The values in Figure 10 come from the literature. Our wet lab measured the first one directly, for salinity, in Arabidopsis (experiment #9: buffer or ACCD given one day before, together with, or one day after 0, 75 or 100 mM NaCl; 15 days on agar). We then carried the result to rice grain yield with published rice studies.
 [TABLE] Arabidopsis fresh weight at 75 millimolar sodium chloride, with and without ACC deaminase at three timings
 | Arabidopsis, 75 mM NaCl
 | Fresh weight (g)
@@ -307,7 +307,7 @@ Measured activity. ACC deaminase activity was measured by DNPH colorimetry on cu
 | 7.25
 | 2.37
 | Detected, below LOQ
-Signal is not a biomass artefact. WB800 has the highest OD600 and the second-highest absorbance; samyQ has lower biomass and higher signal. A background from cell density or secreted carbonyl metabolites would produce matching ranks. This argument is independent of the standard curve and survives any calibration error.
+Signal is not a biomass artefact. WB800 has the highest OD600 and the lowest absorbance; samyQ has lower biomass and higher signal. A background from cell density or secreted carbonyl metabolites would produce matching ranks. This argument is independent of the standard curve and survives any calibration error.
 Calibration correction. The standard-curve concentrations were originally computed against a 110 µL reaction volume while the actual standard volume was 160.6 µL. Correcting this reduces every derived activity by a factor of 1.460.
 [IMG] Absorbance at 540 nanometres against alpha-ketobutyrate concentration. Red crosses mark the five standards as originally labelled, spread out to 4 millimolar; grey arrows move each one left onto a green fitted line, with the corrected points reaching only 2.7 millimolar. The title says labels overstated concentration 1.460 times, inflating activity 46 per cent.
 [CAPTION] Figure 18. Standard curve before and after correction. Arrows show each point moving to its true concentration. Fitted slope 0.18695 AU mM−1, R2 0.99907, residual SD 0.00715.
@@ -375,7 +375,7 @@ Two inputs. Field size sets the litres per application, and the stress level set
 ### Result 2 · Where those numbers come from
 Three things to justify: the dose we measured, the correction we modelled, and how often a field needs it. Then one question that could undo all three.
 #### The dose, and why it is a ceiling rather than a requirement
-Experiment #9 sprayed 1.67 mL of filtered supernatant onto a plate of seven-day-old Arabidopsis. A recorded volume over a known area is a rate, and a rate scales to a hectare without any modelling in between.
+Experiment #9 sprayed 1.67 mL of filtered supernatant onto a plate of seven-day-old Arabidopsis. A recorded volume over an assumed plate area is a rate, and a rate scales to a hectare without any modelling in between.
 [TABLE] What the per-hectare dose rests on, quantity by quantity, with whether each was measured or assumed
 | Quantity
 | Value
@@ -427,7 +427,7 @@ Block 1 rebuilt its stress index dekad by dekad for every 雲林縣 second crop 
 This does not enter the arithmetic, because whatever uptake happened on the plate is already inside the 1,670 L. It matters for a different reason. If an intact enzyme cannot cross into a rice leaf, then no amount of volume fixes it, and the canopy correction is correcting the wrong thing.
 [IMG] Horizontal bars on a logarithmic size axis in nanometres under the title the cuticle is shut, the stoma is wide open. Water 0.3, sucrose 1.0, cuticle aqueous pore 4.5 in red, ACCD subunit 5.9, ACCD active tetramer 9.4, and open stomatal pore 2,000. A pale vertical band marks the cuticle pore width, and both enzyme bars extend past it.
 [CAPTION] Figure 24. Sizes on a log scale. The enzyme is excluded from the cuticle by two-fold. The open stomatal pore is not the barrier it looks like here: along that route the size-exclusion limit is about 10 nm, and the 9.4 nm tetramer clears it only just.
-Rice is amphistomatous: stomata on both leaf surfaces, upper density comparable to or slightly above the lower. Most crops keep theirs on the underside, where a spray never lands. For us that helps, because droplets settle on a surface that actually has the pores.
+Rice is amphistomatous: stomata sit on both surfaces, about 187 per mm² above and 621 below. Most crops keep theirs only on the underside, where a spray never lands, so a sprayed rice leaf at least offers pores on the side the droplets reach.
 [IMG] Light micrograph of the upper surface of a rice leaf, with rows of stomata running parallel to the veins.
 [CAPTION] Figure 25. Rice leaf, upper (adaxial) surface, 186.7 stomata per mm2.
 [IMG] Light micrograph of the lower surface of a rice leaf, with denser rows of stomata between the veins.
@@ -530,7 +530,7 @@ Our Arabidopsis results already reach the ceiling of our efficacy calculation. M
 3 · From a general solution to a specific need
 Our model estimates a 64.7-year payback on ordinary paddy, compared with 2.4 years on salt-affected coastal land. These are projections, but the difference changes where ReLEAF might be useful.
 And one thing we cannot fix this year
-The payback in section 4 is priced on salinity. The spray schedule in section 3 is counted from waterlogging dekads. Salinity is chronic and sits in the soil every day, so it has no event for a forecast to catch, and Block 1 does not carry it in the index. Making the two agree means rebuilding the release rule around salt-sensitive growth stages, which would need roughly 15 applications over a 30-day window instead of 9. We know this is the largest open problem in the model. We would rather state it than paper over it.
+The payback is priced on salinity. The spray schedule, in the same block, is counted from waterlogging dekads. Salinity is chronic and sits in the soil every day, so it has no event for a forecast to catch, and Block 1 does not carry it in the index. Making the two agree means rebuilding the release rule around salt-sensitive growth stages, which would need roughly 15 applications over a 30-day window instead of 9. We know this is the largest open problem in the model. We would rather state it than paper over it.
 We began by trying to calculate how much protectant a farmer would need. We ended up discovering how much we still need to learn before that number can be used in a real field. For us, that is the purpose of the model: not just to produce an estimate, but to show exactly what needs to be tested before ReLEAF can move beyond the lab.
 ## References
 ### Block 1 · Stress index
@@ -549,7 +549,7 @@ We began by trying to calculate how much protectant a farmer would need. We ende
 - Our wet lab: DNPH ACC deaminase activity assay, 2026-10-07, FlexA A540 readings, n = 1.
 ### Block 3 · Dose and payback
 - Our wet lab: Arabidopsis salinity experiment #9, phase 3 application protocol, three sprays from a sterilised nozzle at 10 cm, calibrated at 1.67 mL per three sprays in the companion heat protocol. Recorded on Plants. The source of the applied volume behind 1,670 L/ha.
-- Our wet lab: DNPH ACC deaminase activity assay, 2026-10-07, 7.2514 mU mL−1 supernatant, above the limit of detection and below the limit of quantitation. Every litre figure scales with it.
+- Our wet lab: DNPH ACC deaminase activity assay, 2026-10-07, 7.2514 mU mL−1 of reactor permeate, above the limit of detection and below the limit of quantitation. Every litre figure scales with it.
 - Block 1 rebuilt dekad by dekad for every 雲林縣 second crop (二期), 2001 to 2025, from Agriculture and Food Agency yields and ERA5 daily weather. The source of the release count, of the 17 quiet seasons out of 25, and of the 2001 and 2008 worst case.
 - Rice leaf area index 4.5 at panicle initiation against 0.115 on a seedling plate, and the spray-capture fraction at each. The canopy correction of 2.44× is modelled from these, not measured.
 - Cuticular aqueous pores 4 to 5 nm, against the 9.4 nm active tetramer; organosilicone surfactants drive stomatal mass flow (Knoche 1994). Behind Figure 24.

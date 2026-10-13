@@ -96,7 +96,7 @@ The flaw was control. Once a transgenic organism is released, expression, dose a
 What we needed from the bacteria was the molecule, not the organism. So we moved the organism into a machine and left only the product in the field. Stress appears, the grower turns on the light, protectant is made and delivered. A release problem became a containment problem, and containment is something hardware can solve.
 ### 1.2 Why B. subtilis and Perfusion Hollow Fiber
 Bacillus subtilis WB800 is well characterized, industrially proven, and native to the rhizosphere. Critically, it secretes protein into the medium, so the protectant is already outside the cell.
-That makes separation a question of size. In a perfusion hollow‑fiber bioreactor, culture circulates through the fiber lumens while medium flows past on the other side. Protectant crosses the membrane; whole bacteria are too large to follow it. Exchanging medium as the run goes removes the need to grow to a peak and harvest. Holding density for weeks is the aim and has not been shown: the longest run with the membrane module fitted is about 53 hours (7.2).
+That makes separation a question of size. In a perfusion hollow‑fiber bioreactor, culture circulates through the fiber lumens while medium flows past on the other side. Protectant crosses the membrane; whole bacteria are too large to follow it. Exchanging medium as the run goes removes the need to grow to a peak and harvest. Holding density for weeks is the aim and has not been shown: the longest run with the membrane module fitted is the 434-hour run of 21 July to 8 August, whose OD record is usable for its first 243 hours (7.2).
 ### 1.3 Against Shelf Production
 Centralized manufacturing suits stable chemicals. Many peptides degrade in storage, often require a cold chain, and lose potency before use.
 The timing is also wrong. A bottle filled months earlier cannot respond to a drought that arrives this week. Producing on site means the protectant is fresh, the dose matches the conditions, and no one pays to refrigerate and ship water.
@@ -166,7 +166,7 @@ Four tracks, each with its own design–build–test–learn cycles: growing the
 ### 3.1 Bacteria Growth
 Two cycles, both on the membrane loop. The first ran at room temperature, leaked at the pump and grew almost nothing; the second put a stirrer under the reservoir and held 37 °C.
 01
-#### Culture B. subtilis WB800 at room temperature (22 °C)
+#### Culture B. subtilis 168 at room temperature (22 °C)
 Bacteria growth · Cycle 1 · Prototype I · 6 June 2026
 ##### Design
 The objective of this first design was a working continuous‑flow system around a PES hollow‑fiber membrane. The build that came out of it showed the structural limits and the hardware changes needed next. It comprises a PES hollow‑fiber membrane, a medium reservoir, a peristaltic pump and a Luer valve: a simple, continuous flow‑through mechanism (Figure 2, Figure 3).
@@ -185,7 +185,7 @@ BioreactorFlask control
 ##### Learn
 The divergent OD600 values between the tube and the reservoir indicated poor growth and pointed to two hardware limitations for the next cycle. We hypothesize that the lack of active mixing led to nutrient stratification and cell sedimentation in the reservoir, limiting growth. To stop the leak, the loop needed biocompatible BPT tubing, for higher durability and a more stable seal at the pump. To overcome the lack of growth, we planned an active magnetic stirrer, on the model of the laboratory hot‑plate stirrer, to prevent sedimentation and keep nutrients evenly distributed. And the sampling port was to move to the medium reservoir's outlet, for a cleaner reading and less contamination risk.
 02
-#### Culture B. subtilis WB800 at 37 °C
+#### Culture B. subtilis 168 at 37 °C
 Bacteria growth · Cycle 2 · Prototype II · 14 June 2026
 ##### Design
 A 200 rpm magnetic stirrer was added to the medium reservoir to prevent sedimentation and keep nutrients evenly distributed. The sampler was moved next to the medium reservoir: the reservoir holds far more of the volume than the hollow‑fiber membrane, so a reading there is a better average of the OD of the whole bioreactor module (Figure 6).
@@ -314,7 +314,7 @@ Everything so far has also been static samples held in the cell. Titanium dioxid
 That is what shapes V4. We need the light path enclosed from the LED to both sensors so only our own source reaches them. We need direct control of the LED instead of a fixed drive, in case the source itself is drifting. We need to see both channels live during a run instead of reading them off at the end. And then we need to put real culture through it.
 05
 #### V4, and the 22 °C growth curve
-Photometer · Cycle 5 · V4 · continuous B. subtilis WB800 run
+Photometer · Cycle 5 · V4 · continuous B. subtilis 168 run
 ##### Design
 V4 is the version we ran the long experiment on. Three changes carry it.
 - Component positions are fixed at their default alignment. Nothing slides any more, which removes the drift that hurt V1.
@@ -327,7 +327,7 @@ The instrument runs on an Arduino UNO Q. Both lux sensors report over the same b
 [IMG] The V4 photometer running beside a culture bottle on a shelf inside an incubator
 [CAPTION] Figure 15 The long run V4 logging the culture inside the incubator.
 ##### Test
-A continuous run of engineered B. subtilis WB800 at 22 °C, drawn from the bioreactor loop and passed through the flow cell in line, so no sampling event interrupted the culture and no material was removed to measure it. The run passed 400 hours.
+A continuous run of wild-type B. subtilis 168 at 22 °C, drawn from the bioreactor loop and passed through the flow cell in line, so no sampling event interrupted the culture and no material was removed to measure it. The run passed 400 hours.
 Elapsed336.0h
 OD6001.387
 PhasePlateau
@@ -596,9 +596,9 @@ Turn the handle of the second valve so that it points at the right port, closing
 - Connect a 2‑inch tube from the “Out” of a filter to another hole in the cap of the shell‑side reservoir. It needs no inner tube: its only job is to let oxygen and gas into the system without affecting sterility.
 ### 6.3 Culture and Medium
 #### Organism
-B. subtilis WB800; engineered strains in the 400 h run and integration v1
+B. subtilis 168 in every run to September: wild type in the 400 h run, and 168 secreting ACC deaminase constitutively in integration v1. WB800 from 8 October
 #### Medium
-LB, 300 mL working volume
+LB, 300 mL working volume in the first three runs, 1 L from September
 #### Inoculum
 20 mL multi‑overnight liquid culture
 #### Temperature
@@ -641,7 +641,7 @@ Needs
 A 22 °C growth curve on the membrane loop.
 #### Run duration
 Open
-The longest recording known to have the membrane module fitted is about two days (53 h, integration cycle 1). The 400 h photometer record was drawn from the bioreactor loop, in the doc's words. Field use implies weeks.
+The 434-hour photometer run of 21 July to 8 August had the membrane module fitted, and its OD record is usable for the first 243 hours. The integrated v1 loop has recorded about two days (53 h, integration cycle 1), the first part of the 1 to 6 September run. Field use implies weeks.
 Needs
 An extended run with the membrane module fitted and the photometer logging throughout.
 ### 7.3 What Would Make This Deployable

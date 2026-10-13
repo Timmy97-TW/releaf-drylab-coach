@@ -1,13 +1,249 @@
 {
- "wiki": "655c7af 2026-10-12 Photometer: the last open-question box becomes prose",
+ "wiki": "18b6cda 2026-10-13 Audit: skip software/rig-app, whose page links libraries App Lab supplies at run time",
  "pages": {
   "model": {
    "notes": 68,
-   "broken": []
+   "broken": [
+    {
+     "id": "mm-014",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The values in Figure 11 come from the literature."
+    },
+    {
+     "id": "mm-028",
+     "zone": "body",
+     "found": 0,
+     "anchor": "WB800 has the highest OD600 and the second-highest absorbance"
+    },
+    {
+     "id": "mm-039",
+     "zone": "body",
+     "found": 0,
+     "anchor": "A recorded volume over a known area is a rate"
+    },
+    {
+     "id": "mm-043",
+     "zone": "body",
+     "found": 0,
+     "anchor": "stomata on both leaf surfaces, upper density comparable to or slightly above the lower"
+    },
+    {
+     "id": "mm-056",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The payback in section 4 is priced on salinity. The spray schedule in section 3 is counted from waterlogging dekads."
+    }
+   ]
   },
   "software": {
    "notes": 66,
-   "broken": []
+   "broken": [
+    {
+     "id": "dt-a01",
+     "zone": "abstract",
+     "found": 0,
+     "anchor": "No result rests on one instrument"
+    },
+    {
+     "id": "dt-a02",
+     "zone": "abstract",
+     "found": 0,
+     "anchor": "a reference beam that never sees the culture separates lamp drift from growth"
+    },
+    {
+     "id": "dt-a03",
+     "zone": "abstract",
+     "found": 0,
+     "anchor": "the photometer was calibrated against a known TiO₂ dose"
+    },
+    {
+     "id": "dt-a04",
+     "zone": "abstract",
+     "found": 0,
+     "anchor": "That layer gave 26.7 hours of warning before the OD channel failed"
+    },
+    {
+     "id": "dt-a07",
+     "zone": "abstract",
+     "found": 0,
+     "anchor": "Slope 1.018 against BioDrop, R² 0.995, on a known dose"
+    },
+    {
+     "id": "dt-001",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Nobody will be there to take samples or read every value, so the digital twin makes the decisions"
+    },
+    {
+     "id": "dt-003",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The twin also decides when to switch on green light to start protectant production, which protectant, and how much"
+    },
+    {
+     "id": "dt-006",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Photometer: amber LED, 2 mm flow cuvette, sample and reference lux sensors"
+    },
+    {
+     "id": "dt-008",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Today's rig software reads none of these."
+    },
+    {
+     "id": "dt-009",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The interface applies the BLASTAM rule for leaf blast [7]: a wet period counts when the leaf stays wet 10 h at 22–25 °C"
+    },
+    {
+     "id": "dt-010",
+     "zone": "body",
+     "found": 0,
+     "anchor": "BR-01 has grown B. subtilis five times. Runs 1 and 2 were June prototypes sampled by hand against a shake flask"
+    },
+    {
+     "id": "dt-012",
+     "zone": "body",
+     "found": 0,
+     "anchor": "16 August 2026: water at 22 °C, eight pump settings, once with the module fitted and once with a jumper in its place"
+    },
+    {
+     "id": "dt-013",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The 25 August progress report gives 0.084 bar and 0.90–0.96× theory for the same measurement"
+    },
+    {
+     "id": "dt-014",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Wall shear can be computed from the pressure drop or from the flow rate, and the two agree to 2.8%"
+    },
+    {
+     "id": "dt-023",
+     "zone": "body",
+     "found": 0,
+     "anchor": "B. subtilis 168 growth log with the photometer"
+    },
+    {
+     "id": "dt-024",
+     "zone": "body",
+     "found": 0,
+     "anchor": "21 July to 8 August 2026: 434 hours of B. subtilis 168 at 22 °C, 2,671 valid rows, no sample drawn"
+    },
+    {
+     "id": "dt-028",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Contamination found no support; the culture still smelled of B. subtilis and four-quadrant streaks gave 168 morphology"
+    },
+    {
+     "id": "dt-029",
+     "zone": "body",
+     "found": 0,
+     "anchor": "On the 434-hour run this gave 26.7 hours to mark OD unreliable and pause forecasts while the readings still looked normal"
+    },
+    {
+     "id": "dt-033",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Global linear and exponential fits did worse than persistence at short horizons."
+    },
+    {
+     "id": "dt-034",
+     "zone": "body",
+     "found": 0,
+     "anchor": "grew in light-programmable array wells under six light arms, read on a plate reader at five time points to 24 h"
+    },
+    {
+     "id": "dt-035",
+     "zone": "body",
+     "found": 0,
+     "anchor": "A logistic model beat logistic-with-lag by AICc and fits at NRMSE 1.9%"
+    },
+    {
+     "id": "dt-036",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Green induction costs no growth: r spans 0.279 to 0.317 h⁻¹ across the six arms, within one standard error"
+    },
+    {
+     "id": "dt-039",
+     "zone": "body",
+     "found": 0,
+     "anchor": "A reactor run takes days; a plate run takes 24 hours and tests six conditions."
+    },
+    {
+     "id": "dt-043",
+     "zone": "body",
+     "found": 0,
+     "anchor": "the gap opened from −0.42 °C at the start of run 1 to +1.11 °C at the end of run 3"
+    },
+    {
+     "id": "dt-044",
+     "zone": "body",
+     "found": 0,
+     "anchor": "That leaves two readings of the same data, and this test cannot separate them"
+    },
+    {
+     "id": "dt-048",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The LPA run's temperature was not recorded"
+    },
+    {
+     "id": "dt-049",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The same batch carries the first ACC deaminase activity assay"
+    },
+    {
+     "id": "dt-050",
+     "zone": "body",
+     "found": 0,
+     "anchor": "ELISA follows on the CcaS/CcaR version once the western blot band is strong enough."
+    },
+    {
+     "id": "dt-052",
+     "zone": "body",
+     "found": 0,
+     "anchor": "One file, no install, served by the board on port 7000 in English or Traditional Chinese"
+    },
+    {
+     "id": "dt-053",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Derived against the provisional baseline: wall shear 4996 s⁻¹, ΔP ratio 0.83, γ ratio 1.01"
+    },
+    {
+     "id": "dt-056",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The rig app's interlocks, board-side recording, bubble rejection and calibration bookkeeping each exist because a run failed without them"
+    },
+    {
+     "id": "dt-057",
+     "zone": "body",
+     "found": 0,
+     "anchor": "That makes it a digital shadow with actuation [1, 2]."
+    },
+    {
+     "id": "dt-058",
+     "zone": "body",
+     "found": 0,
+     "anchor": "A documented two-line ASCII protocol with a heartbeat watchdog, interlocks on the microcontroller"
+    },
+    {
+     "id": "dt-059",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The pressure logging also gives the project's cheapest biocontainment layer."
+    }
+   ]
   },
   "protein-design": {
    "notes": 13,
@@ -15,7 +251,20 @@
   },
   "protein-design/methodology": {
    "notes": 60,
-   "broken": []
+   "broken": [
+    {
+     "id": "me-008",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Significantly, her ACC D recommendation was scoped towards drought and heat"
+    },
+    {
+     "id": "me-028",
+     "zone": "body",
+     "found": 0,
+     "anchor": "We based our inputs on two factors: 5GR8, the wwPDB crystal structure of PEPR1-AtPEP1; and Alphafold"
+    }
+   ]
   },
   "protein-design/sprints": {
    "notes": 38,
@@ -23,15 +272,72 @@
   },
   "protein-design/molecular-dynamics": {
    "notes": 42,
-   "broken": []
+   "broken": [
+    {
+     "id": "md-011",
+     "zone": "body",
+     "found": 0,
+     "anchor": "In the full-length peptide (Lys7–Arg156), a salt bridge between Lys7 and Asp129"
+    },
+    {
+     "id": "md-013",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Each trajectory 30 ns of production dynamics from a single random seed"
+    },
+    {
+     "id": "md-038",
+     "zone": "body",
+     "found": 0,
+     "anchor": "illustrates how each peptide-peptide complex evolved during the simulation"
+    }
+   ]
   },
   "hardware/bioreactor": {
    "notes": 70,
-   "broken": []
+   "broken": [
+    {
+     "id": "br-015",
+     "zone": "body",
+     "found": 0,
+     "anchor": "the longest run with the membrane module fitted is about 53 hours (7.2)"
+    },
+    {
+     "id": "br-024",
+     "zone": "body",
+     "found": 0,
+     "anchor": "Culture B. subtilis WB800 at room temperature (22 °C)"
+    },
+    {
+     "id": "br-063",
+     "zone": "body",
+     "found": 0,
+     "anchor": "B. subtilis WB800; engineered strains in the 400 h run and integration v1"
+    },
+    {
+     "id": "br-065",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The longest recording known to have the membrane module fitted is about two days (53 h, integration cycle 1)."
+    },
+    {
+     "id": "br-066",
+     "zone": "body",
+     "found": 0,
+     "anchor": "The 400 h photometer record was drawn from the bioreactor loop, in the doc's words."
+    }
+   ]
   },
   "hardware/photometer": {
    "notes": 70,
-   "broken": []
+   "broken": [
+    {
+     "id": "ph-018",
+     "zone": "body",
+     "found": 0,
+     "anchor": "engineered Bacillus subtilis WB800 at 22 °C, read in line through the flow cell"
+    }
+   ]
   },
   "hardware/diopal": {
    "notes": 60,

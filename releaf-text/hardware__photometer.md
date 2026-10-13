@@ -177,7 +177,7 @@ As built
 400hContinuous run
 2,132Points traced (first 336 h)
 0Samples withdrawn
-The final assembly’s long run: engineered Bacillus subtilis WB800 at 22 °C, read in line through the flow cell, so no sampling event interrupted the culture and nothing was removed to measure it. The run passed 400 hours. Its first 336 hours, 2,132 logged points, are traced in Figure 2 from the live dashboard.
+The final assembly’s long run: wild-type Bacillus subtilis 168 at 22 °C, read in line through the flow cell, so no sampling event interrupted the culture and nothing was removed to measure it. The run passed 400 hours. Its first 336 hours, 2,132 logged points, are traced in Figure 2 from the live dashboard.
 Elapsed336.0h
 OD6001.387
 PhasePlateau
