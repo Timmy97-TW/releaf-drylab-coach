@@ -1,12 +1,12 @@
 {
- "wiki": "18b6cda 2026-10-13 Audit: skip software/rig-app, whose page links libraries App Lab supplies at run time",
+ "wiki": "387d5e4 2026-10-13 Digital Twin: a fifth shorter, field sensors moved up, and the October run taken out",
  "pages": {
   "model": {
    "notes": 63,
    "broken": []
   },
   "software": {
-   "notes": 32,
+   "notes": 52,
    "broken": []
   },
   "protein-design": {

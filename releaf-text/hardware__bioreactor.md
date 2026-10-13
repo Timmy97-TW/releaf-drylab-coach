@@ -596,7 +596,7 @@ Turn the handle of the second valve so that it points at the right port, closing
 - Connect a 2‑inch tube from the “Out” of a filter to another hole in the cap of the shell‑side reservoir. It needs no inner tube: its only job is to let oxygen and gas into the system without affecting sterility.
 ### 6.3 Culture and Medium
 #### Organism
-B. subtilis 168 in every run to September: wild type in the 400 h run, and 168 secreting ACC deaminase constitutively in integration v1. WB800 from 8 October
+B. subtilis 168 in every run to September: wild type in the 400 h run, and 168 secreting ACC deaminase constitutively in integration v1
 #### Medium
 LB, 300 mL working volume in the first three runs, 1 L from September
 #### Inoculum
